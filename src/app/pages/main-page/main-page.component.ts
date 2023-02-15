@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { Observable, of, share } from 'rxjs';
+
+import { GitHubService } from '../../services/git-hub.service';
 
 @Component({
   selector: 'cv-main-page',
@@ -16,7 +19,10 @@ export class MainPageComponent {
   ]);
 basicTable: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private gitHubService:GitHubService) {
+    this.gitHubService.getUserRepos().subscribe(el=>{
+      console.log(el)
+    })
   }
 
   getItems(): Observable<Item[]> {
