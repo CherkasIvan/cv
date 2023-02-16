@@ -7,18 +7,15 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [
-    SpinnerComponent
-  ],
-  imports: [
-    CommonModule
-  ],
+  declarations: [SpinnerComponent],
+  exports: [SpinnerComponent],
+  imports: [CommonModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true,
     },
-  ]
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -8,19 +8,16 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
