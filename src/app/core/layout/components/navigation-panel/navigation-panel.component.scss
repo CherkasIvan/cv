@@ -1,23 +1,27 @@
-.navigation-panel{
+.navigation-panel {
   width: 100vw;
   height: 100%;
   background: red;
   padding: 0 5%;
 
-  .container{
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .navigation-container{
-      .navigation-list{
+    .navigation-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .navigation-list {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        &__item{
+
+        &__item {
           padding: 2rem;
         }
       }
     }
   }
-
 }
