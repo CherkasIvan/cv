@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutPageComponent } from './about-page.component';
-import { Routes } from '@angular/router';
-
-const routes: Routes = [
-  {
-    path: 'about',
-    component: AboutPageComponent,
-  },
-];
+import { AboutPageRoutingModule } from './about-page-routing.module';
 
 @NgModule({
   declarations: [AboutPageComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, AboutPageRoutingModule],
 })
 export class AboutPageModule {}

@@ -11,7 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AboutPageComponent,
+        loadChildren: () =>
+          import('../../pages/about-page/about-page.module').then(
+            (module) => module.AboutPageModule
+          ),
       },
       {
         path: 'projects',
