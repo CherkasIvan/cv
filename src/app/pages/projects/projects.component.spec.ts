@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectPageComponent } from './project-page.component';
+import { ProjectPageComponent } from './projects.component';
 
 describe('ProjectPageComponent', () => {
   let component: ProjectPageComponent;
@@ -8,9 +8,8 @@ describe('ProjectPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectPageComponent ]
-    })
-    .compileComponents();
+      declarations: [ProjectPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectPageComponent);
     component = fixture.componentInstance;
