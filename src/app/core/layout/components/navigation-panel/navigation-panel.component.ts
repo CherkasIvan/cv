@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { navigationLinks } from 'src/assets/constants/navigation';
+
+import { navigationLinks } from '../../../../../assets/constants/navigation';
 
 @Component({
   selector: 'cv-navigation-panel',
