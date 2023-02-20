@@ -17,10 +17,23 @@
       .links-list,
       .personal-data-list {
         display: flex;
-        gap: 1rem;
 
         &__item {
           padding: 2rem;
+
+          .item-link {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .personal-data-list {
+        flex-direction: column;
+        &__item {
+          display: flex;
+          gap: 15px;
+          justify-content: space-between;
         }
       }
     }

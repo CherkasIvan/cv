@@ -20,9 +20,7 @@ export class LayoutComponent {
   basicTable: any;
 
   constructor(private http: HttpClient, private gitHubService: GitHubService) {
-    this.gitHubService.getUserRepos().subscribe((el) => {
-      console.log(el);
-    });
+    this.gitHubService.getUserRepos().subscribe((el) => {});
   }
 
   getItems(): Observable<Item[]> {
