@@ -1,4 +1,4 @@
-export const navigationLinks = [
+export const navigationLinks: any[] = [
   {
     link: 'about-me',
     value: 'Обо мне',

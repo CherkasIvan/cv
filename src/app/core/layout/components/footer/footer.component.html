@@ -2,21 +2,43 @@
   <div class="footer-container">
     <div class="links-container">
       <ul class="links-list">
-        <li class="links-list__item">1</li>
-        <li class="links-list__item">1</li>
-        <li class="links-list__item">1</li>
-        <li class="links-list__item">1</li>
-        <li class="links-list__item">1</li>
+        <li
+          class="links-list__item"
+          *ngFor="let link of socialLinks; let i = index"
+        >
+          <a
+            [href]="link.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="item-link"
+            ><img [src]="link.iconPath" [alt]="link.alt" class="item-img"
+          /></a>
+        </li>
       </ul>
     </div>
 
     <div class="personal-data-container">
       <ul class="personal-data-list">
-        <li class="personal-data-list__item">1</li>
-        <li class="personal-data-list__item">1</li>
-        <li class="personal-data-list__item">1</li>
-        <li class="personal-data-list__item">1</li>
-        <li class="personal-data-list__item">1</li>
+        <li class="personal-data-list__item">
+          <span class="item-title">Телефонный номер:</span
+          ><a href="tel:+375-29-165-76-53" class="item-value"
+            >+375-29-165-76-53</a
+          >
+        </li>
+        <li class="personal-data-list__item">
+          <span class="item-title">Скайп:</span
+          ><a
+            href="skype:live:.cid.270d4d79826c9a4d?userinfo"
+            class="item-value"
+            >live:.cid.270d4d79826c9a4d</a
+          >
+        </li>
+        <li class="personal-data-list__item">
+          <span class="item-title">Емейл:</span
+          ><a href="mailto: cherkas.ivan13@gmail.com" class="item-value"
+            >cherkas.ivan13@gmail.com</a
+          >
+        </li>
       </ul>
     </div>
   </div>

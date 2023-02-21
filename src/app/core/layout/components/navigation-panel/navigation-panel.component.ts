@@ -9,7 +9,5 @@ import { navigationLinks } from '../../../../../assets/constants/navigation';
 })
 export class NavigationPanelComponent {
   public navigation = navigationLinks;
-  constructor() {
-    console.log(this.navigation);
-  }
+  constructor() {}
 }

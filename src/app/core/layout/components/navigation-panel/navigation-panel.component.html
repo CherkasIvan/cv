@@ -1,15 +1,25 @@
 <aside class="navigation-panel">
   <div class="container">
-    <img src="#" alt="cv-logo" class="logo" />
+    <img
+      src="assets/img/Ivan Cherkas.png"
+      alt="cv-logo"
+      class="logo"
+      routerLink="/layout"
+    />
+    <cv-navigation-panel-burger></cv-navigation-panel-burger>
+
     <nav class="navigation-container">
       <ul class="navigation-list">
         <li
           class="navigation-list__item"
           *ngFor="let link of navigation; let i = index"
         >
-          <a routerLink="{{ link.link }}" [routerLinkActive]="['active']">{{
-            link.value
-          }}</a>
+          <a
+            routerLink="{{ link.link }}"
+            class="item-link"
+            [routerLinkActive]="['active']"
+            >{{ link.value }}</a
+          >
         </li>
       </ul>
       <div class="personal-area">test</div>

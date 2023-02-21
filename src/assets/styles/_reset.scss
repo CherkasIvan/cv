@@ -14,7 +14,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Gilroy', sans-serif !important;
   height: 100%;
   width: 100vw;
   font-size: 100%;
@@ -54,6 +53,10 @@ a,
 a:visited,
 a:focus {
   text-decoration: none;
+}
+
+a {
+  color: #ffffff;
 }
 
 ul li {
