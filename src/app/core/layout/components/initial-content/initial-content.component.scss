@@ -1,0 +1,37 @@
+.initial-content {
+  .container {
+    .main-content,
+    .technologies-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+
+      &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .technologies-list {
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        &__item {
+          padding: 1rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    text-align: center;
+
+    .wishes {
+      font-weight: 600;
+      font-size: 18px;
+      font-style: italic;
+    }
+  }
+}

@@ -1,13 +1,23 @@
 .navigation-panel {
   width: 100vw;
   height: 100%;
-  background: red;
+  background: linear-gradient(
+    to top,
+    rgba(169, 208, 113, 0),
+    rgba(136, 173, 215, 1)
+  );
   padding: 0 5%;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+    }
 
     .navigation-container {
       display: flex;
@@ -19,7 +29,19 @@
         grid-template-columns: repeat(5, 1fr);
 
         &__item {
+          font-size: 20px;
+          font-weight: 700;
           padding: 2rem;
+        }
+
+        &__item:hover {
+          .item-link {
+            color: blue;
+          }
+        }
+
+        .active {
+          color: green;
         }
       }
     }
