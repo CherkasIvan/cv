@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, share } from 'rxjs';
 
 import { GitHubService } from '../../services/git-hub.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'cv-layout',
@@ -17,10 +19,22 @@ export class LayoutComponent {
     { name: 'Миша', age: 21, address: 'Париж' },
     { name: 'Вова', age: 23, address: 'Сидней' },
   ]);
-  basicTable: any;
 
-  constructor(private http: HttpClient, private gitHubService: GitHubService) {
+  name = 'Get Current Url Route Demo';
+  currentRoute!: string;
+
+  constructor(
+    private http: HttpClient,
+    private gitHubService: GitHubService,
+    private router: Router
+  ) {
     this.gitHubService.getUserRepos().subscribe((el) => {});
+
+    router.events
+      .pipe(filter((event: any) => event instanceof NavigationEnd))
+      .subscribe((event: { url: string }) => {
+        this.currentRoute = event.url;
+      });
   }
 
   getItems(): Observable<Item[]> {
