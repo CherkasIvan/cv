@@ -28,10 +28,17 @@
 
     text-align: center;
 
-    .wishes {
-      font-weight: 600;
-      font-size: 18px;
-      font-style: italic;
+    .etc {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      &__wishes,
+      &__language,
+      &__color-mode {
+        font-weight: 600;
+        font-size: 18px;
+        font-style: italic;
+      }
     }
   }
 }
