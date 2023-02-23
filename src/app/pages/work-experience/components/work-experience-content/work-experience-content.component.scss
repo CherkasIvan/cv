@@ -1,0 +1,23 @@
+.work-experience-content {
+  .work-container {
+    text-align: center;
+    .work-list {
+      display: flex;
+      justify-content: space-between;
+
+      &__item {
+        .item-header,
+        .item-body,
+        .item-footer {
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+        }
+      }
+    }
+
+    .total-experience {
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,1 +1,20 @@
-<p>work-experience-content works!</p>
+<div class="work-experience-content">
+  <main class="work-container">
+    <ul class="work-list">
+      <li class="work-list__item" *ngFor="let work of workPlace; let i = index">
+        <div class="item-header">
+          <img class="item-header__logo" [src]="work.logo" [alt]="work.logo" />
+          <span class="item-header__company">{{ work.company }}</span>
+        </div>
+        <div class="item-body">
+          <span class="item-body__from">{{ work.from }}</span
+          ><span class="item-body__to">{{ work.to }}</span>
+        </div>
+        <div class="item-footer">
+          <span class="item-footer__place">{{ work.place }}</span>
+        </div>
+      </li>
+    </ul>
+    <div class="total-experience">5 лет</div>
+  </main>
+</div>
