@@ -1,0 +1,36 @@
+.technologies-list {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__item {
+    padding: 1rem;
+    .item-link {
+      .item-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .item__title {
+          font-weight: 600;
+          font-size: 20px;
+          text-transform: uppercase;
+        }
+
+        .item__img {
+          width: 4rem;
+          height: 4rem;
+          transition: all 0.5s ease-out;
+        }
+
+        .item__img:hover {
+          transition: all 0.5s ease-out;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

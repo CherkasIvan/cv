@@ -7,23 +7,35 @@
 
     .hard-skills,
     .soft-skills {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
+      text-align: center;
       &__title {
         font-weight: 700;
         font-size: 20px;
       }
 
-      &__list {
-        margin-top: 25px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+      .front-end-skills,
+      .back-end-skills {
+        &__title {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 10px 0;
+        }
 
-        .item {
-          padding: 10px;
+        &__list {
+          margin-top: 25px;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+
+          .item {
+            padding: 10px;
+
+            &__link {
+              &-img {
+                max-width: 4rem;
+                max-height: 4rem;
+              }
+            }
+          }
         }
       }
     }

@@ -2,44 +2,29 @@
   <div class="container">
     <div class="hard-skills">
       <span class="hard-skills__title">Технические навыки</span>
-      <ul class="hard-skills__list">
-        <li class="item">
-          <a href="" class="item__link">q</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">w</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">e</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">r</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">t</a>
-        </li>
-      </ul>
+
+      <div class="front-end-skills">
+        <span class="front-end-skills__title">Навыки стороны клиента</span>
+        <cv-skills-content
+          [technologiesList]="frontendTech"
+        ></cv-skills-content>
+      </div>
+      <div class="back-end-skills"></div>
+      <span class="back-end-skills__title">Серверные навыки</span>
+      <cv-skills-content [technologiesList]="backendTech"></cv-skills-content>
     </div>
 
     <div class="soft-skills">
       <span class="soft-skills__title">Социальные навыки</span>
-      <ul class="soft-skills__list">
-        <li class="item">
-          <a href="" class="item__link">q</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">w</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">e</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">r</a>
-        </li>
-        <li class="item">
-          <a href="" class="item__link">t</a>
-        </li>
-      </ul>
+      <div class="front-end-skills">
+        <span class="front-end-skills__title">Навыки стороны клиента</span>
+        <cv-skills-content
+          [technologiesList]="frontendTech"
+        ></cv-skills-content>
+      </div>
+      <div class="back-end-skills"></div>
+      <span class="back-end-skills__title">Серверные навыки</span>
+      <cv-skills-content [technologiesList]="backendTech"></cv-skills-content>
     </div>
   </div>
 </div>

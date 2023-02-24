@@ -9,10 +9,17 @@ import { NavigationPanelComponent } from './components/navigation-panel/navigati
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [LayoutComponent, NavigationPanelComponent, FooterComponent, NavigationPanelBurgerComponent, InitialContentComponent],
+  declarations: [
+    LayoutComponent,
+    NavigationPanelComponent,
+    FooterComponent,
+    NavigationPanelBurgerComponent,
+    InitialContentComponent,
+  ],
   exports: [LayoutComponent],
-  imports: [LayoutRoutingModule, MatTableModule, CommonModule],
+  imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule],
 })
 export class LayoutModule {}
