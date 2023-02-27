@@ -12,6 +12,20 @@
           display: flex;
           gap: 10px;
           justify-content: center;
+
+          &__logo {
+            background-color: #ffffff;
+            border-radius: 8px;
+
+            .logo-icon {
+              height: 80px;
+              border-radius: 8px;
+            }
+          }
+        }
+
+        .item-header {
+          flex-direction: column-reverse;
         }
       }
     }

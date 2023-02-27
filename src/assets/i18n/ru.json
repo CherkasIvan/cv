@@ -1,0 +1,10 @@
+{
+  "LANDING": {
+    "LINE1": "Démo de localisation en angulaire avec ngx-translate",
+    "LINE2": "Test de NGX-translate",
+    "LINE3": "Salutations à tous! Je suis Shubhrank Rastogi",
+    "PROPERTY": {
+      "LINE": "Traduction à l'aide de la liaison de propriété"
+    }
+  }
+}

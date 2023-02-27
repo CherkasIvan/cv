@@ -31,6 +31,8 @@
     "@nestjs/ng-universal": "^7.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nguniversal/express-engine": "^15.0.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "express": "^4.15.2",

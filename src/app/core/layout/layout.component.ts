@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Observable, of, share } from 'rxjs';
-
-import { GitHubService } from '../../services/git-hub.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+
+import { Observable, of, share, filter } from 'rxjs';
+
+import { GitHubService } from '../../shared/services/git-hub/git-hub.service';
 
 @Component({
   selector: 'cv-layout',
