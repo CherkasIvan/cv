@@ -1,19 +1,5 @@
 <div class="work-experience-content">
   <main class="work-container">
-    <!-- EXPERIMENTAL WITH LANG! -->
-    <div class="interpolation-content">
-      <hr />
-      <h1>{{ 'LANDING.LINE1' | translate }}</h1>
-      <h2>{{ 'LANDING.LINE2' | translate }}</h2>
-      <h2>{{ 'LANDING.LINE3' | translate }}</h2>
-      <hr />
-    </div>
-    <div class="property-content">
-      <h1 [translate]="'LANDING.PROPERTY.LINE'"></h1>
-      <hr />
-    </div>
-
-    <!-- EXPERIMENTAL WITH LANG! -->
     <ul class="work-list">
       <li class="work-list__item" *ngFor="let work of workPlace; let i = index">
         <div class="item-header">

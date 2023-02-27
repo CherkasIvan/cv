@@ -22,13 +22,7 @@ export class LayoutComponent {
   name = 'Get Current Url Route Demo';
   currentRoute!: string;
 
-  constructor(
-    private http: HttpClient,
-    private gitHubService: GitHubService,
-    private router: Router
-  ) {
-    this.gitHubService.getUserRepos().subscribe((el) => {});
-
+  constructor(private http: HttpClient, private router: Router) {
     router.events
       .pipe(filter((event: any) => event instanceof NavigationEnd))
       .subscribe((event: { url: string }) => {

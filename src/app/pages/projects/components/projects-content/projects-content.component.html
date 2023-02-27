@@ -1,0 +1,16 @@
+<div class="projects-content">
+  <div class="container">
+    <ul class="projects-list">
+      <li
+        class="projects-list__item"
+        *ngFor="let project of projectsList; let i = index"
+      >
+        <a [href]="project.htmlUrl" class="project">
+          <span class="project__title">{{ project.name }}</span>
+          <span class="project__content">{{ project.description }}</span>
+          <span class="project__stars">{{ project.stars }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
