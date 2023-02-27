@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { contacts } from 'src/assets/constants/contacts';
 
 import { socialMediaLinks } from '../../../../../assets/constants/social-media-linke';
 
@@ -9,4 +10,5 @@ import { socialMediaLinks } from '../../../../../assets/constants/social-media-l
 })
 export class FooterComponent {
   public socialLinks = socialMediaLinks;
+  public myContacts = contacts;
 }
