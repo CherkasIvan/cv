@@ -1,13 +1,33 @@
 .education-content {
-  .container {
+  .education-container {
     display: flex;
     align-items: center;
     justify-content: center;
     .education-list {
       display: flex;
       flex-direction: column;
-
+      gap: 2rem;
       &__item {
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.45);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+
+        .places {
+          &__list {
+            .item {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+
+        > * {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

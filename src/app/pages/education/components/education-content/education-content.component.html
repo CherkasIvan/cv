@@ -1,24 +1,28 @@
 <div class="education-content">
-  <div class="container">
+  <div class="education-container">
     <ul class="education-list">
-      <li class="education-list__item">
-        <div class="school">
-          <span class="school__title">Школа:</span>
-          <span class="school__content">№132</span>
-        </div>
-      </li>
-      <li class="education-list__item">
-        <div class="university">
-          <span class="university__title">Университет:</span>
-          <span class="university__content"
-            >Минский инновационный университет</span
-          >
-        </div>
-      </li>
-      <li class="education-list__item">
-        <div class="courses">
-          <span class="courses__title">Курсы</span>
-          <span class="courses__content">TeachMeSkills</span>
+      <li
+        class="education-list__item"
+        *ngFor="let educationPlace of educationList; let i = index"
+      >
+        <div class="places">
+          <span class="places__title">{{ educationPlace.educationTitle }}</span>
+          <ul class="places__list">
+            <li
+              class="item"
+              *ngFor="
+                let education of educationPlace.educationPlaceName;
+                let i = index
+              "
+            >
+              <span class="item__name">{{ education.name }}</span>
+              <span class="item__address">{{ education.address }}</span>
+              <span class="item__phone">{{ education.phone }}</span>
+              <a [href]="education.link" class="intem__link">{{
+                education.link
+              }}</a>
+            </li>
+          </ul>
         </div>
       </li>
     </ul>

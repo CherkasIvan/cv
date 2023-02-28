@@ -31,7 +31,10 @@
         &__item {
           font-size: 20px;
           font-weight: 700;
-          padding: 2rem;
+
+          .item-link {
+            padding: 1.5rem;
+          }
 
           .item-link::first-letter {
             text-transform: uppercase;

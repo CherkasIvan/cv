@@ -1,13 +1,12 @@
 .projects-content {
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  .projects-container {
     .projects-list {
       display: grid;
       width: 100%;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-column-gap: 10px;
 
       .project {
         display: flex;

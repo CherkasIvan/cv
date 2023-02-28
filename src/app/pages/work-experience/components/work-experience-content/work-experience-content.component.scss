@@ -3,7 +3,7 @@
     text-align: center;
     .work-list {
       display: flex;
-      justify-content: space-between;
+      gap: 2rem;
 
       &__item {
         .item-header,

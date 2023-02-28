@@ -43,6 +43,17 @@
     }
   },
 
+  "TECHNOLOGIES": {
+    "HARD-SKILLS": {
+      "TITLE": "Technical skills.",
+      "FRONT-END": "Front-end skills.",
+      "BACK-END": "Back-end skills."
+    },
+    "SOFT-SKILLS": {
+      "TITLE": "Social skills"
+    }
+  },
+
   "FOOTER": {
     "ITEM": {
       "VALUE0": "Phone number:",

@@ -1,30 +1,38 @@
 <div class="technologies">
   <div class="container">
     <div class="hard-skills">
-      <span class="hard-skills__title">Технические навыки</span>
+      <span class="hard-skills__title">{{
+        'TECHNOLOGIES.HARD-SKILLS.TITLE' | translate
+      }}</span>
 
       <div class="front-end-skills">
-        <span class="front-end-skills__title">Навыки стороны клиента</span>
+        <span class="front-end-skills__title">{{
+          'TECHNOLOGIES.HARD-SKILLS.FRONT-END' | translate
+        }}</span>
         <cv-skills-content
           [technologiesList]="frontendTech"
         ></cv-skills-content>
       </div>
       <div class="back-end-skills"></div>
-      <span class="back-end-skills__title">Серверные навыки</span>
+      <span class="back-end-skills__title">{{
+        'TECHNOLOGIES.HARD-SKILLS.BACK-END' | translate
+      }}</span>
       <cv-skills-content [technologiesList]="backendTech"></cv-skills-content>
     </div>
 
     <div class="soft-skills">
-      <span class="soft-skills__title">Социальные навыки</span>
+      <span class="soft-skills__title">{{
+        'TECHNOLOGIES.SOFT-SKILLS.TITLE' | translate
+      }}</span>
+
       <div class="front-end-skills">
-        <span class="front-end-skills__title">Навыки стороны клиента</span>
+        <span class="front-end-skills__title">{{
+          'TECHNOLOGIES.HARD-SKILLS.FRONT-END' | translate
+        }}</span>
         <cv-skills-content
           [technologiesList]="frontendTech"
         ></cv-skills-content>
       </div>
-      <div class="back-end-skills"></div>
-      <span class="back-end-skills__title">Серверные навыки</span>
-      <cv-skills-content [technologiesList]="backendTech"></cv-skills-content>
     </div>
   </div>
 </div>
