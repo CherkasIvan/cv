@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 import { education } from 'src/assets/constants/education';
 
 @Component({
@@ -8,4 +9,10 @@ import { education } from 'src/assets/constants/education';
 })
 export class EducationContentComponent {
   public educationList = education;
+
+  constructor(private dialogService: DialogService) {}
+
+  openDialog(imgPath: string) {
+    this.dialogService.openDialog(imgPath);
+  }
 }

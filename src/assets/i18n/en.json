@@ -43,6 +43,28 @@
     }
   },
 
+  "EDUCATION": {
+    "TITLE-SCHOOL": "School",
+    "TITLE-UNIVERSITY": "University",
+    "TITLE-COURSES": "Courses",
+    "ABOUT": {
+      "TITLE": "Shortly about myself",
+      "TEXT": "Good day. My name is Ivan Vyacheslavovich Cherkas. I was born on January 25, 1991. in the city of Minsk. In programming since 2019. Initial training in C#, but later switched to HTML/CSS/JS. At the moment, I have an excellent command of the Angular framework for the development of corporate solutions on the front-end side. As well as the framework NestJS for the development of applications on the server side."
+    },
+    "HOBBY": {
+      "TITLE": "Hobby",
+      "TEXT": "I can say that I have a fairly general list of hobbies, but I would like to single out the most - the love of handicrafts in my spare time (making bracelets, belts, wallets and other things from leather, metal and stone) and I also like to spend time reading artistic literature."
+    },
+    "SPORTS": {
+      "TITLE": "Sport",
+      "TEXT": "In my youth, I was engaged in kettlebell sports. Now I go to the gym more and more and attend Krav Maga classes."
+    },
+    "ARMY": {
+      "TITLE": "Military duty",
+      "TEXT": "From 2015 to 2017 he served in the Israeli army. He graduated with the rank of sergeant (airborne in Israel). How paradoxical it may sound, but for health in RB."
+    }
+  },
+
   "TECHNOLOGIES": {
     "HARD-SKILLS": {
       "TITLE": "Technical skills.",

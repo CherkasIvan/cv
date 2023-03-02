@@ -6,7 +6,9 @@
         *ngFor="let educationPlace of educationList; let i = index"
       >
         <div class="places">
-          <span class="places__title">{{ educationPlace.educationTitle }}</span>
+          <span class="places__title">{{
+            'EDUCATION.TITLE-' + educationPlace.educationTitle | translate
+          }}</span>
           <ul class="places__list">
             <li
               class="item"
@@ -16,8 +18,20 @@
               "
             >
               <span class="item__name">{{ education.name }}</span>
+              <span class="item__grade">{{ education.grade }}</span>
+
+              <ng-container *ngIf="education.certificatePath">
+                <img
+                  [src]="education.certificatePath"
+                  [alt]="education.grade"
+                  class="item__img"
+                  (click)="openDialog(education.certificatePath)"
+                />
+              </ng-container>
+
               <span class="item__address">{{ education.address }}</span>
               <span class="item__phone">{{ education.phone }}</span>
+
               <a [href]="education.link" class="intem__link">{{
                 education.link
               }}</a>
