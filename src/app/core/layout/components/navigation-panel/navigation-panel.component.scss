@@ -34,7 +34,13 @@
           font-weight: 700;
 
           .item-link {
+            position: relative;
             padding: 1.5rem;
+            color: #ccccff;
+            font-weight: bold;
+            line-height: 1;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
           }
 
           .item-link::first-letter {
@@ -44,12 +50,14 @@
 
         &__item:hover {
           .item-link {
-            color: blue;
+            color: #cc0033;
           }
         }
 
         .active {
-          color: green;
+          -webkit-transition: all 0.1s ease;
+          transition: all 0.1s ease;
+          color: #ccff33;
         }
       }
     }

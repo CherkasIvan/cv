@@ -13,12 +13,13 @@ body {
 .technologies,
 .work-experience,
 .initial-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   width: 100%;
-  min-height: 78vh;
   .container {
+    margin-bottom: 100px;
+    min-height: 78vh;
     padding: 0 5%;
   }
 }

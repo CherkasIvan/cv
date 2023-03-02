@@ -53,6 +53,15 @@ export const education: any[] = [
         certificateLink:
           'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc',
       },
+      {
+        name: 'Stepik',
+        link: 'https://stepik.org/',
+        address: 'г.Москва',
+        phone: '',
+        grade: 'Основы програмирования на C#',
+        certificatePath: 'assets/img/certificate/beginner.jpg',
+        certificateLink: ' https://stepik.org/cert/320534',
+      },
     ],
   },
 ];

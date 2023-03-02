@@ -21,6 +21,8 @@
         .places {
           width: 100%;
           &__title {
+            font-weight: 700;
+            font-size: 22px;
             align-self: center;
             margin-bottom: 2rem;
           }
@@ -28,13 +30,31 @@
           &__list {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1rem;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             .item {
               display: flex;
               flex-direction: column;
+              gap: 0.54rem;
+              &__name {
+                font-weight: 600;
+                font-size: 18px;
+              }
+
               &__img {
+                cursor: pointer;
                 width: 200px;
+                transition: all 0.5s ease-out;
+                transform: scale(1);
+                border-radius: 8px;
+                padding: 1px;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                  0 10px 10px rgba(0, 0, 0, 0.22);
+              }
+
+              &__img:hover {
+                transition: all 0.5s ease-out;
+                transform: scale(1.1);
               }
             }
           }
@@ -43,6 +63,18 @@
         > * {
           display: flex;
           flex-direction: column;
+        }
+      }
+
+      &__item:last-child {
+        .places {
+          &__list {
+            .item {
+              > * {
+                margin: 0 auto;
+              }
+            }
+          }
         }
       }
     }
