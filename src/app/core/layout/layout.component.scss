@@ -1,19 +1,9 @@
 .layout {
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
-  // background: -webkit-linear-gradient(
-  //   0deg,
-  //   rgb(148, 187, 240),
-  //   rgb(28, 45, 172)
-  // );
-  // background: -moz-linear-gradient(0deg, rgb(148, 187, 240), rgb(28, 45, 172));
-  // background: linear-gradient(0deg, rgb(148, 187, 240), rgb(28, 45, 172));
   background: radial-gradient(#a23982, #1f1013);
   -webkit-overflow-y: hidden;
   -moz-overflow-y: hidden;
   -o-overflow-y: hidden;
-  overflow-y: hidden;
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
   -o-animation: fadeIn 1 1s ease-out;

@@ -1,6 +1,14 @@
 .projects-content {
   width: 100%;
   .projects-container {
+    margin: 2rem 0;
+
+    .projects-description {
+      margin-bottom: 2rem;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
     .projects-list {
       display: grid;
       width: 100%;

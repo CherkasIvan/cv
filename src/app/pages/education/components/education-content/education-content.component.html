@@ -7,7 +7,7 @@
       >
         <div class="places">
           <span class="places__title">{{
-            'EDUCATION.TITLE-' + educationPlace.educationTitle | translate
+            'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate
           }}</span>
           <ul class="places__list">
             <li
@@ -17,8 +17,15 @@
                 let i = index
               "
             >
-              <span class="item__name">{{ education.name }}</span>
-              <span class="item__grade">{{ education.grade }}</span>
+              <span class="item__name">
+                {{
+                  'EDUCATION.' +
+                    educationPlace.educationTitle +
+                    '.' +
+                    education.name +
+                    '.NAME' | translate
+                }}
+              </span>
 
               <ng-container *ngIf="education.certificatePath">
                 <img
@@ -29,7 +36,15 @@
                 />
               </ng-container>
 
-              <span class="item__address">{{ education.address }}</span>
+              <span class="item__address">
+                {{
+                  'EDUCATION.' +
+                    educationPlace.educationTitle +
+                    '.' +
+                    education.name +
+                    '.ADDRESS' | translate
+                }}</span
+              >
               <span class="item__phone">{{ education.phone }}</span>
 
               <a [href]="education.link" class="intem__link">{{
