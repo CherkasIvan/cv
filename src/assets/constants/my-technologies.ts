@@ -51,5 +51,12 @@ export const myTechnologies: any[] = [
       alt: 'nest-js',
       link: 'https://nestjs.com/',
     },
+
+    {
+      technologyName: 'node js',
+      iconPath: 'assets/img/technologies/back-end/nodejs.png',
+      alt: 'node-js',
+      link: 'https://nodejs.org/en/',
+    },
   ],
 ];

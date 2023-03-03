@@ -3,7 +3,14 @@
     <ul class="work-list">
       <li class="work-list__item" *ngFor="let work of workPlace; let i = index">
         <div class="item-header">
-          <img class="item-header__logo" [src]="work.logo" [alt]="work.logo" />
+          <div class="item-header__logo">
+            <img
+              class="logo-icon"
+              [src]="work.logoPath"
+              [alt]="work.logoPath"
+            />
+          </div>
+
           <span class="item-header__company">{{ work.company }}</span>
         </div>
         <div class="item-body">
@@ -15,6 +22,8 @@
         </div>
       </li>
     </ul>
-    <div class="total-experience">5 лет</div>
+    <div class="total-experience">
+      5 {{ 'WORK-EXPERIENCE.YEARS' | translate }}
+    </div>
   </main>
 </div>

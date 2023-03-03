@@ -1,12 +1,12 @@
-<aside class="navigation-panel">
+<header class="navigation-panel">
   <div class="container">
     <img
-      src="assets/img/Ivan Cherkas.png"
+      src="assets/img/IvanCherkas.png"
       alt="cv-logo"
       class="logo"
       routerLink="/layout"
     />
-    
+
     <cv-navigation-panel-burger></cv-navigation-panel-burger>
 
     <nav class="navigation-container">
@@ -19,11 +19,13 @@
             routerLink="{{ link.link }}"
             class="item-link"
             [routerLinkActive]="['active']"
-            >{{ link.value }}</a
+            >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
           >
         </li>
       </ul>
-      <div class="personal-area">test</div>
+      <div class="personal-area">
+        <cv-language-selector></cv-language-selector>
+      </div>
     </nav>
   </div>
-</aside>
+</header>

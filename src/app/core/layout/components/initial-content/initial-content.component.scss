@@ -2,15 +2,43 @@
   .container {
     .main-content,
     .technologies-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       margin-bottom: 25px;
 
       &__title {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 20px;
+      }
+
+      .technologies-list {
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        &__item {
+          padding: 1rem;
+          .item-link {
+            .item-container {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+
+              .item__title {
+                font-weight: 600;
+                font-size: 20px;
+                text-transform: uppercase;
+              }
+
+              .item__img {
+                width: 4rem;
+                height: 4rem;
+              }
+            }
+          }
+        }
       }
     }
 

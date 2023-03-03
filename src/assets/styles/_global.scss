@@ -10,13 +10,17 @@ body {
 .about-me,
 .education,
 .projects,
-.projects,
 .technologies,
 .work-experience,
 .initial-content {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  margin: 2rem 0 0 0;
+
   width: 100%;
-  height: 100%;
   .container {
+    min-height: 78vh;
     padding: 0 5%;
   }
 }

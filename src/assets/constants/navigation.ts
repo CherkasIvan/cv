@@ -17,6 +17,6 @@ export const navigationLinks: any[] = [
   },
   {
     link: 'work-experience',
-    value: 'Рабочий опыт',
+    value: 'Опыт работы',
   },
 ];

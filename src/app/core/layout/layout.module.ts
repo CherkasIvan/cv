@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FooterComponent,
     NavigationPanelBurgerComponent,
     InitialContentComponent,
+    LanguageSelectorComponent,
   ],
   exports: [LayoutComponent],
   imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule],

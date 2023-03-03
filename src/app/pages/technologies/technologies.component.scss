@@ -1,6 +1,6 @@
 .technologies {
   .container {
-    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5rem;
@@ -15,10 +15,11 @@
 
       .front-end-skills,
       .back-end-skills {
+        margin: 2rem 0;
+
         &__title {
           font-size: 16px;
           font-weight: 600;
-          margin: 10px 0;
         }
 
         &__list {
@@ -27,6 +28,8 @@
           grid-template-columns: repeat(5, 1fr);
 
           .item {
+            margin-top: 2rem;
+
             padding: 10px;
 
             &__link {

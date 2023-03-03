@@ -19,25 +19,14 @@
 
     <div class="personal-data-container">
       <ul class="personal-data-list">
-        <li class="personal-data-list__item">
-          <span class="item-title">Телефонный номер:</span
-          ><a href="tel:+375-29-165-76-53" class="item-value"
-            >+375-29-165-76-53</a
-          >
-        </li>
-        <li class="personal-data-list__item">
-          <span class="item-title">Скайп:</span
-          ><a
-            href="skype:live:.cid.270d4d79826c9a4d?userinfo"
-            class="item-value"
-            >live:.cid.270d4d79826c9a4d</a
-          >
-        </li>
-        <li class="personal-data-list__item">
-          <span class="item-title">Емейл:</span
-          ><a href="mailto: cherkas.ivan13@gmail.com" class="item-value"
-            >cherkas.ivan13@gmail.com</a
-          >
+        <li
+          class="personal-data-list__item"
+          *ngFor="let contact of myContacts; let i = index"
+        >
+          <span class="item-title">{{
+            'FOOTER.ITEM.VALUE' + i | translate
+          }}</span
+          ><a [href]="contact.path" class="item-value">{{ contact.value }}</a>
         </li>
       </ul>
     </div>
