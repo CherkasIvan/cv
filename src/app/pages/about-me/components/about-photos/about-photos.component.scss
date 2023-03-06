@@ -1,0 +1,53 @@
+.about-photos {
+  padding: 20px 0;
+  .container {
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 150px;
+
+      .carousel-main {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        .item {
+          position: relative;
+          display: inline-block;
+          width: 300px;
+          height: 150px;
+          margin: 0 12px;
+          background: red;
+
+          &__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bolder;
+          }
+        }
+        .button-area {
+          &__preview {
+            padding: 20px;
+            cursor: pointer;
+            position: absolute;
+            left: 37.8px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &__next {
+            padding: 20px;
+            cursor: pointer;
+            position: absolute;
+            right: -2px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
