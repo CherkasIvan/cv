@@ -45,6 +45,11 @@ const routes: Routes = [
             (module) => module.WorkExperienceModule
           ),
       },
+      {
+        path: 'cv',
+        loadChildren: () =>
+          import('../../pages/cv/cv.module').then((module) => module.CvModule),
+      },
     ],
   },
 ];

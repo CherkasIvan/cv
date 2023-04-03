@@ -1,4 +1,4 @@
-.footer {
+.cv-footer {
   width: 100vw;
   padding: 0 5%;
   position: fixed;
@@ -33,6 +33,8 @@
           }
 
           .item-img {
+            width: 35px;
+            height: 35px;
             transition: all 0.5s ease-out;
             -webkit-filter: drop-shadow(1px 1px 1px #222);
             filter: drop-shadow(1px 1px 1px #222);

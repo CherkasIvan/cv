@@ -1,0 +1,13 @@
+.carousel {
+  box-shadow: 0 0 26px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+
+    .item {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  }
+}

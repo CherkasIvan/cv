@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SliderBehaviorDirective } from '../shared/directives/slider-behavior.directive';
 
 @NgModule({
   declarations: [SpinnerComponent],

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cv-cherkas": {
+      "hosting": {
+        "cv": [
+          "cv-cherkas"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cv-cherkas"
+  }
+}

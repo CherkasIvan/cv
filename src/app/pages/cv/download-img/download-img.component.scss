@@ -1,0 +1,14 @@
+.download-img {
+  .cv-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+
+    .page {
+      max-width: 25%;
+      border-radius: 8px;
+    }
+  }
+}

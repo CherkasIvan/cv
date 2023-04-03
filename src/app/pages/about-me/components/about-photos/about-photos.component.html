@@ -1,12 +1,22 @@
-<div class="about-content">
-  <div class="container">
-    <div class="about">
-      <span class="about__title">TITtle</span>
-      <p class="about__text">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam nobis
-        quasi atque, iusto sapiente molestias eum fugiat error est, velit
-        recusandae, nulla delectus unde a dolor vel. Ex, commodi rem.
-      </p>
-    </div>
-  </div>
-</div>
+<c-carousel [animate]="false" transition="crossfade" class="carousel">
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let slide of slides" class="carousel-container">
+      <img
+        [src]="slide.src"
+        alt="{{ slide.title }}"
+        class="d-block w-100 item"
+        loading="lazy"
+      />
+    </c-carousel-item>
+  </c-carousel-inner>
+  <c-carousel-control
+    [routerLink]
+    caption="Previous"
+    direction="prev"
+  ></c-carousel-control>
+  <c-carousel-control
+    [routerLink]
+    caption="Next"
+    direction="next"
+  ></c-carousel-control>
+</c-carousel>

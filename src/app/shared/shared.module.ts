@@ -8,15 +8,17 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SkillsContentComponent } from './components/hard-skills-content/skills-content.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogService } from './services/dialog.service';
+import { SliderBehaviorDirective } from './directives/slider-behavior.directive';
 
 @NgModule({
-  declarations: [SkillsContentComponent],
+  declarations: [SkillsContentComponent, SliderBehaviorDirective],
   exports: [
     SkillsContentComponent,
     TranslateModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatDialogModule,
+    SliderBehaviorDirective,
   ],
   imports: [
     CommonModule,
