@@ -1,23 +1,22 @@
-<section class="about-photos">
-  <div class="container">
-    <div class="carousel-wrapper">
-      <div class="carousel-main">
-        <div class="item"><div class="item__text">1</div></div>
-        <div class="item"><div class="item__text">1</div></div>
-        <div class="item"><div class="item__text">1</div></div>
-        <div class="item"><div class="item__text">1</div></div>
-        <div class="item"><div class="item__text">1</div></div>
-        <div class="item"><div class="item__text">1</div></div>
-
-        <div class="button-area">
-          <button class="button-area__preview" type="button" cvSliderBehavior>
-            Preview
-          </button>
-          <button class="button-area__next" type="button" cvSliderBehavior>
-            Next
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<c-carousel [animate]="false" transition="crossfade" class="carousel">
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let slide of slides" class="carousel-container">
+      <img
+        [src]="slide.src"
+        alt="{{ slide.title }}"
+        class="d-block w-100 item"
+        loading="lazy"
+      />
+    </c-carousel-item>
+  </c-carousel-inner>
+  <c-carousel-control
+    [routerLink]
+    caption="Previous"
+    direction="prev"
+  ></c-carousel-control>
+  <c-carousel-control
+    [routerLink]
+    caption="Next"
+    direction="next"
+  ></c-carousel-control>
+</c-carousel>

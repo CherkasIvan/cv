@@ -8,15 +8,14 @@ body {
 }
 
 .about-me,
+.cv,
 .education,
 .projects,
 .technologies,
 .work-experience,
 .initial-content {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   margin: 2rem 0 0 0;
+  padding-bottom: 9.5rem;
 
   width: 100%;
   .container {

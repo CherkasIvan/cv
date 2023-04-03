@@ -1,6 +1,6 @@
 export const workExperience: any[] = [
   {
-    logoPath: 'assets/img/companies-logo/tms.png',
+    logoPath: '/assets/img/companies-logo/tms.png',
     company: 'TeachMeSkills',
     from: '01-10-2020',
     to: '01-08-2021',
@@ -8,7 +8,7 @@ export const workExperience: any[] = [
     link: 'https://teachmeskills.by/',
   },
   {
-    logoPath: 'assets/img/companies-logo/exadel.png',
+    logoPath: '/assets/img/companies-logo/exadel.png',
     company: 'Exadel',
     from: '01-01-2021',
     to: '01-04-2021',
@@ -17,7 +17,7 @@ export const workExperience: any[] = [
   },
 
   {
-    logoPath: 'assets/img/companies-logo/fls.png',
+    logoPath: '/assets/img/companies-logo/fls.png',
     company: 'FreshLimeSoft',
     from: '01-08-2021',
     to: '22-12-2022',
@@ -26,7 +26,7 @@ export const workExperience: any[] = [
   },
 
   {
-    logoPath: 'assets/img/companies-logo/intexsoft.png',
+    logoPath: '/assets/img/companies-logo/intexsoft.png',
     company: 'IntexSoft',
     from: '01-08-2021',
     to: 'present time',

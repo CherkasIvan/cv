@@ -19,4 +19,8 @@ export const navigationLinks: any[] = [
     link: 'work-experience',
     value: 'Опыт работы',
   },
+  {
+    link: 'cv',
+    value: 'Резюме',
+  },
 ];

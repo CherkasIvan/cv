@@ -12,13 +12,6 @@ import { GitHubService } from '../../shared/services/git-hub/git-hub.service';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  items$: Observable<Item[]> = of([
-    { name: 'Вася', age: 24, address: 'Москва' },
-    { name: 'Петя', age: 23, address: 'Лондон' },
-    { name: 'Миша', age: 21, address: 'Париж' },
-    { name: 'Вова', age: 23, address: 'Сидней' },
-  ]);
-
   name = 'Get Current Url Route Demo';
   currentRoute!: string;
 

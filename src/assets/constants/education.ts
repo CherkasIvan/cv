@@ -30,7 +30,7 @@ export const education: any[] = [
         address: 'г.Минск, ул.Тимирязева, д.67, оф.1101',
         phone: '+375 29 105-59-59',
         grade: 'Front-end developer',
-        certificatePath: 'assets/img/certificate/frontend.jpg',
+        certificatePath: '/assets/img/certificate/frontend.jpg',
         certificateLink: '',
       },
       {
@@ -39,7 +39,7 @@ export const education: any[] = [
         address: 'г.Минск, ул.Скрыганова, д.14, эт.5',
         phone: '+375 44 781-54-12',
         grade: 'C# developer',
-        certificatePath: 'assets/img/certificate/web-design.jpg',
+        certificatePath: '/assets/img/certificate/web-design.jpg',
         certificateLink:
           'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc',
       },
@@ -49,7 +49,7 @@ export const education: any[] = [
         address: 'г.Москва',
         phone: '',
         grade: 'Основы веб-дизайна в Adobe-Photoshop',
-        certificatePath: 'assets/img/certificate/web-design.jpg',
+        certificatePath: '/assets/img/certificate/web-design.jpg',
         certificateLink:
           'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc',
       },
@@ -59,7 +59,7 @@ export const education: any[] = [
         address: 'г.Москва',
         phone: '',
         grade: 'Основы програмирования на C#',
-        certificatePath: 'assets/img/certificate/beginner.jpg',
+        certificatePath: '/assets/img/certificate/beginner.jpg',
         certificateLink: ' https://stepik.org/cert/320534',
       },
     ],
