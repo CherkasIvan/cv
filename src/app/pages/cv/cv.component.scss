@@ -7,28 +7,6 @@
       font-size: 20px;
     }
 
-    .button-block {
-      width: 60%;
-      display: flex;
-      margin: 0 auto;
-      justify-content: space-around;
-
-      &__download {
-        background-color: rgba(255, 255, 255, 0.45);
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%);
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
-        padding: 10px 20px;
-      }
-
-      &__download:hover {
-        transition: all 0.5s ease-out;
-        transform: scale(1.1);
-      }
-    }
-
     .cv-block {
       margin-top: 30px;
     }

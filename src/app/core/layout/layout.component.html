@@ -1,17 +1,6 @@
-<div class="layout">
+<div [ngClass]="currentTheme ? 'layout' : 'dark-layout'">
   <cv-navigation-panel></cv-navigation-panel>
   <cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
-
   <router-outlet></router-outlet>
   <cv-footer></cv-footer>
-
-  <div class="light x1"></div>
-  <div class="light x2"></div>
-  <div class="light x3"></div>
-  <div class="light x4"></div>
-  <div class="light x5"></div>
-  <div class="light x6"></div>
-  <div class="light x7"></div>
-  <div class="light x8"></div>
-  <div class="light x9"></div>
 </div>
