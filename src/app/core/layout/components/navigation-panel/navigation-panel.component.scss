@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 100%;
 
     .logo {
       width: 100px;
@@ -31,11 +32,11 @@
 
         &__item {
           font-size: 20px;
-          font-weight: 700;
+          text-align: center;
 
           .item-link {
             position: relative;
-            padding: 1.5rem;
+            padding: 1.5rem 0;
             color: #ccccff;
             font-weight: bold;
             line-height: 1;

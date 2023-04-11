@@ -7,6 +7,20 @@ body {
   font-family: 'Zekton Rg', Roboto, 'Helvetica Neue', sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: lightblue; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: lightcyan; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid orange; /* creates padding around scroll thumb */
+}
+
 .about-me,
 .cv,
 .education,
@@ -19,7 +33,6 @@ body {
 
   width: 100%;
   .container {
-    min-height: 78vh;
     padding: 0 5%;
   }
 }
