@@ -36,15 +36,16 @@
             width: 35px;
             height: 35px;
             transition: all 0.5s ease-out;
-            -webkit-filter: drop-shadow(1px 1px 1px #222);
-            filter: drop-shadow(1px 1px 1px #222);
           }
 
           .item-img:hover {
             transition: all 0.5s ease-out;
             transform: scale(1.5);
             background: #ffffff;
-            border-radius: 4px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            -webkit-filter: drop-shadow(1px 1px 1px #222);
+            filter: drop-shadow(1px 1px 1px #222);
           }
         }
       }

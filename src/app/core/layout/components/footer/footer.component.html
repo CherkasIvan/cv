@@ -7,7 +7,7 @@
           *ngFor="let link of socialLinks; let i = index"
         >
           <a
-            [href]="link.link"
+            [href]="getSantizeUrl(link.link)"
             target="_blank"
             rel="noopener noreferrer"
             class="item-link"
@@ -26,7 +26,9 @@
           <span class="item-title">{{
             'FOOTER.ITEM.VALUE' + i | translate
           }}</span
-          ><a [href]="contact.path" class="item-value">{{ contact.value }}</a>
+          ><a [href]="getSantizeUrl(contact.path)" class="item-value">{{
+            contact.value
+          }}</a>
         </li>
       </ul>
     </div>

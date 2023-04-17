@@ -52,4 +52,23 @@
   &__label:active:after {
     width: 27px;
   }
+
+  &_label img {
+    position: absolute;
+    width: 22px;
+    top: 1.5px;
+    left: 1px;
+    z-index: 100;
+  }
+
+  &_label img.dm-picture-sun {
+    width: 22px;
+    transition: 0.3;
+  }
+
+  &_label img.dm-picture-moon {
+    width: 22px;
+    left: 1px;
+    transition: 0.3;
+  }
 }
