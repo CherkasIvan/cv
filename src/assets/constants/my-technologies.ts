@@ -19,6 +19,24 @@ export const myTechnologies: any[] = [
       link: 'https://material.angular.io/',
     },
     {
+      technologyName: 'NgRX',
+      iconPath: '/assets/img/technologies/front-end/ngrx.svg',
+      alt: 'ngrx',
+      link: 'https://ngrx.io/',
+    },
+    {
+      technologyName: 'RxJs',
+      iconPath: '/assets/img/technologies/front-end/rxjs.png',
+      alt: 'rxjs',
+      link: 'https://rxjs.dev/',
+    },
+    {
+      technologyName: 'Chart JS',
+      iconPath: '/assets/img/technologies/front-end/chartjs.svg',
+      alt: 'chartjs',
+      link: 'https://www.chartjs.org/',
+    },
+    {
       technologyName: 'CoreUI',
       iconPath: '/assets/img/technologies/front-end/coreui.png',
       alt: 'coreui',

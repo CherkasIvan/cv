@@ -4,7 +4,19 @@ export const education: any[] = [
     educationLogo: [
       {
         id: 0,
-        src: 'assets/img/educational_establishments/university/miu_main.jpeg',
+        src: 'assets/img/educational_establishments/school/hs_132.jpeg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+      {
+        id: 1,
+        src: 'assets/img/educational_establishments/school/main_132.jpeg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+      {
+        id: 2,
+        src: 'assets/img/educational_establishments/school/hs_132_full.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
       },

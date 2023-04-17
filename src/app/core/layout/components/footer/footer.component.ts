@@ -15,9 +15,9 @@ export class FooterComponent implements OnInit {
 
   constructor(private _sanitizer: DomSanitizer) {}
 
-  ngOnInit(): void {
-    this.myContacts.forEach((contact) => {
-      return this._sanitizer.bypassSecurityTrustUrl(contact.value);
-    });
+  ngOnInit(): void {}
+
+  public getSantizeUrl(url: string) {
+    return this._sanitizer.bypassSecurityTrustUrl(url);
   }
 }
