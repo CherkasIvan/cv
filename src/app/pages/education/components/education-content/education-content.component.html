@@ -9,6 +9,7 @@
           <span class="places__title">{{
             'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate
           }}</span>
+
           <ul class="places__list">
             <li
               class="item"
@@ -26,6 +27,14 @@
                     '.NAME' | translate
                 }}
               </span>
+
+              <ng-container *ngIf="educationPlace.educationLogo">
+                <div class="education-logo__container">
+                  <cv-carousel
+                    [pageSlides]="educationPlace.educationLogo"
+                  ></cv-carousel>
+                </div>
+              </ng-container>
 
               <ng-container *ngIf="education.certificatePath">
                 <img

@@ -7,10 +7,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AboutMeComponent } from './about-me.component';
 import { AboutContentComponent } from './components/about-content/about-content.component';
 import { AboutPhotosComponent } from './components/about-photos/about-photos.component';
-import { CarouselModule } from '@coreui/angular';
 
 @NgModule({
   declarations: [AboutMeComponent, AboutContentComponent, AboutPhotosComponent],
-  imports: [CommonModule, AboutMeRoutingModule, SharedModule, CarouselModule],
+  imports: [CommonModule, AboutMeRoutingModule, SharedModule],
 })
 export class AboutMeModule {}
