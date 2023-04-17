@@ -1,6 +1,14 @@
 export const education: any[] = [
   {
     educationTitle: 'SCHOOL',
+    educationLogo: [
+      {
+        id: 0,
+        src: 'assets/img/educational_establishments/university/miu_main.jpeg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+    ],
     educationPlaceName: [
       {
         name: '132',
@@ -12,6 +20,26 @@ export const education: any[] = [
   },
   {
     educationTitle: 'UNIVERSITY',
+    educationLogo: [
+      {
+        id: 0,
+        src: 'assets/img/educational_establishments/university/miu_aside.jpg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+      {
+        id: 1,
+        src: 'assets/img/educational_establishments/university/miu_corpus.jpeg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+      {
+        id: 2,
+        src: 'assets/img/educational_establishments/university/miu_main.jpeg',
+        title: 'First slide',
+        subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+      },
+    ],
     educationPlaceName: [
       {
         name: 'MIU',

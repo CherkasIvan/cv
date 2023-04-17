@@ -9,16 +9,26 @@ import { SkillsContentComponent } from './components/hard-skills-content/skills-
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogService } from './services/dialog.service';
 import { SliderBehaviorDirective } from './directives/slider-behavior.directive';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselModule } from '@coreui/angular';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [SkillsContentComponent, SliderBehaviorDirective],
+  declarations: [
+    SkillsContentComponent,
+    SliderBehaviorDirective,
+    CarouselComponent,
+  ],
   exports: [
     SkillsContentComponent,
+    CarouselComponent,
     TranslateModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatDialogModule,
     SliderBehaviorDirective,
+    CarouselModule,
+    RouterModule,
   ],
   imports: [
     CommonModule,
@@ -26,6 +36,8 @@ import { SliderBehaviorDirective } from './directives/slider-behavior.directive'
     MatSlideToggleModule,
     MatFormFieldModule,
     MatDialogModule,
+    CarouselModule,
+    RouterModule,
   ],
   providers: [
     {
