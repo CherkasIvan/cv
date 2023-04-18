@@ -1,4 +1,10 @@
-<c-carousel [animate]="false" transition="crossfade" class="carousel">
+<c-carousel
+  [animate]="false"
+  transition="crossfade"
+  [interval]="5000"
+  class="carousel"
+>
+  <c-carousel-indicators></c-carousel-indicators>
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of slides" class="carousel-container">
       <img
@@ -7,6 +13,10 @@
         class="d-block w-100 item"
         loading="lazy"
       />
+      <c-carousel-caption class="d-none d-md-block">
+        <h3>{{ slide.title }}</h3>
+        <p>{{ slide.subtitle }}</p>
+      </c-carousel-caption>
     </c-carousel-item>
   </c-carousel-inner>
   <c-carousel-control

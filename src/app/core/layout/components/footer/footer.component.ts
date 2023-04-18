@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { contacts } from 'src/assets/constants/contacts';
 
-import { socialMediaLinks } from '../../../../../assets/constants/social-media-linke';
+import { socialMediaLinks } from '../../../../../assets/constants/social-media-links';
 
 @Component({
   selector: 'cv-footer',

@@ -94,9 +94,17 @@
       "FRONT-END": "Front-end skills.",
       "BACK-END": "Back-end skills."
     },
-    "SOFT-SKILLS": {
-      "TITLE": "Social skills"
+    "OTHER-SKILLS": {
+      "TITLE": "Other skills",
+      "SOCIAL": "Social skills.",
+      "UI": "Program UI skills."
     }
+  },
+
+  "CV": {
+    "TITLE": "If you want to download my CV in PDF or JPG format, then select the appropriate button",
+    "PDF": "Download CV in PDF format",
+    "JPG": "Download CV in JPG format"
   },
 
   "WORK-EXPERIENCE": {
