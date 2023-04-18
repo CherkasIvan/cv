@@ -6,7 +6,7 @@
     grid-gap: 5rem;
 
     .hard-skills,
-    .soft-skills {
+    .other-skills {
       text-align: center;
       &__title {
         font-weight: 700;
@@ -14,7 +14,9 @@
       }
 
       .front-end-skills,
-      .back-end-skills {
+      .back-end-skills,
+      .social-skills,
+      .ui-skills {
         margin: 2rem 0;
 
         &__title {

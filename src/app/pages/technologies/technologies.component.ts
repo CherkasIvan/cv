@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { myTechnologies } from 'src/assets/constants/my-technologies';
+import { backendTech } from 'src/assets/constants/backend-tech';
+import { frontendTech } from 'src/assets/constants/frontend-tech';
+import { otherTech } from 'src/assets/constants/other-tech';
+import { socialTech } from 'src/assets/constants/social-tech';
 
 @Component({
   selector: 'cv-technologies',
@@ -7,6 +10,8 @@ import { myTechnologies } from 'src/assets/constants/my-technologies';
   styleUrls: ['./technologies.component.scss'],
 })
 export class TechnologiesComponent {
-  public frontendTech = myTechnologies[0];
-  public backendTech = myTechnologies[1];
+  public frontendTech = frontendTech;
+  public backendTech = backendTech;
+  public socialTech = socialTech;
+  public otherTech = otherTech;
 }

@@ -102,6 +102,16 @@ export const education: any[] = [
         certificatePath: '/assets/img/certificate/beginner.jpg',
         certificateLink: ' https://stepik.org/cert/320534',
       },
+
+      {
+        name: 'STEPIK',
+        link: 'https://stepik.org/',
+        address: 'г.Москва',
+        phone: '',
+        grade: 'Базовые навыки Excel>',
+        certificatePath: '/assets/img/certificate/stepik-excel.png',
+        certificateLink: ' https://stepik.org/cert/1953522',
+      },
     ],
   },
 ];
