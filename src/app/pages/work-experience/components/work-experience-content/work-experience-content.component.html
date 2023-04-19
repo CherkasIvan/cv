@@ -1,7 +1,7 @@
 <div class="work-experience-content">
   <main class="work-container">
     <ul class="work-list">
-      <li class="work-list__item" *ngFor="let work of workPlace; let i = index">
+      <li class="work-list__item" *ngFor="let work of workPlace">
         <div class="item-header">
           <div class="item-header__logo">
             <img
@@ -19,6 +19,9 @@
         </div>
         <div class="item-footer">
           <span class="item-footer__place">{{ work.place }}</span>
+          <span class="item-footer__total">{{
+            totalWorkTime(work.from, work.to)
+          }}</span>
         </div>
       </li>
     </ul>
