@@ -28,7 +28,7 @@ export const workExperience: any[] = [
   {
     logoPath: '/assets/img/companies-logo/intexsoft.png',
     company: 'IntexSoft',
-    from: '01-08-2021',
+    from: '24-12-2022',
     to: 'present time',
     place: 'Минск, Республика Беларусь',
     link: 'https://www.intexsoft.by/',
