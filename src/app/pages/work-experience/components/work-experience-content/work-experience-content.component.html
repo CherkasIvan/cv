@@ -16,17 +16,15 @@
         <div class="item-body">
           <span class="item-body__from">{{ work.from }}</span
           ><span class="item-body__to">{{ work.to }}</span>
+          <span class="item-body__total">{{ work.workTime }}</span>
         </div>
         <div class="item-footer">
           <span class="item-footer__place">{{ work.place }}</span>
-          <span class="item-footer__total">{{
-            totalWorkTime(work.from, work.to)
-          }}</span>
         </div>
       </li>
     </ul>
     <div class="total-experience">
-      5 {{ 'WORK-EXPERIENCE.YEARS' | translate }}
+      {{ totalWorkTimeEverConverted }}
     </div>
   </main>
 </div>

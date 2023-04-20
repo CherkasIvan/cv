@@ -10,6 +10,8 @@ import * as moment from 'moment';
 export class WorkExperienceContentComponent {
   public workPlace = workExperience;
   public workExp: any[] = [];
+  public totalWorkTimeEverInMonth!: number;
+  public totalWorkTimeEverConverted!: string;
 
   public totalWorkTime(from: string, to: string) {
     const dateFromFormat = moment(from, 'DD-MM-YYYY');
@@ -28,6 +30,7 @@ export class WorkExperienceContentComponent {
 
   public workTimeFormat(days: number) {
     const months = Math.ceil(days / 30);
+    this.workExp.push(months);
     let yearsActual;
     let actualWorkTime;
     let monthActual = months;
@@ -52,10 +55,41 @@ export class WorkExperienceContentComponent {
     return actualWorkTime;
   }
 
+  private countAndConvertTotalWorkTime(time: number) {
+    const years = Math.trunc(time / 12);
+    const months = time % 12;
+    let currentYear;
+    let currentMonths;
+    if (years === 1) {
+      currentYear = `${years} год`;
+    }
+    if (years > 4) {
+      currentYear = `${years} лет`;
+    } else {
+      currentYear = `${years} года`;
+    }
+
+    if (months === 1) {
+      currentMonths = `${months} месяц`;
+    }
+    if (months > 1 && months < 5) {
+      currentMonths = `${months} месяца`;
+    } else {
+      currentMonths = `${months} месяцев`;
+    }
+    this.totalWorkTimeEverConverted = currentYear + ' ' + currentMonths;
+  }
+
   ngOnInit() {
-    this.workPlace.forEach((work) =>
-      this.workExp.push(this.totalWorkTime(work.from, work.to))
-    );
+    this.workPlace.forEach((work) => {
+      work.workTime = this.totalWorkTime(work.from, work.to);
+    });
     console.log(this.workExp);
+    this.totalWorkTimeEverInMonth = this.workExp.reduce(
+      (start: number, end: number) => start + end,
+      0
+    );
+
+    this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
   }
 }
