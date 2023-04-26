@@ -1,4 +1,4 @@
-<div [ngClass]="currentTheme ? 'layout' : 'dark-layout'">
+<div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
   <cv-navigation-panel></cv-navigation-panel>
   <cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
   <router-outlet></router-outlet>

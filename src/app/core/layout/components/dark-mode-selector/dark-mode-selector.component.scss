@@ -18,7 +18,9 @@
   &__input:checked + label:after {
     left: 48.5px;
     transform: translateX(-100%);
-    background: linear-gradient(180deg, #777, #3a3a3a);
+    background: url('../../../../../assets/img/dark-mode-button/moon.svg');
+    background-position: center;
+    background-size: contain;
   }
 
   &__label,
@@ -44,31 +46,13 @@
     position: absolute;
     top: 1.5px;
     left: 1px;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    background: url('../../../../../assets/img/dark-mode-button/sun.svg');
+    background-position: center;
+    background-size: contain;
     border-radius: 22px;
-    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
 
   &__label:active:after {
     width: 27px;
-  }
-
-  &_label img {
-    position: absolute;
-    width: 22px;
-    top: 1.5px;
-    left: 1px;
-    z-index: 100;
-  }
-
-  &_label img.dm-picture-sun {
-    width: 22px;
-    transition: 0.3;
-  }
-
-  &_label img.dm-picture-moon {
-    width: 22px;
-    left: 1px;
-    transition: 0.3;
   }
 }

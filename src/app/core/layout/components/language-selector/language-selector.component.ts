@@ -11,7 +11,9 @@ export class LanguageSelectorComponent {
   public languages = this.translateManagerService.languageList;
   constructor(private translateManagerService: TranslateManagerService) {}
 
-  public toggle(event: MatSlideToggleChange) {
-    this.translateManagerService.changeLang(event.checked);
+  public toggle(event: Event) {
+    this.translateManagerService.changeLang(
+      (event?.target as HTMLInputElement).checked
+    );
   }
 }
