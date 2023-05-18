@@ -11,7 +11,6 @@ import { DarkModeService } from '../services/dark-mode.service';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  public name = 'Get Current Url Route Demo';
   public currentRoute!: string;
   public currentTheme!: boolean;
 
