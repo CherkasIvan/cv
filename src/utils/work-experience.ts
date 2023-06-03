@@ -1,4 +1,6 @@
-export const workExperience: any[] = [
+import { IWorkExperience } from "@shared/models/work-experience.interface";
+
+export const workExperience: IWorkExperience[] = [
   {
     logoPath: '/assets/img/companies-logo/tms.png',
     company: 'TeachMeSkills',

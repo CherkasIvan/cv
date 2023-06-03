@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { projectTechnologies } from '@assets/constants/project-technologies';
+import { projectTechnologies } from 'utils/project-technologies';
 
 @Component({
 	selector: 'cv-initial-content',

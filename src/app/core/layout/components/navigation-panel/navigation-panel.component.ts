@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { navigationLinks } from '@assets/constants/navigation';
+import { navigationLinks } from 'utils/navigation';
 
 @Component({
 	selector: 'cv-navigation-panel',
@@ -9,5 +9,4 @@ import { navigationLinks } from '@assets/constants/navigation';
 })
 export class NavigationPanelComponent {
 	public navigation = navigationLinks;
-	constructor() {}
 }

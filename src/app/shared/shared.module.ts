@@ -7,7 +7,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { SkillsContentComponent } from './components/hard-skills-content/skills-content.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { DialogService } from './services/dialog.service';
+import { DialogService } from './services/dialog/dialog.service';
 import { SliderBehaviorDirective } from './directives/slider-behavior.directive';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from '@coreui/angular';

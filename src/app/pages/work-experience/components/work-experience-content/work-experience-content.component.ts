@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { workExperience } from '@assets/constants/work-experience';
+import { workExperience } from 'utils/work-experience';
 import * as moment from 'moment';
 
 @Component({
@@ -9,7 +9,7 @@ import * as moment from 'moment';
 })
 export class WorkExperienceContentComponent {
 	public workPlace = workExperience;
-	public workExp: any[] = [];
+	public workExp: number[] = [];
 	public totalWorkTimeEverInMonth!: number;
 	public totalWorkTimeEverConverted!: string;
 
