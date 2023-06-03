@@ -2,7 +2,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "paths": {
+      "@angular/*": ["../node_modules/@angular/*"],
+      "@env/*": ["environments/*"],
+      "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
+      "@shared/*": ["app/shared/*"],
+      "@pages/*": ["app/pages/*"],
+      "@core/*": ["app/core/*"],
+      "@utils/*": ["app/utils/*"]
+    },
+
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

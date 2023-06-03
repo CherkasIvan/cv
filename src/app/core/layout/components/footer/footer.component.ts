@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { contacts } from 'src/assets/constants/contacts';
+import { contacts } from 'utils/contacts';
 
-import { socialMediaLinks } from '../../../../../assets/constants/social-media-links';
-import { DarkModeService } from 'src/app/core/services/dark-mode.service';
+import { DarkModeService } from '@core/services/dark-mode.service';
+import { socialMediaLinks } from '@utils/social-media-links';
+
 
 @Component({
-  selector: 'cv-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+	selector: 'cv-footer',
+	templateUrl: './footer.component.html',
+	styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit 
   public socialLinks = socialMediaLinks;
   public myContacts = contacts;
   public currentTheme!: boolean;
@@ -23,10 +24,14 @@ export class FooterComponent implements OnInit {
       (theme) => (this.currentTheme = theme)
     );
   }
+	public socialLinks = socialMediaLinks;
+	public myContacts = contacts;
 
-  ngOnInit(): void {}
+	constructor(private _sanitizer: DomSanitizer) {}
 
-  public getSantizeUrl(url: string) {
-    return this._sanitizer.bypassSecurityTrustUrl(url);
-  }
+	ngOnInit(): void {}
+
+	public getSantizeUrl(url: string) {
+		return this._sanitizer.bypassSecurityTrustUrl(url);
+	}
 }

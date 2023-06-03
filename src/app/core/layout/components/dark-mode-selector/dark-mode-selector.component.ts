@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { DarkModeService } from 'src/app/core/services/dark-mode.service';
+import { DarkModeService } from '@core/services/dark-mode.service';
 
 @Component({
-  selector: 'cv-dark-mode-selector',
-  templateUrl: './dark-mode-selector.component.html',
-  styleUrls: ['./dark-mode-selector.component.scss'],
+	selector: 'cv-dark-mode-selector',
+	templateUrl: './dark-mode-selector.component.html',
+	styleUrls: ['./dark-mode-selector.component.scss'],
 })
 export class DarkModeSelectorComponent {
-  constructor(private darkModeService: DarkModeService) {}
+	constructor(private darkModeService: DarkModeService) {}
 
-  changeView(event: any) {
-    this.darkModeService.isDark$.next(event.target.checked);
-  }
+	changeView($target: MouseEvent) {
+		const isChecked = (<HTMLInputElement>$target.target).checked
+		this.darkModeService.isDark$.next(isChecked);
+	}
 }
