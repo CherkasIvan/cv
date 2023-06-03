@@ -1,4 +1,6 @@
-export const otherTech: any[] = [
+import { ITechnology } from "@shared/models/technology.interface";
+
+export const otherTech: ITechnology[] = [
   {
     technologyName: 'figma',
     iconPath: '/assets/img/technologies/other-skills/figma.png',

@@ -1,4 +1,6 @@
-export const socialTech: any[] = [
+import { ITechnology } from "@shared/models/technology.interface";
+
+export const socialTech: ITechnology[] = [
   {
     technologyName: 'jira',
     iconPath: '/assets/img/technologies/social/jira.png',

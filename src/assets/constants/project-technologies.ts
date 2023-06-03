@@ -1,4 +1,6 @@
-export const projectTechnologies: any[] = [
+import { ITechnology } from "@shared/models/technology.interface";
+
+export const projectTechnologies: ITechnology[] = [
   {
     technologyName: 'angular',
     iconPath: '/assets/img/technologies/front-end/angular.png',

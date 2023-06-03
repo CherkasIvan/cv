@@ -9,21 +9,22 @@ import { NavigationPanelComponent } from './components/navigation-panel/navigati
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-mode-selector.component';
 
+import { SharedModule } from '@shared/shared.module';
+
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    NavigationPanelComponent,
-    FooterComponent,
-    NavigationPanelBurgerComponent,
-    InitialContentComponent,
-    LanguageSelectorComponent,
-    DarkModeSelectorComponent,
-  ],
-  exports: [LayoutComponent],
-  imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule],
+	declarations: [
+		LayoutComponent,
+		NavigationPanelComponent,
+		FooterComponent,
+		NavigationPanelBurgerComponent,
+		InitialContentComponent,
+		LanguageSelectorComponent,
+		DarkModeSelectorComponent,
+	],
+	exports: [LayoutComponent],
+	imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule],
 })
 export class LayoutModule {}

@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogService } from 'src/app/shared/services/dialog.service';
+import { DialogService } from '@shared/services/dialog.service';
 
 @Component({
   selector: 'cv-img-dialog',

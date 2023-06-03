@@ -12,39 +12,42 @@ import { SliderBehaviorDirective } from './directives/slider-behavior.directive'
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from '@coreui/angular';
 import { RouterModule } from '@angular/router';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
-  declarations: [
-    SkillsContentComponent,
-    SliderBehaviorDirective,
-    CarouselComponent,
-  ],
-  exports: [
-    SkillsContentComponent,
-    CarouselComponent,
-    TranslateModule,
-    MatSlideToggleModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    SliderBehaviorDirective,
-    CarouselModule,
-    RouterModule,
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    MatSlideToggleModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    CarouselModule,
-    RouterModule,
-  ],
-  providers: [
-    {
-      provide: MatDialogRef,
-      useValue: {},
-    },
-    DialogService,
-  ],
+	declarations: [
+		SkillsContentComponent,
+		SliderBehaviorDirective,
+		CarouselComponent,
+		ButtonComponent,
+	],
+	exports: [
+		SkillsContentComponent,
+		CarouselComponent,
+		TranslateModule,
+		MatSlideToggleModule,
+		MatFormFieldModule,
+		MatDialogModule,
+		ButtonComponent,
+		SliderBehaviorDirective,
+		CarouselModule,
+		RouterModule,
+	],
+	imports: [
+		CommonModule,
+		TranslateModule,
+		MatSlideToggleModule,
+		MatFormFieldModule,
+		MatDialogModule,
+		CarouselModule,
+		RouterModule,
+	],
+	providers: [
+		{
+			provide: MatDialogRef,
+			useValue: {},
+		},
+		DialogService,
+	],
 })
 export class SharedModule {}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DialogService } from 'src/app/shared/services/dialog.service';
-import { education } from 'src/assets/constants/education';
+import { DialogService } from '@shared/services/dialog.service';
+import { education } from '@assets/constants/education';
 
 @Component({
   selector: 'cv-education-content',

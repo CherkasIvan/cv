@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { cvFormat } from 'src/assets/constants/cv-format';
+import { cvFormat } from '@assets/constants/cv-format';
 
 @Component({
   selector: 'cv-cv',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { profilePhotos } from 'src/assets/constants/my-profile-photos';
+import { profilePhotos } from '@assets/constants/my-profile-photos';
 
 @Component({
   selector: 'cv-about-photos',

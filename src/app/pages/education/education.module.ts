@@ -6,7 +6,7 @@ import { EducationRoutingModule } from './education-routing.module';
 import { EducationComponent } from './education.component';
 import { EducationContentComponent } from './components/education-content/education-content.component';
 import { ImgDialogComponent } from './components/img-dialog/img-dialog.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [

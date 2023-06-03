@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TechnologiesRoutingModule } from './technologies-routing.module';
 
 import { TechnologiesComponent } from './technologies.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [TechnologiesComponent],
