@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { contacts } from 'utils/contacts';
 
 import { DarkModeService } from '@core/services/dark-mode.service';
-import { socialMediaLinks } from '@utils/social-media-links';
+import { socialMediaLinks } from 'utils/social-media-links';
 
 
 @Component({
@@ -11,23 +11,19 @@ import { socialMediaLinks } from '@utils/social-media-links';
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit 
-  public socialLinks = socialMediaLinks;
-  public myContacts = contacts;
-  public currentTheme!: boolean;
-
-  constructor(
-    private _sanitizer: DomSanitizer,
-    private darkModeService: DarkModeService
-  ) {
-    this.darkModeService.isDark$.subscribe(
-      (theme) => (this.currentTheme = theme)
-    );
-  }
+export class FooterComponent implements OnInit {
 	public socialLinks = socialMediaLinks;
 	public myContacts = contacts;
+	public currentTheme!: boolean;
 
-	constructor(private _sanitizer: DomSanitizer) {}
+	constructor(
+		private _sanitizer: DomSanitizer,
+		private darkModeService: DarkModeService
+	) {
+		this.darkModeService.isDark$.subscribe(
+			(theme) => (this.currentTheme = theme)
+		);
+	}
 
 	ngOnInit(): void {}
 

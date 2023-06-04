@@ -28,14 +28,4 @@ export class LayoutComponent {
 				this.currentRoute = event.url;
 			});
 	}
-
-	getItems(): Observable<Item[]> {
-		return this.http.get<Item[]>('/api/items').pipe(share());
-	}
-}
-
-interface Item {
-	name: string;
-	age: number;
-	address: string;
 }

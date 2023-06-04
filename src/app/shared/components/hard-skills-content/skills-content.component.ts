@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ITechnology } from '@shared/models/technology.interface';
 
 @Component({
   selector: 'cv-skills-content',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./skills-content.component.scss'],
 })
 export class SkillsContentComponent {
-  @Input() public technologiesList: any[] = [];
+  @Input() public technologiesList: ITechnology[] = [];
 }
