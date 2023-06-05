@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { workExperience } from 'utils/work-experience';
 import * as moment from 'moment';
+import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
 @Component({
 	selector: 'cv-work-experience-content',
@@ -13,6 +14,9 @@ export class WorkExperienceContentComponent {
 	public totalWorkTimeEverInMonth!: number;
 	public totalWorkTimeEverConverted!: string;
 
+	constructor(private translateManagerService: TranslateManagerService) {
+
+	}
 	public totalWorkTime(from: string, to: string) {
 		const dateFromFormat = moment(from, 'DD-MM-YYYY');
 		const dateToFormat = moment(to, 'DD-MM-YYYY');
@@ -35,7 +39,7 @@ export class WorkExperienceContentComponent {
 		let actualWorkTime;
 		let monthActual = months;
 
-		if (months >= 12) {
+		if (months >= 12 && this.translateManagerService.currentLanguage$.value === 'ru') {
 			yearsActual = Math.round(months / 12);
 			monthActual = months - yearsActual * 12;
 			actualWorkTime =

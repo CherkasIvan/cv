@@ -1,25 +1,28 @@
 .projects-content {
-  width: 100%;
-  .projects-container {
-    margin: 2rem 0;
+	width: 100%;
 
-    .projects-description {
-      margin-bottom: 2rem;
-      font-size: 20px;
-      font-weight: 700;
-      text-align: center;
-    }
-    .projects-list {
-      display: grid;
-      width: 100%;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-column-gap: 10px;
+	.projects-container {
+		margin: 2rem 0;
 
-      .project {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
+		.projects-description {
+			margin-bottom: 2rem;
+			font-size: 20px;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		.projects-list {
+			display: grid;
+			width: 100%;
+			gap: 1rem;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-column-gap: 10px;
+
+			.project {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+			}
+		}
+	}
 }
