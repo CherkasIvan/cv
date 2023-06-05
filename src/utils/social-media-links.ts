@@ -25,7 +25,7 @@ export const socialMediaLinks: ISocialMediaLinks[] = [
 	},
 
 	{
-		iconPath: '/assets/img/social-media/vkontakte.png',
+		iconPath: '/assets/img/social-media/vk.svg',
 		alt: 'vkontakte',
 		link: 'https://vk.com/cherkasss',
 	},
