@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",
-    "@angular/cli": "~15.1.2",
+    "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.1",
     "@nguniversal/builders": "^16.2.0",
     "@types/dom-to-image": "^2.6.4",
