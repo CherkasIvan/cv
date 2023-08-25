@@ -5,7 +5,7 @@
   >
     <a
       [href]="technology.link"
-      target="_blank"
+      [target]="isPwaView ? '_self' : '_blank'"
       rel="noopener noreferrer"
       class="item-link"
     >
