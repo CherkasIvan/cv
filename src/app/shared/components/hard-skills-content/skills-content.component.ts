@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ITechnology } from '@shared/models/technology.interface';
+import { pwaView } from 'utils/functions/pwaView';
 
 @Component({
   selector: 'cv-skills-content',
@@ -8,4 +9,5 @@ import { ITechnology } from '@shared/models/technology.interface';
 })
 export class SkillsContentComponent {
   @Input() public technologiesList: ITechnology[] = [];
+  public isPwaView: boolean = pwaView;
 }
