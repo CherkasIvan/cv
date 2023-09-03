@@ -1,4 +1,4 @@
-import { ITechnology } from "@shared/models/technology.interface";
+import { ITechnology } from '@shared/models/technology.interface';
 
 export const projectTechnologies: ITechnology[] = [
   {
@@ -8,10 +8,10 @@ export const projectTechnologies: ITechnology[] = [
     link: 'https://angular.io/',
   },
   {
-    technologyName: 'angular universal',
-    iconPath: '/assets/img/technologies/back-end/angular-universal.png',
-    alt: 'angular-universal',
-    link: 'https://angular.io/guide/universal',
+    technologyName: 'angular pwa',
+    iconPath: '/assets/img/technologies/back-end/pwa.png',
+    alt: 'angular-pwa',
+    link: 'https://angular.io/guide/pwa',
   },
 
   {

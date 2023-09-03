@@ -3,12 +3,11 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
 } from '@angular/common/http';
 
 import { finalize, Observable } from 'rxjs';
-
-import { SpinnerService } from '../services/spinner.service';
+import { SpinnerService } from '@app/core/services/spinner.service';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
