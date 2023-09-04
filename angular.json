@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://cherkasivan.github.io/cv/",
             "outputPath": "dist/functions/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
