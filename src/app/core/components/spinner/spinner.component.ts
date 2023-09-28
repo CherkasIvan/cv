@@ -5,7 +5,7 @@ import { SpinnerService } from '../../services/spinner.service';
 @Component({
   selector: 'cv-spinner',
   templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.scss'],
+  styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent implements OnInit {
   constructor(public spinnerService: SpinnerService) {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { contacts } from 'utils/contacts';
 
@@ -9,9 +9,9 @@ import { pwaView } from 'utils/functions/pwaView';
 @Component({
   selector: 'cv-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   public socialLinks = socialMediaLinks;
   public myContacts = contacts;
   public currentTheme!: boolean;
@@ -25,8 +25,6 @@ export class FooterComponent implements OnInit {
       (theme) => (this.currentTheme = theme)
     );
   }
-
-  ngOnInit(): void {}
 
   public getSantizeUrl(url: string) {
     return this._sanitizer.bypassSecurityTrustUrl(url);

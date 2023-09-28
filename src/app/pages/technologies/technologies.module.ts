@@ -8,6 +8,6 @@ import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [TechnologiesComponent],
-  imports: [CommonModule, TechnologiesRoutingModule, SharedModule],
+  imports: [CommonModule, TechnologiesRoutingModule, SharedModule]
 })
 export class TechnologiesModule {}

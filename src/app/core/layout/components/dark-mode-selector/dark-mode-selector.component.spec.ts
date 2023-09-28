@@ -8,9 +8,8 @@ describe('DarkModeSelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DarkModeSelectorComponent ]
-    })
-    .compileComponents();
+      declarations: [DarkModeSelectorComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DarkModeSelectorComponent);
     component = fixture.componentInstance;

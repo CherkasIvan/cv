@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './navigation-panel-burger.component.html',
   styleUrls: ['./navigation-panel-burger.component.scss']
 })
-export class NavigationPanelBurgerComponent {
-
-}
+export class NavigationPanelBurgerComponent {}

@@ -1,6 +1,6 @@
 export interface IProfilePhoto {
-	id: number,
-	src: string,
-	title: string,
-	subtitle: string,
+  id: number;
+  src: string;
+  title: string;
+  subtitle: string;
 }

@@ -1,24 +1,24 @@
-import { ITechnology } from "@shared/models/technology.interface";
+import { ITechnology } from '@shared/models/technology.interface';
 
 export const backendTech: ITechnology[] = [
-	{
-		technologyName: 'angular universal',
-		iconPath: '/assets/img/technologies/back-end/angular-universal.png',
-		alt: 'angular-universal',
-		link: 'https://angular.io/guide/universal',
-	},
+  {
+    technologyName: 'angular universal',
+    iconPath: '/assets/img/technologies/back-end/angular-universal.png',
+    alt: 'angular-universal',
+    link: 'https://angular.io/guide/universal'
+  },
 
-	{
-		technologyName: 'nest js',
-		iconPath: '/assets/img/technologies/back-end/nestjs.png',
-		alt: 'nest-js',
-		link: 'https://nestjs.com/',
-	},
+  {
+    technologyName: 'nest js',
+    iconPath: '/assets/img/technologies/back-end/nestjs.png',
+    alt: 'nest-js',
+    link: 'https://nestjs.com/'
+  },
 
-	{
-		technologyName: 'node js',
-		iconPath: '/assets/img/technologies/back-end/nodejs.png',
-		alt: 'node-js',
-		link: 'https://nodejs.org/en/',
-	},
+  {
+    technologyName: 'node js',
+    iconPath: '/assets/img/technologies/back-end/nodejs.png',
+    alt: 'node-js',
+    link: 'https://nodejs.org/en/'
+  }
 ];

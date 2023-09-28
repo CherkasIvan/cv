@@ -1,14 +1,15 @@
 <div class="work-experience-content">
   <main class="work-container">
     <ul class="work-list">
-      <li class="work-list__item" *ngFor="let work of workPlace">
+      <li
+        class="work-list__item"
+        *ngFor="let work of workPlace">
         <div class="item-header">
           <div class="item-header__logo">
             <img
               class="logo-icon"
               [src]="work.logoPath"
-              [alt]="work.logoPath"
-            />
+              [alt]="work.logoPath" />
           </div>
 
           <span class="item-header__company">{{ work.company }}</span>

@@ -15,7 +15,7 @@ import {
   provideAnalytics,
   getAnalytics,
   ScreenTrackingService,
-  UserTrackingService,
+  UserTrackingService
 } from '@angular/fire/analytics';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -35,9 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
+        deps: [HttpClient]
       },
-      defaultLanguage: 'ru',
+      defaultLanguage: 'ru'
     }),
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -49,10 +49,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     EntityDataModule.forRoot(entityConfig),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000',
-    }),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [ScreenTrackingService, UserTrackingService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

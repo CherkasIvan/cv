@@ -8,7 +8,7 @@ describe('ProjectPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectPageComponent],
+      declarations: [ProjectPageComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectPageComponent);

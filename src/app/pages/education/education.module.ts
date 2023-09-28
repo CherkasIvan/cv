@@ -12,8 +12,8 @@ import { SharedModule } from '@shared/shared.module';
   declarations: [
     EducationComponent,
     EducationContentComponent,
-    ImgDialogComponent,
+    ImgDialogComponent
   ],
-  imports: [CommonModule, EducationRoutingModule, SharedModule],
+  imports: [CommonModule, EducationRoutingModule, SharedModule]
 })
 export class EducationModule {}

@@ -103,9 +103,9 @@
 
   "CV": {
     "TITLE": "If you would like to download my CV in PDF or JPG format, please select the appropriate button. You can also choose between the European version and the version for the CIS countries.",
-		"BUTTON-CSI-TEXT": "Switch to European version",
-		"BUTTON-EURO-TEXT": "Switch to CIS version",
-		"PDF": "Download CV in PDF format",
+    "BUTTON-CSI-TEXT": "Switch to European version",
+    "BUTTON-EURO-TEXT": "Switch to CIS version",
+    "PDF": "Download CV in PDF format",
     "JPG": "Download CV in JPG format"
   },
 

@@ -5,13 +5,13 @@ import { otherTech } from 'utils/other-tech';
 import { socialTech } from 'utils/social-tech';
 
 @Component({
-	selector: 'cv-technologies',
-	templateUrl: './technologies.component.html',
-	styleUrls: ['./technologies.component.scss'],
+  selector: 'cv-technologies',
+  templateUrl: './technologies.component.html',
+  styleUrls: ['./technologies.component.scss']
 })
 export class TechnologiesComponent {
-	public frontendTech = frontendTech;
-	public backendTech = backendTech;
-	public socialTech = socialTech;
-	public otherTech = otherTech;
+  public frontendTech = frontendTech;
+  public backendTech = backendTech;
+  public socialTech = socialTech;
+  public otherTech = otherTech;
 }

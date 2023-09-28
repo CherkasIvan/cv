@@ -2,17 +2,17 @@
   [animate]="false"
   transition="crossfade"
   [interval]="5000"
-  class="carousel"
->
+  class="carousel">
   <c-carousel-indicators></c-carousel-indicators>
   <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of slides" class="carousel-container">
+    <c-carousel-item
+      *ngFor="let slide of slides"
+      class="carousel-container">
       <img
         [src]="slide.src"
         alt="{{ slide.title }}"
         class="d-block w-100 item"
-        loading="lazy"
-      />
+        loading="lazy" />
       <c-carousel-caption class="d-none d-md-block">
         <h3>{{ slide.title }}</h3>
         <p>{{ slide.subtitle }}</p>
@@ -22,11 +22,9 @@
   <c-carousel-control
     [routerLink]
     caption="Previous"
-    direction="prev"
-  ></c-carousel-control>
+    direction="prev"></c-carousel-control>
   <c-carousel-control
     [routerLink]
     caption="Next"
-    direction="next"
-  ></c-carousel-control>
+    direction="next"></c-carousel-control>
 </c-carousel>

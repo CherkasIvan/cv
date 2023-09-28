@@ -10,6 +10,6 @@ import { AboutPhotosComponent } from './components/about-photos/about-photos.com
 
 @NgModule({
   declarations: [AboutMeComponent, AboutContentComponent, AboutPhotosComponent],
-  imports: [CommonModule, AboutMeRoutingModule, SharedModule],
+  imports: [CommonModule, AboutMeRoutingModule, SharedModule]
 })
 export class AboutMeModule {}

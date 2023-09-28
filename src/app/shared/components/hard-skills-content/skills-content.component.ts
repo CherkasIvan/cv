@@ -5,7 +5,7 @@ import { pwaView } from 'utils/functions/pwaView';
 @Component({
   selector: 'cv-skills-content',
   templateUrl: './skills-content.component.html',
-  styleUrls: ['./skills-content.component.scss'],
+  styleUrls: ['./skills-content.component.scss']
 })
 export class SkillsContentComponent {
   @Input() public technologiesList: ITechnology[] = [];
