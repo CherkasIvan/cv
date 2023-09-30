@@ -4,8 +4,7 @@
       src="/assets/img/IvanCherkas.png"
       alt="cv-logo"
       class="logo"
-      routerLink="/layout"
-    />
+      routerLink="/layout" />
 
     <cv-navigation-panel-burger></cv-navigation-panel-burger>
 
@@ -13,8 +12,7 @@
       <ul class="navigation-list">
         <li
           class="navigation-list__item"
-          *ngFor="let link of navigation; let i = index"
-        >
+          *ngFor="let link of navigation; let i = index">
           <a
             routerLink="{{ link.link }}"
             class="item-link"

@@ -15,16 +15,16 @@ import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
-	declarations: [
-		LayoutComponent,
-		NavigationPanelComponent,
-		FooterComponent,
-		NavigationPanelBurgerComponent,
-		InitialContentComponent,
-		LanguageSelectorComponent,
-		DarkModeSelectorComponent,
-	],
-	exports: [LayoutComponent],
-	imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule],
+  declarations: [
+    LayoutComponent,
+    NavigationPanelComponent,
+    FooterComponent,
+    NavigationPanelBurgerComponent,
+    InitialContentComponent,
+    LanguageSelectorComponent,
+    DarkModeSelectorComponent
+  ],
+  exports: [LayoutComponent],
+  imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule]
 })
 export class LayoutModule {}

@@ -3,8 +3,7 @@
     <ul class="education-list">
       <li
         class="education-list__item"
-        *ngFor="let educationPlace of educationList; let i = index"
-      >
+        *ngFor="let educationPlace of educationList; let i = index">
         <span class="educational__institution">{{
           'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate
         }}</span>
@@ -17,8 +16,7 @@
                 *ngFor="
                   let education of educationPlace.educationPlaceName;
                   let i = index
-                "
-              >
+                ">
                 <span class="item__name">
                   {{
                     'EDUCATION.' +
@@ -34,8 +32,7 @@
                     [src]="education.certificatePath"
                     [alt]="education.grade"
                     class="item__img"
-                    (click)="openDialog(education.certificatePath)"
-                  />
+                    (click)="openDialog(education.certificatePath)" />
                 </ng-container>
 
                 <span class="item__address">
@@ -49,9 +46,11 @@
                 >
                 <span class="item__phone">{{ education.phone }}</span>
 
-                <a [href]="education.link" class="intem__link">{{
-                  education.link
-                }}</a>
+                <a
+                  [href]="education.link"
+                  class="intem__link"
+                  >{{ education.link }}</a
+                >
               </li>
             </ul>
           </div>
@@ -59,8 +58,7 @@
           <ng-container *ngIf="educationPlace.educationLogo">
             <div class="education-logo__container">
               <cv-carousel
-                [pageSlides]="educationPlace.educationLogo"
-              ></cv-carousel>
+                [pageSlides]="educationPlace.educationLogo"></cv-carousel>
             </div>
           </ng-container>
         </div>

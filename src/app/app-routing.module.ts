@@ -6,17 +6,17 @@ const routes: Routes = [
   {
     path: 'layout',
     loadChildren: () =>
-      import('./core/layout/layout.module').then((m) => m.LayoutModule),
-  },
+      import('./core/layout/layout.module').then((m) => m.LayoutModule)
+  }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabledBlocking',
-      scrollPositionRestoration: 'enabled',
-    }),
+      scrollPositionRestoration: 'enabled'
+    })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

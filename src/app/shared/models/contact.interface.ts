@@ -1,5 +1,5 @@
 export interface IContact {
-	contactName: string,
-	path: string,
-	value: string,
+  contactName: string;
+  path: string;
+  value: string;
 }

@@ -1,5 +1,5 @@
-import { IGitHub } from "./github.interface";
+import { IGitHub } from './github.interface';
 
 export interface IGitHubRepos {
-	repos: IGitHub[]
+  repos: IGitHub[];
 }

@@ -7,8 +7,8 @@ import { SharedModule } from '@shared/shared.module';
 import { CvItemComponent } from './components/download-column/cv-item.component';
 
 @NgModule({
-	declarations: [CvComponent, DownloadImgComponent, CvItemComponent],
-	exports: [DownloadImgComponent],
-	imports: [CvRoutingModule, CommonModule, SharedModule],
+  declarations: [CvComponent, DownloadImgComponent, CvItemComponent],
+  exports: [DownloadImgComponent],
+  imports: [CvRoutingModule, CommonModule, SharedModule]
 })
 export class CvModule {}

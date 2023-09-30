@@ -8,9 +8,8 @@ describe('DownloadImgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DownloadImgComponent ]
-    })
-    .compileComponents();
+      declarations: [DownloadImgComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DownloadImgComponent);
     component = fixture.componentInstance;

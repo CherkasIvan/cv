@@ -1,4 +1,4 @@
-import { IWorkExperience } from "@shared/models/work-experience.interface";
+import { IWorkExperience } from '@shared/models/work-experience.interface';
 
 export const workExperience: IWorkExperience[] = [
   {
@@ -7,7 +7,7 @@ export const workExperience: IWorkExperience[] = [
     from: '01-10-2020',
     to: '01-08-2021',
     place: 'Минск, Республика Беларусь',
-    link: 'https://teachmeskills.by/',
+    link: 'https://teachmeskills.by/'
   },
   {
     logoPath: '/assets/img/companies-logo/exadel.png',
@@ -15,7 +15,7 @@ export const workExperience: IWorkExperience[] = [
     from: '01-01-2021',
     to: '01-04-2021',
     place: 'Минск, Республика Беларусь',
-    link: 'https://exadel.com/',
+    link: 'https://exadel.com/'
   },
 
   {
@@ -24,7 +24,7 @@ export const workExperience: IWorkExperience[] = [
     from: '01-08-2021',
     to: '22-12-2022',
     place: 'Минск, Республика Беларусь',
-    link: 'https://www.freshlimesoft.com/',
+    link: 'https://www.freshlimesoft.com/'
   },
 
   {
@@ -33,6 +33,6 @@ export const workExperience: IWorkExperience[] = [
     from: '24-12-2022',
     to: 'present time',
     place: 'Минск, Республика Беларусь',
-    link: 'https://www.intexsoft.by/',
-  },
+    link: 'https://www.intexsoft.by/'
+  }
 ];

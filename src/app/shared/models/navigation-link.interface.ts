@@ -1,4 +1,4 @@
 export interface INavigationLink {
-	link: string,
-	value: string,
+  link: string;
+  value: string;
 }

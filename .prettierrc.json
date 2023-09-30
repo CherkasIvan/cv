@@ -1,4 +1,21 @@
 {
   "singleQuote": true,
-  "semi": true
+  "semi": true,
+  "proseWrap": "preserve",
+  "trailingComma": "none",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "singleAttributePerLine": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "importOrder": [
+    "'^@angular$'",
+    "'rxjs'",
+    "^(@shared|@core|@env|@test-utilities)(/.*|$)",
+    "^(business-logic|@ui)(/.*|$)",
+    "^[./|~/]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderParserPlugins": ["decorators-legacy", "typescript"]
 }

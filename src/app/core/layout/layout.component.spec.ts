@@ -8,7 +8,7 @@ describe('MainPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LayoutComponent],
+      declarations: [LayoutComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LayoutComponent);

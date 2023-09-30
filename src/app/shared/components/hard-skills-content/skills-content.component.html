@@ -1,21 +1,18 @@
 <ul class="technologies-list">
   <li
     class="technologies-list__item"
-    *ngFor="let technology of technologiesList; let i = index"
-  >
+    *ngFor="let technology of technologiesList; let i = index">
     <a
       [href]="technology.link"
       [target]="isPwaView ? '_self' : '_blank'"
       rel="noopener noreferrer"
-      class="item-link"
-    >
+      class="item-link">
       <div class="item-container">
         <span class="item__title">{{ technology.technologyName }}</span>
         <img
           [src]="technology.iconPath"
           [alt]="technology.alt"
-          class="item__img"
-        />
+          class="item__img" />
       </div>
     </a>
   </li>
