@@ -8,11 +8,11 @@ import { LayoutComponent } from './layout.component';
 import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
-import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-mode-selector.component';
 
 import { SharedModule } from '@shared/shared.module';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,16 @@ import { SharedModule } from '@shared/shared.module';
     NavigationPanelComponent,
     FooterComponent,
     NavigationPanelBurgerComponent,
-    InitialContentComponent,
     LanguageSelectorComponent,
     DarkModeSelectorComponent
   ],
   exports: [LayoutComponent],
-  imports: [LayoutRoutingModule, MatTableModule, CommonModule, SharedModule]
+  imports: [
+    LayoutRoutingModule,
+    MatTableModule,
+    CommonModule,
+    SharedModule,
+    AuthModule
+  ]
 })
 export class LayoutModule {}

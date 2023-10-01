@@ -1,0 +1,31 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form
+  [formGroup]="authForm"
+  (ngSubmit)="onSubmit()">
+  <h3>Login Here</h3>
+
+  <label for="username">Username</label>
+  <input
+    type="text"
+    placeholder="Email"
+    id="username"
+    formControlName="firstName" />
+
+  <label for="text">User Email</label>
+  <input
+    type="text"
+    placeholder="Email"
+    id="text"
+    formControlName="email" />
+
+  <button
+    (click)="checkAuth()"
+    [disabled]="!authForm.valid"
+    routerLink="/layout"
+    type="submit">
+    Log In
+  </button>
+</form>

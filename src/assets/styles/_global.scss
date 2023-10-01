@@ -7,19 +7,27 @@ body {
   font-family: 'Zekton Rg', Roboto, 'Helvetica Neue', sans-serif;
 }
 
-body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+::-webkit-scrollbar {
+  background-color: #000;
+  width: 12px;
+  scrollbar-width: auto;
+  scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar-track {
-  background: lightblue; /* color of the tracking area */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
-body::-webkit-scrollbar-thumb {
-  z-index: 100;
-  background-color: lightcyan; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid orange; /* creates padding around scroll thumb */
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, #a520ca),
+    color-stop(1, #2681cc)
+  );
+  border-radius: 10px;
 }
 
 .about-me,

@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -10,13 +11,21 @@ const routes: Routes = [
     data: { animation: 'Layout' },
     children: [
       {
+        path: 'initial',
+        loadChildren: () =>
+          import('../../pages/initial-content/initial-content.module').then(
+            (module) => module.InitialContentModule
+          ),
+        data: { num: 1 }
+      },
+      {
         path: 'about-me',
         loadChildren: () =>
           import('../../pages/about-me/about-me.module').then(
             (module) => module.AboutMeModule
           ),
 
-        data: { animation: 'Home' }
+        data: { num: 1 }
       },
       {
         path: 'projects',
@@ -25,7 +34,7 @@ const routes: Routes = [
             (module) => module.ProjectsModule
           ),
 
-        data: { animation: 'Home' }
+        data: { num: 1 }
       },
       {
         path: 'education',
@@ -34,7 +43,7 @@ const routes: Routes = [
             (module) => module.EducationModule
           ),
 
-        data: { animation: 'Home' }
+        data: { num: 1 }
       },
       {
         path: 'technologies',
@@ -50,14 +59,14 @@ const routes: Routes = [
             (module) => module.WorkExperienceModule
           ),
 
-        data: { animation: 'Home' }
+        data: { num: 1 }
       },
       {
         path: 'cv',
         loadChildren: () =>
           import('../../pages/cv/cv.module').then((module) => module.CvModule),
 
-        data: { animation: 'Home' }
+        data: { num: 1 }
       }
     ]
   }
