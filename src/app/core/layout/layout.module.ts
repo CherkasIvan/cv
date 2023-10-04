@@ -17,7 +17,7 @@ import { InitialContentComponent } from './components/initial-content/initial-co
 
 @NgModule({
   declarations: [
-    // InitialContentComponent,
+    InitialContentComponent,
     LayoutComponent,
     NavigationPanelComponent,
     FooterComponent,
