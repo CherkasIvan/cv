@@ -13,9 +13,11 @@ import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-
 
 import { SharedModule } from '@shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
+import { InitialContentComponent } from './components/initial-content/initial-content.component';
 
 @NgModule({
   declarations: [
+    // InitialContentComponent,
     LayoutComponent,
     NavigationPanelComponent,
     FooterComponent,

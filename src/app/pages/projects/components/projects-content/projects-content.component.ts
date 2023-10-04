@@ -17,7 +17,6 @@ export class ProjectsContentComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.gitHubSubscriber.add(
       this.gitHubService.getUserRepos().subscribe((el) => {
-        console.log(el);
         this.projectsList = el;
       })
     );

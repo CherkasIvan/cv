@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { Observable, share, filter } from 'rxjs';
+import { filter } from 'rxjs';
+
 import { DarkModeService } from '../services/dark-mode.service';
 import { AuthService } from '../auth/services/auth.service';
 import { NavigationService } from './services/navigation.service';
+
 import { routerTransition } from '../animations/route-animation';
 
 @Component({
@@ -20,7 +21,6 @@ export class LayoutComponent implements OnInit {
   public isAuth: boolean = false;
 
   constructor(
-    private http: HttpClient,
     private router: Router,
     private darkModeService: DarkModeService,
     public authService: AuthService,

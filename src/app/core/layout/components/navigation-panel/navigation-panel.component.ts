@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { navigationLinks } from 'utils/navigation';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'cv-navigation-panel',
@@ -8,5 +7,16 @@ import { navigationLinks } from 'utils/navigation';
   styleUrls: ['./navigation-panel.component.scss']
 })
 export class NavigationPanelComponent {
-  public navigation = navigationLinks;
+  public navigation: any[] = [];
+
+  constructor(private firebaseService: FirebaseService) {}
+  ngOnInit(): void {
+    this.getNavigation();
+  }
+
+  public getNavigation() {
+    this.firebaseService
+      .getNavigation()
+      .subscribe((links) => (this.navigation = links));
+  }
 }

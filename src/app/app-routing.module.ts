@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth' },
@@ -14,7 +14,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabledBlocking',
-      scrollPositionRestoration: 'enabled'
+      scrollPositionRestoration: 'enabled',
+      preloadingStrategy: PreloadAllModules
     })
   ],
   exports: [RouterModule]

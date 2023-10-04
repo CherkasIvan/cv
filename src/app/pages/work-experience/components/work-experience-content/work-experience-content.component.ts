@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { workExperience } from 'utils/work-experience';
+
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
+
 import * as moment from 'moment';
 
 @Component({
@@ -8,10 +10,12 @@ import * as moment from 'moment';
   styleUrls: ['./work-experience-content.component.scss']
 })
 export class WorkExperienceContentComponent {
-  public workPlace = workExperience;
+  public workPlace: any[] = [];
   public workExp: number[] = [];
   public totalWorkTimeEverInMonth!: number;
   public totalWorkTimeEverConverted!: string;
+
+  constructor(private firebaseService: FirebaseService) {}
 
   public totalWorkTime(from: string, to: string) {
     const dateFromFormat = moment(from, 'DD-MM-YYYY');
@@ -80,7 +84,8 @@ export class WorkExperienceContentComponent {
     this.totalWorkTimeEverConverted = currentYear + ' ' + currentMonths;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getWorkExperience();
     this.workPlace.forEach((work) => {
       work.workTime = this.totalWorkTime(work.from, work.to);
     });
@@ -90,5 +95,11 @@ export class WorkExperienceContentComponent {
     );
 
     this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
+  }
+
+  getWorkExperience(): void {
+    this.firebaseService
+      .getWorkExperience()
+      .subscribe((works) => (this.workPlace = works));
   }
 }

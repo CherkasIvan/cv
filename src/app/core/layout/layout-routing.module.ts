@@ -8,16 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    data: { animation: 'Layout' },
+    data: { num: 1 },
     children: [
-      {
-        path: 'initial',
-        loadChildren: () =>
-          import('../../pages/initial-content/initial-content.module').then(
-            (module) => module.InitialContentModule
-          ),
-        data: { num: 1 }
-      },
       {
         path: 'about-me',
         loadChildren: () =>
