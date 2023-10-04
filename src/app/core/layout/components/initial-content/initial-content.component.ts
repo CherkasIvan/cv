@@ -9,18 +9,18 @@ import { projectTechnologies } from 'utils/project-technologies';
   styleUrls: ['./initial-content.component.scss']
 })
 export class InitialContentComponent implements OnInit {
-  public technologiesList = projectTechnologies;
+  public technologiesList: any[] = [];
 
   constructor(private firebaseService: FirebaseService) {}
   ngOnInit(): void {
-    // this.getTechnologiesList();
+    this.getTechnologiesList();
   }
 
-  // getTechnologiesList() {
-  //   this.firebaseService
-  //     .getProjectTech()
-  //     .subscribe(
-  //       (projectTechList) => (this.technologiesList = projectTechList)
-  //     );
-  // }
+  getTechnologiesList() {
+    this.firebaseService
+      .getProjectTech()
+      .subscribe(
+        (projectTechList) => (this.technologiesList = projectTechList)
+      );
+  }
 }
