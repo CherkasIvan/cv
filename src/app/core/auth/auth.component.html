@@ -13,9 +13,9 @@
       type="text"
       formControlName="email"
       class="form-control"
-      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+      [ngClass]="{ 'is-invalid': f['email'].errors }" />
     <div
-      *ngIf="submitted && f['email'].errors"
+      *ngIf="f['email'].errors"
       class="invalid-feedback">
       <div *ngIf="f['email'].errors['email']">E-mail is required</div>
     </div>
@@ -26,9 +26,9 @@
       type="password"
       formControlName="password"
       class="form-control"
-      [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+      [ngClass]="{ 'is-invalid': f['password'].errors }" />
     <div
-      *ngIf="submitted && f['password'].errors"
+      *ngIf="f['password'].errors"
       class="invalid-feedback">
       <div *ngIf="f['password'].errors['required']">Password is required</div>
     </div>

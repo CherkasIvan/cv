@@ -41,6 +41,6 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isAuth = this.authService.isAuth$.value;
+    // this.isAuth = this.authService.isAuth$.value;
   }
 }

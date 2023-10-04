@@ -15,7 +15,6 @@ import { AuthService } from './services/auth.service';
 })
 export class AuthComponent implements OnInit {
   authForm!: FormGroup;
-  submitted: boolean = false;
 
   constructor(
     private router: Router,
@@ -36,11 +35,8 @@ export class AuthComponent implements OnInit {
 
   checkAuth() {
     if (this.authForm.valid) {
-      this.submitted = true;
-      const formBody: any = this.authForm.value;
-      this.authService.signIn(formBody.email, formBody.password);
-    } else {
-      return;
+      const { email, password }: any = this.authForm.value;
+      this.authService.signIn(email, password);
     }
   }
 
@@ -49,7 +45,6 @@ export class AuthComponent implements OnInit {
   }
 
   onReset(): void {
-    this.submitted = false;
     this.authForm.reset();
   }
 

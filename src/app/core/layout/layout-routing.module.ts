@@ -1,14 +1,17 @@
-import { NgModule, inject } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
-import { AuthGuard } from '../guards/auth.guard';
+import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['auth']);
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    data: { num: 1 },
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
     children: [
       {
         path: 'about-me',
