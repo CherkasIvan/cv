@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TranslateManagerService } from '@app/shared/services/translate/translate-manager.service';
+import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
 @Component({
   selector: 'cv-download-img',

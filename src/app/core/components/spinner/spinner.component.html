@@ -1,5 +1,10 @@
 <div
-  *ngIf="this.spinnerService.getLoading()"
-  class="cssload-container">
-  <div class="cssload-speeding-wheel"></div>
+  class="loader"
+  *ngIf="this.spinnerService.getLoading()">
+  <div class="face">
+    <div class="circle"></div>
+  </div>
+  <div class="face">
+    <div class="circle"></div>
+  </div>
 </div>

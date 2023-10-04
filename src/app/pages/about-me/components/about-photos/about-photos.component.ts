@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { profilePhotos } from 'utils/my-profile-photos';
 
 @Component({
@@ -6,6 +7,18 @@ import { profilePhotos } from 'utils/my-profile-photos';
   templateUrl: './about-photos.component.html',
   styleUrls: ['./about-photos.component.scss']
 })
-export class AboutPhotosComponent {
+export class AboutPhotosComponent implements OnInit {
   public slides = profilePhotos;
+
+  constructor(private firebaseService: FirebaseService) {}
+
+  ngOnInit(): void {
+    this.getSlides();
+  }
+
+  getSlides() {
+    this.firebaseService
+      .getMyProfilePhotos()
+      .subscribe((photos) => console.log(photos));
+  }
 }

@@ -4,8 +4,8 @@
       class="layout-container"
       [@routerAnimation]="getRouteAnimation(router)">
       <cv-navigation-panel></cv-navigation-panel>
-      <!-- <cv-auth></cv-auth> -->
-      <!-- <cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content> -->
+      <cv-initial-content
+        *ngIf="currentRoute === '/layout'"></cv-initial-content>
       <router-outlet #router="outlet"></router-outlet>
       <cv-footer></cv-footer>
     </div>
