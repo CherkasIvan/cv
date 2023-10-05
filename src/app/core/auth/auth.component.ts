@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IAuth } from './model/auth.interface';
-import { Router } from '@angular/router';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -10,17 +13,14 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  authForm!: FormGroup<IAuth>;
+  authForm!: FormGroup;
 
-  constructor(
-    private router: Router,
-    private authService: AuthService
-  ) {}
+  constructor(private authService: AuthService) {}
 
-  createForm(): FormGroup<IAuth> {
-    this.authForm = new FormGroup<IAuth>({
-      firstName: new FormControl('', { validators: [Validators.required] }),
-      email: new FormControl('', { validators: [Validators.required] })
+  createForm(): FormGroup {
+    this.authForm = new FormGroup({
+      email: new FormControl('', { validators: [Validators.required] }),
+      password: new FormControl('', { validators: [Validators.required] })
     });
     return this.authForm;
   }
@@ -31,12 +31,17 @@ export class AuthComponent implements OnInit {
 
   checkAuth() {
     if (this.authForm.valid) {
-      const formBody: any = this.authForm.value;
-      this.authService.checkUser(formBody);
-      if (this.authService.checkUser(formBody)) {
-        this.router.navigate(['/layout']);
-      }
+      const { email, password }: any = this.authForm.value;
+      this.authService.signIn(email, password);
     }
+  }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.authForm.controls;
+  }
+
+  onReset(): void {
+    this.authForm.reset();
   }
 
   ngOnInit(): void {

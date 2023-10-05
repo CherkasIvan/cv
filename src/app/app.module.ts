@@ -31,6 +31,7 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { AuthService } from './core/auth/services/auth.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,7 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [ScreenTrackingService, UserTrackingService],
+  providers: [AuthService, ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
