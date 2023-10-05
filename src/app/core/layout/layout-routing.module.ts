@@ -2,9 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
-import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import {
+  AuthGuard,
+  AuthPipe,
+  redirectUnauthorizedTo
+} from '@angular/fire/auth-guard';
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['auth']);
+const redirectUnauthorizedToLogin = (): AuthPipe =>
+  redirectUnauthorizedTo(['auth']);
 
 const routes: Routes = [
   {
