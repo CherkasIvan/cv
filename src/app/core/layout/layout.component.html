@@ -1,75 +1,71 @@
 <ng-container>
-  <div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
-    <div
-      class="layout-container"
-      [@routerAnimation]="getRouteAnimation(router)">
-      <cv-navigation-panel></cv-navigation-panel>
-      <cv-initial-content
-        *ngIf="currentRoute === '/layout'"></cv-initial-content>
-      <router-outlet #router="outlet"></router-outlet>
-      <cv-footer></cv-footer>
-    </div>
+	<div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
+		<div class="layout-container" [@routerAnimation]="getRouteAnimation(router)">
+			<cv-navigation-panel></cv-navigation-panel>
+			<cv-spinner [spinnerStyle]="currentTheme ? 'dark-layout' : 'layout'"></cv-spinner>
+			<cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
+			<router-outlet #router="outlet"></router-outlet>
+			<cv-footer></cv-footer>
+		</div>
 
-    <div class="stars-container">
-      <ng-container
-        *ngIf="currentTheme"
-        [ngTemplateOutlet]="isDarkMode">
-      </ng-container>
-    </div>
-  </div>
+		<div class="stars-container">
+			<ng-container *ngIf="currentTheme" [ngTemplateOutlet]="isDarkMode">
+			</ng-container>
+		</div>
+	</div>
 </ng-container>
 
 <ng-template #isDarkMode>
-  <div class="stars">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-  </div>
+	<div class="stars">
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+	</div>
 </ng-template>

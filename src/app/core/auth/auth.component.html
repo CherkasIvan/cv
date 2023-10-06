@@ -1,53 +1,34 @@
 <div class="background">
-  <div class="shape"></div>
-  <div class="shape"></div>
+	<div class="shape"></div>
+	<div class="shape"></div>
 </div>
-<form
-  [formGroup]="authForm"
-  (ngSubmit)="onSubmit()">
-  <h3>Login Here</h3>
+<form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+	<h3>Login Here</h3>
 
-  <div class="form-group">
-    <label>E-Mail</label>
-    <input
-      type="text"
-      formControlName="email"
-      class="form-control"
-      [ngClass]="{ 'is-invalid': f['email'].errors }" />
-    <div
-      *ngIf="f['email'].errors"
-      class="invalid-feedback">
-      <div *ngIf="f['email'].errors['email']">E-mail is required</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input
-      type="password"
-      formControlName="password"
-      class="form-control"
-      [ngClass]="{ 'is-invalid': f['password'].errors }" />
-    <div
-      *ngIf="f['password'].errors"
-      class="invalid-feedback">
-      <div *ngIf="f['password'].errors['required']">Password is required</div>
-    </div>
-  </div>
+	<div class="form-group">
+		<label for="email">E-Mail</label>
+		<input type="text" name="email" formControlName="email" class="form-control"
+			[ngClass]="{ 'is-invalid': f['email'].errors }" />
+		<div *ngIf="f['email'].errors" class="invalid-feedback">
+			<div *ngIf="f['email'].errors['email']">E-mail is required</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" formControlName="password" name="password" class="form-control"
+			[ngClass]="{ 'is-invalid': f['password'].errors }" />
+		<div *ngIf="f['password'].errors" class="invalid-feedback">
+			<div *ngIf="f['password'].errors['required']">Password is required</div>
+		</div>
+	</div>
 
-  <div class="button__block">
-    <button
-      (click)="checkAuth()"
-      [disabled]="!authForm.valid"
-      routerLink="/layout"
-      type="submit">
-      Log In
-    </button>
+	<div class="button__block">
+		<button (click)="checkAuth()" [disabled]="!authForm.valid" routerLink="/layout" type="submit">
+			Log In
+		</button>
 
-    <button
-      type="button"
-      (click)="onReset()"
-      class="btn btn-warning float-right">
-      Reset
-    </button>
-  </div>
+		<button type="button" (click)="onReset()" class="btn btn-warning float-right">
+			Reset
+		</button>
+	</div>
 </form>

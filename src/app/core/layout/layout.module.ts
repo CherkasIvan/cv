@@ -14,24 +14,26 @@ import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-
 import { SharedModule } from '@shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [
-    InitialContentComponent,
-    LayoutComponent,
-    NavigationPanelComponent,
-    FooterComponent,
-    NavigationPanelBurgerComponent,
-    LanguageSelectorComponent,
-    DarkModeSelectorComponent
-  ],
-  exports: [LayoutComponent],
-  imports: [
-    LayoutRoutingModule,
-    MatTableModule,
-    CommonModule,
-    SharedModule,
-    AuthModule
-  ]
+	declarations: [
+		SpinnerComponent,
+		InitialContentComponent,
+		LayoutComponent,
+		NavigationPanelComponent,
+		FooterComponent,
+		NavigationPanelBurgerComponent,
+		LanguageSelectorComponent,
+		DarkModeSelectorComponent
+	],
+	exports: [LayoutComponent],
+	imports: [
+		LayoutRoutingModule,
+		MatTableModule,
+		CommonModule,
+		SharedModule,
+		AuthModule
+	]
 })
 export class LayoutModule {}
