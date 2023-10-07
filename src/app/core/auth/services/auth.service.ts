@@ -8,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { User } from '../model/user.interface';
 import { BehaviorSubject } from 'rxjs';
+import { SnackbarService } from '@app/shared/services/snackbar/snackbar.service';
 @Injectable({
 	providedIn: 'root',
 })
@@ -18,7 +19,8 @@ export class AuthService {
 		public afs: AngularFirestore,
 		public afAuth: AngularFireAuth,
 		public router: Router,
-		public ngZone: NgZone
+		public ngZone: NgZone,
+		private snackbarService: SnackbarService
 	) {
 		if (localStorage.getItem('user')) {
 			this.isAuth$.next(true)
@@ -45,6 +47,7 @@ export class AuthService {
 			})
 			.catch((error: Error) => {
 				this.isAuth$.next(false)
+				this.snackbarService.openSnackBar(error.message)
 				return
 			});
 	}
