@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class SpinnerService {
-  private loading = false;
+	private loading = false;
 
-  public setLoading(loading: boolean) {
-    this.loading = loading;
-  }
+	public setLoading(loading: boolean) {
+		this.loading = loading;
+	}
 
-  public getLoading(): boolean {
-    return this.loading;
-  }
+	public getLoading(): boolean {
+		return this.loading;
+	}
 }

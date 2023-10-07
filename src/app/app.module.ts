@@ -16,8 +16,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {
-  ScreenTrackingService,
-  UserTrackingService
+	ScreenTrackingService,
+	UserTrackingService
 } from '@angular/fire/analytics';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -31,45 +31,47 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { AuthService } from './core/auth/services/auth.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-      defaultLanguage: 'ru'
-    }),
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    CoreModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
-    EntityDataModule.forRoot(entityConfig),
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000'
-    })
-  ],
-  providers: [AuthService, ScreenTrackingService, UserTrackingService],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent],
+	imports: [
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient]
+			},
+			defaultLanguage: 'ru'
+		}),
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
+		CoreModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireAuthModule,
+		AngularFirestoreModule,
+		AngularFireStorageModule,
+		AngularFireDatabaseModule,
+		provideFirebaseApp(() => initializeApp(environment.firebase)),
+		provideAuth(() => getAuth()),
+		provideFirestore(() => getFirestore()),
+		provideDatabase(() => getDatabase()),
+		StoreModule.forRoot({}, {}),
+		EffectsModule.forRoot([]),
+		StoreRouterConnectingModule.forRoot(),
+		EntityDataModule.forRoot(entityConfig),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			registrationStrategy: 'registerWhenStable:30000'
+		})
+	],
+	providers: [AuthService, ScreenTrackingService, UserTrackingService],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}
