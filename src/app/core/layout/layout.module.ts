@@ -15,6 +15,7 @@ import { SharedModule } from '@shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
 	declarations: [
@@ -25,7 +26,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 		FooterComponent,
 		NavigationPanelBurgerComponent,
 		LanguageSelectorComponent,
-		DarkModeSelectorComponent
+		DarkModeSelectorComponent,
+  LogoutComponent
 	],
 	exports: [LayoutComponent],
 	imports: [

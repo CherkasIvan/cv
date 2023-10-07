@@ -31,6 +31,7 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { AuthService } from './core/auth/services/auth.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),
+		provideDatabase(() => getDatabase()),
 		StoreModule.forRoot({}, {}),
 		EffectsModule.forRoot([]),
 		StoreRouterConnectingModule.forRoot(),

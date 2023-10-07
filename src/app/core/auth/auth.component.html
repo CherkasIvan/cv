@@ -7,7 +7,7 @@
 
 	<div class="form-group">
 		<label for="email">E-Mail</label>
-		<input type="text" name="email" formControlName="email" class="form-control"
+		<input type="text" name="email" formControlName="email" autocomplete="on" required class="form-control"
 			[ngClass]="{ 'is-invalid': f['email'].errors }" />
 		<div *ngIf="f['email'].errors" class="invalid-feedback">
 			<div *ngIf="f['email'].errors['email']">E-mail is required</div>
@@ -15,7 +15,7 @@
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
-		<input type="password" formControlName="password" name="password" class="form-control"
+		<input type="password" formControlName="password" name="password" autocomplete="on" required class="form-control"
 			[ngClass]="{ 'is-invalid': f['password'].errors }" />
 		<div *ngIf="f['password'].errors" class="invalid-feedback">
 			<div *ngIf="f['password'].errors['required']">Password is required</div>
