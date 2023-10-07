@@ -5,11 +5,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
 	declarations: [],
 	exports: [],
-	imports: [CommonModule, AuthModule],
+	imports: [CommonModule, AuthModule, SharedModule],
 	providers: [
 		{
 			provide: HTTP_INTERCEPTORS,

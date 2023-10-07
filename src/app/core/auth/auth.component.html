@@ -9,25 +9,26 @@
 		<label for="email">E-Mail</label>
 		<input type="text" name="email" formControlName="email" autocomplete="on" required class="form-control"
 			[ngClass]="{ 'is-invalid': f['email'].errors }" />
-		<div *ngIf="f['email'].errors" class="invalid-feedback">
-			<div *ngIf="f['email'].errors['email']">E-mail is required</div>
+		<div *ngIf="!authForm.get('email')?.touched || !authForm.get('email')?.value" class="invalid-feedback">
+			<div *ngIf="f['email']?.errors['required']">E-mail is required</div>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
 		<input type="password" formControlName="password" name="password" autocomplete="on" required class="form-control"
 			[ngClass]="{ 'is-invalid': f['password'].errors }" />
-		<div *ngIf="f['password'].errors" class="invalid-feedback">
-			<div *ngIf="f['password'].errors['required']">Password is required</div>
+		<div *ngIf="!authForm.get('password')?.touched || !authForm.get('password')?.value" class="invalid-feedback">
+			<div *ngIf="f['password']?.errors['required']">Password is required</div>
 		</div>
 	</div>
 
 	<div class="button__block">
-		<button (click)="checkAuth()" [disabled]="!authForm.valid" routerLink="/layout" type="submit">
+		<button (click)="checkAuth()" [ngClass]="!authForm.valid ? 'disabled': 'enabled'" [disabled]="!authForm.valid"
+			type=" submit">
 			Log In
 		</button>
 
-		<button type="button" (click)="onReset()" class="btn btn-warning float-right">
+		<button type="button" (click)="onReset()" class="btn btn-warning">
 			Reset
 		</button>
 	</div>
