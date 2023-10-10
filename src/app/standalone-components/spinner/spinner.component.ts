@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { SpinnerService } from '@core/services/spinner.service';
+import { SpinnerService } from '@app/core/services/spinner/spinner.service';
 
 
 @Component({
 	selector: 'cv-spinner',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './spinner.component.html',
 	styleUrls: ['./spinner.component.scss']
 })

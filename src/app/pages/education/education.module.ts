@@ -6,14 +6,15 @@ import { EducationRoutingModule } from './education-routing.module';
 import { EducationComponent } from './education.component';
 import { EducationContentComponent } from './components/education-content/education-content.component';
 import { ImgDialogComponent } from './components/img-dialog/img-dialog.component';
-import { SharedModule } from '@shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { CarouselComponent } from '@app/standalone-components/carousel/carousel.component';
 
 @NgModule({
-  declarations: [
-    EducationComponent,
-    EducationContentComponent,
-    ImgDialogComponent
-  ],
-  imports: [CommonModule, EducationRoutingModule, SharedModule]
+	declarations: [
+		EducationComponent,
+		EducationContentComponent,
+		ImgDialogComponent
+	],
+	imports: [CommonModule, EducationRoutingModule, TranslateModule, CarouselComponent]
 })
 export class EducationModule {}

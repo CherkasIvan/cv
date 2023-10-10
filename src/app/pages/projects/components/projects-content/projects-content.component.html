@@ -1,20 +1,16 @@
 <div class="projects-content">
-  <div class="projects-container">
-    <h1 class="projects-description">
-      {{ 'PROJECTS.DESCRIPTION' | translate }}
-    </h1>
-    <ul class="projects-list">
-      <li
-        class="projects-list__item"
-        *ngFor="let project of projectsList; let i = index">
-        <a
-          [href]="project.htmlUrl"
-          class="project">
-          <span class="project__title">{{ project.name }}</span>
-          <span class="project__content">{{ project.description }}</span>
-          <span class="project__stars">{{ project.stars }}</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+	<div class="projects-container">
+		<h1 class="projects-description">
+			{{ 'PROJECTS.DESCRIPTION' | translate }}
+		</h1>
+		<ul class="projects-list">
+			<li class="projects-list__item" *ngFor="let project of projectsList; let i = index">
+				<a [href]="project.htmlUrl" class="project">
+					<span class="project__title">{{ project.name }}</span>
+					<span class="project__content">{{ project.description }}</span>
+					<cv-project-stars [projectStars]="project.stars"></cv-project-stars>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>

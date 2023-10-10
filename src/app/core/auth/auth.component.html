@@ -7,18 +7,18 @@
 
 	<div class="form-group">
 		<label for="email">E-Mail</label>
-		<input type="text" name="email" formControlName="email" autocomplete="on" required class="form-control"
-			[ngClass]="{ 'is-invalid': f['email'].errors }" />
-		<div *ngIf="!authForm.get('email')?.touched || !authForm.get('email')?.value" class="invalid-feedback">
-			<div *ngIf="f['email']?.errors['required']">E-mail is required</div>
+		<input type="text" name="email" formControlName="email" autocomplete="on" class="form-control"
+			[ngClass]="{ 'is-invalid': authForm.get('email')?.touched && !authForm.get('email')?.value }" />
+		<div *ngIf="authForm.get('email')?.touched && !authForm.get('email')?.value" class="invalid-feedback">
+			<div *ngIf="f['email'].errors['required']">E-mail is required</div>
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
-		<input type="password" formControlName="password" name="password" autocomplete="on" required class="form-control"
-			[ngClass]="{ 'is-invalid': f['password'].errors }" />
-		<div *ngIf="!authForm.get('password')?.touched || !authForm.get('password')?.value" class="invalid-feedback">
-			<div *ngIf="f['password']?.errors['required']">Password is required</div>
+		<input type="password" formControlName="password" name="password" autocomplete="on" class="form-control"
+			[ngClass]="{ 'is-invalid': (authForm.get('password')?.touched && !authForm.get('password')?.value) }" />
+		<div *ngIf="authForm.get('password')?.touched && !authForm.get('password')?.value" class="invalid-feedback">
+			<div *ngIf="f['password'].errors['required']">Password is required</div>
 		</div>
 	</div>
 

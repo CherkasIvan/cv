@@ -8,34 +8,40 @@ import { LayoutComponent } from './layout.component';
 import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
-import { DarkModeSelectorComponent } from './components/dark-mode-selector/dark-mode-selector.component';
+import { LanguageSelectorComponent } from '../../standalone-components/language-selector/language-selector.component';
+import { DarkModeSelectorComponent } from '../../standalone-components/dark-mode-selector/dark-mode-selector.component';
 
-import { SharedModule } from '@shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { SpinnerComponent } from '../../standalone-components/spinner/spinner.component';
+import { LogoutComponent } from '../../standalone-components/logout/logout.component';
+import { MediaButtonComponent } from '../../standalone-components/media-button/media-button.component';
+import { ButtonComponent } from '../../standalone-components/button/button.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { SkillsContentComponent } from '../../standalone-components/hard-skills-content/skills-content.component';
 
 @NgModule({
 	declarations: [
-		SpinnerComponent,
 		InitialContentComponent,
 		LayoutComponent,
 		NavigationPanelComponent,
 		FooterComponent,
 		NavigationPanelBurgerComponent,
-		LanguageSelectorComponent,
-		DarkModeSelectorComponent,
-  LogoutComponent
 	],
 	exports: [LayoutComponent],
 	imports: [
 		LayoutRoutingModule,
 		MatTableModule,
 		CommonModule,
-		SharedModule,
+		MediaButtonComponent,
+		LanguageSelectorComponent,
+		DarkModeSelectorComponent,
+		SpinnerComponent,
+		SkillsContentComponent,
+		ButtonComponent,
+		LogoutComponent,
+		TranslateModule,
 		AuthModule
-	]
+	],
 })
 export class LayoutModule {}

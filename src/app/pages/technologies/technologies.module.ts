@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { TechnologiesRoutingModule } from './technologies-routing.module';
 
 import { TechnologiesComponent } from './technologies.component';
-import { SharedModule } from '@shared/shared.module';
+import { SkillsContentComponent } from '@app/standalone-components/hard-skills-content/skills-content.component';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [TechnologiesComponent],
-  imports: [CommonModule, TechnologiesRoutingModule, SharedModule]
+	declarations: [TechnologiesComponent],
+	imports: [CommonModule, TechnologiesRoutingModule, SkillsContentComponent, TranslateModule]
 })
 export class TechnologiesModule {}

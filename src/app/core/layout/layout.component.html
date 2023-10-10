@@ -1,10 +1,10 @@
 <ng-container>
 	<div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
-		<div class="layout-container" [@routerAnimation]="getRouteAnimation(router)">
+		<div class="layout-container" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
 			<cv-navigation-panel></cv-navigation-panel>
 			<cv-spinner [spinnerStyle]="currentTheme ? 'dark-layout' : 'layout'"></cv-spinner>
 			<cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
-			<router-outlet #router="outlet"></router-outlet>
+			<router-outlet #outlet="outlet"></router-outlet>
 			<cv-footer></cv-footer>
 		</div>
 

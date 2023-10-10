@@ -38,8 +38,8 @@ export class AuthService {
 					this.isAuth$.next(true)
 					this.afAuth.authState.subscribe((user) => {
 						if (user) {
-							console.log(user)
 							this.router.navigate(['layout']);
+							this.snackbarService.openSnackBar(result.user?.email)
 						}
 					});
 				}

@@ -25,16 +25,19 @@
 			gap: 1rem;
 
 			.navigation-list {
-				display: grid;
-				grid-template-columns: repeat(6, 1fr);
+				display: flex;
+				column-gap: 15px;
+				margin: 0 10px;
 
 				&__item {
+					justify-self: center;
+					justify-content: center;
+					width: fit-content;
 					font-size: 20px;
-					text-align: center;
 
 					.item-link {
 						position: relative;
-						padding: 1.5rem 0;
+						padding: 1rem 0;
 						color: #ccccff;
 						font-weight: bold;
 						line-height: 1;
@@ -50,6 +53,8 @@
 				&__item:hover {
 					.item-link {
 						color: #cc0033;
+						border-bottom: 4px solid #cc0033;
+						border-radius: 4px;
 					}
 				}
 
@@ -57,6 +62,8 @@
 					-webkit-transition: all 0.1s ease;
 					transition: all 0.1s ease;
 					color: #ccff33;
+					border-bottom: 4px solid #ccff33;
+					border-radius: 4px;
 				}
 			}
 		}

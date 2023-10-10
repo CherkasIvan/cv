@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@core/auth/services/auth.service';
 
 @Component({
 	selector: 'cv-logout',
+	standalone: true,
+	imports: [CommonModule],
 	templateUrl: './logout.component.html',
 	styleUrls: ['./logout.component.scss']
 })

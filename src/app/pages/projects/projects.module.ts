@@ -5,10 +5,12 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 
 import { ProjectsComponent } from './projects.component';
 import { ProjectsContentComponent } from './components/projects-content/projects-content.component';
-import { SharedModule } from '@shared/shared.module';
+import { ProjectStarsComponent } from './components/project-stars/project-stars.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @NgModule({
-  declarations: [ProjectsComponent, ProjectsContentComponent],
-  imports: [CommonModule, ProjectsRoutingModule, SharedModule]
+	declarations: [ProjectsComponent, ProjectsContentComponent, ProjectStarsComponent],
+	imports: [CommonModule, ProjectsRoutingModule, TranslateModule]
 })
 export class ProjectsModule {}

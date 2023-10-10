@@ -6,6 +6,7 @@ import {
 	Validators
 } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { IAuth } from './model/auth.interface';
 
 @Component({
 	selector: 'cv-auth',
@@ -19,7 +20,7 @@ export class AuthComponent implements OnInit {
 
 	createForm(): FormGroup {
 		this.authForm = new FormGroup({
-			email: new FormControl('', { validators: [Validators.required] }),
+			email: new FormControl('', { validators: [Validators.required, Validators.email] }),
 			password: new FormControl('', { validators: [Validators.required] })
 		});
 		return this.authForm;
@@ -31,7 +32,7 @@ export class AuthComponent implements OnInit {
 
 	checkAuth() {
 		if (this.authForm.valid) {
-			const { email, password }: any = this.authForm.value;
+			const { email, password }: IAuth = this.authForm.value;
 			this.authService.signIn(email, password);
 		}
 	}

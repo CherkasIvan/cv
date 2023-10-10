@@ -14,8 +14,6 @@ const routes: Routes = [
 					import('../../pages/about-me/about-me.module').then(
 						(module) => module.AboutMeModule
 					),
-
-				data: { num: 1 }
 			},
 			{
 				path: 'projects',
@@ -23,8 +21,6 @@ const routes: Routes = [
 					import('../../pages/projects/projects.module').then(
 						(module) => module.ProjectsModule
 					),
-
-				data: { num: 1 }
 			},
 			{
 				path: 'education',
@@ -33,7 +29,6 @@ const routes: Routes = [
 						(module) => module.EducationModule
 					),
 
-				data: { num: 1 }
 			},
 			{
 				path: 'technologies',
@@ -48,15 +43,11 @@ const routes: Routes = [
 					import('../../pages/work-experience/work-experience.module').then(
 						(module) => module.WorkExperienceModule
 					),
-
-				data: { num: 1 }
 			},
 			{
 				path: 'cv',
 				loadChildren: () =>
 					import('../../pages/cv/cv.module').then((module) => module.CvModule),
-
-				data: { num: 1 }
 			}
 		]
 	}
