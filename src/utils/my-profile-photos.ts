@@ -1,4 +1,4 @@
-import { IProfilePhoto } from '@app/core/models/profile-photo.interface';
+import { IProfilePhoto } from '@core/models/profile-photo.interface';
 
 export const profilePhotos: IProfilePhoto[] = [
 	{

@@ -1,67 +1,71 @@
 .work-experience-content {
-  .work-container {
-    width: 100%;
-    text-align: center;
-    .work-list {
-      width: 100%;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	.work-container {
+		width: 100%;
+		text-align: center;
 
-      &__item {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+		.work-list {
+			width: 100%;
+			display: grid;
+			gap: 1rem;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-        .item-header,
-        .item-body,
-        .item-footer {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          justify-content: center;
+			&__item {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
 
-          &__company {
-            font-weight: 700;
-            font-size: 20px;
-          }
+				.item-header,
+				.item-body,
+				.item-footer {
+					display: flex;
+					gap: 10px;
+					align-items: center;
+					justify-content: center;
 
-          &__logo {
-            cursor: pointer;
-            background-color: #ffffff;
-            width: fit-content;
-            border-radius: 8px;
-            box-shadow:
-              0 14px 28px rgba(0, 0, 0, 0.25),
-              0 10px 10px rgba(0, 0, 0, 0.22);
-            transition: all 0.5s ease-out;
-            transform: scale(1);
+					&__company {
+						font-weight: 700;
+						font-size: 20px;
+					}
 
-            .logo-icon {
-              height: 200px;
-              border-radius: 8px;
-            }
-          }
+					&__logo {
+						cursor: pointer;
+						width: fit-content;
+						border-radius: 8px;
+						box-shadow:
+							0 14px 28px rgba(0, 0, 0, 0.25),
+							0 10px 10px rgba(0, 0, 0, 0.22);
+						transition: all 0.5s ease-out;
+						transform: scale(1);
 
-          &__logo:hover {
-            transition: all 0.5s ease-out;
-            transform: scale(1.05);
-          }
-        }
+						.logo-icon {
+							height: 200px;
+							border-radius: 8px;
+						}
+					}
 
-        .item-header {
-          flex-direction: column-reverse;
-        }
+					&__logo:hover {
+						transition: all 0.5s ease-out;
+						transform: scale(1.05);
+					}
 
-        .item-body {
-          font-weight: 600;
-          font-size: 18px;
-        }
-      }
-    }
+					.white {
+						background-color: #fff;
+					}
+				}
 
-    .total-experience {
-      margin-top: 50px;
-    }
-  }
+				.item-header {
+					flex-direction: column-reverse;
+				}
+
+				.item-body {
+					font-weight: 600;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.total-experience {
+			margin-top: 50px;
+		}
+	}
 }

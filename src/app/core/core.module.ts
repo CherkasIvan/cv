@@ -16,7 +16,7 @@ import { SliderBehaviorDirective } from './directives/slider-behavior.directive'
 		SliderBehaviorDirective,
 	],
 	exports: [MatDialogModule, CommonModule],
-	imports: [AuthModule, RouterModule, MatDialogModule],
+	imports: [AuthModule, RouterModule, MatDialogModule, CommonModule],
 	providers: [
 		MatSnackBarModule,
 		{
