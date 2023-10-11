@@ -1,4 +1,4 @@
-import { IEducation } from '@app/core/models/education.interface';
+import { IEducation } from '@core/models/education.interface';
 
 export const education: IEducation[] = [
 	{

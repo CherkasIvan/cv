@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { DarkModeService } from '@app/core/services/dark-mode/dark-mode.service';
+import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 import { pwaView } from 'utils/functions/pwaView';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 

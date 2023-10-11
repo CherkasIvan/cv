@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DarkModeService } from '@app/core/services/dark-mode/dark-mode.service';
+import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
 @Component({
 	selector: 'cv-dark-mode-selector',

@@ -10,7 +10,8 @@
       "@shared/*": ["app/shared/*"],
       "@pages/*": ["app/pages/*"],
       "@core/*": ["app/core/*"],
-      "@utils/*": ["app/utils/*"]
+      "@utils/*": ["app/utils/*"],
+      "@standalone-components/*": ["app/standalone-components/*"]
     },
 
     "outDir": "./dist/out-tsc",

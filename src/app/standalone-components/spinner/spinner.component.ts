@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { SpinnerService } from '@app/core/services/spinner/spinner.service';
+import { SpinnerService } from '@core/services/spinner/spinner.service';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ISocialMediaLinks } from '@app/core/models/social-media-link.itnerface';
+import { ISocialMediaLinks } from '@core/models/social-media-link.itnerface';
 
 @Component({
 	selector: 'cv-media-button',

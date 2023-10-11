@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ITechnology } from '@app/core/models/technology.interface';
+import { ITechnology } from '@core/models/technology.interface';
 import { pwaView } from 'utils/functions/pwaView';
 
 @Component({

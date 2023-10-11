@@ -8,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { User } from '../model/user.interface';
 import { BehaviorSubject } from 'rxjs';
-import { SnackbarService } from '@app/shared/services/snackbar/snackbar.service';
+import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 @Injectable({
 	providedIn: 'root',
 })
