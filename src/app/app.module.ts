@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -22,8 +24,9 @@ import {
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './entity-metadata';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
@@ -32,7 +35,12 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+
+import { entityConfig } from './entity-metadata';
+
 import { AuthService } from './core/auth/services/auth.service';
+import { routerRedcer } from './store/reducers/router-reducer';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,8 +60,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		BrowserModule,
 		CoreModule,
 		AngularFireModule.initializeApp(environment.firebase),
+		RouterModule.forRoot([]),
 		AngularFireAuthModule,
 		AngularFirestoreModule,
 		AngularFireStorageModule,
@@ -62,7 +72,11 @@ export function HttpLoaderFactory(http: HttpClient) {
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),
 		provideDatabase(() => getDatabase()),
-		StoreModule.forRoot({}, {}),
+		StoreModule.forRoot({}),
+		StoreDevtoolsModule.instrument({
+			maxAge: 25, // Retains last 25 states
+			logOnly: environment.production, // Restrict extension to log-only mode
+		}),
 		EffectsModule.forRoot([]),
 		StoreRouterConnectingModule.forRoot(),
 		EntityDataModule.forRoot(entityConfig),

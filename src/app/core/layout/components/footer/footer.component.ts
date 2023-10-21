@@ -11,7 +11,6 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 	styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-	public socialLinks: any[] = [];
 	public myContacts: any[] = [];
 	public currentTheme!: boolean;
 	public isPwaView: boolean = pwaView;
@@ -27,7 +26,6 @@ export class FooterComponent implements OnInit {
 	}
 	ngOnInit(): void {
 		this.getContacts();
-		this.getSocialMediaLinks();
 	}
 
 	public getSantizeUrl(url: string) {
@@ -38,11 +36,5 @@ export class FooterComponent implements OnInit {
 		this.firebaseService
 			.getContacts()
 			.subscribe((contacts) => (this.myContacts = contacts));
-	}
-
-	public getSocialMediaLinks() {
-		this.firebaseService
-			.getSocialMediaLinks()
-			.subscribe((socialMediaLinks) => (this.socialLinks = socialMediaLinks));
 	}
 }

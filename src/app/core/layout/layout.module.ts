@@ -19,6 +19,7 @@ import { MediaButtonComponent } from '../../standalone-components/media-button/m
 import { ButtonComponent } from '../../standalone-components/button/button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SkillsContentComponent } from '../../standalone-components/hard-skills-content/skills-content.component';
+import { LinksContainerComponent } from '../../standalone-components/links-container/links-container.component';
 
 @NgModule({
 	declarations: [
@@ -38,10 +39,11 @@ import { SkillsContentComponent } from '../../standalone-components/hard-skills-
 		DarkModeSelectorComponent,
 		SpinnerComponent,
 		SkillsContentComponent,
+		LinksContainerComponent,
 		ButtonComponent,
 		LogoutComponent,
 		TranslateModule,
-		AuthModule
+		AuthModule,
 	],
 })
 export class LayoutModule {}

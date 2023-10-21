@@ -1,0 +1,7 @@
+<div class="links-container">
+	<ul class="links-list">
+		<li class="links-list__item" *ngFor="let link of socialMediaLinks; let i = index">
+			<cv-media-button [mediaLink]="link" [modeTheme]="currentTheme" [pwaView]="isPwaView"></cv-media-button>
+		</li>
+	</ul>
+</div>

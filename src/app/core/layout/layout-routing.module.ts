@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, provideRouter } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
 
@@ -14,6 +14,7 @@ const routes: Routes = [
 					import('../../pages/about-me/about-me.module').then(
 						(module) => module.AboutMeModule
 					),
+				data: { animation: 'aboutMePage' }
 			},
 			{
 				path: 'projects',
@@ -21,6 +22,7 @@ const routes: Routes = [
 					import('../../pages/projects/projects.module').then(
 						(module) => module.ProjectsModule
 					),
+				data: { animation: 'projectsPage' }
 			},
 			{
 				path: 'education',
@@ -28,14 +30,15 @@ const routes: Routes = [
 					import('../../pages/education/education.module').then(
 						(module) => module.EducationModule
 					),
-
+				data: { animation: 'educationPage' }
 			},
 			{
 				path: 'technologies',
 				loadChildren: () =>
 					import('../../pages/technologies/technologies.module').then(
 						(module) => module.TechnologiesModule
-					)
+					),
+				data: { animation: 'technologiesPage' }
 			},
 			{
 				path: 'work-experience',
@@ -43,11 +46,13 @@ const routes: Routes = [
 					import('../../pages/work-experience/work-experience.module').then(
 						(module) => module.WorkExperienceModule
 					),
+				data: { animation: 'workExperiencePage' }
 			},
 			{
 				path: 'cv',
 				loadChildren: () =>
 					import('../../pages/cv/cv.module').then((module) => module.CvModule),
+				data: { animation: 'cvPage' }
 			}
 		]
 	}
@@ -55,6 +60,9 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [
+		provideRouter(routes)
+	]
 })
 export class LayoutRoutingModule {}

@@ -1,51 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import {
-	AbstractControl,
-	FormControl,
-	FormGroup,
-	Validators
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators
 } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { IAuth } from './model/auth.interface';
+import { Store } from '@ngrx/store';
+import { authFailure, authSuccess } from './store/actions/auth.action';
+import { selectAuth, selectAuthState } from './store/selectors/auth.selector';
+import { Observable } from 'rxjs';
 
 @Component({
-	selector: 'cv-auth',
-	templateUrl: './auth.component.html',
-	styleUrls: ['./auth.component.scss']
+  selector: 'cv-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent implements OnInit {
-	authForm!: FormGroup;
+  authForm!: FormGroup;
+  user: IAuth | null = null;
+  constructor(private authService: AuthService, private store$: Store<IAuth>) {}
 
-	constructor(private authService: AuthService) {}
+  createForm(): FormGroup {
+    this.authForm = new FormGroup({
+      email: new FormControl('', { validators: [Validators.required, Validators.email] }),
+      password: new FormControl('', { validators: [Validators.required] })
+    });
+    return this.authForm;
+  }
 
-	createForm(): FormGroup {
-		this.authForm = new FormGroup({
-			email: new FormControl('', { validators: [Validators.required, Validators.email] }),
-			password: new FormControl('', { validators: [Validators.required] })
-		});
-		return this.authForm;
-	}
+  onSubmit() {
+    this.checkAuth();
+    this.store$.select(selectAuthState).subscribe(auth => {
+      this.user = auth.user
+      console.log(auth)
+    })
+  }
 
-	onSubmit() {
-		this.checkAuth();
-	}
+  checkAuth() {
+    const { email, password } = this.authForm.value;
 
-	checkAuth() {
-		if (this.authForm.valid) {
-			const { email, password }: IAuth = this.authForm.value;
-			this.authService.signIn(email, password);
-		}
-	}
+    if (this.authForm.valid) {
+      this.store$.dispatch(authSuccess({ email, password }))
+      this.authService.signIn(email, password);
+    }
 
-	get f(): { [key: string]: AbstractControl } {
-		return this.authForm.controls;
-	}
+    else {
+      this.store$.dispatch(authFailure({ email, password }))
+    }
+  }
 
-	onReset(): void {
-		this.authForm.reset();
-	}
+  get f(): { [key: string]: AbstractControl } {
+    return this.authForm.controls;
+  }
 
-	ngOnInit(): void {
-		this.createForm();
-	}
+  onReset(): void {
+    this.authForm.reset();
+    this.store$.dispatch(authFailure({ email: '', password: '' }))
+  }
+
+  ngOnInit(): void {
+    this.createForm();
+
+  }
 }

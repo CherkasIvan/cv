@@ -1,0 +1,10 @@
+.links-container {
+  display: flex;
+  justify-content: center;
+
+  .links-list,
+  .personal-data-list {
+    display: flex;
+    flex-direction: column;
+  }
+}

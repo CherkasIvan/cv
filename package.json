@@ -36,6 +36,7 @@
     "@ngrx/entity": "^16.2.0",
     "@ngrx/router-store": "^16.3.0",
     "@ngrx/store": "^16.2.0",
+    "@ngrx/store-devtools": "^16.3.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@types/firebase": "^3.2.1",

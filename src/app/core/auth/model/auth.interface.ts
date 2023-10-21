@@ -1,4 +1,4 @@
 export interface IAuth {
-	readonly email: string;
-	readonly password: string;
+	readonly email: string | null ;
+	readonly password: string | null;
 }
