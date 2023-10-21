@@ -9,8 +9,7 @@ import { AuthService } from './services/auth.service';
 import { IAuth } from './model/auth.interface';
 import { Store } from '@ngrx/store';
 import { authFailure, authSuccess } from './store/actions/auth.action';
-import { selectAuth, selectAuthState } from './store/selectors/auth.selector';
-import { Observable } from 'rxjs';
+import { selectAuthState } from './store/selectors/auth.selector';
 
 @Component({
   selector: 'cv-auth',
