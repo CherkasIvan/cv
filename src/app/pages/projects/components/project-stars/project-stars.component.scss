@@ -1,16 +1,18 @@
 .stars {
-	&-img {}
+  &-img {
+  }
 
-	&-count {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		column-gap: 10px;
+  &-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
 
-		&__description {
-			margin: 0;
-		}
+    &__description {
+      margin: 0;
+    }
 
-		&__number {}
-	}
+    &__number {
+    }
+  }
 }

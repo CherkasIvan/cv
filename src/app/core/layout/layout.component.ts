@@ -13,7 +13,7 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   selector: 'cv-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  animations: [fadeAnimation],
+  animations: [fadeAnimation]
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent implements OnInit {
@@ -21,7 +21,7 @@ export class LayoutComponent implements OnInit {
   public currentTheme!: boolean;
   public isAuth = false;
   public isPwaView = false;
-  public socialLinks!: any[]
+  public socialLinks!: any[];
   // public currentRoute$: any = this.store$.pipe(select(selectCurrentRoute));
 
   constructor(

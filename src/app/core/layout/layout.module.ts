@@ -22,28 +22,28 @@ import { SkillsContentComponent } from '../../standalone-components/hard-skills-
 import { LinksContainerComponent } from '../../standalone-components/links-container/links-container.component';
 
 @NgModule({
-	declarations: [
-		InitialContentComponent,
-		LayoutComponent,
-		NavigationPanelComponent,
-		FooterComponent,
-		NavigationPanelBurgerComponent,
-	],
-	exports: [LayoutComponent],
-	imports: [
-		LayoutRoutingModule,
-		MatTableModule,
-		CommonModule,
-		MediaButtonComponent,
-		LanguageSelectorComponent,
-		DarkModeSelectorComponent,
-		SpinnerComponent,
-		SkillsContentComponent,
-		LinksContainerComponent,
-		ButtonComponent,
-		LogoutComponent,
-		TranslateModule,
-		AuthModule,
-	],
+  declarations: [
+    InitialContentComponent,
+    LayoutComponent,
+    NavigationPanelComponent,
+    FooterComponent,
+    NavigationPanelBurgerComponent
+  ],
+  exports: [LayoutComponent],
+  imports: [
+    LayoutRoutingModule,
+    MatTableModule,
+    CommonModule,
+    MediaButtonComponent,
+    LanguageSelectorComponent,
+    DarkModeSelectorComponent,
+    SpinnerComponent,
+    SkillsContentComponent,
+    LinksContainerComponent,
+    ButtonComponent,
+    LogoutComponent,
+    TranslateModule,
+    AuthModule
+  ]
 })
 export class LayoutModule {}

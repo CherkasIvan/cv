@@ -4,24 +4,24 @@ import { Subscription } from 'rxjs';
 import { IGitHub } from '../../models/github.interface';
 
 @Component({
-	selector: 'cv-projects-content',
-	templateUrl: './projects-content.component.html',
-	styleUrls: ['./projects-content.component.scss']
+  selector: 'cv-projects-content',
+  templateUrl: './projects-content.component.html',
+  styleUrls: ['./projects-content.component.scss']
 })
 export class ProjectsContentComponent implements OnInit, OnDestroy {
-	public projectsList!: IGitHub;
-	private gitHubSubscriber: Subscription = new Subscription();
-	constructor(private gitHubService: GitHubService) {}
+  public projectsList!: IGitHub;
+  private gitHubSubscriber: Subscription = new Subscription();
+  constructor(private gitHubService: GitHubService) {}
 
-	ngOnInit(): void {
-		this.gitHubSubscriber.add(
-			this.gitHubService.getUserRepos().subscribe((el) => {
-				console.log(el)
-				this.projectsList = el;
-			})
-		);
-	}
-	ngOnDestroy() {
-		this.gitHubSubscriber.unsubscribe();
-	}
+  ngOnInit(): void {
+    this.gitHubSubscriber.add(
+      this.gitHubService.getUserRepos().subscribe((el) => {
+        console.log(el);
+        this.projectsList = el;
+      })
+    );
+  }
+  ngOnDestroy() {
+    this.gitHubSubscriber.unsubscribe();
+  }
 }

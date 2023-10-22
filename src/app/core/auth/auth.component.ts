@@ -14,17 +14,22 @@ import { selectAuthState } from './store/selectors/auth.selector';
 @Component({
   selector: 'cv-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
+  styleUrls: ['./auth.component.scss']
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent implements OnInit {
   authForm!: FormGroup;
   user: IAuth | null = null;
-  constructor(private authService: AuthService, private store$: Store<IAuth>) {}
+  constructor(
+    private authService: AuthService,
+    private store$: Store<IAuth>
+  ) {}
 
   createForm(): FormGroup {
     this.authForm = new FormGroup({
-      email: new FormControl('', { validators: [Validators.required, Validators.email] }),
+      email: new FormControl('', {
+        validators: [Validators.required, Validators.email]
+      }),
       password: new FormControl('', { validators: [Validators.required] })
     });
     return this.authForm;
@@ -32,22 +37,20 @@ export class AuthComponent implements OnInit {
 
   onSubmit() {
     this.checkAuth();
-    this.store$.select(selectAuthState).subscribe(auth => {
-      this.user = auth.user
-      console.log(auth)
-    })
+    this.store$.select(selectAuthState).subscribe((auth) => {
+      this.user = auth.user;
+      console.log(auth);
+    });
   }
 
   checkAuth() {
     const { email, password } = this.authForm.value;
 
     if (this.authForm.valid) {
-      this.store$.dispatch(authSuccess({ email, password }))
+      this.store$.dispatch(authSuccess({ email, password }));
       this.authService.signIn(email, password);
-    }
-
-    else {
-      this.store$.dispatch(authFailure({ email, password }))
+    } else {
+      this.store$.dispatch(authFailure({ email, password }));
     }
   }
 
@@ -57,11 +60,10 @@ export class AuthComponent implements OnInit {
 
   onReset(): void {
     this.authForm.reset();
-    this.store$.dispatch(authFailure({ email: '', password: '' }))
+    this.store$.dispatch(authFailure({ email: '', password: '' }));
   }
 
   ngOnInit(): void {
     this.createForm();
-
   }
 }
