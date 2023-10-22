@@ -8,9 +8,12 @@ import { ProjectsContentComponent } from './components/projects-content/projects
 import { ProjectStarsComponent } from './components/project-stars/project-stars.component';
 import { TranslateModule } from '@ngx-translate/core';
 
-
 @NgModule({
-	declarations: [ProjectsComponent, ProjectsContentComponent, ProjectStarsComponent],
-	imports: [CommonModule, ProjectsRoutingModule, TranslateModule]
+  declarations: [
+    ProjectsComponent,
+    ProjectsContentComponent,
+    ProjectStarsComponent
+  ],
+  imports: [CommonModule, ProjectsRoutingModule, TranslateModule]
 })
 export class ProjectsModule {}

@@ -13,12 +13,15 @@ export class AuthEffects {
       ofType(auth),
       switchMap(({ email, password }) =>
         this.authService.signIn(email, password).pipe(
-          map(user => authSuccess({ user })),
-          catchError(error => of(authFailure({ error })))
+          map((user) => authSuccess({ user })),
+          catchError((error) => of(authFailure({ error })))
         )
       )
     )
   );
 
-  constructor(private actions$: Actions, private authService: AuthService) {}
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService
+  ) {}
 }

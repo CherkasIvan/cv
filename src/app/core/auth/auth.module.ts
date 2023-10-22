@@ -8,7 +8,10 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StoreModule } from '@ngrx/store';
-import { authReducer, authReducerFeatureKey } from './store/reducers/auth.reducer';
+import {
+  authReducer,
+  authReducerFeatureKey
+} from './store/reducers/auth.reducer';
 
 @NgModule({
   declarations: [AuthComponent],

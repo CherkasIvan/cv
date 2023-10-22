@@ -9,7 +9,12 @@ import { SkillsContentComponent } from '@standalone-components/hard-skills-conte
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-	declarations: [TechnologiesComponent],
-	imports: [CommonModule, TechnologiesRoutingModule, SkillsContentComponent, TranslateModule]
+  declarations: [TechnologiesComponent],
+  imports: [
+    CommonModule,
+    TechnologiesRoutingModule,
+    SkillsContentComponent,
+    TranslateModule
+  ]
 })
 export class TechnologiesModule {}

@@ -3,22 +3,20 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { profilePhotos } from 'utils/my-profile-photos';
 
 @Component({
-	selector: 'cv-about-photos',
-	templateUrl: './about-photos.component.html',
-	styleUrls: ['./about-photos.component.scss']
+  selector: 'cv-about-photos',
+  templateUrl: './about-photos.component.html',
+  styleUrls: ['./about-photos.component.scss']
 })
 export class AboutPhotosComponent implements OnInit {
-	public slides = profilePhotos;
+  public slides = profilePhotos;
 
-	constructor(private firebaseService: FirebaseService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
-	ngOnInit(): void {
-		this.getSlides();
-	}
+  ngOnInit(): void {
+    this.getSlides();
+  }
 
-	getSlides() {
-		this.firebaseService
-			.getMyProfilePhotos()
-			.subscribe((photos) => photos);
-	}
+  getSlides() {
+    this.firebaseService.getMyProfilePhotos().subscribe((photos) => photos);
+  }
 }

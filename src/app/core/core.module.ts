@@ -12,9 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SliderBehaviorDirective } from './directives/slider-behavior.directive';
 
 @NgModule({
-  declarations: [
-    SliderBehaviorDirective,
-  ],
+  declarations: [SliderBehaviorDirective],
   exports: [MatDialogModule, CommonModule],
   imports: [AuthModule, RouterModule, MatDialogModule, CommonModule],
   providers: [
