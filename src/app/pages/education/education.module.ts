@@ -10,11 +10,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CarouselComponent } from '@standalone-components/carousel/carousel.component';
 
 @NgModule({
-	declarations: [
-		EducationComponent,
-		EducationContentComponent,
-		ImgDialogComponent
-	],
-	imports: [CommonModule, EducationRoutingModule, TranslateModule, CarouselComponent]
+  declarations: [
+    EducationComponent,
+    EducationContentComponent,
+    ImgDialogComponent
+  ],
+  imports: [
+    CommonModule,
+    EducationRoutingModule,
+    TranslateModule,
+    CarouselComponent
+  ]
 })
 export class EducationModule {}

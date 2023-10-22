@@ -18,8 +18,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {
-	ScreenTrackingService,
-	UserTrackingService
+  ScreenTrackingService,
+  UserTrackingService
 } from '@angular/fire/analytics';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -41,51 +41,50 @@ import { entityConfig } from './entity-metadata';
 import { AuthService } from './core/auth/services/auth.service';
 import { routerRedcer } from './store/reducers/router-reducer';
 
-
 export function HttpLoaderFactory(http: HttpClient) {
-	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
-				deps: [HttpClient]
-			},
-			defaultLanguage: 'ru'
-		}),
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
-		BrowserModule,
-		CoreModule,
-		AngularFireModule.initializeApp(environment.firebase),
-		RouterModule.forRoot([]),
-		AngularFireAuthModule,
-		AngularFirestoreModule,
-		AngularFireStorageModule,
-		AngularFireDatabaseModule,
-		provideFirebaseApp(() => initializeApp(environment.firebase)),
-		provideAuth(() => getAuth()),
-		provideFirestore(() => getFirestore()),
-		provideDatabase(() => getDatabase()),
-		StoreModule.forRoot({}),
-		StoreDevtoolsModule.instrument({
-			maxAge: 25, // Retains last 25 states
-			logOnly: environment.production, // Restrict extension to log-only mode
-		}),
-		EffectsModule.forRoot([]),
-		StoreRouterConnectingModule.forRoot(),
-		EntityDataModule.forRoot(entityConfig),
-		ServiceWorkerModule.register('ngsw-worker.js', {
-			enabled: environment.production,
-			registrationStrategy: 'registerWhenStable:30000'
-		})
-	],
-	providers: [AuthService, ScreenTrackingService, UserTrackingService],
-	bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'ru'
+    }),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    BrowserModule,
+    CoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    RouterModule.forRoot([]),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production // Restrict extension to log-only mode
+    }),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
+    EntityDataModule.forRoot(entityConfig),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerWhenStable:30000'
+    })
+  ],
+  providers: [AuthService, ScreenTrackingService, UserTrackingService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
