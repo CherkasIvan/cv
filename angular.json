@@ -184,7 +184,6 @@
           "builder": "@angular/fire:deploy",
           "options": {
             "prerender": true,
-            "ssr": false,
             "browserTarget": "cv:build:production",
             "firebaseProject": "cv-cherkas",
             "firebaseHostingSite": "cv-cherkas",
