@@ -97,9 +97,9 @@ export class WorkExperienceContentComponent {
     this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
   }
 
-  getWorkExperience(): void {
-    this.firebaseService
-      .getWorkExperience()
-      .subscribe((works) => (this.workPlace = works));
-  }
+	getWorkExperience(): void {
+		this.firebaseService
+			.getWorkExperience()
+			.subscribe((works:any) => (this.workPlace = works));
+	}
 }

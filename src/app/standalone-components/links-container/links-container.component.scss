@@ -1,6 +1,10 @@
 .links-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
   .links-list,
   .personal-data-list {

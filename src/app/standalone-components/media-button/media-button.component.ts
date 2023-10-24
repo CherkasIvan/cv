@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ISocialMediaLinks } from '@core/models/social-media-link.itnerface';
+import { ILinks } from '@shared/models/links.interface';
 
 @Component({
   selector: 'cv-media-button',
@@ -11,9 +11,9 @@ import { ISocialMediaLinks } from '@core/models/social-media-link.itnerface';
   styleUrls: ['./media-button.component.scss']
 })
 export class MediaButtonComponent {
-  @Input() mediaLink!: ISocialMediaLinks;
-  @Input() modeTheme!: boolean;
-  @Input() pwaView!: boolean;
+	@Input() mediaLink!: ILinks;
+	@Input() modeTheme!: boolean;
+	@Input() pwaView!: boolean;
 
   constructor(private _sanitizer: DomSanitizer) {}
 

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from '@coreui/angular';
-import { IProfilePhoto } from '@core/models/profile-photo.interface';
+import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 
 @Component({
   selector: 'cv-carousel',
