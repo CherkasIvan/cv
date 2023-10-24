@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ITechnology } from '@core/models/technology.interface';
+import { ITechnologies } from '@shared/models/tecnologies.interface';
 import { pwaView } from 'utils/functions/pwaView';
 
 @Component({
@@ -11,6 +11,6 @@ import { pwaView } from 'utils/functions/pwaView';
 	styleUrls: ['./skills-content.component.scss']
 })
 export class SkillsContentComponent {
-	@Input() public technologiesList: ITechnology[] = [];
+	@Input() public technologiesList: ITechnologies[] = [];
 	public isPwaView: boolean = pwaView;
 }

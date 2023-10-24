@@ -21,7 +21,8 @@ export class LayoutComponent implements OnInit {
   public currentTheme!: boolean;
   public isAuth = false;
   public isPwaView = false;
-  public socialLinks!: any[]
+  public socialMediaLinksL: any[] = [];
+  public socialMediaLinksR: any[] = []
   // public currentRoute$: any = this.store$.pipe(select(selectCurrentRoute));
 
   constructor(
@@ -45,7 +46,17 @@ export class LayoutComponent implements OnInit {
   public getSocialMediaLinks() {
     this.firebaseService
       .getSocialMediaLinks()
-      .subscribe((socialMediaLinks) => (this.socialLinks = socialMediaLinks));
+      .subscribe((socialMediaLinks) => {
+        const [evenNumbers, oddNumbers] = socialMediaLinks.reduce(
+          (acc: any, val: any, index: number) => {
+            acc[index % 2].push(val);
+            return acc;
+          },
+          [[], []]
+        );
+        this.socialMediaLinksL = evenNumbers
+        this.socialMediaLinksR = oddNumbers
+      });
   }
 
   ngOnInit(): void {

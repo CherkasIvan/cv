@@ -100,6 +100,6 @@ export class WorkExperienceContentComponent {
 	getWorkExperience(): void {
 		this.firebaseService
 			.getWorkExperience()
-			.subscribe((works) => (this.workPlace = works));
+			.subscribe((works:any) => (this.workPlace = works));
 	}
 }
