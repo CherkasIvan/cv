@@ -13,7 +13,7 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   selector: 'cv-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  animations: [fadeAnimation],
+  animations: [fadeAnimation]
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent implements OnInit {

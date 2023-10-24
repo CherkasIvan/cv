@@ -1,14 +1,18 @@
 <ng-container>
-	<div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
-		<div class="layout-container" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
-			<cv-navigation-panel></cv-navigation-panel>
+  <div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
+    <div
+      class="layout-container"
+      [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+      <cv-navigation-panel></cv-navigation-panel>
 
 			<cv-links-container [socialMediaLinks]="socialMediaLinksL" [modeTheme]="currentTheme"
 				[pwaView]="isPwaView"></cv-links-container>
 
-			<cv-spinner [spinnerStyle]="currentTheme ? 'dark-layout' : 'layout'"></cv-spinner>
-			<cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
-			<router-outlet #outlet="outlet"></router-outlet>
+      <cv-spinner
+        [spinnerStyle]="currentTheme ? 'dark-layout' : 'layout'"></cv-spinner>
+      <cv-initial-content
+        *ngIf="currentRoute === '/layout'"></cv-initial-content>
+      <router-outlet #outlet="outlet"></router-outlet>
 
 			<cv-links-container [socialMediaLinks]="socialMediaLinksR" [modeTheme]="currentTheme"
 				[pwaView]="isPwaView"></cv-links-container>
@@ -16,11 +20,13 @@
 			<cv-footer></cv-footer>
 		</div>
 
-		<div class="stars-container">
-			<ng-container *ngIf="currentTheme" [ngTemplateOutlet]="isDarkMode">
-			</ng-container>
-		</div>
-	</div>
+    <div class="stars-container">
+      <ng-container
+        *ngIf="currentTheme"
+        [ngTemplateOutlet]="isDarkMode">
+      </ng-container>
+    </div>
+  </div>
 </ng-container>
 
 <ng-template #isDarkMode>

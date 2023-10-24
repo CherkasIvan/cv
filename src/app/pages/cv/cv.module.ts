@@ -8,8 +8,8 @@ import { ButtonComponent } from '@standalone-components/button/button.component'
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-	declarations: [CvComponent, DownloadImgComponent, CvItemComponent],
-	exports: [DownloadImgComponent],
-	imports: [CvRoutingModule, CommonModule, ButtonComponent, TranslateModule]
+  declarations: [CvComponent, DownloadImgComponent, CvItemComponent],
+  exports: [DownloadImgComponent],
+  imports: [CvRoutingModule, CommonModule, ButtonComponent, TranslateModule]
 })
 export class CvModule {}

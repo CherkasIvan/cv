@@ -4,11 +4,11 @@ import { ITechnologies } from '@shared/models/tecnologies.interface';
 import { pwaView } from 'utils/functions/pwaView';
 
 @Component({
-	selector: 'cv-skills-content',
-	templateUrl: './skills-content.component.html',
-	standalone: true,
-	imports: [CommonModule],
-	styleUrls: ['./skills-content.component.scss']
+  selector: 'cv-skills-content',
+  templateUrl: './skills-content.component.html',
+  standalone: true,
+  imports: [CommonModule],
+  styleUrls: ['./skills-content.component.scss']
 })
 export class SkillsContentComponent {
 	@Input() public technologiesList: ITechnologies[] = [];
