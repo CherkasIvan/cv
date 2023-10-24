@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +11,9 @@ import {
   authReducer,
   authReducerFeatureKey
 } from './store/reducers/auth.reducer';
+import { AuthService } from './services/auth.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Firestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AuthComponent],
@@ -26,6 +28,6 @@ import {
     provideAuth(() => getAuth()),
     CommonModule
   ],
-  providers: [MatSnackBarModule]
+  providers: [MatSnackBarModule, AngularFirestore, Firestore]
 })
 export class AuthModule {}

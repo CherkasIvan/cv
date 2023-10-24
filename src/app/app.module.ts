@@ -32,7 +32,6 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { provideFirestore } from '@angular/fire/firestore';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 
@@ -40,6 +39,7 @@ import { entityConfig } from './entity-metadata';
 
 import { AuthService } from './core/auth/services/auth.service';
 import { routerRedcer } from './store/reducers/router-reducer';
+import { getAuth } from 'firebase/auth';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

@@ -1,4 +1,4 @@
-export interface ILinks {
+export interface ISocialMediaLinks {
   id: string
   alt: string,
   iconPath: string
