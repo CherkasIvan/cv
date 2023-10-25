@@ -1,22 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IProfilePhoto } from '@app/shared/models/profile-photo.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
-import { profilePhotos } from 'utils/my-profile-photos';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cv-about-photos',
   templateUrl: './about-photos.component.html',
   styleUrls: ['./about-photos.component.scss']
 })
-export class AboutPhotosComponent implements OnInit {
-  public slides = profilePhotos;
+export class AboutPhotosComponent {
+  public slides$: Observable<IProfilePhoto[]> =
+    this.firebaseService.getMyProfilePhotos();
 
   constructor(private firebaseService: FirebaseService) {}
-
-  ngOnInit(): void {
-    this.getSlides();
-  }
-
-  getSlides() {
-    this.firebaseService.getMyProfilePhotos().subscribe((photos) => photos);
-  }
 }

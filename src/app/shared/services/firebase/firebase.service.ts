@@ -1,87 +1,122 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import {
+  Firestore,
+  Query,
+  collection,
+  collectionData
+} from '@angular/fire/firestore';
+import { IContacts } from '@shared/models/contacts.interface';
+import { ITechnologies } from '@app/shared/models/technologies.interface';
+import { ICvFormat } from '@shared/models/cv-format.interface';
+import { ISocialMedia } from '@app/shared/models/social-media.interface';
+import { INavigation } from '@shared/models/navigation.interface';
+import { IProfilePhoto } from '@shared/models/profile-photo.interface';
+import { IWorkExperience } from '@shared/models/work-experience.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  frontendTechCollection!: any;
+  frontendTechCollection$!: Observable<ITechnologies[]>;
+  backendTechCollection$!: Observable<ITechnologies[]>;
+  socialTechCollection$!: Observable<ITechnologies[]>;
+  otherTechCollection$!: Observable<ITechnologies[]>;
+  contactsCollection$!: Observable<IContacts[]>;
+  navigationCollection$!: Observable<INavigation[]>;
+  cvFormatCollection$!: Observable<ICvFormat[]>;
+  profilePhotosCollection$!: Observable<IProfilePhoto[]>;
+  socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
+  workExperienceCollection$!: Observable<IWorkExperience[]>;
+  projectTechCollection$!: Observable<ITechnologies[]>;
 
-  backendTechCollection!: any;
+  constructor(private firestore: Firestore) {}
 
-  socialTechCollection!: any;
-
-  otherTechCollection!: any;
-
-  contactsCollection!: any;
-
-  navigationCollection!: any;
-
-  cvFormatCollection!: any;
-
-  profilePhotosCollection!: any;
-
-  socialMediaLinksCollection!: any;
-
-  workExperienceCollection!: any;
-
-  projectTechCollection!: any;
-
-  constructor(private afs: Firestore) {}
-
-  getFrontendTech() {
-    this.frontendTechCollection = collection(this.afs, 'frontendTech');
-    return collectionData(this.frontendTechCollection, { idField: 'id' });
+  getFrontendTech(): Observable<ITechnologies[]> {
+    this.frontendTechCollection$ = collectionData(
+      collection(this.firestore, 'frontendTech'),
+      { idField: 'id' }
+    ) as Observable<ITechnologies[]>;
+    return this.frontendTechCollection$;
   }
 
-  getBackendTech() {
-    this.backendTechCollection = collection(this.afs, 'backendTech');
-    return collectionData(this.backendTechCollection, { idField: 'id' });
+  getBackendTech(): Observable<ITechnologies[]> {
+    this.backendTechCollection$ = collectionData(
+      collection(this.firestore, 'backendTech'),
+      { idField: 'id' }
+    ) as Observable<ITechnologies[]>;
+    return this.backendTechCollection$;
   }
 
-  getSocialTech() {
-    this.socialTechCollection = collection(this.afs, 'socialTech');
-    return collectionData(this.socialTechCollection, { idField: 'id' });
+  getSocialTech(): Observable<ITechnologies[]> {
+    this.socialTechCollection$ = collectionData(
+      collection(this.firestore, 'socialTech'),
+      { idField: 'id' }
+    ) as Observable<ITechnologies[]>;
+    return this.socialTechCollection$;
   }
 
-  getOtherTech() {
-    this.otherTechCollection = collection(this.afs, 'otherTech');
-    return collectionData(this.otherTechCollection, { idField: 'id' });
+  getProjectTech(): Observable<ITechnologies[]> {
+    this.projectTechCollection$ = collectionData(
+      collection(this.firestore, 'projectTech'),
+      { idField: 'id' }
+    ) as Observable<ITechnologies[]>;
+    return this.projectTechCollection$;
   }
 
-  getContacts() {
-    this.contactsCollection = collection(this.afs, 'contacts');
-    return collectionData(this.contactsCollection, { idField: 'id' });
+  getOtherTech(): Observable<ITechnologies[]> {
+    this.otherTechCollection$ = collectionData(
+      collection(this.firestore, 'otherTech'),
+      { idField: 'id' }
+    ) as Observable<ITechnologies[]>;
+    return this.otherTechCollection$;
   }
 
-  getNavigation() {
-    this.navigationCollection = collection(this.afs, 'navigation');
-    return collectionData(this.navigationCollection, { idField: 'id' });
+  getContacts(): Observable<IContacts[]> {
+    this.contactsCollection$ = collectionData(
+      collection(this.firestore, 'contacts'),
+      { idField: 'id' }
+    ) as Observable<IContacts[]>;
+    return this.contactsCollection$;
   }
 
-  getCvFormat() {
-    this.cvFormatCollection = collection(this.afs, 'cvFormat');
-    return collectionData(this.cvFormatCollection, { idField: 'id' });
+  getNavigation(): Observable<INavigation[]> {
+    this.navigationCollection$ = collectionData(
+      collection(this.firestore, 'navigation'),
+      { idField: 'id' }
+    ) as Observable<INavigation[]>;
+    return this.navigationCollection$;
   }
 
-  getMyProfilePhotos() {
-    this.profilePhotosCollection = collection(this.afs, 'profilePhotos');
-    return collectionData(this.profilePhotosCollection, { idField: 'id' });
+  getCvFormat(): Observable<ICvFormat[]> {
+    this.cvFormatCollection$ = collectionData(
+      collection(this.firestore, 'cvFormat'),
+      { idField: 'id' }
+    ) as Observable<ICvFormat[]>;
+    return this.cvFormatCollection$;
   }
 
-  getSocialMediaLinks() {
-    this.socialMediaLinksCollection = collection(this.afs, 'socialMediaLinks');
-    return collectionData(this.socialMediaLinksCollection, { idField: 'id' });
+  getMyProfilePhotos(): Observable<IProfilePhoto[]> {
+    this.profilePhotosCollection$ = collectionData(
+      collection(this.firestore, 'profilePhotos'),
+      { idField: 'id' }
+    ) as Observable<IProfilePhoto[]>;
+    return this.profilePhotosCollection$;
   }
 
-  getWorkExperience() {
-    this.workExperienceCollection = collection(this.afs, 'workExperience');
-    return collectionData(this.workExperienceCollection, { idField: 'id' });
+  getSocialMediaLinks(): Observable<ISocialMedia[]> {
+    this.socialMediaLinksCollection$ = collectionData(
+      collection(this.firestore, 'socialMediaLinks'),
+      { idField: 'id' }
+    ) as Observable<ISocialMedia[]>;
+    return this.socialMediaLinksCollection$;
   }
 
-  getProjectTech() {
-    this.projectTechCollection = collection(this.afs, 'projectTech');
-    return collectionData(this.projectTechCollection, { idField: 'id' });
+  getWorkExperience(): Observable<IWorkExperience[]> {
+    this.workExperienceCollection$ = collectionData(
+      collection(this.firestore, 'workExperience'),
+      { idField: 'id' }
+    ) as Observable<IWorkExperience[]>;
+    return this.workExperienceCollection$;
   }
 }

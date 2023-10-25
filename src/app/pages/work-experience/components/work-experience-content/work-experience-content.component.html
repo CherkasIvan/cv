@@ -3,7 +3,7 @@
     <ul class="work-list">
       <li
         class="work-list__item"
-        *ngFor="let work of workPlace">
+        *ngFor="let work of workPlace$ | async">
         <div class="item-header">
           <div
             class="item-header__logo"

@@ -1,23 +1,26 @@
-import { IEducation } from '@core/models/education.interface';
+import { IEducation } from '@shared/models/education.interface';
 
 export const education: IEducation[] = [
   {
     educationTitle: 'SCHOOL',
     educationLogo: [
       {
-        id: 0,
+        id: '0',
+        slideNumber: 0,
         src: 'assets/img/educational_establishments/school/hs_132.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 1,
+        id: '1',
+        slideNumber: 1,
         src: 'assets/img/educational_establishments/school/main_132.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 2,
+        id: '2',
+        slideNumber: 2,
         src: 'assets/img/educational_establishments/school/hs_132_full.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
@@ -36,19 +39,22 @@ export const education: IEducation[] = [
     educationTitle: 'UNIVERSITY',
     educationLogo: [
       {
-        id: 0,
+        id: ' 0',
+        slideNumber: 0,
         src: 'assets/img/educational_establishments/university/miu_aside.jpg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 1,
+        id: '1',
+        slideNumber: 1,
         src: 'assets/img/educational_establishments/university/miu_corpus.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 2,
+        id: '2',
+        slideNumber: 2,
         src: 'assets/img/educational_establishments/university/miu_main.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
@@ -72,7 +78,7 @@ export const education: IEducation[] = [
         address: 'г.Минск, ул.Тимирязева, д.67, оф.1101',
         phone: '+375 29 105-59-59',
         grade: 'Front-end developer',
-        certificatePath: '/assets/img/certificate/frontend.jpg',
+        certificatePath: 'assets/img/certificate/frontend.jpg',
         certificateLink: ''
       },
       {
@@ -81,7 +87,7 @@ export const education: IEducation[] = [
         address: 'г.Минск, ул.Скрыганова, д.14, эт.5',
         phone: '+375 44 781-54-12',
         grade: 'C# developer',
-        certificatePath: '/assets/img/certificate/web-design.jpg',
+        certificatePath: 'assets/img/certificate/web-design.jpg',
         certificateLink:
           'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc'
       },
@@ -91,7 +97,7 @@ export const education: IEducation[] = [
         address: 'г.Москва',
         phone: '',
         grade: 'Основы веб-дизайна в Adobe-Photoshop',
-        certificatePath: '/assets/img/certificate/web-design.jpg',
+        certificatePath: 'assets/img/certificate/web-design.jpg',
         certificateLink:
           'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc'
       },
@@ -101,8 +107,8 @@ export const education: IEducation[] = [
         address: 'г.Москва',
         phone: '',
         grade: 'Основы програмирования на C#',
-        certificatePath: '/assets/img/certificate/beginner.jpg',
-        certificateLink: ' https://stepik.org/cert/320534'
+        certificatePath: 'assets/img/certificate/beginner.jpg',
+        certificateLink: 'https://stepik.org/cert/320534'
       },
       {
         name: 'STEPIK',
@@ -110,8 +116,8 @@ export const education: IEducation[] = [
         address: 'г.Москва',
         phone: '',
         grade: 'Базовые навыки Excel>',
-        certificatePath: '/assets/img/certificate/stepik-excel.png',
-        certificateLink: ' https://stepik.org/cert/1953522'
+        certificatePath: 'assets/img/certificate/stepik-excel.png',
+        certificateLink: 'https://stepik.org/cert/1953522'
       }
     ]
   }

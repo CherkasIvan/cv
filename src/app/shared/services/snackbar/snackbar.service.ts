@@ -8,7 +8,7 @@ import { SnackbarComponent } from '@standalone-components/snackbar/snackbar.comp
 export class SnackbarService {
   constructor(private _snackBar: MatSnackBar) {}
 
-  openSnackBar(message: any) {
+  openSnackBar(message: string | null | undefined) {
     this._snackBar.openFromComponent(SnackbarComponent, {
       duration: 1000,
       data: message

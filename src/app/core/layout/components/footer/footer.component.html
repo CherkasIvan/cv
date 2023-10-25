@@ -2,24 +2,15 @@
   class="cv-footer"
   [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
   <div class="footer-container">
-    <!-- <div class="links-container">
-      <ul class="links-list">
-        <li
-          class="links-list__item"
-          *ngFor="let link of socialLinks; let i = index">
-          <cv-media-button
-            [mediaLink]="link"
-            [modeTheme]="currentTheme"
-            [pwaView]="isPwaView"></cv-media-button>
-        </li>
-      </ul>
-    </div> -->
-
+    <cv-links-container
+      [socialMediaLinks]="socialMedia$ | async"
+      [modeTheme]="currentTheme"
+      [pwaView]="isPwaView"></cv-links-container>
     <div class="personal-data-container">
       <ul class="personal-data-list">
         <li
           class="personal-data-list__item"
-          *ngFor="let contact of myContacts; let i = index">
+          *ngFor="let contact of myContacts$ | async; let i = index">
           <span class="item-title">{{
             'FOOTER.ITEM.VALUE' + i | translate
           }}</span

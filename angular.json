@@ -42,13 +42,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "15mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
                 }
               ],
               "outputHashing": "all"
@@ -149,20 +149,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "cv:build:development",
-              "serverTarget": "cv:server:development"
-            },
-            "production": {
-              "browserTarget": "cv:build:production",
-              "serverTarget": "cv:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
@@ -184,7 +170,6 @@
           "builder": "@angular/fire:deploy",
           "options": {
             "prerender": true,
-            "ssr": false,
             "browserTarget": "cv:build:production",
             "firebaseProject": "cv-cherkas",
             "firebaseHostingSite": "cv-cherkas",

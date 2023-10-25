@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { CarouselModule } from '@coreui/angular';
-import { IProfilePhoto } from '@core/models/profile-photo.interface';
+import { IProfilePhoto } from '@shared/models/profile-photo.interface';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'cv-carousel',
@@ -12,23 +14,33 @@ import { IProfilePhoto } from '@core/models/profile-photo.interface';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+  public pageSlides$!: Observable<IProfilePhoto[]>;
+
   public slides: IProfilePhoto[] = new Array(3).fill({
-    id: -1,
+    id: '',
+    slideNumber: -1,
     src: '',
     title: '',
     subtitle: ''
   });
 
-  @Input() public pageSlides!: IProfilePhoto[];
+  constructor(private firebaseService: FirebaseService) {}
 
   public ngOnInit(): void {
-    this.pageSlides.forEach((el: IProfilePhoto) => {
-      this.slides[el.id] = {
-        id: el.id,
-        src: el.src,
-        title: el.title,
-        subtitle: el.subtitle
-      };
-    });
+    this.pageSlides$ = this.firebaseService.getMyProfilePhotos();
+    this.pageSlides$.pipe(
+      tap((slideList: IProfilePhoto[]) => {
+        console.log(slideList);
+        slideList.forEach((slide: IProfilePhoto) => {
+          this.slides[slide.slideNumber] = {
+            id: slide.id,
+            slideNumber: slide.slideNumber,
+            src: slide.src,
+            title: slide.title,
+            subtitle: slide.subtitle
+          };
+        });
+      })
+    );
   }
 }
