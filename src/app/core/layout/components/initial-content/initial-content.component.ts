@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./initial-content.component.scss']
 })
 export class InitialContentComponent {
-  public technologiesList$: Observable<ITechnologies[]> = this.firebaseService.getProjectTech()
+  public technologiesList$: Observable<ITechnologies[]> =
+    this.firebaseService.getProjectTech();
 
   constructor(private firebaseService: FirebaseService) {}
 }

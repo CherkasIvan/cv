@@ -4,20 +4,20 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ISocialMedia } from '@app/shared/models/social-media.interface';
 
 @Component({
-	selector: 'cv-media-button',
-	standalone: true,
-	imports: [CommonModule],
-	templateUrl: './media-button.component.html',
-	styleUrls: ['./media-button.component.scss']
+  selector: 'cv-media-button',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './media-button.component.html',
+  styleUrls: ['./media-button.component.scss']
 })
 export class MediaButtonComponent {
-	@Input() mediaLink!: ISocialMedia;
-	@Input() modeTheme!: boolean;
-	@Input() pwaView!: boolean;
+  @Input() mediaLink!: ISocialMedia;
+  @Input() modeTheme!: boolean;
+  @Input() pwaView!: boolean;
 
-	constructor(private _sanitizer: DomSanitizer) {}
+  constructor(private _sanitizer: DomSanitizer) {}
 
-	public getSantizeUrl(url: string) {
-		return this._sanitizer.bypassSecurityTrustUrl(url);
-	}
+  public getSantizeUrl(url: string) {
+    return this._sanitizer.bypassSecurityTrustUrl(url);
+  }
 }

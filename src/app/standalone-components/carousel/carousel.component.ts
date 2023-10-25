@@ -14,7 +14,7 @@ import { Observable, tap } from 'rxjs';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  public pageSlides$!:Observable<IProfilePhoto[]>;
+  public pageSlides$!: Observable<IProfilePhoto[]>;
 
   public slides: IProfilePhoto[] = new Array(3).fill({
     id: '',
@@ -27,10 +27,10 @@ export class CarouselComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) {}
 
   public ngOnInit(): void {
-    this.pageSlides$ = this.firebaseService.getMyProfilePhotos()
+    this.pageSlides$ = this.firebaseService.getMyProfilePhotos();
     this.pageSlides$.pipe(
       tap((slideList: IProfilePhoto[]) => {
-        console.log(slideList)
+        console.log(slideList);
         slideList.forEach((slide: IProfilePhoto) => {
           this.slides[slide.slideNumber] = {
             id: slide.id,
@@ -39,8 +39,8 @@ export class CarouselComponent implements OnInit {
             title: slide.title,
             subtitle: slide.subtitle
           };
-        })
+        });
       })
-    )
+    );
   }
 }

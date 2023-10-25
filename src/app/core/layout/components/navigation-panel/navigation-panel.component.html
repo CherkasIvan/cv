@@ -8,23 +8,29 @@
 
     <!-- <cv-navigation-panel-burger></cv-navigation-panel-burger> -->
 
-		<nav class="navigation-container">
-			<ul class="navigation-list">
-				<li class="navigation-list__item" *ngFor="let link of navigation$ | async; let i = index">
-					<a routerLink="{{ link.link }}" class="item-link" [routerLinkActive]="['active']">{{ 'NAVIGATION.LINK.VALUE' +
-						i | translate }}</a>
-				</li>
-			</ul>
-		</nav>
+    <nav class="navigation-container">
+      <ul class="navigation-list">
+        <li
+          class="navigation-list__item"
+          *ngFor="let link of navigation$ | async; let i = index">
+          <a
+            routerLink="{{ link.link }}"
+            class="item-link"
+            [routerLinkActive]="['active']"
+            >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-		<div class="personal-area">
-			<div class="selectors">
-				<cv-language-selector></cv-language-selector>
-				<cv-dark-mode-selector></cv-dark-mode-selector>
-			</div>
-			<div class="log-out">
-				<cv-logout></cv-logout>
-			</div>
-		</div>
-	</div>
+    <div class="personal-area">
+      <div class="selectors">
+        <cv-language-selector></cv-language-selector>
+        <cv-dark-mode-selector></cv-dark-mode-selector>
+      </div>
+      <div class="log-out">
+        <cv-logout></cv-logout>
+      </div>
+    </div>
+  </div>
 </header>

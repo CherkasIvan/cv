@@ -1,5 +1,5 @@
 export interface IWorkExperience {
-  id: string
+  id: string;
   logoPath: string;
   company: string;
   from: string;
