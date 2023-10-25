@@ -149,23 +149,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": ["/"]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "cv:build:production",
-              "serverTarget": "cv:server:production"
-            },
-            "development": {
-              "browserTarget": "cv:build:development",
-              "serverTarget": "cv:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
@@ -173,7 +156,6 @@
             "browserTarget": "cv:build:production",
             "firebaseProject": "cv-cherkas",
             "firebaseHostingSite": "cv-cherkas",
-            "serverTarget": "cv:server:production",
             "prerenderTarget": "cv:prerender:production"
           }
         },
