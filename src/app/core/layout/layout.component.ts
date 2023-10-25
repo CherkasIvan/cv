@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChildrenOutletContexts, NavigationEnd, Router } from '@angular/router';
 
 import { filter } from 'rxjs';
@@ -16,14 +16,11 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   animations: [fadeAnimation]
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   public currentRoute!: string;
   public currentTheme!: boolean;
   public isAuth = false;
   public isPwaView = false;
-  public socialMediaLinksL: any[] = [];
-  public socialMediaLinksR: any[] = []
-  // public currentRoute$: any = this.store$.pipe(select(selectCurrentRoute));
 
   constructor(
     private router: Router,
@@ -41,25 +38,5 @@ export class LayoutComponent implements OnInit {
       .subscribe((event: { url: string }) => {
         this.currentRoute = event.url;
       });
-  }
-
-  public getSocialMediaLinks() {
-    this.firebaseService
-      .getSocialMediaLinks()
-      .subscribe((socialMediaLinks) => {
-        const [evenNumbers, oddNumbers] = socialMediaLinks.reduce(
-          (acc: any, val: any, index: number) => {
-            acc[index % 2].push(val);
-            return acc;
-          },
-          [[], []]
-        );
-        this.socialMediaLinksL = evenNumbers
-        this.socialMediaLinksR = oddNumbers
-      });
-  }
-
-  ngOnInit(): void {
-    this.getSocialMediaLinks();
   }
 }
