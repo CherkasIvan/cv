@@ -41,7 +41,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@types/firebase": "^3.2.1",
     "class-transformer": "^0.4.0",
-    "class-validator": "^0.13.2",
+    "class-validator": "^0.14.0",
     "dom-to-image": "^2.6.0",
     "firebase": "^9.23.0",
     "font-awesome": "^4.7.0",
