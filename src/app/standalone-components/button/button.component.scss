@@ -48,11 +48,9 @@
     top: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0.15),
-      transparent
-    );
+    background: linear-gradient(to left,
+        rgba(255, 255, 255, 0.15),
+        transparent);
     transform: skewX(40deg) translateX(0);
     transition: all 0.5s ease-out;
   }
@@ -107,5 +105,11 @@
       0 0 15px #ff7979,
       0 0 30px #ff7979,
       0 0 60px #ff7979;
+  }
+}
+
+.download {
+  .button {
+    height: fit-content;
   }
 }
