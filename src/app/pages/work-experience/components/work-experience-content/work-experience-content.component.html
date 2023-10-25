@@ -1,16 +1,24 @@
 <div class="work-experience-content">
   <main class="work-container">
     <ul class="work-list">
-      <li class="work-list__item" *ngFor="let work of workPlace$ | async">
+      <li
+        class="work-list__item"
+        *ngFor="let work of workPlace$ | async">
         <div class="item-header">
-          <div class="item-header__logo" [ngClass]="work.company === 'FreshLimeSoft' ? 'white' : ''">
-            <img class="logo-icon" [src]="work.logoPath" [alt]="work.logoPath" />
+          <div
+            class="item-header__logo"
+            [ngClass]="work.company === 'FreshLimeSoft' ? 'white' : ''">
+            <img
+              class="logo-icon"
+              [src]="work.logoPath"
+              [alt]="work.logoPath" />
           </div>
 
           <span class="item-header__company">{{ work.company }}</span>
         </div>
         <div class="item-body">
-          <span class="item-body__from">{{ work.from }}</span><span class="item-body__to">{{ work.to }}</span>
+          <span class="item-body__from">{{ work.from }}</span
+          ><span class="item-body__to">{{ work.to }}</span>
           <span class="item-body__total">{{ work.workTime }}</span>
         </div>
         <div class="item-footer">

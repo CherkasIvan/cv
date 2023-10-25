@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./about-photos.component.scss']
 })
 export class AboutPhotosComponent {
-  public slides$: Observable<IProfilePhoto[]> = this.firebaseService.getMyProfilePhotos();
+  public slides$: Observable<IProfilePhoto[]> =
+    this.firebaseService.getMyProfilePhotos();
 
   constructor(private firebaseService: FirebaseService) {}
 }

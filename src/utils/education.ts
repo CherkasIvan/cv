@@ -1,4 +1,4 @@
-import { IEducation } from "@shared/models/education.interface";
+import { IEducation } from '@shared/models/education.interface';
 
 export const education: IEducation[] = [
   {
@@ -39,7 +39,7 @@ export const education: IEducation[] = [
     educationTitle: 'UNIVERSITY',
     educationLogo: [
       {
-        id:' 0',
+        id: ' 0',
         slideNumber: 0,
         src: 'assets/img/educational_establishments/university/miu_aside.jpg',
         title: 'First slide',

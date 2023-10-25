@@ -14,7 +14,7 @@ export class LinksContainerComponent {
   @Input() public modeTheme!: boolean;
   @Input() public pwaView!: boolean;
 
-  ngOnInit(){
-    console.log(this.socialMediaLinks)
+  ngOnInit() {
+    console.log(this.socialMediaLinks);
   }
 }

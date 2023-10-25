@@ -3,38 +3,42 @@
     <div class="hard-skills">
       <span class="hard-skills__title">{{
         'TECHNOLOGIES.HARD-SKILLS.TITLE' | translate
-        }}</span>
+      }}</span>
 
       <div class="front-end-skills">
         <span class="front-end-skills__title">{{
           'TECHNOLOGIES.HARD-SKILLS.FRONT-END' | translate
-          }}</span>
-        <cv-skills-content [technologiesList]="frontendTech$ | async"></cv-skills-content>
+        }}</span>
+        <cv-skills-content
+          [technologiesList]="frontendTech$ | async"></cv-skills-content>
       </div>
       <div class="back-end-skills"></div>
       <span class="back-end-skills__title">{{
         'TECHNOLOGIES.HARD-SKILLS.BACK-END' | translate
-        }}</span>
-      <cv-skills-content [technologiesList]="backendTech$ | async"></cv-skills-content>
+      }}</span>
+      <cv-skills-content
+        [technologiesList]="backendTech$ | async"></cv-skills-content>
     </div>
 
     <div class="other-skills">
       <span class="other-skills__title">{{
         'TECHNOLOGIES.OTHER-SKILLS.TITLE' | translate
-        }}</span>
+      }}</span>
 
       <div class="social-skills">
         <span class="social-skills__title">{{
           'TECHNOLOGIES.OTHER-SKILLS.SOCIAL' | translate
-          }}</span>
-        <cv-skills-content [technologiesList]="socialTech$ | async"></cv-skills-content>
+        }}</span>
+        <cv-skills-content
+          [technologiesList]="socialTech$ | async"></cv-skills-content>
       </div>
 
       <div class="ui-skills">
         <span class="ui-skills__title">{{
           'TECHNOLOGIES.OTHER-SKILLS.UI' | translate
-          }}</span>
-        <cv-skills-content [technologiesList]="otherTech$ | async"></cv-skills-content>
+        }}</span>
+        <cv-skills-content
+          [technologiesList]="otherTech$ | async"></cv-skills-content>
       </div>
     </div>
   </div>

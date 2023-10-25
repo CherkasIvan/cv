@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./navigation-panel.component.scss']
 })
 export class NavigationPanelComponent {
-  public navigation$: Observable<INavigation[]> = this.firebaseService.getNavigation();
+  public navigation$: Observable<INavigation[]> =
+    this.firebaseService.getNavigation();
 
   constructor(private firebaseService: FirebaseService) {}
 }

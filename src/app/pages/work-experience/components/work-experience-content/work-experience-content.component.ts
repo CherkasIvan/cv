@@ -88,11 +88,13 @@ export class WorkExperienceContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.workPlace$ = this.firebaseService.getWorkExperience();
-    this.workPlace$.pipe(
+    this.workPlace$
+      .pipe
       // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
       // this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
-    // })
-    ).subscribe()
+      // })
+      ()
+      .subscribe();
     // workPlaces.forEach((work) => {
     //   work.workTime = this.totalWorkTime(work.from, work.to);
     // });
@@ -100,8 +102,6 @@ export class WorkExperienceContentComponent implements OnInit {
     //   (start: number, end: number) => start + end,
     //   0
     // ))
-
-
 
     this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
   }

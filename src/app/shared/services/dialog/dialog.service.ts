@@ -14,11 +14,11 @@ export class DialogService {
       data: img
     });
     dialogRef.afterClosed().subscribe((result) => {
-      return result
+      return result;
     });
   }
 
-  closeDialog():void {
+  closeDialog(): void {
     this.dialog.closeAll();
   }
 }

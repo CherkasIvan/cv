@@ -9,10 +9,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./technologies.component.scss']
 })
 export class TechnologiesComponent {
-  public frontendTech$: Observable<ITechnologies[]> = this.firebaseService.getFrontendTech();
-  public backendTech$: Observable<ITechnologies[]> = this.firebaseService.getBackendTech();
-  public socialTech$: Observable<ITechnologies[]> = this.firebaseService.getSocialTech();
-  public otherTech$: Observable<ITechnologies[]> = this.firebaseService.getOtherTech();
+  public frontendTech$: Observable<ITechnologies[]> =
+    this.firebaseService.getFrontendTech();
+  public backendTech$: Observable<ITechnologies[]> =
+    this.firebaseService.getBackendTech();
+  public socialTech$: Observable<ITechnologies[]> =
+    this.firebaseService.getSocialTech();
+  public otherTech$: Observable<ITechnologies[]> =
+    this.firebaseService.getOtherTech();
 
   constructor(private firebaseService: FirebaseService) {}
 }

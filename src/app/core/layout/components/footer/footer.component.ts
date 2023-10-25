@@ -14,8 +14,10 @@ import { ISocialMedia } from '@shared/models/social-media.interface';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  public socialMedia$: Observable<ISocialMedia[]> = this.firebaseService.getSocialMediaLinks();
-  public myContacts$: Observable<IContacts[]> = this.firebaseService.getContacts();
+  public socialMedia$: Observable<ISocialMedia[]> =
+    this.firebaseService.getSocialMediaLinks();
+  public myContacts$: Observable<IContacts[]> =
+    this.firebaseService.getContacts();
   public currentTheme!: boolean;
   public isPwaView: boolean = pwaView;
 

@@ -11,7 +11,7 @@ import { pwaView } from 'utils/functions/pwaView';
   styleUrls: ['./skills-content.component.scss']
 })
 export class SkillsContentComponent {
-	@Input() public technologiesList: ITechnologies[] = [];
-  
-	public isPwaView: boolean = pwaView;
+  @Input() public technologiesList: ITechnologies[] = [];
+
+  public isPwaView: boolean = pwaView;
 }
