@@ -1,5 +1,7 @@
 <footer class="cv-footer" [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
   <div class="footer-container">
+    <cv-links-container [socialMediaLinks]="socialMedia$ | async" [modeTheme]="currentTheme"
+    [pwaView]="isPwaView"></cv-links-container>
     <div class="personal-data-container">
       <ul class="personal-data-list">
         <li class="personal-data-list__item" *ngFor="let contact of myContacts$ | async; let i = index">

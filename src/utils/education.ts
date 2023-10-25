@@ -5,19 +5,22 @@ export const education: IEducation[] = [
     educationTitle: 'SCHOOL',
     educationLogo: [
       {
-        id: 0,
+        id: '0',
+        slideNumber: 0,
         src: 'assets/img/educational_establishments/school/hs_132.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 1,
+        id: '1',
+        slideNumber: 1,
         src: 'assets/img/educational_establishments/school/main_132.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 2,
+        id: '2',
+        slideNumber: 2,
         src: 'assets/img/educational_establishments/school/hs_132_full.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
@@ -36,19 +39,22 @@ export const education: IEducation[] = [
     educationTitle: 'UNIVERSITY',
     educationLogo: [
       {
-        id: 0,
+        id:' 0',
+        slideNumber: 0,
         src: 'assets/img/educational_establishments/university/miu_aside.jpg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 1,
+        id: '1',
+        slideNumber: 1,
         src: 'assets/img/educational_establishments/university/miu_corpus.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
       },
       {
-        id: 2,
+        id: '2',
+        slideNumber: 2,
         src: 'assets/img/educational_establishments/university/miu_main.jpeg',
         title: 'First slide',
         subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'

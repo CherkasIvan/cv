@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IWorkExperience } from '@shared/models/work-experience.interface';
 
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 import * as moment from 'moment';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'cv-work-experience-content',
   templateUrl: './work-experience-content.component.html',
   styleUrls: ['./work-experience-content.component.scss']
 })
-export class WorkExperienceContentComponent {
-  public workPlace: any[] = [];
+export class WorkExperienceContentComponent implements OnInit {
+  public workPlace$!: Observable<IWorkExperience[]>;
   public workExp: number[] = [];
   public totalWorkTimeEverInMonth!: number;
   public totalWorkTimeEverConverted!: string;
@@ -85,21 +87,22 @@ export class WorkExperienceContentComponent {
   }
 
   ngOnInit(): void {
-    this.getWorkExperience();
-    this.workPlace.forEach((work) => {
-      work.workTime = this.totalWorkTime(work.from, work.to);
-    });
-    this.totalWorkTimeEverInMonth = this.workExp.reduce(
-      (start: number, end: number) => start + end,
-      0
-    );
+    this.workPlace$ = this.firebaseService.getWorkExperience();
+    this.workPlace$.pipe(
+      // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
+      // this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
+    // })
+    ).subscribe()
+    // workPlaces.forEach((work) => {
+    //   work.workTime = this.totalWorkTime(work.from, work.to);
+    // });
+    // this.totalWorkTimeEverInMonth = this.workExp.reduce(
+    //   (start: number, end: number) => start + end,
+    //   0
+    // ))
+
+
 
     this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
   }
-
-	getWorkExperience(): void {
-		this.firebaseService
-			.getWorkExperience()
-			.subscribe((works:any) => (this.workPlace = works));
-	}
 }

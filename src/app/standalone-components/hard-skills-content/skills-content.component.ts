@@ -12,5 +12,6 @@ import { pwaView } from 'utils/functions/pwaView';
 })
 export class SkillsContentComponent {
 	@Input() public technologiesList: ITechnologies[] = [];
+  
 	public isPwaView: boolean = pwaView;
 }
