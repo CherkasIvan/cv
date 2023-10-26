@@ -46,7 +46,6 @@
     "install": "^0.13.0",
     "jspdf": "^2.5.1",
     "ngx-gallery": "^5.10.0",
-    "pnpm": "^8.9.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.2",

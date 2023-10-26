@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Firestore,
-  Query,
-  collection,
-  collectionData
-} from '@angular/fire/firestore';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { IContacts } from '@shared/models/contacts.interface';
 import { ITechnologies } from '@app/shared/models/technologies.interface';
 import { ICvFormat } from '@shared/models/cv-format.interface';
@@ -13,6 +8,7 @@ import { INavigation } from '@shared/models/navigation.interface';
 import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
 import { Observable } from 'rxjs';
+import { IEducation } from '@shared/models/education.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +25,7 @@ export class FirebaseService {
   socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
   workExperienceCollection$!: Observable<IWorkExperience[]>;
   projectTechCollection$!: Observable<ITechnologies[]>;
+  educarionCollection$!: Observable<IEducation[]>;
 
   constructor(private firestore: Firestore) {}
 
@@ -118,5 +115,13 @@ export class FirebaseService {
       { idField: 'id' }
     ) as Observable<IWorkExperience[]>;
     return this.workExperienceCollection$;
+  }
+
+  getEducation(): Observable<IEducation[]> {
+    this.educarionCollection$ = collectionData(
+      collection(this.firestore, 'education'),
+      { idField: 'id' }
+    ) as Observable<IEducation[]>;
+    return this.educarionCollection$;
   }
 }

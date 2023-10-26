@@ -2,11 +2,21 @@
   <ul class="links-list">
     <li
       class="links-list__item"
-      *ngFor="let link of socialMediaLinks; let i = index">
-      <cv-media-button
-        [mediaLink]="link"
-        [modeTheme]="currentTheme"
-        [pwaView]="isPwaView"></cv-media-button>
+      *ngFor="let link of socialMediaLinks$ | async">
+      <div
+        class="social-media-container"
+        [ngClass]="modeTheme ? 'dark-layout' : 'layout'">
+        <a
+          [href]="getSantizeUrl(link?.link)"
+          [target]="pwaView ? '_self' : '_blank'"
+          rel="noopener noreferrer"
+          class="social-media social-media__back"
+          ><img
+            [src]="link?.iconPath"
+            [alt]="link?.alt"
+            class="social-media__img"
+        /></a>
+      </div>
     </li>
   </ul>
 </div>

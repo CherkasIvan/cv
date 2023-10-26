@@ -9,9 +9,22 @@
     align-items: center;
     gap: 20px;
 
+    &__button {
+      background-color: transparent;
+      width: fit-content;
+      cursor: auto;
+    }
+
     &__img {
       max-width: 65%;
       border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+    }
+
+    &__img:hover {
+      transition: all 0.5s ease-out;
+      transform: scale(1.1);
     }
 
     &__download {
