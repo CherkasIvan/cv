@@ -1,5 +1,5 @@
 <ng-container>
-  <div [ngClass]="currentTheme ? 'dark-layout' : 'layout'">
+  <div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
     <div
       class="layout-container"
       [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
@@ -9,7 +9,9 @@
 				[pwaView]="isPwaView"></cv-links-container> -->
 
       <cv-spinner
-        [spinnerStyle]="currentTheme ? 'dark-layout' : 'layout'"></cv-spinner>
+        [spinnerStyle]="
+          (currentTheme$ | async) ? 'dark-layout' : 'layout'
+        "></cv-spinner>
       <cv-initial-content
         *ngIf="currentRoute === '/layout'"></cv-initial-content>
       <router-outlet #outlet="outlet"></router-outlet>
@@ -22,7 +24,7 @@
 
     <div class="stars-container">
       <ng-container
-        *ngIf="currentTheme"
+        *ngIf="currentTheme$ | async"
         [ngTemplateOutlet]="isDarkMode">
       </ng-container>
     </div>

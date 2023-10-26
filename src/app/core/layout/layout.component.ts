@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChildrenOutletContexts, NavigationEnd, Router } from '@angular/router';
 
-import { filter } from 'rxjs';
+import { BehaviorSubject, filter } from 'rxjs';
 
 import { DarkModeService } from '../services/dark-mode/dark-mode.service';
 import { AuthService } from '../auth/services/auth.service';
@@ -18,7 +18,7 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 })
 export class LayoutComponent {
   public currentRoute!: string;
-  public currentTheme!: boolean;
+  public currentTheme$: BehaviorSubject<boolean> = this.darkModeService.isDark$;
   public isAuth = false;
   public isPwaView = false;
 
@@ -30,9 +30,6 @@ export class LayoutComponent {
     private contexts: ChildrenOutletContexts,
     private store$: Store
   ) {
-    this.darkModeService.isDark$.subscribe(
-      (theme) => (this.currentTheme = theme)
-    );
     this.router.events
       .pipe(filter((event: any) => event instanceof NavigationEnd))
       .subscribe((event: { url: string }) => {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
 @Component({
@@ -6,18 +6,12 @@ import { TranslateManagerService } from '@shared/services/translate/translate-ma
   templateUrl: './download-img.component.html',
   styleUrls: ['./download-img.component.scss']
 })
-export class DownloadImgComponent implements OnInit {
+export class DownloadImgComponent {
   public isEuropean = false;
-  public language!: string;
+  public currentLanguage$ = this.translateManagerService.currentLanguage$;
   public changeCvVersions() {
     this.isEuropean = !this.isEuropean;
   }
 
   constructor(private translateManagerService: TranslateManagerService) {}
-
-  ngOnInit(): void {
-    this.translateManagerService.currentLanguage$.subscribe(
-      (actualLanguage: string) => (this.language = actualLanguage)
-    );
-  }
 }

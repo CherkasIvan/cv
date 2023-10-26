@@ -1,27 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GitHubService } from '@pages/projects/services/git-hub/git-hub.service';
-import { Subscription } from 'rxjs';
 import { IGitHub } from '../../models/github.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cv-projects-content',
   templateUrl: './projects-content.component.html',
   styleUrls: ['./projects-content.component.scss']
 })
-export class ProjectsContentComponent implements OnInit, OnDestroy {
-  public projectsList!: IGitHub;
-  private gitHubSubscriber: Subscription = new Subscription();
-  constructor(private gitHubService: GitHubService) {}
+export class ProjectsContentComponent {
+  public projectsList$: Observable<IGitHub> = this.gitHubService.getUserRepos();
 
-  ngOnInit(): void {
-    this.gitHubSubscriber.add(
-      this.gitHubService.getUserRepos().subscribe((el) => {
-        console.log(el);
-        this.projectsList = el;
-      })
-    );
-  }
-  ngOnDestroy() {
-    this.gitHubSubscriber.unsubscribe();
-  }
+  constructor(private gitHubService: GitHubService) {}
 }
