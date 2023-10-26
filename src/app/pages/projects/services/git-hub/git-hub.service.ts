@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 
 import { IGitHub } from '../../models/github.interface';
+import { IGitHubRepo } from '../../models/github-repos.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,17 @@ export class GitHubService {
 
   getUserRepos(): Observable<IGitHub> {
     return this.httpClient
-      .get(`https://api.github.com/users/CherkasIvan/repos`)
+      .get('https://api.github.com/users/CherkasIvan/repos')
       .pipe(
-        map((item: any) =>
-          item.map(
-            (p: any) =>
+        map((repositories: any) =>
+          repositories.map(
+            (repository: IGitHubRepo) =>
               <IGitHub>{
-                name: p.name,
-                stars: p.stargazers_count,
-                htmlUrl: p.html_url,
-                forks: p.forks,
-                description: p.description
+                name: repository.name,
+                stars: repository.stargazers_count,
+                htmlUrl: repository.html_url,
+                forks: repository.forks,
+                description: repository.description
               }
           )
         )

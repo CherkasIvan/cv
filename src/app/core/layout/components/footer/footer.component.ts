@@ -18,18 +18,14 @@ export class FooterComponent {
     this.firebaseService.getSocialMediaLinks();
   public myContacts$: Observable<IContacts[]> =
     this.firebaseService.getContacts();
-  public currentTheme!: boolean;
+  public currentTheme$ = this.darkModeService.isDark$;
   public isPwaView: boolean = pwaView;
 
   constructor(
     private _sanitizer: DomSanitizer,
     private darkModeService: DarkModeService,
     private firebaseService: FirebaseService
-  ) {
-    this.darkModeService.isDark$.subscribe(
-      (theme) => (this.currentTheme = theme)
-    );
-  }
+  ) {}
 
   public getSantizeUrl(url: string) {
     return this._sanitizer.bypassSecurityTrustUrl(url);

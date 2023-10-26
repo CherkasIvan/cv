@@ -39,7 +39,6 @@ export class AuthComponent implements OnInit {
     this.checkAuth();
     this.store$.select(selectAuthState).subscribe((auth) => {
       this.user = auth.user;
-      console.log(auth);
     });
   }
 

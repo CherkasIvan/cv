@@ -6,7 +6,7 @@
     <ul class="projects-list">
       <li
         class="projects-list__item"
-        *ngFor="let project of projectsList; let i = index">
+        *ngFor="let project of projectsList$ | async; let i = index">
         <a
           [href]="project.htmlUrl"
           class="project">
