@@ -3,7 +3,7 @@
     <ul class="education-list">
       <li
         class="education-list__item"
-        *ngFor="let educationPlace of educationList; let i = index">
+        *ngFor="let educationPlace of educationList$ | async; let i = index">
         <span class="educational__institution">{{
           'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate
         }}</span>

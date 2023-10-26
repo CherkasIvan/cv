@@ -3,9 +3,13 @@
     <cv-button
       [downloadPath]="downloadPath"
       [label]="currentText"></cv-button>
-    <img
-      [src]="imgPath"
-      alt="cv-first-page"
-      class="cv-item__img" />
+    <button
+      class="cv-item__button"
+      (click)="openDialog(imgPath)">
+      <img
+        [src]="imgPath"
+        alt="cv-first-page"
+        class="cv-item__img" />
+    </button>
   </div>
 </div>

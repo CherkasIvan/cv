@@ -15,7 +15,6 @@ import { AuthModule } from '../auth/auth.module';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { SpinnerComponent } from '../../standalone-components/spinner/spinner.component';
 import { LogoutComponent } from '../../standalone-components/logout/logout.component';
-import { MediaButtonComponent } from '../../standalone-components/media-button/media-button.component';
 import { ButtonComponent } from '../../standalone-components/button/button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SkillsContentComponent } from '../../standalone-components/hard-skills-content/skills-content.component';
@@ -34,7 +33,6 @@ import { LinksContainerComponent } from '../../standalone-components/links-conta
     LayoutRoutingModule,
     MatTableModule,
     CommonModule,
-    MediaButtonComponent,
     LanguageSelectorComponent,
     DarkModeSelectorComponent,
     SpinnerComponent,
