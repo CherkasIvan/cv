@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { IWorkExperience } from '@shared/models/work-experience.interface';
-
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
-
-import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'cv-work-experience-content',

@@ -2,6 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectsContentComponent } from './projects-content.component';
 
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
+import { ProjectsContentComponent } from './projects-content.component';
+
 describe('ProjectsContentComponent', () => {
   let component: ProjectsContentComponent;
   let fixture: ComponentFixture<ProjectsContentComponent>;

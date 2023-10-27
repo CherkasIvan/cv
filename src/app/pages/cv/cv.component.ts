@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ICvFormat } from '@app/shared/models/cv-format.interface';
-import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { Observable } from 'rxjs';
+
+import { ICvFormat } from '@shared/models/cv-format.interface';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'cv-cv',

@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
 
 import { TechnologiesRoutingModule } from './technologies-routing.module';
-
 import { TechnologiesComponent } from './technologies.component';
-import { SkillsContentComponent } from '@standalone-components/hard-skills-content/skills-content.component';
-
-import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [TechnologiesComponent],

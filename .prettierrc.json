@@ -9,13 +9,37 @@
   "singleAttributePerLine": true,
   "tabWidth": 2,
   "useTabs": false,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
-    "'^@angular$'",
+    "'^@angular/(.*)$",
+
     "'rxjs'",
-    "^(@shared|@core|@env|@test-utilities)(/.*|$)",
-    "^(business-logic|@ui)(/.*|$)",
-    "^[./|~/]"
+
+    "'@ngrx'",
+
+    "^@auth/(.*)$",
+
+    "^@core/(.*)$",
+
+    "^@layout/(.*)$",
+
+    "^@pages/(.*)$",
+
+    "^@shared/(.*)$",
+
+    "^@assets/(.*)$",
+
+    "^@env/(.*)$",
+
+    "^utils/(.*)$",
+
+    "^@app/(.*)$",
+
+    "^[../]",
+
+    "^[./]"
   ],
   "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
   "importOrderParserPlugins": ["decorators-legacy", "typescript"]
 }

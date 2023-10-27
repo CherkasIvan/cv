@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IProfilePhoto } from '@app/shared/models/profile-photo.interface';
-import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { Observable } from 'rxjs';
+
+import { IProfilePhoto } from '@shared/models/profile-photo.interface';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'cv-about-photos',

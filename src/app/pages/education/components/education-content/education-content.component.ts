@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FirebaseService } from '@shared/services/firebase/firebase.service';
-import { DialogService } from '@shared/services/dialog/dialog.service';
-import { IEducation } from '@shared/models/education.interface';
 import { Observable } from 'rxjs';
+
+import { IEducation } from '@shared/models/education.interface';
+import { DialogService } from '@shared/services/dialog/dialog.service';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'cv-education-content',

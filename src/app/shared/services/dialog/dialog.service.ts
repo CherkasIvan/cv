@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { ImgDialogComponent } from '@pages/education/components/img-dialog/img-dialog.component';
 
 @Injectable({

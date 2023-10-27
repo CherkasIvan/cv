@@ -2,6 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DownloadColumnComponent } from './cv-item.component';
 
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
+import { DownloadColumnComponent } from './cv-item.component';
+
 describe('DownloadColumnComponent', () => {
   let component: DownloadColumnComponent;
   let fixture: ComponentFixture<DownloadColumnComponent>;
