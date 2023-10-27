@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ITechnologies } from '@app/shared/models/technologies.interface';
-import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { Observable } from 'rxjs';
+
+import { ITechnologies } from '@shared/models/technologies.interface';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'cv-technologies',

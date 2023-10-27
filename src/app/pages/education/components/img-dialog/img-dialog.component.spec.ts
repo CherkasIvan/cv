@@ -2,6 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImgDialogComponent } from './img-dialog.component';
 
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
+import { ImgDialogComponent } from './img-dialog.component';
+
 describe('ImgDialogComponent', () => {
   let component: ImgDialogComponent;
   let fixture: ComponentFixture<ImgDialogComponent>;

@@ -1,5 +1,22 @@
 import * as fromRouter from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
+import { routerAdapter } from '../reducers/router-reducer';
+
 import { routerAdapter } from '../reducers/router-reducer';
 
 // const routerAdapter  = routerAdapter.getSelectors();

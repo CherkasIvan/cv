@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
-
-import { AuthModule } from './auth/auth.module';
-import { RouterModule } from '@angular/router';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterModule } from '@angular/router';
+
+import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { SliderBehaviorDirective } from './directives/slider-behavior.directive';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [SliderBehaviorDirective],
   exports: [MatDialogModule, CommonModule],
-  imports: [AuthModule, RouterModule, MatDialogModule, CommonModule],
+  imports: [RouterModule, MatDialogModule, MatSnackBarModule, CommonModule],
   providers: [
     MatSnackBarModule,
+    SnackbarService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,

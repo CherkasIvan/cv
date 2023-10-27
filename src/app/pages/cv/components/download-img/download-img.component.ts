@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
 @Component({

@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable, map } from 'rxjs';
 
-import { IGitHub } from '../../models/github.interface';
 import { IGitHubRepo } from '../../models/github-repos.interface';
+import { IGitHub } from '../../models/github.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +11,11 @@ import { IGitHubRepo } from '../../models/github-repos.interface';
 export class GitHubService {
   constructor(private httpClient: HttpClient) {}
 
-  getUserRepos(): Observable<IGitHub> {
+  getUserRepos(): Observable<IGitHub[]> {
     return this.httpClient
-      .get('https://api.github.com/users/CherkasIvan/repos')
+      .get<IGitHubRepo[]>('https://api.github.com/users/CherkasIvan/repos')
       .pipe(
-        map((repositories: any) =>
+        map((repositories: IGitHubRepo[]) =>
           repositories.map(
             (repository: IGitHubRepo) =>
               <IGitHub>{

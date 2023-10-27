@@ -9,11 +9,9 @@ import {
 
 export const routeStateTrigger = trigger('routeState', [
   transition('* <=> *', [
-    query(
-      ':enter, :leave',
-      [style({ position: 'fixed', width: '100%', opacity: 0 })],
-      { optional: true }
-    ),
+    query(':enter, :leave', [style({ opacity: 0 })], {
+      optional: true
+    }),
     group([
       query(
         ':enter',

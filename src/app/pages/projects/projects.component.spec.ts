@@ -2,6 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectPageComponent } from './projects.component';
 
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
+import { ProjectPageComponent } from './projects.component';
+
 describe('ProjectPageComponent', () => {
   let component: ProjectPageComponent;
   let fixture: ComponentFixture<ProjectPageComponent>;

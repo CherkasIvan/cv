@@ -2,6 +2,22 @@ import { TestBed } from '@angular/core/testing';
 
 import { SpinnerService } from './spinner.service';
 
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
+import { SpinnerService } from './spinner.service';
+
 describe('SpinnerService', () => {
   let service: SpinnerService;
 

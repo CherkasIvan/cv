@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 import { IContacts } from '@shared/models/contacts.interface';
-import { ITechnologies } from '@app/shared/models/technologies.interface';
 import { ICvFormat } from '@shared/models/cv-format.interface';
-import { ISocialMedia } from '@app/shared/models/social-media.interface';
+import { IEducation } from '@shared/models/education.interface';
 import { INavigation } from '@shared/models/navigation.interface';
 import { IProfilePhoto } from '@shared/models/profile-photo.interface';
+import { ISocialMedia } from '@shared/models/social-media.interface';
+import { ITechnologies } from '@shared/models/technologies.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
-import { Observable } from 'rxjs';
-import { IEducation } from '@shared/models/education.interface';
 
 @Injectable({
   providedIn: 'root'
