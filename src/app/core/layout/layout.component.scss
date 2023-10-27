@@ -87,12 +87,10 @@
       left: calc(var(--star-width) / -2);
       width: var(--star-width);
       height: 100%;
-      background: linear-gradient(
-        45deg,
-        transparent,
-        currentColor,
-        transparent
-      );
+      background: linear-gradient(45deg,
+          transparent,
+          currentColor,
+          transparent);
       border-radius: inherit;
       animation: blink 2s linear infinite;
     }
@@ -113,6 +111,7 @@
   }
 
   @keyframes tail-fade {
+
     0%,
     50% {
       width: var(--star-tail-length);
@@ -135,5 +134,13 @@
     50% {
       opacity: 0.6;
     }
+  }
+}
+
+ng-deep {
+  router-outlet~* {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 }

@@ -36,4 +36,9 @@ export class LayoutComponent {
         this.currentRoute = event.url;
       });
   }
+
+  public getState(outlet: any) {
+    console.log(outlet.activatedRouteData.state)
+    return outlet.activatedRouteData.state;
+  }
 }
