@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { AuthService } from '@auth/services/auth.service';
 
@@ -8,12 +8,13 @@ import { AuthService } from '@auth/services/auth.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.scss']
+  styleUrls: ['./logout.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LogoutComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private readonly _authService: AuthService) {}
 
-  logout() {
-    this.authService.signOut();
+  public logout() {
+    this._authService.signOut();
   }
 }

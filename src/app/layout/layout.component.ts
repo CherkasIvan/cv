@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { BehaviorSubject, filter } from 'rxjs';
 
@@ -11,21 +11,22 @@ import { AuthService } from '../auth/services/auth.service';
   selector: 'cv-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  animations: [fadeAnimation]
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [fadeAnimation],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutComponent {
   public currentRoute!: string;
-  public currentTheme$: BehaviorSubject<boolean> = this.darkModeService.isDark$;
+  public currentTheme$: BehaviorSubject<boolean> =
+    this._darkModeService.isDark$;
   public isAuth = false;
   public isPwaView = false;
 
   constructor(
-    private router: Router,
-    private darkModeService: DarkModeService,
+    private readonly _router: Router,
+    private readonly _darkModeService: DarkModeService,
     public authService: AuthService
   ) {
-    this.router.events
+    this._router.events
       .pipe(filter((event: any) => event instanceof NavigationEnd))
       .subscribe((event: { url: string }) => {
         this.currentRoute = event.url;

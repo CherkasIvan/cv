@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
@@ -7,13 +7,14 @@ import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
   standalone: true,
   imports: [],
   templateUrl: './dark-mode-selector.component.html',
-  styleUrls: ['./dark-mode-selector.component.scss']
+  styleUrls: ['./dark-mode-selector.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DarkModeSelectorComponent {
-  constructor(private darkModeService: DarkModeService) {}
+  constructor(private readonly _darkModeService: DarkModeService) {}
 
   changeView($target: MouseEvent) {
     const isChecked = (<HTMLInputElement>$target.target).checked;
-    this.darkModeService.isDark$.next(isChecked);
+    this._darkModeService.isDark$.next(isChecked);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { IEducation } from '@shared/models/education.interface';
@@ -8,20 +8,19 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 @Component({
   selector: 'cv-education-content',
   templateUrl: './education-content.component.html',
-  styleUrls: ['./education-content.component.scss']
+  styleUrls: ['./education-content.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EducationContentComponent {
   public educationList$: Observable<IEducation[]> =
-    this.firebaseService.getEducation();
+    this._firebaseService.getEducation();
 
   constructor(
-    private dialogService: DialogService,
-    private firebaseService: FirebaseService
-  ) {
-    this.firebaseService.getEducation().subscribe((el) => console.log(el));
-  }
+    private readonly _dialogService: DialogService,
+    private readonly _firebaseService: FirebaseService
+  ) {}
 
-  openDialog(imgPath: string) {
-    this.dialogService.openDialog(imgPath);
+  public openDialog(imgPath: string) {
+    this._dialogService.openDialog(imgPath);
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
@@ -11,17 +11,18 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './links-container.component.html',
-  styleUrls: ['./links-container.component.scss']
+  styleUrls: ['./links-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinksContainerComponent {
   @Input() public modeTheme!: boolean;
-  @Input() public pwaView!: boolean;
+  @Input() public pwaView = false;
   public socialMediaLinks$: Observable<ISocialMedia[]> =
-    this.firebaseService.getSocialMediaLinks();
+    this._firebaseService.getSocialMediaLinks();
 
   constructor(
-    private firebaseService: FirebaseService,
-    private _sanitizer: DomSanitizer
+    private readonly _firebaseService: FirebaseService,
+    private readonly _sanitizer: DomSanitizer
   ) {}
 
   public getSantizeUrl(url: string) {

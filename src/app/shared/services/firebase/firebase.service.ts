@@ -28,11 +28,11 @@ export class FirebaseService {
   projectTechCollection$!: Observable<ITechnologies[]>;
   educarionCollection$!: Observable<IEducation[]>;
 
-  constructor(private firestore: Firestore) {}
+  constructor(private readonly _firestore: Firestore) {}
 
   getFrontendTech(): Observable<ITechnologies[]> {
     this.frontendTechCollection$ = collectionData(
-      collection(this.firestore, 'frontendTech'),
+      collection(this._firestore, 'frontendTech'),
       { idField: 'id' }
     ) as Observable<ITechnologies[]>;
     return this.frontendTechCollection$;
@@ -40,7 +40,7 @@ export class FirebaseService {
 
   getBackendTech(): Observable<ITechnologies[]> {
     this.backendTechCollection$ = collectionData(
-      collection(this.firestore, 'backendTech'),
+      collection(this._firestore, 'backendTech'),
       { idField: 'id' }
     ) as Observable<ITechnologies[]>;
     return this.backendTechCollection$;
@@ -48,7 +48,7 @@ export class FirebaseService {
 
   getSocialTech(): Observable<ITechnologies[]> {
     this.socialTechCollection$ = collectionData(
-      collection(this.firestore, 'socialTech'),
+      collection(this._firestore, 'socialTech'),
       { idField: 'id' }
     ) as Observable<ITechnologies[]>;
     return this.socialTechCollection$;
@@ -56,7 +56,7 @@ export class FirebaseService {
 
   getProjectTech(): Observable<ITechnologies[]> {
     this.projectTechCollection$ = collectionData(
-      collection(this.firestore, 'projectTech'),
+      collection(this._firestore, 'projectTech'),
       { idField: 'id' }
     ) as Observable<ITechnologies[]>;
     return this.projectTechCollection$;
@@ -64,7 +64,7 @@ export class FirebaseService {
 
   getOtherTech(): Observable<ITechnologies[]> {
     this.otherTechCollection$ = collectionData(
-      collection(this.firestore, 'otherTech'),
+      collection(this._firestore, 'otherTech'),
       { idField: 'id' }
     ) as Observable<ITechnologies[]>;
     return this.otherTechCollection$;
@@ -72,7 +72,7 @@ export class FirebaseService {
 
   getContacts(): Observable<IContacts[]> {
     this.contactsCollection$ = collectionData(
-      collection(this.firestore, 'contacts'),
+      collection(this._firestore, 'contacts'),
       { idField: 'id' }
     ) as Observable<IContacts[]>;
     return this.contactsCollection$;
@@ -80,7 +80,7 @@ export class FirebaseService {
 
   getNavigation(): Observable<INavigation[]> {
     this.navigationCollection$ = collectionData(
-      collection(this.firestore, 'navigation'),
+      collection(this._firestore, 'navigation'),
       { idField: 'id' }
     ) as Observable<INavigation[]>;
     return this.navigationCollection$;
@@ -88,7 +88,7 @@ export class FirebaseService {
 
   getCvFormat(): Observable<ICvFormat[]> {
     this.cvFormatCollection$ = collectionData(
-      collection(this.firestore, 'cvFormat'),
+      collection(this._firestore, 'cvFormat'),
       { idField: 'id' }
     ) as Observable<ICvFormat[]>;
     return this.cvFormatCollection$;
@@ -96,7 +96,7 @@ export class FirebaseService {
 
   getMyProfilePhotos(): Observable<IProfilePhoto[]> {
     this.profilePhotosCollection$ = collectionData(
-      collection(this.firestore, 'profilePhotos'),
+      collection(this._firestore, 'profilePhotos'),
       { idField: 'id' }
     ) as Observable<IProfilePhoto[]>;
     return this.profilePhotosCollection$;
@@ -104,7 +104,7 @@ export class FirebaseService {
 
   getSocialMediaLinks(): Observable<ISocialMedia[]> {
     this.socialMediaLinksCollection$ = collectionData(
-      collection(this.firestore, 'socialMediaLinks'),
+      collection(this._firestore, 'socialMediaLinks'),
       { idField: 'id' }
     ) as Observable<ISocialMedia[]>;
     return this.socialMediaLinksCollection$;
@@ -112,7 +112,7 @@ export class FirebaseService {
 
   getWorkExperience(): Observable<IWorkExperience[]> {
     this.workExperienceCollection$ = collectionData(
-      collection(this.firestore, 'workExperience'),
+      collection(this._firestore, 'workExperience'),
       { idField: 'id' }
     ) as Observable<IWorkExperience[]>;
     return this.workExperienceCollection$;
@@ -120,7 +120,7 @@ export class FirebaseService {
 
   getEducation(): Observable<IEducation[]> {
     this.educarionCollection$ = collectionData(
-      collection(this.firestore, 'education'),
+      collection(this._firestore, 'education'),
       { idField: 'id' }
     ) as Observable<IEducation[]>;
     return this.educarionCollection$;

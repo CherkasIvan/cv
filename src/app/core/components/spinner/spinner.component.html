@@ -2,7 +2,7 @@
   <div
     [ngClass]="spinnerStyle"
     class="loader"
-    *ngIf="this.spinnerService.getLoading()">
+    *ngIf="loading$ | async">
     <div class="face">
       <div class="circle"></div>
     </div>
@@ -21,7 +21,7 @@
   <div
     [ngClass]="spinnerStyle"
     class="circles"
-    *ngIf="this.spinnerService.getLoading()">
+    *ngIf="loading$ | async">
     <div class="circles">
       <div class="circle1"></div>
       <div class="circle2"></div>

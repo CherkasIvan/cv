@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { SpinnerService } from '@core/services/spinner/spinner.service';
 
@@ -8,10 +9,12 @@ import { SpinnerService } from '@core/services/spinner/spinner.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.scss']
+  styleUrls: ['./spinner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpinnerComponent {
-  @Input() spinnerStyle!: string;
+  @Input() public spinnerStyle!: string;
+  public loading$: Observable<boolean> = this._spinnerService.loading$;
 
-  constructor(public spinnerService: SpinnerService) {}
+  constructor(private readonly _spinnerService: SpinnerService) {}
 }

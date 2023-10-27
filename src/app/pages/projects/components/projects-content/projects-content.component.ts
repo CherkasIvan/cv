@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { GitHubService } from '@pages/projects/services/git-hub/git-hub.service';
@@ -8,11 +8,12 @@ import { IGitHub } from '../../models/github.interface';
 @Component({
   selector: 'cv-projects-content',
   templateUrl: './projects-content.component.html',
-  styleUrls: ['./projects-content.component.scss']
+  styleUrls: ['./projects-content.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsContentComponent {
   public projectsList$: Observable<IGitHub[]> =
-    this.gitHubService.getUserRepos();
+    this._gitHubService.getUserRepos();
 
-  constructor(private gitHubService: GitHubService) {}
+  constructor(private readonly _gitHubService: GitHubService) {}
 }

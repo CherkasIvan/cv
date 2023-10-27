@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { IWorkExperience } from '@shared/models/work-experience.interface';
@@ -7,7 +7,8 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 @Component({
   selector: 'cv-work-experience-content',
   templateUrl: './work-experience-content.component.html',
-  styleUrls: ['./work-experience-content.component.scss']
+  styleUrls: ['./work-experience-content.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorkExperienceContentComponent implements OnInit {
   public workPlace$!: Observable<IWorkExperience[]>;
@@ -15,7 +16,7 @@ export class WorkExperienceContentComponent implements OnInit {
   public totalWorkTimeEverInMonth!: number;
   public totalWorkTimeEverConverted!: string;
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private readonly _firebaseService: FirebaseService) {}
 
   // public totalWorkTime(from: string, to: string) {
   //   const dateFromFormat = moment(from, 'DD-MM-YYYY');
@@ -85,7 +86,7 @@ export class WorkExperienceContentComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.workPlace$ = this.firebaseService.getWorkExperience();
+    this.workPlace$ = this._firebaseService.getWorkExperience();
     this.workPlace$
       .pipe
       // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)

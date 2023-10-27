@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { DialogService } from '@shared/services/dialog/dialog.service';
@@ -6,15 +6,16 @@ import { DialogService } from '@shared/services/dialog/dialog.service';
 @Component({
   selector: 'cv-img-dialog',
   templateUrl: './img-dialog.component.html',
-  styleUrls: ['./img-dialog.component.scss']
+  styleUrls: ['./img-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImgDialogComponent {
   constructor(
-    private dialogService: DialogService,
+    private readonly _dialogService: DialogService,
     @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
 
   public closeDialog() {
-    this.dialogService.closeDialog();
+    this._dialogService.closeDialog();
   }
 }

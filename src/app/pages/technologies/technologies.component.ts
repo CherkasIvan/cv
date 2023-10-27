@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ITechnologies } from '@shared/models/technologies.interface';
@@ -7,17 +7,18 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 @Component({
   selector: 'cv-technologies',
   templateUrl: './technologies.component.html',
-  styleUrls: ['./technologies.component.scss']
+  styleUrls: ['./technologies.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TechnologiesComponent {
   public frontendTech$: Observable<ITechnologies[]> =
-    this.firebaseService.getFrontendTech();
+    this._firebaseService.getFrontendTech();
   public backendTech$: Observable<ITechnologies[]> =
-    this.firebaseService.getBackendTech();
+    this._firebaseService.getBackendTech();
   public socialTech$: Observable<ITechnologies[]> =
-    this.firebaseService.getSocialTech();
+    this._firebaseService.getSocialTech();
   public otherTech$: Observable<ITechnologies[]> =
-    this.firebaseService.getOtherTech();
+    this._firebaseService.getOtherTech();
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private readonly _firebaseService: FirebaseService) {}
 }

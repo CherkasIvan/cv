@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from '@coreui/angular';
 import { Observable, tap } from 'rxjs';
@@ -12,7 +12,8 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   templateUrl: './carousel.component.html',
   standalone: true,
   imports: [CarouselModule, RouterModule, CommonModule],
-  styleUrls: ['./carousel.component.scss']
+  styleUrls: ['./carousel.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements OnInit {
   public pageSlides$!: Observable<IProfilePhoto[]>;
@@ -25,10 +26,10 @@ export class CarouselComponent implements OnInit {
     subtitle: ''
   });
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private readonly _firebaseService: FirebaseService) {}
 
   public ngOnInit(): void {
-    this.pageSlides$ = this.firebaseService.getMyProfilePhotos();
+    this.pageSlides$ = this._firebaseService.getMyProfilePhotos();
     this.pageSlides$.pipe(
       tap((slideList: IProfilePhoto[]) => {
         console.log(slideList);

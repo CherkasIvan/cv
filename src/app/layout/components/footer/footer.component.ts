@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
@@ -12,18 +12,19 @@ import { pwaView } from 'utils/functions/pwaView';
 @Component({
   selector: 'cv-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {
   public myContacts$: Observable<IContacts[]> =
-    this.firebaseService.getContacts();
-  public currentTheme$ = this.darkModeService.isDark$;
+    this._firebaseService.getContacts();
+  public currentTheme$ = this._darkModeService.isDark$;
   public isPwaView: boolean = pwaView;
 
   constructor(
-    private _sanitizer: DomSanitizer,
-    private darkModeService: DarkModeService,
-    private firebaseService: FirebaseService
+    private readonly _sanitizer: DomSanitizer,
+    private readonly _darkModeService: DarkModeService,
+    private readonly _firebaseService: FirebaseService
   ) {}
 
   public getSantizeUrl(url: string) {

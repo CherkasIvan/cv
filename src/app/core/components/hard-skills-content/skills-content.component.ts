@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { ITechnologies } from '@shared/models/tecnologies.interface';
 
@@ -10,7 +10,8 @@ import { pwaView } from 'utils/functions/pwaView';
   templateUrl: './skills-content.component.html',
   standalone: true,
   imports: [CommonModule],
-  styleUrls: ['./skills-content.component.scss']
+  styleUrls: ['./skills-content.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsContentComponent {
   @Input() public technologiesList: ITechnologies[] = [];
