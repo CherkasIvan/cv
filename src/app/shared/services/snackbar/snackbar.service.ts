@@ -7,7 +7,7 @@ import { SnackbarComponent } from '@app/core/components/snackbar/snackbar.compon
   providedIn: 'root'
 })
 export class SnackbarService {
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private readonly _snackBar: MatSnackBar) {}
 
   openSnackBar(message: string | null | undefined) {
     this._snackBar.openFromComponent(SnackbarComponent, {
