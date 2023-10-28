@@ -34,7 +34,7 @@ export class CarouselComponent implements OnInit {
       tap((slideList: IProfilePhoto[]) => {
         console.log(slideList);
         slideList.forEach((slide: IProfilePhoto) => {
-          this.slides[slide.slideNumber] = {
+          this.slides[Number(slide.slideNumber)] = {
             id: slide.id,
             slideNumber: slide.slideNumber,
             src: slide.src,

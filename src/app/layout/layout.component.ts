@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { BehaviorSubject, filter } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 import { fadeAnimation } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
-import { AuthService } from '../auth/services/auth.service';
+import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
 @Component({
   selector: 'cv-layout',
@@ -14,26 +14,33 @@ import { AuthService } from '../auth/services/auth.service';
   animations: [fadeAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LayoutComponent {
-  public currentRoute!: string;
+export class LayoutComponent implements OnDestroy {
   public currentTheme$: BehaviorSubject<boolean> =
     this._darkModeService.isDark$;
+  public currentRoute!: string;
   public isAuth = false;
   public isPwaView = false;
+
+  private routerSubscription$: Subscription = new Subscription();
 
   constructor(
     private readonly _router: Router,
     private readonly _darkModeService: DarkModeService,
-    public authService: AuthService
+    private _localStorageService: localStorageService
   ) {
-    this._router.events
-      .pipe(filter((event: any) => event instanceof NavigationEnd))
-      .subscribe((event: { url: string }) => {
-        this.currentRoute = event.url;
-      });
+    this.routerSubscription$.add(
+      this._router.events.subscribe((event) => {
+        event instanceof NavigationEnd ? (this.currentRoute = event.url) : null;
+        this._localStorageService.setRout(this.currentRoute);
+      })
+    );
   }
 
   public getState(outlet: RouterOutlet) {
     return outlet.activatedRouteData['state'];
+  }
+
+  ngOnDestroy(): void {
+    this.routerSubscription$.unsubscribe();
   }
 }

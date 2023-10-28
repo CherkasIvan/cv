@@ -10,8 +10,6 @@ export class SpinnerService {
   );
   public readonly loading$: Observable<boolean> = this._loading$.asObservable();
 
-  constructor() {}
-
   public show() {
     this._loading$.next(true);
   }
