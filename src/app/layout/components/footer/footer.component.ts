@@ -7,7 +7,7 @@ import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 import { IContacts } from '@shared/models/contacts.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
-import { pwaView } from 'utils/functions/pwaView';
+import { pwaView } from '@utils/functions/pwaView';
 
 @Component({
   selector: 'cv-footer',

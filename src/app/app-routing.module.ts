@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { ERouterPath } from '@utils/enum/router-path.enum';
+
 import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/auth' },
+  { path: '', pathMatch: 'full', redirectTo: `/${ERouterPath.AUTH}` },
   {
-    path: 'auth',
+    path: ERouterPath.AUTH,
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)
   },
   {
-    path: 'layout',
+    path: ERouterPath.LAYOUT,
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./layout/layout.module').then((m) => m.LayoutModule)

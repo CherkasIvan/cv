@@ -11,7 +11,7 @@
     visibility: hidden;
   }
 
-  &__input:checked+label:after {
+  &__input:checked + label:after {
     left: 48.5px;
     transform: translateX(-100%);
     background: url('../../../../assets/img/language-button/uk.png');

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { ITechnologies } from '@shared/models/tecnologies.interface';
 
-import { pwaView } from 'utils/functions/pwaView';
+import { pwaView } from '@utils/functions/pwaView';
 
 @Component({
   selector: 'cv-skills-content',

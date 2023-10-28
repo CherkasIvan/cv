@@ -5,6 +5,7 @@
     "paths": {
       "@angular/*": ["../node_modules/@angular/*"],
       "@env/*": ["environments/*"],
+      "@utils/*": ["utils/*"],
       "@app/*": ["app/*"],
       "@assets/*": ["assets/*"],
       "@shared/*": ["app/shared/*"],
