@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, provideRouter } from '@angular/router';
 
+import { ERouterPath } from '@utils/enum/router-path.enum';
+
 import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
@@ -9,7 +11,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'about-me',
+        path: ERouterPath.ABOUT_ME,
         loadChildren: () =>
           import('../pages/about-me/about-me.module').then(
             (module) => module.AboutMeModule
@@ -17,7 +19,7 @@ const routes: Routes = [
         data: { animation: 'aboutMePage' }
       },
       {
-        path: 'projects',
+        path: ERouterPath.PROJECTS,
         loadChildren: () =>
           import('../pages/projects/projects.module').then(
             (module) => module.ProjectsModule
@@ -25,7 +27,7 @@ const routes: Routes = [
         data: { animation: 'projectsPage' }
       },
       {
-        path: 'education',
+        path: ERouterPath.EDUCATION,
         loadChildren: () =>
           import('../pages/education/education.module').then(
             (module) => module.EducationModule
@@ -33,7 +35,7 @@ const routes: Routes = [
         data: { animation: 'educationPage' }
       },
       {
-        path: 'technologies',
+        path: ERouterPath.TECHNOLOGIES,
         loadChildren: () =>
           import('../pages/technologies/technologies.module').then(
             (module) => module.TechnologiesModule
@@ -41,7 +43,7 @@ const routes: Routes = [
         data: { animation: 'technologiesPage' }
       },
       {
-        path: 'work-experience',
+        path: ERouterPath.WORK_EXPERIENCE,
         loadChildren: () =>
           import('../pages/work-experience/work-experience.module').then(
             (module) => module.WorkExperienceModule
@@ -49,7 +51,7 @@ const routes: Routes = [
         data: { animation: 'workExperiencePage' }
       },
       {
-        path: 'cv',
+        path: ERouterPath.CV,
         loadChildren: () =>
           import('../pages/cv/cv.module').then((module) => module.CvModule),
         data: { animation: 'cvPage' }
