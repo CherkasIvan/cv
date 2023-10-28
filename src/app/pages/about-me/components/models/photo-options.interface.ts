@@ -1,21 +1,5 @@
 import { IPhoto } from './photo.interface';
 
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
-import { IPhoto } from './photo.interface';
-
 export interface IPhotoOptions {
   [key: string]: any;
   slides: IPhoto[];

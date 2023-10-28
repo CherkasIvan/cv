@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
@@ -8,51 +8,58 @@ import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
 
+import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
+
+import { ERouterPath } from '@utils/enum/router-path.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  userData: User | null = null;
-  isAuth$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public userData: User | null = null;
+  public isAuth$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public userState = this._localStorageService.getUsersState();
   constructor(
-    public afs: AngularFirestore,
-    public afAuth: AngularFireAuth,
-    public router: Router,
-    public ngZone: NgZone,
-    private snackbarService: SnackbarService
+    private readonly _afs: AngularFirestore,
+    private readonly _afAuth: AngularFireAuth,
+    private readonly _router: Router,
+    private readonly _snackbarService: SnackbarService,
+    private readonly _localStorageService: localStorageService
   ) {
-    if (localStorage.getItem('user')) {
+    if (this.userState.user) {
       this.isAuth$.next(true);
-      this.router.navigate(['layout']);
+      this._router.navigate([this.userState.rout]);
     }
   }
   signIn(email: string, password: string) {
-    return this.afAuth
+    return this._afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        localStorage.setItem('user', JSON.stringify(result.user));
+        this._localStorageService.setUser(result.user);
         this.setUserData(result.user);
         if (result.user) {
           this.isAuth$.next(true);
-          this.afAuth.authState.subscribe((user) => {
-            if (user) {
-              this.router.navigate(['layout']);
-              this.snackbarService.openSnackBar(result.user?.email);
+          this._afAuth.authState.subscribe(() => {
+            if (this.userState.user && this.userState.rout) {
+              this._router.navigate([this.userState.rout]);
+              this._snackbarService.openSnackBar(result.user?.email);
+            } else {
+              this._router.navigate([ERouterPath.LAYOUT]);
+              this._snackbarService.openSnackBar(result.user?.email);
             }
           });
         }
       })
       .catch((error: Error) => {
         this.isAuth$.next(false);
-        this.snackbarService.openSnackBar(error.message);
+        this._snackbarService.openSnackBar(error.message);
         return;
       });
   }
 
   setUserData(user: firebase.default.User | null) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+    const userRef: AngularFirestoreDocument<User> = this._afs.doc(
       `users/${user?.uid}`
     );
     const userData: any = {
@@ -68,10 +75,17 @@ export class AuthService {
   }
   // Sign out
   signOut() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
+    return this._afAuth.signOut().then(() => {
+      const removeUser = localStorage.getItem('usersState');
+      if (removeUser) {
+        const userState = JSON.parse(removeUser);
+        userState.user = null;
+        if (userState.user === null) {
+          this._localStorageService.setNewUserState(userState);
+        }
+      }
       this.isAuth$.next(false);
-      this.router.navigate(['auth']);
+      this._router.navigate([ERouterPath.AUTH]);
     });
   }
 }

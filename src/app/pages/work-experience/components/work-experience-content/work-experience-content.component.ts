@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { IWorkExperience } from '@shared/models/work-experience.interface';
@@ -10,8 +10,9 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
   styleUrls: ['./work-experience-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorkExperienceContentComponent implements OnInit {
-  public workPlace$!: Observable<IWorkExperience[]>;
+export class WorkExperienceContentComponent {
+  public workPlace$: Observable<IWorkExperience[]> =
+    this._firebaseService.getWorkExperience();
   public workExp: number[] = [];
   public totalWorkTimeEverInMonth!: number;
   public totalWorkTimeEverConverted!: string;
@@ -85,23 +86,17 @@ export class WorkExperienceContentComponent implements OnInit {
   //   this.totalWorkTimeEverConverted = currentYear + ' ' + currentMonths;
   // }
 
-  ngOnInit(): void {
-    this.workPlace$ = this._firebaseService.getWorkExperience();
-    this.workPlace$
-      .pipe
-      // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
-      // this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
-      // })
-      ()
-      .subscribe();
-    // workPlaces.forEach((work) => {
-    //   work.workTime = this.totalWorkTime(work.from, work.to);
-    // });
-    // this.totalWorkTimeEverInMonth = this.workExp.reduce(
-    //   (start: number, end: number) => start + end,
-    //   0
-    // ))
-
-    // this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
-  }
+  // ngOnInit(): void {
+  // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
+  // this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
+  // })
+  // workPlaces.forEach((work) => {
+  //   work.workTime = this.totalWorkTime(work.from, work.to);
+  // });
+  // this.totalWorkTimeEverInMonth = this.workExp.reduce(
+  //   (start: number, end: number) => start + end,
+  //   0
+  // ))
+  // this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
+  // }
 }

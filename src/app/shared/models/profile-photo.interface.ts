@@ -1,6 +1,6 @@
 export interface IProfilePhoto {
   id: string;
-  slideNumber: number;
+  slideNumber: string;
   src: string;
   title: string;
   subtitle: string;
