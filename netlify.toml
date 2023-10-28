@@ -1,5 +1,9 @@
 [build]
+<<<<<<< Updated upstream
   publish = "dist/anglify"
+=======
+  publish = "dist/"
+>>>>>>> Stashed changes
   command = "npm run build"
 [[redirects]]
   from = "/*"
