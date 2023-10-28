@@ -26,12 +26,8 @@ export class AuthService {
     private readonly _router: Router,
     private readonly _snackbarService: SnackbarService,
     private readonly _localStorageService: localStorageService
-  ) {
-    if (this.userState.user) {
-      this.isAuth$.next(true);
-      this._router.navigate([this.userState.rout]);
-    }
-  }
+  ) {}
+
   signIn(email: string, password: string) {
     return this._afAuth
       .signInWithEmailAndPassword(email, password)
@@ -41,11 +37,8 @@ export class AuthService {
         if (result.user) {
           this.isAuth$.next(true);
           this._afAuth.authState.subscribe(() => {
-            if (this.userState.user && this.userState.rout) {
+            if (this.userState.user) {
               this._router.navigate([this.userState.rout]);
-              this._snackbarService.openSnackBar(result.user?.email);
-            } else {
-              this._router.navigate([ERouterPath.LAYOUT]);
               this._snackbarService.openSnackBar(result.user?.email);
             }
           });
@@ -77,12 +70,11 @@ export class AuthService {
   signOut() {
     return this._afAuth.signOut().then(() => {
       const removeUser = localStorage.getItem('usersState');
-      if (removeUser) {
-        const userState = JSON.parse(removeUser);
-        userState.user = null;
-        if (userState.user === null) {
-          this._localStorageService.setNewUserState(userState);
-        }
+      const userState = JSON.parse(removeUser!);
+      userState.user = null;
+      console.log(removeUser);
+      if (userState.user === null) {
+        this._localStorageService.setNewUserState(userState);
       }
       this.isAuth$.next(false);
       this._router.navigate([ERouterPath.AUTH]);
