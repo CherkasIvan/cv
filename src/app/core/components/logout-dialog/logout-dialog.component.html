@@ -1,0 +1,17 @@
+<div
+  class="dialog-content"
+  mat-dialog-content>
+  <p class="dialog-message">Are you shure that you wont to exit from app?</p>
+  <div class="dialog-actions">
+    <button
+      (click)="closeDialog()"
+      class="cancel">
+      Cancel
+    </button>
+    <button
+      class="logout"
+      (click)="logout()">
+      Logout
+    </button>
+  </div>
+</div>

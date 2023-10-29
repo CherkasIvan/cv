@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { AuthService } from '@auth/services/auth.service';
+import { LogoutDialogService } from '@app/core/services/logout-dialog/logout-dialog.service';
 
 @Component({
   selector: 'cv-logout',
@@ -12,9 +12,9 @@ import { AuthService } from '@auth/services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LogoutComponent {
-  constructor(private readonly _authService: AuthService) {}
+  constructor(private readonly _logoutDialogService: LogoutDialogService) {}
 
   public logout() {
-    this._authService.signOut();
+    this._logoutDialogService.openDialog();
   }
 }
