@@ -32,7 +32,7 @@ export class AuthService {
   ) {
     if (this.userState.user) {
       this.isAuth$.next(true);
-      this._router.navigate([this.userState.rout]);
+      this._router.navigate(['layout']);
     }
   }
 
@@ -45,10 +45,6 @@ export class AuthService {
         } else {
           this._localStorageService.usersState.user = result.user;
           this._localStorageService.usersState.rout = this.userState.rout;
-          this._localStorageService.usersState.isDarkMode =
-            this.userState.isDarkMode;
-          this._localStorageService.usersState.language =
-            this.userState.language;
         }
 
         this.setUserData(result.user);
