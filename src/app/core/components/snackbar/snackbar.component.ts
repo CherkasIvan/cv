@@ -5,6 +5,8 @@ import {
   MatSnackBarModule
 } from '@angular/material/snack-bar';
 
+import { ISnackbar } from '@shared/models/snackbar.interface';
+
 @Component({
   selector: 'cv-snackbar',
   standalone: true,
@@ -14,5 +16,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SnackbarComponent {
-  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: string) {}
+  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: ISnackbar) {}
 }

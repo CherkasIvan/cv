@@ -13,6 +13,8 @@ import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
+import { ISnackbar } from '@app/shared/models/snackbar.interface';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,11 +29,12 @@ export class AuthService {
     private readonly _snackbarService: SnackbarService,
     private readonly _localStorageService: localStorageService
   ) {
-    if (this.userState.user) {
+    if (localStorage.getItem('usersState')) {
       this.isAuth$.next(true);
       this._router.navigate([this.userState.rout]);
     }
   }
+
   signIn(email: string, password: string) {
     return this._afAuth
       .signInWithEmailAndPassword(email, password)
@@ -40,20 +43,26 @@ export class AuthService {
         this.setUserData(result.user);
         if (result.user) {
           this.isAuth$.next(true);
-          this._afAuth.authState.subscribe(() => {
-            if (this.userState.user && this.userState.rout) {
-              this._router.navigate([this.userState.rout]);
-              this._snackbarService.openSnackBar(result.user?.email);
-            } else {
-              this._router.navigate([ERouterPath.LAYOUT]);
-              this._snackbarService.openSnackBar(result.user?.email);
+          this._afAuth.authState.subscribe((user) => {
+            if (user) {
+              const snackbarDataSuccess: ISnackbar = {
+                message: `You are logged in as ${result.user?.email}`,
+                isSuccess: true
+              };
+
+              this._router.navigate(['layout']);
+              this._snackbarService.openSnackBar(snackbarDataSuccess);
             }
           });
         }
       })
       .catch((error: Error) => {
+        const snackbarDataError: ISnackbar = {
+          message: error.message,
+          isSuccess: false
+        };
         this.isAuth$.next(false);
-        this._snackbarService.openSnackBar(error.message);
+        this._snackbarService.openSnackBar(snackbarDataError);
         return;
       });
   }
@@ -76,13 +85,13 @@ export class AuthService {
   // Sign out
   signOut() {
     return this._afAuth.signOut().then(() => {
-      const removeUser = localStorage.getItem('usersState');
-      if (removeUser) {
-        const userState = JSON.parse(removeUser);
-        userState.user = null;
-        if (userState.user === null) {
-          this._localStorageService.setNewUserState(userState);
-        }
+      const removeUser = this._localStorageService.getUsersState();
+      const previousUser = removeUser.user;
+      removeUser.previousUser = previousUser;
+      removeUser.user = null;
+      console.log(removeUser);
+      if (removeUser.user === null) {
+        this._localStorageService.setNewUserState(removeUser);
       }
       this.isAuth$.next(false);
       this._router.navigate([ERouterPath.AUTH]);

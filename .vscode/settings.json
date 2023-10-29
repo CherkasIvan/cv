@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": false
+  "editor.formatOnPaste": false,
+  "angular.enable-strict-mode-prompt": false
 }
