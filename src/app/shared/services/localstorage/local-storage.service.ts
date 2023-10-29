@@ -51,7 +51,9 @@ export class localStorageService {
 
   public getUsersState(): ILocalStorage {
     const getUser = localStorage.getItem('usersState');
+    // console.log(getUser);
     if (getUser) {
+      console.log(JSON.parse(getUser));
       return JSON.parse(getUser);
     } else {
       return this.usersState;

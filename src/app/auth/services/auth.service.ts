@@ -22,6 +22,7 @@ export class AuthService {
   public userData: User | null = null;
   public isAuth$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public userState = this._localStorageService.getUsersState();
+
   constructor(
     private readonly _afs: AngularFirestore,
     private readonly _afAuth: AngularFireAuth,
@@ -29,7 +30,7 @@ export class AuthService {
     private readonly _snackbarService: SnackbarService,
     private readonly _localStorageService: localStorageService
   ) {
-    if (localStorage.getItem('usersState')) {
+    if (this.userState.user) {
       this.isAuth$.next(true);
       this._router.navigate([this.userState.rout]);
     }
@@ -39,7 +40,17 @@ export class AuthService {
     return this._afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this._localStorageService.setUser(result.user);
+        if (!this.userState.previousUser) {
+          this._localStorageService.setUser(result.user);
+        } else {
+          this._localStorageService.usersState.user = result.user;
+          this._localStorageService.usersState.rout = this.userState.rout;
+          this._localStorageService.usersState.isDarkMode =
+            this.userState.isDarkMode;
+          this._localStorageService.usersState.language =
+            this.userState.language;
+        }
+
         this.setUserData(result.user);
         if (result.user) {
           this.isAuth$.next(true);
@@ -49,8 +60,15 @@ export class AuthService {
                 message: `You are logged in as ${result.user?.email}`,
                 isSuccess: true
               };
-
-              this._router.navigate(['layout']);
+              this.userState.user = result.user;
+              this.userState.rout = this._localStorageService.usersState.rout;
+              this.userState.isDarkMode =
+                this._localStorageService.usersState.isDarkMode;
+              this.userState.language =
+                this._localStorageService.usersState.language;
+              console.log(this.userState);
+              console.log(user);
+              this._router.navigate([this.userState.rout]);
               this._snackbarService.openSnackBar(snackbarDataSuccess);
             }
           });

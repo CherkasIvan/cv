@@ -20,6 +20,7 @@ import { localStorageService } from '@app/shared/services/localstorage/local-sto
 })
 export class DarkModeSelectorComponent {
   @ViewChild('darkModeCheckBox') public darkModeToggle!: ElementRef;
+  public isChecked = false;
 
   constructor(
     private readonly _darkModeService: DarkModeService,
@@ -30,6 +31,6 @@ export class DarkModeSelectorComponent {
     const isChecked = (<HTMLInputElement>$target.target).checked;
     this._darkModeService.isDark$.next(isChecked);
 
-    this._localStorageService.setMode(this._darkModeService.isDark$.value);
+    this._localStorageService.setMode(isChecked);
   }
 }
