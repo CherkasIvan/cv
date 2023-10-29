@@ -9,6 +9,7 @@ import { ERouterPath } from '@utils/enum/router-path.enum';
 })
 export class localStorageService {
   public usersState: ILocalStorage = {
+    previousUser: null,
     user: null,
     rout: `${ERouterPath.LAYOUT}`,
     isDarkMode: false,

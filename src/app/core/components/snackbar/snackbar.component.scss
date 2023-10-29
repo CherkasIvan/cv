@@ -1,0 +1,16 @@
+@use '../../../../assets/styles/mixins/styles.mixin' as *;
+
+.snackbar {
+  @include flex-center-sb;
+
+  &-message {
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  &-img {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}

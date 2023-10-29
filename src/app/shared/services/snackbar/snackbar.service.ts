@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { SnackbarComponent } from '@app/core/components/snackbar/snackbar.component';
+import { SnackbarComponent } from '@core/components/snackbar/snackbar.component';
+
+import { ISnackbar } from '@shared/models/snackbar.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,12 @@ import { SnackbarComponent } from '@app/core/components/snackbar/snackbar.compon
 export class SnackbarService {
   constructor(private readonly _snackBar: MatSnackBar) {}
 
-  openSnackBar(message: string | null | undefined) {
+  openSnackBar(snackbarData: ISnackbar) {
     this._snackBar.openFromComponent(SnackbarComponent, {
-      duration: 1000,
-      data: message
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      duration: 6000,
+      data: snackbarData
     });
   }
 }
