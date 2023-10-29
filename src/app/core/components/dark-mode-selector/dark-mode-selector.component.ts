@@ -29,7 +29,5 @@ export class DarkModeSelectorComponent {
   public changeView($target: MouseEvent) {
     const isChecked = (<HTMLInputElement>$target.target).checked;
     this._darkModeService.isDark$.next(isChecked);
-
-    this._localStorageService.setMode(this._darkModeService.isDark$.value);
   }
 }
