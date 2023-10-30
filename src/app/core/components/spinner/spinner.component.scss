@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
 .loader {
   position: fixed;
   top: 30%;
@@ -5,9 +7,7 @@
   width: 20em;
   height: 20em;
   font-size: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-a_center-j_center;
   z-index: 999999;
 }
 
@@ -87,9 +87,7 @@ body {
   width: 20em;
   height: 20em;
   font-size: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-a_center-j_center;
   z-index: 999999;
 }
 

@@ -1,6 +1,7 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
 .links-container {
-  display: flex;
-  justify-content: center;
+  @include flex-j_center;
 
   .links-list,
   .personal-data-list {

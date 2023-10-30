@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
 .technologies-list {
   margin-top: 2rem;
   display: grid;
@@ -8,10 +10,7 @@
     padding: 1rem;
     .item-link {
       .item-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flex-a_center-j_center-d_column;
         gap: 10px;
 
         .item__title {

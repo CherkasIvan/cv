@@ -5,9 +5,6 @@
       [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
       <cv-navigation-panel></cv-navigation-panel>
 
-      <!-- <cv-links-container [socialMediaLinks]="socialMediaLinksL" [modeTheme]="currentTheme"
-				[pwaView]="isPwaView"></cv-links-container> -->
-
       <cv-spinner
         [spinnerStyle]="
           (currentTheme$ | async) ? 'dark-layout' : 'layout'
@@ -15,9 +12,6 @@
       <cv-initial-content
         *ngIf="currentRoute === '/layout'"></cv-initial-content>
       <router-outlet #outlet="outlet"></router-outlet>
-
-      <!-- <cv-links-container [socialMediaLinks]="socialMediaLinksR" [modeTheme]="currentTheme"
-				[pwaView]="isPwaView"></cv-links-container> -->
 
       <cv-footer></cv-footer>
     </div>

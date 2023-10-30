@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { LogoutDialogService } from '@app/core/services/logout-dialog/logout-dialog.service';
+import { LogoutDialogService } from '@core/services/logout-dialog/logout-dialog.service';
 
 @Component({
   selector: 'cv-logout',

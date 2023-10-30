@@ -1,21 +1,21 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
 .cv-footer {
   width: 100vw;
   padding: 0 5%;
   position: fixed;
   bottom: 0;
-  left: 0;
-  // backdrop-filter: blur(15px);
-  // background: linear-gradient(to bottom,
-  // 		rgba(169, 208, 113, 0),
-  // 		rgba(255, 255, 255, 0.25));
+  backdrop-filter: blur(15px);
+  z-index: 100000;
+  background: linear-gradient(to bottom,
+      rgba(169, 208, 113, 0),
+      rgba(255, 255, 255, 0.25));
 
   .footer-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-d_column;
 
     .personal-data-container {
-      display: flex;
-      justify-content: center;
+      @include flex-j_center;
 
       .links-list,
       .personal-data-list {
@@ -28,8 +28,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
         &__item {
-          display: flex;
-          justify-content: center;
+          @include flex-j_center;
           gap: 15px;
         }
       }
@@ -39,7 +38,6 @@
 
 .dark-layout {
   .item-img {
-    filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg)
-      brightness(109%) contrast(100%);
+    filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg) brightness(109%) contrast(100%);
   }
 }

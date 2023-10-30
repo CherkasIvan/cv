@@ -1,3 +1,5 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
 .projects-content {
   width: 100%;
 
@@ -31,8 +33,7 @@
         transition: 0.5s ease;
 
         .project {
-          display: flex;
-          flex-direction: column;
+          @include flex-d_column;
           text-align: center;
           row-gap: 5px;
         }

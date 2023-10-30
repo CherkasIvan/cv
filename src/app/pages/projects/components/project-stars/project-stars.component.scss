@@ -1,11 +1,11 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
 .stars {
   &-img {
   }
 
   &-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-a_center-j_center;
     column-gap: 10px;
 
     &__description {
