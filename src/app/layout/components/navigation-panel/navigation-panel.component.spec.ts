@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavigationPanelComponent } from './navigation-panel.component';
 
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
-import { NavigationPanelComponent } from './navigation-panel.component';
-
 describe('NavigationPanelComponent', () => {
   let component: NavigationPanelComponent;
   let fixture: ComponentFixture<NavigationPanelComponent>;
