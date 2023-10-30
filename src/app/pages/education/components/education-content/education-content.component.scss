@@ -4,10 +4,12 @@
   .education-container {
     width: 100%;
     @include flex-a_center-j_center;
+
     .education-list {
       width: 100%;
       @include flex-d_column;
       gap: 2rem;
+
       &__item {
         width: 100%;
         padding: 1rem;
@@ -26,9 +28,8 @@
         }
 
         .content-container {
-          display: flex;
+          @include flex-j_sb;
           flex-direction: row;
-          justify-content: space-between;
         }
 
         .education-logo__container {
@@ -49,10 +50,12 @@
             display: grid;
             gap: 1rem;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
             .item {
               display: flex;
               flex-direction: column;
               gap: 0.54rem;
+
               &__name {
                 font-weight: 600;
                 font-size: 18px;
@@ -78,7 +81,7 @@
           }
         }
 
-        > * {
+        >* {
           @include flex-d_column;
         }
       }
@@ -87,7 +90,7 @@
         .places {
           &__list {
             .item {
-              > * {
+              >* {
                 margin: 0 auto;
               }
             }

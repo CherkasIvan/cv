@@ -4,6 +4,11 @@
   justify-content: space-between;
 }
 
+@mixin flex-j_sb {
+  display: flex;
+  justify-content: space-between;
+}
+
 @mixin flex-a_center-j_sa {
   display: flex;
   align-items: center;

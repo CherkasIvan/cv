@@ -1,16 +1,18 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
 .about-content {
   width: 100%;
+
   .container {
-    display: flex;
-    flex-direction: column;
+    @include flex-d_column;
     gap: 20px;
 
     .about-block,
     .hobby-block,
     .sports-block,
     .army-block {
-      display: flex;
-      flex-direction: column;
+      @include flex-d_column;
+
       &__title {
         align-self: center;
         font-weight: 700;
