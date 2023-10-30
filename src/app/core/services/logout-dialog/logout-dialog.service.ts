@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { LogoutDialogComponent } from '@app/core/components/logout-dialog/logout-dialog.component';
+import { LogoutDialogComponent } from '@core/components/logout-dialog/logout-dialog.component';
 
 @Injectable({
   providedIn: 'root'
