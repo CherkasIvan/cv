@@ -1,3 +1,5 @@
+@use '../../assets/styles/mixins/flex.mixin' as *;
+
 .background {
   width: 100vw;
   height: 100%;
@@ -82,8 +84,7 @@ input {
 
 .button__block {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  @include flex-d_column;
   row-gap: 20px;
 
   button {

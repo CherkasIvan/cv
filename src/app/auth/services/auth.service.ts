@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
 
+import { ISnackbar } from '@shared/models/snackbar.interface';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { ERouterPath } from '@utils/enum/router-path.enum';
-
-import { ISnackbar } from '@app/shared/models/snackbar.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +30,9 @@ export class AuthService {
     private readonly _localStorageService: localStorageService
   ) {
     if (this.userState.user) {
+      console.log(this.userState.user);
       this.isAuth$.next(true);
-      this._router.navigate(['layout']);
+      this._router.navigate([this.userState.rout]);
     }
   }
 
@@ -58,14 +58,12 @@ export class AuthService {
               };
               this.userState.user = result.user;
               this.userState.rout = this._localStorageService.usersState.rout;
-              this.userState.isDarkMode =
-                this._localStorageService.usersState.isDarkMode;
-              this.userState.language =
-                this._localStorageService.usersState.language;
-              console.log(this.userState);
-              console.log(user);
-              this._router.navigate([this.userState.rout]);
-              this._snackbarService.openSnackBar(snackbarDataSuccess);
+
+              if (this.userState.user === result.user) {
+                console.log(1);
+                this._router.navigate([this.userState.rout]);
+                this._snackbarService.openSnackBar(snackbarDataSuccess);
+              }
             }
           });
         }

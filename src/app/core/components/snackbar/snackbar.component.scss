@@ -1,7 +1,7 @@
-@use '../../../../assets/styles/mixins/styles.mixin' as *;
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
 
 .snackbar {
-  @include flex-center-sb;
+  @include flex-a_center-j_sb;
 
   &-message {
     font-weight: 700;

@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
 .navigation-panel {
   width: 100vw;
   height: 100%;
@@ -10,9 +12,7 @@
   padding: 0 5%;
 
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-a_center-j_sb;
     min-width: 100%;
 
     .logo {
@@ -22,8 +22,7 @@
     }
 
     .navigation-container {
-      display: flex;
-      align-items: center;
+      @include flex-a_center;
       gap: 1rem;
 
       .navigation-list {
@@ -71,13 +70,11 @@
     }
 
     .personal-area {
-      display: flex;
-      align-items: center;
+      @include flex-a_center;
       column-gap: 20px;
 
       .selectors {
-        display: flex;
-        flex-direction: column;
+        @include flex-d_column;
         row-gap: 10px;
       }
     }
