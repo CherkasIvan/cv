@@ -6,7 +6,7 @@ import { TechnologiesComponent } from './technologies.component';
 const routes: Routes = [{ path: '', component: TechnologiesComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class TechnologiesRoutingModule {}

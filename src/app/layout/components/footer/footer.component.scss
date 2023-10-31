@@ -1,46 +1,46 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
 
 .cv-footer {
-  padding: 0 5%;
-  position: fixed;
-  bottom: 0;
-  backdrop-filter: blur(15px);
-  z-index: 100000;
-  background: linear-gradient(
-    to bottom,
-    rgba(169, 208, 113, 0),
-    rgba(255, 255, 255, 0.25)
-  );
-  width: calc(100% - 8px);
+    padding: 0 5%;
+    position: fixed;
+    bottom: 0;
+    backdrop-filter: blur(15px);
+    z-index: 100000;
+    background: linear-gradient(
+        to bottom,
+        rgba(169, 208, 113, 0),
+        rgba(255, 255, 255, 0.25)
+    );
+    width: calc(100% - 8px);
 
-  .footer-container {
-    @include flex-d_column;
+    .footer-container {
+        @include flex-d_column;
 
-    .personal-data-container {
-      @include flex-j_center;
+        .personal-data-container {
+            @include flex-j_center;
 
-      .links-list,
-      .personal-data-list {
-        display: flex;
-      }
+            .links-list,
+            .personal-data-list {
+                display: flex;
+            }
 
-      .personal-data-list {
-        width: 75%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            .personal-data-list {
+                width: 75%;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-        &__item {
-          @include flex-j_center;
-          gap: 15px;
+                &__item {
+                    @include flex-j_center;
+                    gap: 15px;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 .dark-layout {
-  .item-img {
-    filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg)
-      brightness(109%) contrast(100%);
-  }
+    .item-img {
+        filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg)
+            brightness(109%) contrast(100%);
+    }
 }

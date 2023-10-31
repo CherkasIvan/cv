@@ -2,36 +2,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectStarsComponent } from './project-stars.component';
 
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
 describe('ProjectStarsComponent', () => {
-  let component: ProjectStarsComponent;
-  let fixture: ComponentFixture<ProjectStarsComponent>;
+    let component: ProjectStarsComponent;
+    let fixture: ComponentFixture<ProjectStarsComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ProjectStarsComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [ProjectStarsComponent]
+        });
+        fixture = TestBed.createComponent(ProjectStarsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(ProjectStarsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -12,117 +12,117 @@ import { ITechnologies } from '@shared/models/technologies.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class FirebaseService {
-  frontendTechCollection$!: Observable<ITechnologies[]>;
-  backendTechCollection$!: Observable<ITechnologies[]>;
-  socialTechCollection$!: Observable<ITechnologies[]>;
-  otherTechCollection$!: Observable<ITechnologies[]>;
-  contactsCollection$!: Observable<IContacts[]>;
-  navigationCollection$!: Observable<INavigation[]>;
-  cvFormatCollection$!: Observable<ICvFormat[]>;
-  profilePhotosCollection$!: Observable<IProfilePhoto[]>;
-  socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
-  workExperienceCollection$!: Observable<IWorkExperience[]>;
-  projectTechCollection$!: Observable<ITechnologies[]>;
-  educarionCollection$!: Observable<IEducation[]>;
+    frontendTechCollection$!: Observable<ITechnologies[]>;
+    backendTechCollection$!: Observable<ITechnologies[]>;
+    socialTechCollection$!: Observable<ITechnologies[]>;
+    otherTechCollection$!: Observable<ITechnologies[]>;
+    contactsCollection$!: Observable<IContacts[]>;
+    navigationCollection$!: Observable<INavigation[]>;
+    cvFormatCollection$!: Observable<ICvFormat[]>;
+    profilePhotosCollection$!: Observable<IProfilePhoto[]>;
+    socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
+    workExperienceCollection$!: Observable<IWorkExperience[]>;
+    projectTechCollection$!: Observable<ITechnologies[]>;
+    educarionCollection$!: Observable<IEducation[]>;
 
-  constructor(private readonly _firestore: Firestore) {}
+    constructor(private readonly _firestore: Firestore) {}
 
-  getFrontendTech(): Observable<ITechnologies[]> {
-    this.frontendTechCollection$ = collectionData(
-      collection(this._firestore, 'frontendTech'),
-      { idField: 'id' }
-    ) as Observable<ITechnologies[]>;
-    return this.frontendTechCollection$;
-  }
+    getFrontendTech(): Observable<ITechnologies[]> {
+        this.frontendTechCollection$ = collectionData(
+            collection(this._firestore, 'frontendTech'),
+            { idField: 'id' }
+        ) as Observable<ITechnologies[]>;
+        return this.frontendTechCollection$;
+    }
 
-  getBackendTech(): Observable<ITechnologies[]> {
-    this.backendTechCollection$ = collectionData(
-      collection(this._firestore, 'backendTech'),
-      { idField: 'id' }
-    ) as Observable<ITechnologies[]>;
-    return this.backendTechCollection$;
-  }
+    getBackendTech(): Observable<ITechnologies[]> {
+        this.backendTechCollection$ = collectionData(
+            collection(this._firestore, 'backendTech'),
+            { idField: 'id' }
+        ) as Observable<ITechnologies[]>;
+        return this.backendTechCollection$;
+    }
 
-  getSocialTech(): Observable<ITechnologies[]> {
-    this.socialTechCollection$ = collectionData(
-      collection(this._firestore, 'socialTech'),
-      { idField: 'id' }
-    ) as Observable<ITechnologies[]>;
-    return this.socialTechCollection$;
-  }
+    getSocialTech(): Observable<ITechnologies[]> {
+        this.socialTechCollection$ = collectionData(
+            collection(this._firestore, 'socialTech'),
+            { idField: 'id' }
+        ) as Observable<ITechnologies[]>;
+        return this.socialTechCollection$;
+    }
 
-  getProjectTech(): Observable<ITechnologies[]> {
-    this.projectTechCollection$ = collectionData(
-      collection(this._firestore, 'projectTech'),
-      { idField: 'id' }
-    ) as Observable<ITechnologies[]>;
-    return this.projectTechCollection$;
-  }
+    getProjectTech(): Observable<ITechnologies[]> {
+        this.projectTechCollection$ = collectionData(
+            collection(this._firestore, 'projectTech'),
+            { idField: 'id' }
+        ) as Observable<ITechnologies[]>;
+        return this.projectTechCollection$;
+    }
 
-  getOtherTech(): Observable<ITechnologies[]> {
-    this.otherTechCollection$ = collectionData(
-      collection(this._firestore, 'otherTech'),
-      { idField: 'id' }
-    ) as Observable<ITechnologies[]>;
-    return this.otherTechCollection$;
-  }
+    getOtherTech(): Observable<ITechnologies[]> {
+        this.otherTechCollection$ = collectionData(
+            collection(this._firestore, 'otherTech'),
+            { idField: 'id' }
+        ) as Observable<ITechnologies[]>;
+        return this.otherTechCollection$;
+    }
 
-  getContacts(): Observable<IContacts[]> {
-    this.contactsCollection$ = collectionData(
-      collection(this._firestore, 'contacts'),
-      { idField: 'id' }
-    ) as Observable<IContacts[]>;
-    return this.contactsCollection$;
-  }
+    getContacts(): Observable<IContacts[]> {
+        this.contactsCollection$ = collectionData(
+            collection(this._firestore, 'contacts'),
+            { idField: 'id' }
+        ) as Observable<IContacts[]>;
+        return this.contactsCollection$;
+    }
 
-  getNavigation(): Observable<INavigation[]> {
-    this.navigationCollection$ = collectionData(
-      collection(this._firestore, 'navigation'),
-      { idField: 'id' }
-    ) as Observable<INavigation[]>;
-    return this.navigationCollection$;
-  }
+    getNavigation(): Observable<INavigation[]> {
+        this.navigationCollection$ = collectionData(
+            collection(this._firestore, 'navigation'),
+            { idField: 'id' }
+        ) as Observable<INavigation[]>;
+        return this.navigationCollection$;
+    }
 
-  getCvFormat(): Observable<ICvFormat[]> {
-    this.cvFormatCollection$ = collectionData(
-      collection(this._firestore, 'cvFormat'),
-      { idField: 'id' }
-    ) as Observable<ICvFormat[]>;
-    return this.cvFormatCollection$;
-  }
+    getCvFormat(): Observable<ICvFormat[]> {
+        this.cvFormatCollection$ = collectionData(
+            collection(this._firestore, 'cvFormat'),
+            { idField: 'id' }
+        ) as Observable<ICvFormat[]>;
+        return this.cvFormatCollection$;
+    }
 
-  getMyProfilePhotos(): Observable<IProfilePhoto[]> {
-    this.profilePhotosCollection$ = collectionData(
-      collection(this._firestore, 'profilePhotos'),
-      { idField: 'id' }
-    ) as Observable<IProfilePhoto[]>;
-    return this.profilePhotosCollection$;
-  }
+    getMyProfilePhotos(): Observable<IProfilePhoto[]> {
+        this.profilePhotosCollection$ = collectionData(
+            collection(this._firestore, 'profilePhotos'),
+            { idField: 'id' }
+        ) as Observable<IProfilePhoto[]>;
+        return this.profilePhotosCollection$;
+    }
 
-  getSocialMediaLinks(): Observable<ISocialMedia[]> {
-    this.socialMediaLinksCollection$ = collectionData(
-      collection(this._firestore, 'socialMediaLinks'),
-      { idField: 'id' }
-    ) as Observable<ISocialMedia[]>;
-    return this.socialMediaLinksCollection$;
-  }
+    getSocialMediaLinks(): Observable<ISocialMedia[]> {
+        this.socialMediaLinksCollection$ = collectionData(
+            collection(this._firestore, 'socialMediaLinks'),
+            { idField: 'id' }
+        ) as Observable<ISocialMedia[]>;
+        return this.socialMediaLinksCollection$;
+    }
 
-  getWorkExperience(): Observable<IWorkExperience[]> {
-    this.workExperienceCollection$ = collectionData(
-      collection(this._firestore, 'workExperience'),
-      { idField: 'id' }
-    ) as Observable<IWorkExperience[]>;
-    return this.workExperienceCollection$;
-  }
+    getWorkExperience(): Observable<IWorkExperience[]> {
+        this.workExperienceCollection$ = collectionData(
+            collection(this._firestore, 'workExperience'),
+            { idField: 'id' }
+        ) as Observable<IWorkExperience[]>;
+        return this.workExperienceCollection$;
+    }
 
-  getEducation(): Observable<IEducation[]> {
-    this.educarionCollection$ = collectionData(
-      collection(this._firestore, 'education'),
-      { idField: 'id' }
-    ) as Observable<IEducation[]>;
-    return this.educarionCollection$;
-  }
+    getEducation(): Observable<IEducation[]> {
+        this.educarionCollection$ = collectionData(
+            collection(this._firestore, 'education'),
+            { idField: 'id' }
+        ) as Observable<IEducation[]>;
+        return this.educarionCollection$;
+    }
 }

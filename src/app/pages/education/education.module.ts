@@ -10,16 +10,16 @@ import { EducationRoutingModule } from './education-routing.module';
 import { EducationComponent } from './education.component';
 
 @NgModule({
-  declarations: [
-    EducationComponent,
-    EducationContentComponent,
-    ImgDialogComponent
-  ],
-  imports: [
-    CommonModule,
-    EducationRoutingModule,
-    TranslateModule,
-    CarouselComponent
-  ]
+    declarations: [
+        EducationComponent,
+        EducationContentComponent,
+        ImgDialogComponent
+    ],
+    imports: [
+        CommonModule,
+        EducationRoutingModule,
+        TranslateModule,
+        CarouselComponent
+    ]
 })
 export class EducationModule {}

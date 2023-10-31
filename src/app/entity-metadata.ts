@@ -5,6 +5,6 @@ const entityMetadata: EntityMetadataMap = {};
 const pluralNames = {};
 
 export const entityConfig: EntityDataModuleConfig = {
-  entityMetadata,
-  pluralNames
+    entityMetadata,
+    pluralNames
 };

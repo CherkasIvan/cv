@@ -8,41 +8,41 @@ import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
-  selector: 'cv-carousel',
-  templateUrl: './carousel.component.html',
-  standalone: true,
-  imports: [CarouselModule, RouterModule, CommonModule],
-  styleUrls: ['./carousel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'cv-carousel',
+    templateUrl: './carousel.component.html',
+    standalone: true,
+    imports: [CarouselModule, RouterModule, CommonModule],
+    styleUrls: ['./carousel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements OnInit {
-  public pageSlides$!: Observable<IProfilePhoto[]>;
+    public pageSlides$!: Observable<IProfilePhoto[]>;
 
-  public slides: IProfilePhoto[] = new Array(3).fill({
-    id: '',
-    slideNumber: -1,
-    src: '',
-    title: '',
-    subtitle: ''
-  });
+    public slides: IProfilePhoto[] = new Array(3).fill({
+        id: '',
+        slideNumber: -1,
+        src: '',
+        title: '',
+        subtitle: ''
+    });
 
-  constructor(private readonly _firebaseService: FirebaseService) {}
+    constructor(private readonly _firebaseService: FirebaseService) {}
 
-  public ngOnInit(): void {
-    this.pageSlides$ = this._firebaseService.getMyProfilePhotos();
-    this.pageSlides$.pipe(
-      tap((slideList: IProfilePhoto[]) => {
-        console.log(slideList);
-        slideList.forEach((slide: IProfilePhoto) => {
-          this.slides[Number(slide.slideNumber)] = {
-            id: slide.id,
-            slideNumber: slide.slideNumber,
-            src: slide.src,
-            title: slide.title,
-            subtitle: slide.subtitle
-          };
-        });
-      })
-    );
-  }
+    public ngOnInit(): void {
+        this.pageSlides$ = this._firebaseService.getMyProfilePhotos();
+        this.pageSlides$.pipe(
+            tap((slideList: IProfilePhoto[]) => {
+                console.log(slideList);
+                slideList.forEach((slide: IProfilePhoto) => {
+                    this.slides[Number(slide.slideNumber)] = {
+                        id: slide.id,
+                        slideNumber: slide.slideNumber,
+                        src: slide.src,
+                        title: slide.title,
+                        subtitle: slide.subtitle
+                    };
+                });
+            })
+        );
+    }
 }

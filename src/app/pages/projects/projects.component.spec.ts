@@ -1,38 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectPageComponent } from './projects.component';
+import { ProjectsComponent } from './projects.component';
 
-import { ProjectPageComponent } from './projects.component';
+describe('ProjectsComponent', () => {
+    let component: ProjectsComponent;
+    let fixture: ComponentFixture<ProjectsComponent>;
 
-import { ProjectPageComponent } from './projects.component';
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ProjectsComponent]
+        }).compileComponents();
 
-import { ProjectPageComponent } from './projects.component';
+        fixture = TestBed.createComponent(ProjectsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-import { ProjectPageComponent } from './projects.component';
-
-import { ProjectPageComponent } from './projects.component';
-
-import { ProjectPageComponent } from './projects.component';
-
-import { ProjectPageComponent } from './projects.component';
-
-import { ProjectPageComponent } from './projects.component';
-
-describe('ProjectPageComponent', () => {
-  let component: ProjectPageComponent;
-  let fixture: ComponentFixture<ProjectPageComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ProjectPageComponent]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(ProjectPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -1,19 +1,19 @@
 @use '../../../../assets/styles/variables' as color;
 
 .logout-button {
-  width: fit-content;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: color.$white;
-  font-size: 18px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  transition: 0.5s ease;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: color.$white;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease;
 }
 
 .logout-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }

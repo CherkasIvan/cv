@@ -9,22 +9,22 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { AuthService } from './services/auth.service';
 import {
-  authReducer,
-  authReducerFeatureKey
+    authReducer,
+    authReducerFeatureKey
 } from './store/reducers/auth.reducer';
 
 @NgModule({
-  declarations: [AuthComponent],
-  exports: [AuthComponent],
-  imports: [
-    AuthRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularFireAuthModule,
-    StoreModule.forFeature(authReducerFeatureKey, authReducer),
-    provideAuth(() => getAuth()),
-    CommonModule
-  ],
-  providers: [AuthService]
+    declarations: [AuthComponent],
+    exports: [AuthComponent],
+    imports: [
+        AuthRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularFireAuthModule,
+        StoreModule.forFeature(authReducerFeatureKey, authReducer),
+        provideAuth(() => getAuth()),
+        CommonModule
+    ],
+    providers: [AuthService]
 })
 export class AuthModule {}

@@ -3,45 +3,29 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { routerAdapter } from '../reducers/router-reducer';
 
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
 // const routerAdapter  = routerAdapter.getSelectors();
 
 export interface State {
-  [fromRouter.DEFAULT_ROUTER_FEATURENAME]: fromRouter.RouterReducerState<any>;
+    [fromRouter.DEFAULT_ROUTER_FEATURENAME]: fromRouter.RouterReducerState<any>;
 }
 
 export const selectRouter = createFeatureSelector<State>(
-  fromRouter.DEFAULT_ROUTER_FEATURENAME
+    fromRouter.DEFAULT_ROUTER_FEATURENAME
 );
 
 // const routerSelectors = fromRouter.getSelectors(selectRouter);
 
 export const {
-  selectCurrentRoute, // select the current route
-  selectFragment, // select the current route fragment
-  selectQueryParams, // select the current route query params
-  selectQueryParam, // factory function to select a query param
-  selectRouteParams, // select the current route params
-  selectRouteParam, // factory function to select a route param
-  selectRouteData, // select the current route data
-  selectRouteDataParam, // factory function to select a route data param
-  selectUrl, // select the current url
-  selectTitle // select the title if available
+    selectCurrentRoute, // select the current route
+    selectFragment, // select the current route fragment
+    selectQueryParams, // select the current route query params
+    selectQueryParam, // factory function to select a query param
+    selectRouteParams, // select the current route params
+    selectRouteParam, // factory function to select a route param
+    selectRouteData, // select the current route data
+    selectRouteDataParam, // factory function to select a route data param
+    selectUrl, // select the current url
+    selectTitle // select the title if available
 } = fromRouter.getRouterSelectors();
 // export const selectCurrentRout = routerSelectors.selectCurrentRoute
 
@@ -50,8 +34,8 @@ export const {
 const { selectEntities } = routerAdapter.getSelectors();
 
 export const selectRouterEntities = createSelector(
-  selectRouter,
-  selectEntities
+    selectRouter,
+    selectEntities
 );
 
 // export const selectCars = createSelector(carsFeatureSelector, selectAll);

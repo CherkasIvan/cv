@@ -5,20 +5,20 @@ import { ITechnologies } from '@shared/models/technologies.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 @Component({
-  selector: 'cv-technologies',
-  templateUrl: './technologies.component.html',
-  styleUrls: ['./technologies.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'cv-technologies',
+    templateUrl: './technologies.component.html',
+    styleUrls: ['./technologies.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TechnologiesComponent {
-  public frontendTech$: Observable<ITechnologies[]> =
-    this._firebaseService.getFrontendTech();
-  public backendTech$: Observable<ITechnologies[]> =
-    this._firebaseService.getBackendTech();
-  public socialTech$: Observable<ITechnologies[]> =
-    this._firebaseService.getSocialTech();
-  public otherTech$: Observable<ITechnologies[]> =
-    this._firebaseService.getOtherTech();
+    public frontendTech$: Observable<ITechnologies[]> =
+        this._firebaseService.getFrontendTech();
+    public backendTech$: Observable<ITechnologies[]> =
+        this._firebaseService.getBackendTech();
+    public socialTech$: Observable<ITechnologies[]> =
+        this._firebaseService.getSocialTech();
+    public otherTech$: Observable<ITechnologies[]> =
+        this._firebaseService.getOtherTech();
 
-  constructor(private readonly _firebaseService: FirebaseService) {}
+    constructor(private readonly _firebaseService: FirebaseService) {}
 }
