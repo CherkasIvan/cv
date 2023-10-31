@@ -3,22 +3,6 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { routerAdapter } from '../reducers/router-reducer';
 
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
-import { routerAdapter } from '../reducers/router-reducer';
-
 // const routerAdapter  = routerAdapter.getSelectors();
 
 export interface State {

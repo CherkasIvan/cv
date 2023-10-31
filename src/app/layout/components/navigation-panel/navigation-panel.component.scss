@@ -4,9 +4,11 @@
   width: 100vw;
   height: 100%;
   backdrop-filter: blur(15px);
-  background: linear-gradient(to top,
-      rgba(169, 208, 113, 0),
-      rgba(255, 255, 255, 0.25));
+  background: linear-gradient(
+    to top,
+    rgba(169, 208, 113, 0),
+    rgba(255, 255, 255, 0.25)
+  );
   padding: 0 5%;
 
   .container {
@@ -84,7 +86,6 @@
 }
 
 @media screen and (max-width: 950px) {
-
   .navigation-panel .container .navigation-container,
   .navigation-panel .container .personal-area {
     display: none;

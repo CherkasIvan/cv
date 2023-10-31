@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectStarsComponent } from './project-stars.component';
 
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
-import { ProjectStarsComponent } from './project-stars.component';
-
 describe('ProjectStarsComponent', () => {
   let component: ProjectStarsComponent;
   let fixture: ComponentFixture<ProjectStarsComponent>;

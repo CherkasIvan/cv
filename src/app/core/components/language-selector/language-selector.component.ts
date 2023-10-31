@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { languageSelectorType } from '@core/store/model/language-selector.type';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
@@ -19,7 +22,8 @@ export class LanguageSelectorComponent implements OnInit {
 
   constructor(
     private readonly _translateManagerService: TranslateManagerService,
-    private _localStorageService: localStorageService
+    private _localStorageService: localStorageService,
+    private _store$: Store<languageSelectorType>
   ) {}
 
   public toggle(event: Event) {

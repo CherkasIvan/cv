@@ -2,37 +2,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EducationContentComponent } from './education-content.component';
 
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
-import { EducationContentComponent } from './education-content.component';
-
 describe('EducationContentComponent', () => {
-  let component: EducationContentComponent;
-  let fixture: ComponentFixture<EducationContentComponent>;
+    let component: EducationContentComponent;
+    let fixture: ComponentFixture<EducationContentComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [EducationContentComponent]
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [EducationContentComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(EducationContentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(EducationContentComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

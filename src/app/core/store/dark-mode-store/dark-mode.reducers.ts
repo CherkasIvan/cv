@@ -6,6 +6,6 @@ import { getMode } from './dark-mode.actions';
 const initialState: DarkModeType = false;
 
 export const darkModeReducer = createReducer(
-    initialState,
-    on(getMode, (state, { mode }) => mode)
+  initialState,
+  on(getMode, (state) => state)
 );

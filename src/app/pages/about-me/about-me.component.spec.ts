@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutMeComponent } from './about-me.component';
 
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
-import { AboutMeComponent } from './about-me.component';
-
 describe('AboutMeComponent', () => {
   let component: AboutMeComponent;
   let fixture: ComponentFixture<AboutMeComponent>;

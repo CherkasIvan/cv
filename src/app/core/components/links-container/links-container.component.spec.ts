@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LinksContainerComponent } from './links-container.component';
 
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
-import { LinksContainerComponent } from './links-container.component';
-
 describe('LinksContainerComponent', () => {
   let component: LinksContainerComponent;
   let fixture: ComponentFixture<LinksContainerComponent>;

@@ -81,7 +81,7 @@
           }
         }
 
-        >* {
+        > * {
           @include flex-d_column;
         }
       }
@@ -90,7 +90,7 @@
         .places {
           &__list {
             .item {
-              >* {
+              > * {
                 margin: 0 auto;
               }
             }

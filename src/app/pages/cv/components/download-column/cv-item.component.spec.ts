@@ -1,33 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DownloadColumnComponent } from './cv-item.component';
+import { CvItemComponent } from './cv-item.component';
 
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-import { DownloadColumnComponent } from './cv-item.component';
-
-describe('DownloadColumnComponent', () => {
-  let component: DownloadColumnComponent;
-  let fixture: ComponentFixture<DownloadColumnComponent>;
+describe('CvItemComponent', () => {
+  let component: CvItemComponent;
+  let fixture: ComponentFixture<CvItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DownloadColumnComponent]
+      declarations: [CvItemComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DownloadColumnComponent);
+    fixture = TestBed.createComponent(CvItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

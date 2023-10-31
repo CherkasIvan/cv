@@ -13,9 +13,9 @@
   "importOrder": [
     "'^@angular/(.*)$",
 
-    "'rxjs'",
+    "'rxjs/(.*)$'",
 
-    "'@ngrx'",
+    "'@ngrx/(.*)$'",
 
     "^@auth/(.*)$",
 

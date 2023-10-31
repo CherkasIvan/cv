@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DownloadImgComponent } from './download-img.component';
 
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
-import { DownloadImgComponent } from './download-img.component';
-
 describe('DownloadImgComponent', () => {
   let component: DownloadImgComponent;
   let fixture: ComponentFixture<DownloadImgComponent>;

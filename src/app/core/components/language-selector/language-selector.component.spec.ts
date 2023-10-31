@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageSelectorComponent } from './language-selector.component';
 
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
-import { LanguageSelectorComponent } from './language-selector.component';
-
 describe('LanguageSelectorComponent', () => {
   let component: LanguageSelectorComponent;
   let fixture: ComponentFixture<LanguageSelectorComponent>;

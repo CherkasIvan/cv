@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkExperienceContentComponent } from './work-experience-content.component';
 
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
-import { WorkExperienceContentComponent } from './work-experience-content.component';
-
 describe('WorkExperienceContentComponent', () => {
   let component: WorkExperienceContentComponent;
   let fixture: ComponentFixture<WorkExperienceContentComponent>;

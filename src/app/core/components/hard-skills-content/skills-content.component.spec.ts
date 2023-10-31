@@ -2,22 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SkillsContentComponent } from './skills-content.component';
 
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
-import { SkillsContentComponent } from './skills-content.component';
-
 describe('SkillsContentComponent', () => {
   let component: SkillsContentComponent;
   let fixture: ComponentFixture<SkillsContentComponent>;

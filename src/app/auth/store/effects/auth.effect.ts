@@ -1,42 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
-import { auth } from '../actions/auth.action';
-
-import { AuthService } from '../../services/auth.service';
-import { authSuccess, authFailure } from '../actions/auth.action';
+import { authFailure, authSuccess } from '../actions/auth.action';
 import { auth } from '../actions/auth.action';
 
 @Injectable()
