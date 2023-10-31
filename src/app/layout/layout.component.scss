@@ -7,6 +7,7 @@
 }
 
 .layout {
+  min-height: 100%;
   background: radial-gradient(#a23982, #1f1013);
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
@@ -16,6 +17,7 @@
 }
 
 .dark-layout {
+  min-height: 100%;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
@@ -86,12 +88,10 @@
       left: calc(var(--star-width) / -2);
       width: var(--star-width);
       height: 100%;
-      background: linear-gradient(
-        45deg,
-        transparent,
-        currentColor,
-        transparent
-      );
+      background: linear-gradient(45deg,
+          transparent,
+          currentColor,
+          transparent);
       border-radius: inherit;
       animation: blink 2s linear infinite;
     }
@@ -112,6 +112,7 @@
   }
 
   @keyframes tail-fade {
+
     0%,
     50% {
       width: var(--star-tail-length);
@@ -138,7 +139,7 @@
 }
 
 ng-deep {
-  router-outlet ~ * {
+  router-outlet~* {
     position: absolute;
     width: 100%;
     height: 100%;

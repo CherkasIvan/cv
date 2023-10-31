@@ -1,34 +1,33 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild
-} from '@angular/core';
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { getMode } from '@app/core/store/dark-mode-store/dark-mode.actions';
+import { darkModeSelector } from '@app/core/store/dark-mode-store/dark-mode.selectors';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-
-import { localStorageService } from '@app/shared/services/localstorage/local-storage.service';
+import { DarkModeType } from '@core/store/model/dark-mode.type';
+import { Store } from '@ngrx/store';
+import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
 @Component({
-  selector: 'cv-dark-mode-selector',
-  standalone: true,
-  imports: [],
-  templateUrl: './dark-mode-selector.component.html',
-  styleUrls: ['./dark-mode-selector.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'cv-dark-mode-selector',
+    standalone: true,
+    imports: [],
+    templateUrl: './dark-mode-selector.component.html',
+    styleUrls: ['./dark-mode-selector.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DarkModeSelectorComponent {
-  public isChecked = false;
+    public isChecked$ = this._store$.select((darkModeSelector) => false);
 
-  constructor(
-    private readonly _darkModeService: DarkModeService,
-    private readonly _localStorageService: localStorageService
-  ) {}
+    constructor(
+        private readonly _darkModeService: DarkModeService,
+        private readonly _localStorageService: localStorageService,
+        private _store$: Store<DarkModeType>
+    ) {}
 
-  public changeView($event: MouseEvent) {
-    this.isChecked = (<HTMLInputElement>$event.target).checked;
-    this._darkModeService.isDark$.next(this.isChecked);
-    this._localStorageService.setMode(this.isChecked.toString());
-  }
+    public changeView($event: MouseEvent) {
+        this._store$.dispatch(
+            getMode((<HTMLInputElement>$event.target).checked)
+        );
+        this._darkModeService.isDark$.next(Boolean(this.isChecked$));
+        this._localStorageService.setMode(this.isChecked$.toString());
+    }
 }
