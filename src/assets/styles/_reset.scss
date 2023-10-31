@@ -1,3 +1,5 @@
+@use '../../assets/styles/variables' as color;
+
 * {
   padding: 0;
   margin: 0;
@@ -21,7 +23,7 @@ body {
   line-height: 1;
   overflow-y: visible;
   overflow-x: hidden;
-  color: #ffffff;
+  color: color.$white;
 }
 
 input,
@@ -58,7 +60,7 @@ a:focus {
 }
 
 a {
-  color: #ffffff;
+  color: color.$white;
   cursor: pointer;
 }
 

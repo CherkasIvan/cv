@@ -1,5 +1,5 @@
 @use '../../../../../assets/styles/mixins/flex.mixin' as *;
-
+@use '../../../../../assets/styles/variables' as color;
 .work-experience-content {
   .work-container {
     width: 100%;
@@ -48,7 +48,7 @@
           }
 
           .white {
-            background-color: #fff;
+            background-color: color.$white;
           }
         }
 

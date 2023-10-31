@@ -29,10 +29,10 @@ export class AuthService {
     private readonly _snackbarService: SnackbarService,
     private readonly _localStorageService: localStorageService
   ) {
-    if (this.userState.user) {
-      console.log(this.userState.user);
+    if (localStorage.getItem('usersState')) {
       this.isAuth$.next(true);
-      this._router.navigate([this.userState.rout]);
+    } else {
+      this.isAuth$.next(true);
     }
   }
 
@@ -40,12 +40,9 @@ export class AuthService {
     return this._afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        if (!this.userState.previousUser) {
-          this._localStorageService.setUser(result.user);
-        } else {
-          this._localStorageService.usersState.user = result.user;
-          this._localStorageService.usersState.rout = this.userState.rout;
-        }
+        !this.userState
+          ? this._localStorageService.initUser(result.user)
+          : this._localStorageService.setUser(result.user);
 
         this.setUserData(result.user);
         if (result.user) {
@@ -56,12 +53,11 @@ export class AuthService {
                 message: `You are logged in as ${result.user?.email}`,
                 isSuccess: true
               };
-              this.userState.user = result.user;
-              this.userState.rout = this._localStorageService.usersState.rout;
+              // this.userState.rout = this._localStorageService.usersState.rout;
 
-              if (this.userState.user === result.user) {
-                console.log(1);
-                this._router.navigate([this.userState.rout]);
+              if (this.isAuth$.value) {
+                console.log(this.userState);
+                this._router.navigate([ERouterPath.LAYOUT]);
                 this._snackbarService.openSnackBar(snackbarDataSuccess);
               }
             }
@@ -98,15 +94,17 @@ export class AuthService {
   signOut() {
     return this._afAuth.signOut().then(() => {
       const removeUser = this._localStorageService.getUsersState();
-      const previousUser = removeUser.user;
-      removeUser.previousUser = previousUser;
-      removeUser.user = null;
-      console.log(removeUser);
-      if (removeUser.user === null) {
-        this._localStorageService.setNewUserState(removeUser);
+      if (removeUser) {
+        const previousUser = removeUser.user;
+        removeUser.previousUser = previousUser;
+        removeUser.user = null;
+        console.log(removeUser);
+        if (removeUser.user === null) {
+          this._localStorageService.setNewUserState(removeUser);
+        }
+        this.isAuth$.next(false);
+        this._router.navigate([ERouterPath.AUTH]);
       }
-      this.isAuth$.next(false);
-      this._router.navigate([ERouterPath.AUTH]);
     });
   }
 }
