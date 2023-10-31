@@ -1,12 +1,12 @@
 @use '../../assets/styles/mixins/layout.mixin' as *;
 
 .layout-container {
+  flex-grow: 1;
   position: relative;
   z-index: 1;
 }
 
 .layout {
-  min-height: 100%;
   background: radial-gradient(#a23982, #1f1013);
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;
@@ -16,7 +16,6 @@
 }
 
 .dark-layout {
-  min-height: 100%;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   -webkit-animation: fadeIn 1 1s ease-out;
   -moz-animation: fadeIn 1 1s ease-out;

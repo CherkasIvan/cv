@@ -1,8 +1,10 @@
+@use '../../../../assets/styles/variables' as color;
+
 .logout-button {
   width: fit-content;
   padding: 10px 15px;
   border-radius: 8px;
-  color: #fff;
+  color: color.$white;
   font-size: 18px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);

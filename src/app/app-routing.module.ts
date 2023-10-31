@@ -5,7 +5,7 @@ import { ERouterPath } from '@utils/enum/router-path.enum';
 
 import { AuthGuard } from './auth/guards/auth.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: `/${ERouterPath.AUTH}` },
   {
     path: ERouterPath.AUTH,

@@ -5,7 +5,8 @@
     type="checkbox"
     name="darkmode-toggle"
     id="darkmode-toggle"
-    (click)="changeView($event)" />
+    [value]="isChecked"
+    (change)="changeView($event)" />
   <label
     class="dark-mode-selector__label"
     for="darkmode-toggle">

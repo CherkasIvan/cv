@@ -19,15 +19,16 @@ import { localStorageService } from '@app/shared/services/localstorage/local-sto
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DarkModeSelectorComponent {
-  @ViewChild('darkModeCheckBox') public darkModeToggle!: ElementRef;
+  public isChecked = false;
 
   constructor(
     private readonly _darkModeService: DarkModeService,
     private readonly _localStorageService: localStorageService
   ) {}
 
-  public changeView($target: MouseEvent) {
-    const isChecked = (<HTMLInputElement>$target.target).checked;
-    this._darkModeService.isDark$.next(isChecked);
+  public changeView($event: MouseEvent) {
+    this.isChecked = (<HTMLInputElement>$event.target).checked;
+    this._darkModeService.isDark$.next(this.isChecked);
+    this._localStorageService.setMode(this.isChecked.toString());
   }
 }
