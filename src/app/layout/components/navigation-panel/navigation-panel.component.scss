@@ -1,97 +1,97 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
 
 .navigation-panel {
-  width: 100vw;
-  height: 100%;
-  backdrop-filter: blur(15px);
-  background: linear-gradient(
-    to top,
-    rgba(169, 208, 113, 0),
-    rgba(255, 255, 255, 0.25)
-  );
-  padding: 0 5%;
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    background: linear-gradient(
+        to top,
+        rgba(169, 208, 113, 0),
+        rgba(255, 255, 255, 0.25)
+    );
+    padding: 0 5%;
 
-  .container {
-    @include flex-a_center-j_sb;
-    min-width: 100%;
+    .container {
+        @include flex-a_center-j_sb;
+        min-width: 100%;
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      cursor: pointer;
-    }
-
-    .navigation-container {
-      @include flex-a_center;
-      gap: 1rem;
-
-      .navigation-list {
-        display: flex;
-        column-gap: 15px;
-        margin: 0 10px;
-
-        &__item {
-          justify-self: center;
-          justify-content: center;
-          width: fit-content;
-          font-size: 20px;
-
-          .item-link {
-            position: relative;
-            padding: 1rem 0;
-            color: #ccccff;
-            font-weight: bold;
-            line-height: 1;
-            -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-          }
-
-          .item-link::first-letter {
-            text-transform: uppercase;
-          }
+        .logo {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
         }
 
-        &__item:hover {
-          .item-link {
-            color: #cc0033;
-            border-bottom: 4px solid #cc0033;
-            border-radius: 4px;
-          }
+        .navigation-container {
+            @include flex-a_center;
+            gap: 1rem;
+
+            .navigation-list {
+                display: flex;
+                column-gap: 15px;
+                margin: 0 10px;
+
+                &__item {
+                    justify-self: center;
+                    justify-content: center;
+                    width: fit-content;
+                    font-size: 20px;
+
+                    .item-link {
+                        position: relative;
+                        padding: 1rem 0;
+                        color: #ccccff;
+                        font-weight: bold;
+                        line-height: 1;
+                        -webkit-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                    }
+
+                    .item-link::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+
+                &__item:hover {
+                    .item-link {
+                        color: #cc0033;
+                        border-bottom: 4px solid #cc0033;
+                        border-radius: 4px;
+                    }
+                }
+
+                .active {
+                    -webkit-transition: all 0.1s ease;
+                    transition: all 0.1s ease;
+                    color: #ccff33;
+                    border-bottom: 4px solid #ccff33;
+                    border-radius: 4px;
+                }
+            }
         }
 
-        .active {
-          -webkit-transition: all 0.1s ease;
-          transition: all 0.1s ease;
-          color: #ccff33;
-          border-bottom: 4px solid #ccff33;
-          border-radius: 4px;
+        .personal-area {
+            @include flex-a_center;
+            column-gap: 20px;
+
+            .selectors {
+                @include flex-d_column;
+                row-gap: 10px;
+            }
         }
-      }
-    }
 
-    .personal-area {
-      @include flex-a_center;
-      column-gap: 20px;
-
-      .selectors {
-        @include flex-d_column;
-        row-gap: 10px;
-      }
+        .navigation-burger-menu {
+            display: none;
+        }
     }
-
-    .navigation-burger-menu {
-      display: none;
-    }
-  }
 }
 
 @media screen and (max-width: 950px) {
-  .navigation-panel .container .navigation-container,
-  .navigation-panel .container .personal-area {
-    display: none;
-  }
+    .navigation-panel .container .navigation-container,
+    .navigation-panel .container .personal-area {
+        display: none;
+    }
 
-  .navigation-burger-menu {
-    display: block !important;
-  }
+    .navigation-burger-menu {
+        display: block !important;
+    }
 }

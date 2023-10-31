@@ -11,14 +11,14 @@ import { routes } from './app/app-routing.module';
 import { AppModule } from './app/app.module';
 
 platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .then(() => {
-    if ('serviceWorker' in navigator && environment.production) {
-      navigator.serviceWorker.register('/ngsw-worker.js');
-    }
-  })
-  .catch((err) => console.log(err));
+    .bootstrapModule(AppModule)
+    .then(() => {
+        if ('serviceWorker' in navigator && environment.production) {
+            navigator.serviceWorker.register('/ngsw-worker.js');
+        }
+    })
+    .catch((err) => console.log(err));
 
 bootstrapApplication(DarkModeSelectorComponent, {
-  providers: [provideStore()]
+    providers: [provideStore()]
 }).catch((err) => console.log(err));

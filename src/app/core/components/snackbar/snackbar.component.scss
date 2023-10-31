@@ -2,16 +2,16 @@
 @use '../../../../assets/styles/variables' as color;
 
 .snackbar {
-  @include flex-a_center-j_sb;
+    @include flex-a_center-j_sb;
 
-  &-message {
-    font-weight: 700;
-    color: color.$white;
-  }
+    &-message {
+        font-weight: 700;
+        color: color.$white;
+    }
 
-  &-img {
-    margin-left: 10px;
-    width: 30px;
-    height: 30px;
-  }
+    &-img {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+    }
 }

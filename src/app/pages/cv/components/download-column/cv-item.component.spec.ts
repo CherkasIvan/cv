@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CvItemComponent } from './cv-item.component';
 
 describe('CvItemComponent', () => {
-  let component: CvItemComponent;
-  let fixture: ComponentFixture<CvItemComponent>;
+    let component: CvItemComponent;
+    let fixture: ComponentFixture<CvItemComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [CvItemComponent]
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [CvItemComponent]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(CvItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(CvItemComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

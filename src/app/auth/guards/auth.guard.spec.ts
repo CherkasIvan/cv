@@ -5,19 +5,19 @@ import { Observable } from 'rxjs';
 import { AuthGuard as authGuard } from './auth.guard';
 
 describe('authGuard', ():
-  | Observable<boolean>
-  | Promise<boolean>
-  | UrlTree
-  | boolean => {
-  const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => new authGuard(...guardParameters));
+    | Observable<boolean>
+    | Promise<boolean>
+    | UrlTree
+    | boolean => {
+    const executeGuard: CanActivateFn = (...guardParameters) =>
+        TestBed.runInInjectionContext(() => new authGuard(...guardParameters));
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+    });
 
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
-  });
-  return;
+    it('should be created', () => {
+        expect(executeGuard).toBeTruthy();
+    });
+    return;
 });

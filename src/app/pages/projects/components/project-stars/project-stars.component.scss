@@ -1,18 +1,18 @@
 @use '../../../../../assets/styles/mixins/flex.mixin' as *;
 
 .stars {
-  &-img {
-  }
-
-  &-count {
-    @include flex-a_center-j_center;
-    column-gap: 10px;
-
-    &__description {
-      margin: 0;
+    &-img {
     }
 
-    &__number {
+    &-count {
+        @include flex-a_center-j_center;
+        column-gap: 10px;
+
+        &__description {
+            margin: 0;
+        }
+
+        &__number {
+        }
     }
-  }
 }

@@ -21,27 +21,27 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  declarations: [
-    InitialContentComponent,
-    LayoutComponent,
-    NavigationPanelComponent,
-    FooterComponent,
-    NavigationPanelBurgerComponent
-  ],
-  exports: [LayoutComponent],
-  imports: [
-    LayoutRoutingModule,
-    MatTableModule,
-    CommonModule,
-    LanguageSelectorComponent,
-    DarkModeSelectorComponent,
-    SpinnerComponent,
-    SkillsContentComponent,
-    LinksContainerComponent,
-    ButtonComponent,
-    LogoutComponent,
-    TranslateModule,
-    AuthModule
-  ]
+    declarations: [
+        InitialContentComponent,
+        LayoutComponent,
+        NavigationPanelComponent,
+        FooterComponent,
+        NavigationPanelBurgerComponent
+    ],
+    exports: [LayoutComponent],
+    imports: [
+        LayoutRoutingModule,
+        MatTableModule,
+        CommonModule,
+        LanguageSelectorComponent,
+        DarkModeSelectorComponent,
+        SpinnerComponent,
+        SkillsContentComponent,
+        LinksContainerComponent,
+        ButtonComponent,
+        LogoutComponent,
+        TranslateModule,
+        AuthModule
+    ]
 })
 export class LayoutModule {}

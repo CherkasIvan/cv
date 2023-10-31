@@ -3,19 +3,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthComponent } from './auth.component';
 
 describe('LoginComponent', () => {
-  let component: AuthComponent;
-  let fixture: ComponentFixture<AuthComponent>;
+    let component: AuthComponent;
+    let fixture: ComponentFixture<AuthComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AuthComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [AuthComponent]
+        });
+        fixture = TestBed.createComponent(AuthComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(AuthComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

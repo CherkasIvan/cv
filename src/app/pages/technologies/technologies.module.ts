@@ -8,12 +8,12 @@ import { TechnologiesRoutingModule } from './technologies-routing.module';
 import { TechnologiesComponent } from './technologies.component';
 
 @NgModule({
-  declarations: [TechnologiesComponent],
-  imports: [
-    CommonModule,
-    TechnologiesRoutingModule,
-    SkillsContentComponent,
-    TranslateModule
-  ]
+    declarations: [TechnologiesComponent],
+    imports: [
+        CommonModule,
+        TechnologiesRoutingModule,
+        SkillsContentComponent,
+        TranslateModule
+    ]
 })
 export class TechnologiesModule {}

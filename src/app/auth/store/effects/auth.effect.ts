@@ -9,20 +9,20 @@ import { auth } from '../actions/auth.action';
 
 @Injectable()
 export class AuthEffects {
-  login$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(auth),
-      switchMap(({ email, password }) =>
-        this.authService.signIn(email, password).pipe(
-          map((user) => authSuccess({ user })),
-          catchError((error) => of(authFailure({ error })))
+    login$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(auth),
+            switchMap(({ email, password }) =>
+                this.authService.signIn(email, password).pipe(
+                    map((user) => authSuccess({ user })),
+                    catchError((error) => of(authFailure({ error })))
+                )
+            )
         )
-      )
-    )
-  );
+    );
 
-  constructor(
-    private actions$: Actions,
-    private authService: AuthService
-  ) {}
+    constructor(
+        private actions$: Actions,
+        private authService: AuthService
+    ) {}
 }

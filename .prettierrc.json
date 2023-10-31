@@ -1,45 +1,45 @@
 {
-  "singleQuote": true,
-  "semi": true,
-  "proseWrap": "preserve",
-  "trailingComma": "none",
-  "bracketSameLine": true,
-  "bracketSpacing": true,
-  "arrowParens": "always",
-  "singleAttributePerLine": true,
-  "tabWidth": 2,
-  "useTabs": false,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "importOrder": [
-    "'^@angular/(.*)$",
+    "singleQuote": true,
+    "semi": true,
+    "proseWrap": "preserve",
+    "trailingComma": "none",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "singleAttributePerLine": true,
+    "tabWidth": 4,
+    "useTabs": false,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": [
+        "'^@angular/(.*)$",
 
-    "'rxjs/(.*)$'",
+        "'rxjs/(.*)$'",
 
-    "'@ngrx/(.*)$'",
+        "'@ngrx/(.*)$'",
 
-    "^@auth/(.*)$",
+        "^@auth/(.*)$",
 
-    "^@core/(.*)$",
+        "^@core/(.*)$",
 
-    "^@layout/(.*)$",
+        "^@layout/(.*)$",
 
-    "^@pages/(.*)$",
+        "^@pages/(.*)$",
 
-    "^@shared/(.*)$",
+        "^@shared/(.*)$",
 
-    "^@utils/(.*)$",
+        "^@utils/(.*)$",
 
-    "^@assets/(.*)$",
+        "^@assets/(.*)$",
 
-    "^@env/(.*)$",
+        "^@env/(.*)$",
 
-    "^@app/(.*)$",
+        "^@app/(.*)$",
 
-    "^[../]",
+        "^[../]",
 
-    "^[./]"
-  ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "importOrderParserPlugins": ["decorators-legacy", "typescript"]
+        "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderParserPlugins": ["decorators-legacy", "typescript"]
 }

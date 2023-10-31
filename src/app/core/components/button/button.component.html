@@ -1,19 +1,19 @@
 <div
-  class="button-container"
-  [ngClass]="downloadPath ? 'download' : 'change-view'">
-  <button
-    class="button"
-    [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'">
-    <a
-      *ngIf="downloadPath"
-      [href]="downloadPath"
-      class="button__label"
-      >{{ label }}</a
-    >
-    <a
-      *ngIf="!downloadPath"
-      class="button__label">
-      {{ label }}
-    </a>
-  </button>
+    class="button-container"
+    [ngClass]="downloadPath ? 'download' : 'change-view'">
+    <button
+        class="button"
+        [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'">
+        <a
+            *ngIf="downloadPath"
+            [href]="downloadPath"
+            class="button__label"
+            >{{ label }}</a
+        >
+        <a
+            *ngIf="!downloadPath"
+            class="button__label">
+            {{ label }}
+        </a>
+    </button>
 </div>

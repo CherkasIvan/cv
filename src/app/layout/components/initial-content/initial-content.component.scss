@@ -1,60 +1,60 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
 
 .initial-content {
-  .container {
-    text-align: center;
+    .container {
+        text-align: center;
 
-    .main-content,
-    .technologies-content {
-      margin-bottom: 25px;
+        .main-content,
+        .technologies-content {
+            margin-bottom: 25px;
 
-      &__title {
-        font-size: 20px;
-        font-weight: 700;
-      }
-
-      &__description {
-        margin-top: 20px;
-      }
-
-      .technologies-list {
-        width: 100%;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-        &__item {
-          padding: 1rem;
-          .item-link {
-            .item-container {
-              @include flex-a_center-j_center-d_column;
-              gap: 10px;
-
-              .item__title {
-                font-weight: 600;
+            &__title {
                 font-size: 20px;
-                text-transform: uppercase;
-              }
-
-              .item__img {
-                height: 4rem;
-              }
+                font-weight: 700;
             }
-          }
-        }
-      }
-    }
 
-    .etc {
-      @include flex-d_column;
-      gap: 15px;
-      &__wishes,
-      &__language,
-      &__color-mode {
-        font-weight: 600;
-        font-size: 18px;
-        font-style: italic;
-      }
+            &__description {
+                margin-top: 20px;
+            }
+
+            .technologies-list {
+                width: 100%;
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+                &__item {
+                    padding: 1rem;
+                    .item-link {
+                        .item-container {
+                            @include flex-a_center-j_center-d_column;
+                            gap: 10px;
+
+                            .item__title {
+                                font-weight: 600;
+                                font-size: 20px;
+                                text-transform: uppercase;
+                            }
+
+                            .item__img {
+                                height: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .etc {
+            @include flex-d_column;
+            gap: 15px;
+            &__wishes,
+            &__language,
+            &__color-mode {
+                font-weight: 600;
+                font-size: 18px;
+                font-style: italic;
+            }
+        }
     }
-  }
 }

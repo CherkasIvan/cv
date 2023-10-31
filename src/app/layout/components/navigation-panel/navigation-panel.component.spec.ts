@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationPanelComponent } from './navigation-panel.component';
 
 describe('NavigationPanelComponent', () => {
-  let component: NavigationPanelComponent;
-  let fixture: ComponentFixture<NavigationPanelComponent>;
+    let component: NavigationPanelComponent;
+    let fixture: ComponentFixture<NavigationPanelComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [NavigationPanelComponent]
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [NavigationPanelComponent]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(NavigationPanelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(NavigationPanelComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -6,7 +6,7 @@ import { WorkExperienceComponent } from './work-experience.component';
 const routes: Routes = [{ path: '', component: WorkExperienceComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class WorkExperienceRoutingModule {}

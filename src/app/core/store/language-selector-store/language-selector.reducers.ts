@@ -6,6 +6,6 @@ import { getLanguage } from './language-selector.actions';
 const initialState: languageSelectorType = 'ru';
 
 export const languageSelectorReducer = createReducer(
-  initialState,
-  on(getLanguage, (state) => state)
+    initialState,
+    on(getLanguage, (state) => state)
 );

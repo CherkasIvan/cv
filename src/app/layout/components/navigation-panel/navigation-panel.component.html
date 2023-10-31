@@ -1,40 +1,40 @@
 <header class="navigation-panel">
-  <div class="container">
-    <img
-      src="assets/img/IvanCherkas.png"
-      alt="cv-logo"
-      class="logo"
-      routerLink="/layout" />
+    <div class="container">
+        <img
+            src="assets/img/IvanCherkas.png"
+            alt="cv-logo"
+            class="logo"
+            routerLink="/layout" />
 
-    <!-- <cv-navigation-panel-burger></cv-navigation-panel-burger> -->
+        <!-- <cv-navigation-panel-burger></cv-navigation-panel-burger> -->
 
-    <nav class="navigation-container">
-      <ul class="navigation-list">
-        <li
-          class="navigation-list__item"
-          *ngFor="let link of navigation$ | async; let i = index"
-          (click)="checkScroll()">
-          <a
-            routerLink="{{ link.link }}"
-            class="item-link"
-            [routerLinkActive]="['active']"
-            >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
-          >
-        </li>
-      </ul>
-    </nav>
+        <nav class="navigation-container">
+            <ul class="navigation-list">
+                <li
+                    class="navigation-list__item"
+                    *ngFor="let link of navigation$ | async; let i = index"
+                    (click)="checkScroll()">
+                    <a
+                        routerLink="{{ link.link }}"
+                        class="item-link"
+                        [routerLinkActive]="['active']"
+                        >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
+                    >
+                </li>
+            </ul>
+        </nav>
 
-    <cv-navigation-panel-burger
-      class="navigation-burger-menu"></cv-navigation-panel-burger>
+        <cv-navigation-panel-burger
+            class="navigation-burger-menu"></cv-navigation-panel-burger>
 
-    <div class="personal-area">
-      <div class="selectors">
-        <cv-language-selector></cv-language-selector>
-        <cv-dark-mode-selector></cv-dark-mode-selector>
-      </div>
-      <div class="log-out">
-        <cv-logout></cv-logout>
-      </div>
+        <div class="personal-area">
+            <div class="selectors">
+                <cv-language-selector></cv-language-selector>
+                <cv-dark-mode-selector></cv-dark-mode-selector>
+            </div>
+            <div class="log-out">
+                <cv-logout></cv-logout>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
