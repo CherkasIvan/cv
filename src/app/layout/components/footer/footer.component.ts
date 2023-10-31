@@ -1,19 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
-
+import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-
+import { TranslateModule } from '@ngx-translate/core';
 import { IContacts } from '@shared/models/contacts.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
-
 import { pwaView } from '@utils/functions/pwaView';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'cv-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [LinksContainerComponent, CommonModule, TranslateModule],
 })
 export class FooterComponent {
     public myContacts$: Observable<IContacts[]> =
@@ -32,3 +34,4 @@ export class FooterComponent {
         return this._sanitizer.bypassSecurityTrustUrl(url);
     }
 }
+

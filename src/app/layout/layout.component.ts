@@ -2,22 +2,20 @@ import {
     ChangeDetectionStrategy,
     Component,
     HostListener,
-    OnDestroy
+    OnDestroy,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { BehaviorSubject, Subscription } from 'rxjs';
-
 import { fadeAnimation } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
     selector: 'cv-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
     animations: [fadeAnimation],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent implements OnDestroy {
     public currentTheme$: BehaviorSubject<boolean> =
@@ -31,7 +29,7 @@ export class LayoutComponent implements OnDestroy {
     constructor(
         private readonly _router: Router,
         private readonly _darkModeService: DarkModeService,
-        private _localStorageService: localStorageService
+        private readonly _localStorageService: localStorageService
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
@@ -51,3 +49,4 @@ export class LayoutComponent implements OnDestroy {
         this.routerSubscription$.unsubscribe();
     }
 }
+

@@ -4,7 +4,7 @@ import {
     query,
     style,
     transition,
-    trigger
+    trigger,
 } from '@angular/animations';
 
 export const fadeAnimation = trigger('fadeAnimation', [
@@ -12,13 +12,14 @@ export const fadeAnimation = trigger('fadeAnimation', [
         query(':enter', [style({ opacity: 0 })], { optional: true }),
         group([
             query(':leave', [animate(500, style({ opacity: 0 }))], {
-                optional: true
+                optional: true,
             }),
             query(
                 ':enter',
                 [style({ opacity: 0 }), animate(500, style({ opacity: 1 }))],
                 { optional: true }
-            )
-        ])
-    ])
+            ),
+        ]),
+    ]),
 ]);
+
