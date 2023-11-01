@@ -1,17 +1,26 @@
-<nav class="burger-navigation">
+<nav
+    class="burger-navigation"
+    (click)="navigationCheck()">
     <input
-        id="menu-toggle"
-        type="checkbox" />
+        class="menu-toggle"
+        type="checkbox"
+        [ngClass]="!isNavigate ? 'menu-toggle__close' : 'menu-toggle__open'" />
     <label
         class="menu-button-container"
         for="menu-toggle">
         <div class="menu-button"></div>
     </label>
     <ul class="menu">
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-        <li>Four</li>
-        <li>Five</li>
+        <li
+            class="menu__item"
+            *ngFor="let item of burgerNavigators; let i = index">
+            <a
+                routerLink="{{ item.link }}"
+                class="item-link"
+                [routerLinkActive]="['active']"
+                (click)="navigationClose($event)"
+                >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
+            >
+        </li>
     </ul>
 </nav>

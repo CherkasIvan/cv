@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
+import { INavigation } from '@shared/models/navigation.interface';
 
 @Component({
     selector: 'cv-navigation-panel-burger',
@@ -6,4 +8,16 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     styleUrls: ['./navigation-panel-burger.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavigationPanelBurgerComponent {}
+export class NavigationPanelBurgerComponent {
+    @Input() public burgerNavigators: INavigation[] = [];
+    public isNavigate: boolean = false;
+
+    public navigationCheck() {
+        this.isNavigate = !this.isNavigate;
+    }
+
+    public navigationClose(event: MouseEvent) {
+        console.log(event);
+        this.isNavigate = false;
+    }
+}

@@ -2,24 +2,30 @@ import {
     ChangeDetectionStrategy,
     Component,
     HostListener,
-    OnDestroy,
+    OnDestroy
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
 import { fadeAnimation } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
+
+import { INavigation } from '@shared/models/navigation.interface';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
-import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
     selector: 'cv-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
     animations: [fadeAnimation],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutComponent implements OnDestroy {
     public currentTheme$: BehaviorSubject<boolean> =
         this._darkModeService.isDark$;
+    public navigation$: Observable<INavigation[]> =
+        this._firebaseService.getNavigation();
     public currentRoute!: string;
     public isAuth = false;
     public isPwaView = false;
@@ -29,7 +35,8 @@ export class LayoutComponent implements OnDestroy {
     constructor(
         private readonly _router: Router,
         private readonly _darkModeService: DarkModeService,
-        private readonly _localStorageService: localStorageService
+        private readonly _localStorageService: localStorageService,
+        private readonly _firebaseService: FirebaseService
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
@@ -49,4 +56,3 @@ export class LayoutComponent implements OnDestroy {
         this.routerSubscription$.unsubscribe();
     }
 }
-

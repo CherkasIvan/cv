@@ -1,17 +1,9 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as glass;
 
 .cv-footer {
     padding: 0 5%;
-    position: fixed;
-    bottom: 0;
-    backdrop-filter: blur(15px);
-    z-index: 100000;
-    background: linear-gradient(
-        to bottom,
-        rgba(169, 208, 113, 0),
-        rgba(255, 255, 255, 0.25)
-    );
-    width: calc(100% - 8px);
+    @include glass.footer_glassmorphism;
 
     .footer-container {
         @include flex-d_column;

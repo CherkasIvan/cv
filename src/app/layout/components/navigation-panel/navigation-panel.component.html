@@ -6,14 +6,11 @@
             class="logo"
             routerLink="/layout" />
 
-        <!-- <cv-navigation-panel-burger></cv-navigation-panel-burger> -->
-
         <nav class="navigation-container">
             <ul class="navigation-list">
                 <li
                     class="navigation-list__item"
-                    *ngFor="let link of navigation$ | async; let i = index"
-                    (click)="checkScroll()">
+                    *ngFor="let link of navigators; let i = index">
                     <a
                         routerLink="{{ link.link }}"
                         class="item-link"
@@ -25,7 +22,8 @@
         </nav>
 
         <cv-navigation-panel-burger
-            class="navigation-burger-menu"></cv-navigation-panel-burger>
+            class="navigation-burger-menu"
+            [burgerNavigators]="navigators"></cv-navigation-panel-burger>
 
         <div class="personal-area">
             <div class="selectors">

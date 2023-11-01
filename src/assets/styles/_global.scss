@@ -8,26 +8,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    background-color: #000;
-    width: 8px;
-    scrollbar-width: auto;
-    scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.5, #a520ca),
-        color-stop(1, #2681cc)
-    );
-    border-radius: 10px;
+    display: none;
 }
 
 .about-me,
@@ -37,11 +18,5 @@ body {
 .technologies,
 .work-experience,
 .initial-content {
-    margin: 2rem 0 0 0;
-    padding-bottom: 9.5rem;
     width: 100%;
-
-    .container {
-        padding: 0 5%;
-    }
 }

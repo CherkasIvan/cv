@@ -7,12 +7,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     styleUrls: ['./backgrounds.component.scss'],
     standalone: true,
     imports: [CommonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BackgroundsComponent {
     @Input() public isDarkBackground!: boolean;
-    ngOnInit() {
-        console.log(this.isDarkBackground);
-    }
 }
-

@@ -1,0 +1,23 @@
+@mixin footer_glassmorphism {
+    backdrop-filter: blur(20px);
+    border-radius: 10px 10px 0 0;
+    opacity: 0.95;
+    border-top: 1px solid rgba(244, 244, 244, 0.2);
+    border-left: 1px solid rgba(244, 244, 244, 0.2);
+}
+
+@mixin header_glassmorphism {
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 10px 10px;
+    opacity: 0.95;
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    border-left: 1px solid rgba(244, 244, 244, 0.2);
+}
+
+@mixin reset_glassmorphism {
+    backdrop-filter: initial;
+    border-radius: 0;
+    opacity: 1;
+    border-bottom: none;
+    border-left: none;
+}
