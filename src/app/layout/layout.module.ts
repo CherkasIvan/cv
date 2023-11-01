@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { AuthModule } from '@auth/auth.module';
+
 import { ButtonComponent } from '@core/components/button/button.component';
 import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
@@ -9,7 +12,6 @@ import { LanguageSelectorComponent } from '@core/components/language-selector/la
 import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { LogoutComponent } from '@core/components/logout/logout.component';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -24,7 +26,7 @@ import { LayoutComponent } from './layout.component';
         InitialContentComponent,
         LayoutComponent,
         NavigationPanelComponent,
-        NavigationPanelBurgerComponent,
+        NavigationPanelBurgerComponent
     ],
     exports: [LayoutComponent],
     imports: [
@@ -41,8 +43,7 @@ import { LayoutComponent } from './layout.component';
         ButtonComponent,
         LogoutComponent,
         TranslateModule,
-        AuthModule,
-    ],
+        AuthModule
+    ]
 })
 export class LayoutModule {}
-
