@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
+import { PopUpCloseDirective } from '@app/core/directives/pop-up-close/pop-up-close.directive';
 import { AuthModule } from '@auth/auth.module';
 import { ButtonComponent } from '@core/components/button/button.component';
 import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
@@ -20,12 +21,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-    declarations: [
-        InitialContentComponent,
-        LayoutComponent,
-        NavigationPanelComponent,
-        NavigationPanelBurgerComponent,
-    ],
+    declarations: [InitialContentComponent, LayoutComponent, NavigationPanelComponent, NavigationPanelBurgerComponent, PopUpCloseDirective],
     exports: [LayoutComponent],
     imports: [
         LayoutRoutingModule,
@@ -45,4 +41,3 @@ import { LayoutComponent } from './layout.component';
     ],
 })
 export class LayoutModule {}
-

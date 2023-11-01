@@ -8,7 +8,7 @@ describe('BackgroundsComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [BackgroundsComponent],
+            declarations: [BackgroundsComponent]
         }).compileComponents();
 
         fixture = TestBed.createComponent(BackgroundsComponent);
@@ -20,4 +20,3 @@ describe('BackgroundsComponent', () => {
         expect(component).toBeTruthy();
     });
 });
-

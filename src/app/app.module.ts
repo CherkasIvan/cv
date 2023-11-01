@@ -1,9 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import {
-    ScreenTrackingService,
-    UserTrackingService
-} from '@angular/fire/analytics';
+import { ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -46,9 +43,9 @@ export function HttpLoaderFactory(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
+                deps: [HttpClient],
             },
-            defaultLanguage: 'ru'
+            defaultLanguage: 'ru',
         }),
         AppRoutingModule,
         BrowserAnimationsModule,
@@ -68,17 +65,17 @@ export function HttpLoaderFactory(http: HttpClient) {
         StoreModule.forRoot({}),
         StoreDevtoolsModule.instrument({
             maxAge: 25, // Retains last 25 states
-            logOnly: environment.production // Restrict extension to log-only mode
+            logOnly: environment.production, // Restrict extension to log-only mode
         }),
         EffectsModule.forRoot([]),
         StoreRouterConnectingModule.forRoot(),
         EntityDataModule.forRoot(entityConfig),
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
-            registrationStrategy: 'registerWhenStable:30000'
-        })
+            registrationStrategy: 'registerWhenStable:30000',
+        }),
     ],
     providers: [AuthService, ScreenTrackingService, UserTrackingService],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

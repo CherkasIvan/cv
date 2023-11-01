@@ -48,3 +48,9 @@
     justify-content: center;
     flex-direction: column;
 }
+
+@mixin flex-j_sb-d_column {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
