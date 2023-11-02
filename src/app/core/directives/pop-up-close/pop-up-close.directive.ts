@@ -1,22 +1,24 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Output
+} from '@angular/core';
 
 @Directive({
-    selector: '[cvPopUpClose]',
+    selector: '[cvPopUpClose]'
 })
 export class PopUpCloseDirective {
-    @Output()
-    clickOutside: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() clickOutside = new EventEmitter<MouseEvent>();
 
     @HostListener('document:click', ['$event'])
     onClick(event: MouseEvent) {
-        if (!this.elemRef.nativeElement.contains(event.target)) {
-            this.clickOutside.emit(!this.elemRef.nativeElement.contains(event.target));
-            console.log(!this.elemRef.nativeElement.contains(event.target));
-        } else {
-            this.clickOutside.emit(!this.elemRef.nativeElement.contains(event.target));
-            console.log(!this.elemRef.nativeElement.contains(event.target));
+        const target = event.target as HTMLElement;
+        if (!this.elementRef.nativeElement.contains(target)) {
+            this.clickOutside.emit(event);
         }
     }
 
-    constructor(private elemRef: ElementRef) {}
+    constructor(private elementRef: ElementRef) {}
 }

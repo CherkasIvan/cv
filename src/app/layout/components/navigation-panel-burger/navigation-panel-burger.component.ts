@@ -1,28 +1,27 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
 import { INavigation } from '@shared/models/navigation.interface';
 
 @Component({
     selector: 'cv-navigation-panel-burger',
     templateUrl: './navigation-panel-burger.component.html',
     styleUrls: ['./navigation-panel-burger.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [PopUpCloseDirective],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationPanelBurgerComponent {
     @Input() public burgerNavigators: INavigation[] = [];
-    @ViewChild('clickOutside')
-    private readonly popup!: ElementRef;
+
     public isNavigate: boolean = false;
-    constructor(private popUpClose: PopUpCloseDirective) {}
-    public navigationCheck() {
+    elementRef: any;
+
+    public navigationCheck(event: MouseEvent) {
+        event.stopPropagation();
         this.isNavigate = !this.isNavigate;
-        console.log(this.popUpClose.clickOutside);
     }
 
-    public hidePopup(event$: MouseEvent) {
-        console.log(event$);
-        this.popup.nativeElement.classList.add('menu-toggle__close');
-        console.log(this.popup);
+    public hidePopup(event: any) {
+        if (event.target !== this.elementRef.nativeElement) {
+            this.isNavigate = false;
+        }
     }
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
                     import('../pages/about-me/about-me.module').then(
                         (module) => module.AboutMeModule
                     ),
-                data: { animation: 'aboutMePage' }
+                data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.PROJECTS,
@@ -24,7 +24,7 @@ const routes: Routes = [
                     import('../pages/projects/projects.module').then(
                         (module) => module.ProjectsModule
                     ),
-                data: { animation: 'projectsPage' }
+                data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.EDUCATION,
@@ -32,7 +32,7 @@ const routes: Routes = [
                     import('../pages/education/education.module').then(
                         (module) => module.EducationModule
                     ),
-                data: { animation: 'educationPage' }
+                data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.TECHNOLOGIES,
@@ -40,7 +40,7 @@ const routes: Routes = [
                     import('../pages/technologies/technologies.module').then(
                         (module) => module.TechnologiesModule
                     ),
-                data: { animation: 'technologiesPage' }
+                data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.WORK_EXPERIENCE,
@@ -48,7 +48,7 @@ const routes: Routes = [
                     import(
                         '../pages/work-experience/work-experience.module'
                     ).then((module) => module.WorkExperienceModule),
-                data: { animation: 'workExperiencePage' }
+                data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.CV,
@@ -56,7 +56,7 @@ const routes: Routes = [
                     import('../pages/cv/cv.module').then(
                         (module) => module.CvModule
                     ),
-                data: { animation: 'cvPage' }
+                data: { animation: 'page-enter' }
             }
         ]
     }

@@ -48,8 +48,13 @@ export class LayoutComponent implements OnDestroy {
         );
     }
 
-    public getState(outlet: RouterOutlet) {
-        return outlet.activatedRouteData['state'];
+    public prepareRoute(outlet: RouterOutlet) {
+        console.log(outlet.activatedRouteData['animation']);
+        return (
+            outlet &&
+            outlet.activatedRouteData &&
+            outlet.activatedRouteData['animation']
+        );
     }
 
     ngOnDestroy(): void {
