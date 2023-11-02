@@ -3,12 +3,16 @@ import { Observable } from 'rxjs';
 
 import { ITechnologies } from '@shared/models/technologies.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
+import { fadeIn } from '@app/core/animations/route-animation';
 
 @Component({
     selector: 'cv-technologies',
     templateUrl: './technologies.component.html',
     styleUrls: ['./technologies.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    animations: [
+        fadeIn
+        ]
 })
 export class TechnologiesComponent {
     public frontendTech$: Observable<ITechnologies[]> =

@@ -3,12 +3,16 @@ import { Observable } from 'rxjs';
 
 import { ICvFormat } from '@shared/models/cv-format.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
+import { fadeIn } from '@app/core/animations/route-animation';
 
 @Component({
     selector: 'cv-cv',
     templateUrl: './cv.component.html',
     styleUrls: ['./cv.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    animations: [
+        fadeIn
+        ]
 })
 export class CvComponent {
     public cvList: Observable<ICvFormat[]> =

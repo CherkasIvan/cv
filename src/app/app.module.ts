@@ -40,7 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-    declarations: [AppComponent],
+    // declarations: [AppComponent],
     imports: [
         TranslateModule.forRoot({
             loader: {
@@ -53,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        AppComponent,
         BrowserModule,
         CoreModule,
         AngularFireModule.initializeApp(environment.firebase),
@@ -79,6 +80,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         })
     ],
     providers: [AuthService, ScreenTrackingService, UserTrackingService],
-    bootstrap: [AppComponent]
+    // bootstrap: [AppComponent]
 })
 export class AppModule {}

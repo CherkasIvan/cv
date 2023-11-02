@@ -2,6 +2,7 @@
 
 .dialog-content {
     @include flex-a_center-d_column;
+
     .dialog-actions {
         display: flex;
         align-items: center;

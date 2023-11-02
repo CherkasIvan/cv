@@ -11,7 +11,7 @@ export class LogoutDialogService {
 
     openDialog(): void {
         const dialogRef = this.dialog.open(LogoutDialogComponent, {
-            width: '600px'
+            panelClass: 'logoutDialog'
         });
         dialogRef.afterClosed().subscribe((result) => {
             return result;
