@@ -14,7 +14,7 @@
         padding: 0;
     }
 
-    .menu>.menu__item {
+    .menu > .menu__item {
         margin: 0 1rem;
         overflow: hidden;
 
@@ -59,16 +59,16 @@
         margin-top: 8px;
     }
 
-    .menu-toggle__open+.menu-button-container .menu-button::before {
+    .menu-toggle__open + .menu-button-container .menu-button::before {
         margin-top: 0px;
         transform: rotate(405deg);
     }
 
-    .menu-toggle__open+.menu-button-container .menu-button {
+    .menu-toggle__open + .menu-button-container .menu-button {
         background: rgba(255, 255, 255, 0);
     }
 
-    .menu-toggle__open+.menu-button-container .menu-button::after {
+    .menu-toggle__open + .menu-button-container .menu-button::after {
         margin-top: 0px;
         transform: rotate(-405deg);
     }
@@ -86,7 +86,7 @@
             width: fit-content;
         }
 
-        .menu-toggle~.menu .menu__item {
+        .menu-toggle ~ .menu .menu__item {
             height: 0;
             margin: 0;
             padding: 0;
@@ -94,13 +94,13 @@
             transition: all 0.3s;
         }
 
-        .menu-toggle__open~.menu .menu__item {
+        .menu-toggle__open ~ .menu .menu__item {
             border: 1px solid rgba(255, 255, 255, 0.5);
             height: 2.5em;
             transition: all 0.3s;
         }
 
-        .menu>.menu__item {
+        .menu > .menu__item {
             @include flex-j_center;
             padding: 0.5em 0;
             width: 100%;
@@ -113,16 +113,16 @@
             border-radius: 0;
         }
 
-        .menu>.menu__item:hover {
+        .menu > .menu__item:hover {
             background: rgba(255, 255, 255, 0.3);
             transition: all 0.3s;
         }
 
-        .menu>.menu__item:last-child {
+        .menu > .menu__item:last-child {
             @include glass.header_glassmorphism;
         }
 
-        .menu>.menu__item:first-child {
+        .menu > .menu__item:first-child {
             @include glass.header_glassmorphism;
             border-radius: 10px 10px 0 0;
         }

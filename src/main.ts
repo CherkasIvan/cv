@@ -1,10 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { provideRouter } from '@angular/router';
-import { AppComponent } from '@app/app.component';
-import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
-import { environment } from '@env/environment';
 import { provideStore } from '@ngrx/store';
+
+import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
+
+import { environment } from '@env/environment';
+
+import { AppComponent } from '@app/app.component';
 
 import { routes } from './app/app-routing.module';
 import { AppModule } from './app/app.module';
@@ -19,5 +22,5 @@ platformBrowserDynamic()
     .catch((err) => console.log(err));
 
 bootstrapApplication(AppComponent, {
-    providers: [provideStore()],
+    providers: [provideStore()]
 }).catch((err) => console.log(err));

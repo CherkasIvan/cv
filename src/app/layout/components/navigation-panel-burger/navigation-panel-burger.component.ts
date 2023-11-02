@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Input,
+    ViewChild
+} from '@angular/core';
+
+import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
 import { INavigation } from '@shared/models/navigation.interface';
 
@@ -10,9 +18,10 @@ import { INavigation } from '@shared/models/navigation.interface';
 })
 export class NavigationPanelBurgerComponent {
     @Input() public burgerNavigators: INavigation[] = [];
+    @ViewChild('popup', { read: ElementRef })
+    popup!: ElementRef<PopUpCloseDirective>;
 
     public isNavigate: boolean = false;
-    elementRef: any;
 
     public navigationCheck(event: MouseEvent) {
         event.stopPropagation();
@@ -20,7 +29,7 @@ export class NavigationPanelBurgerComponent {
     }
 
     public hidePopup(event: any) {
-        if (event.target !== this.elementRef.nativeElement) {
+        if (event.target !== this.popup.nativeElement) {
             this.isNavigate = false;
         }
     }

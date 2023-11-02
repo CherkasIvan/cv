@@ -1,30 +1,28 @@
-<div (cvPopUpClose)="hidePopup($event)">
-    <nav
-        class="burger-navigation"
-        (click)="navigationCheck($event)">
-        <input
-            class="menu-toggle"
-            type="checkbox"
-            [ngClass]="
-                !isNavigate ? 'menu-toggle__close' : 'menu-toggle__open'
-            " />
-        <label
-            class="menu-button-container"
-            for="menu-toggle">
-            <div class="menu-button"></div>
-        </label>
-        <ul class="menu">
-            <li
-                class="menu__item"
-                *ngFor="let item of burgerNavigators; let i = index"
-                (click)="navigationCheck($event)">
-                <a
-                    routerLink="{{ item.link }}"
-                    class="item-link"
-                    [routerLinkActive]="['active']"
-                    >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
-                >
-            </li>
-        </ul>
-    </nav>
-</div>
+<nav
+    class="burger-navigation"
+    #popup
+    (click)="navigationCheck($event)"
+    (cvPopUpClose)="hidePopup($event)">
+    <input
+        class="menu-toggle"
+        type="checkbox"
+        [ngClass]="!isNavigate ? 'menu-toggle__close' : 'menu-toggle__open'" />
+    <label
+        class="menu-button-container"
+        for="menu-toggle">
+        <div class="menu-button"></div>
+    </label>
+    <ul class="menu">
+        <li
+            class="menu__item"
+            *ngFor="let item of burgerNavigators; let i = index"
+            (click)="navigationCheck($event)">
+            <a
+                routerLink="{{ item.link }}"
+                class="item-link"
+                [routerLinkActive]="['active']"
+                >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
+            >
+        </li>
+    </ul>
+</nav>
