@@ -10,13 +10,13 @@ import {
     selector: '[cvPopUpClose]'
 })
 export class PopUpCloseDirective {
-    @Output() clickOutside = new EventEmitter<MouseEvent>();
+    @Output() cvPopUpClose = new EventEmitter<MouseEvent>();
 
     @HostListener('document:click', ['$event'])
     onClick(event: MouseEvent) {
         const target = event.target as HTMLElement;
         if (!this.elementRef.nativeElement.contains(target)) {
-            this.clickOutside.emit(event);
+            return this.cvPopUpClose.emit(event);
         }
     }
 
