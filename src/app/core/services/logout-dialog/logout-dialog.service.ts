@@ -10,11 +10,9 @@ export class LogoutDialogService {
     constructor(public dialog: MatDialog) {}
 
     openDialog(): void {
-        const dialogRef = this.dialog.open(LogoutDialogComponent, {
-            width: '600px'
-        });
-        dialogRef.afterClosed().subscribe((result) => {
-            return result;
+        this.dialog.open(LogoutDialogComponent, {
+            width: '600px',
+            panelClass: 'logout-modal'
         });
     }
 

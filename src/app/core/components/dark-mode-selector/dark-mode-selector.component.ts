@@ -1,8 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-import { getMode } from '@core/store/dark-mode-store/dark-mode.actions';
+import {
+    setMode,
+    setModeSuccess
+} from '@core/store/dark-mode-store/dark-mode.actions';
+import { darkModeSelector } from '@core/store/dark-mode-store/dark-mode.selectors';
 import { DarkModeType } from '@core/store/model/dark-mode.type';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
@@ -16,8 +20,7 @@ import { localStorageService } from '@shared/services/localstorage/local-storage
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DarkModeSelectorComponent {
-    public isChecked$ = this._store$.select((darkModeSelector) => false);
-
+    public isChecked$ = this._store$.pipe(select(darkModeSelector));
     constructor(
         private readonly _darkModeService: DarkModeService,
         private readonly _localStorageService: localStorageService,
@@ -25,12 +28,13 @@ export class DarkModeSelectorComponent {
     ) {}
 
     public changeView($event: MouseEvent) {
+        this._store$.dispatch(setMode());
         this._store$.dispatch(
-            getMode((<HTMLInputElement>$event.target).checked)
+            setModeSuccess((<HTMLInputElement>$event.target).checked)
         );
-        this._darkModeService.isDark$.next(
-            (<HTMLInputElement>$event.target).checked
-        );
-        this._localStorageService.setMode(this.isChecked$.toString());
+        // this._darkModeService.isDark$.next(
+        //     (<HTMLInputElement>$event.target).checked
+        // );
+        // this._localStorageService.setMode(this.isChecked$.toString());
     }
 }
