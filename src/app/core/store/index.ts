@@ -6,6 +6,6 @@ export interface State {
     isDark: boolean;
 }
 
-export const reducer: ActionReducerMap<State> = {
+export const reducers: ActionReducerMap<State> = {
     isDark: darkModeReducer
 };

@@ -6,6 +6,7 @@
             "@angular/*": ["../node_modules/@angular/*"],
             "@env/*": ["environments/*"],
             "@utils/*": ["utils/*"],
+            "@store/*": ["app/store/*"],
             "@app/*": ["app/*"],
             "@assets/*": ["assets/*"],
             "@shared/*": ["app/shared/*"],

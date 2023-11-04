@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 
-import { languageSelectorType } from '../model/language-selector.type';
+import { languageSelectorType } from '../model/language-selector.interface';
 
 export interface State {
     language: languageSelectorType;
