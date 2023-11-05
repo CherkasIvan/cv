@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
+import { languageSelector } from '@core/store/language-selector-store/language-selector.selectors';
 import { ILanguagesSelector } from '@core/store/model/language-selector.interface';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
+
+import { setLanguageSuccess } from '@app/core/store/language-selector-store/language-selector.actions';
 
 @Component({
     selector: 'cv-language-selector',
@@ -20,7 +23,7 @@ import { TranslateManagerService } from '@shared/services/translate/translate-ma
 export class LanguageSelectorComponent implements OnInit {
     public isDark$: Observable<boolean> = this._darkModeService.isDark$;
     public languages = this._translateManagerService.languageList;
-    public language = 'ru';
+    public language$ = this._translateManagerService.currentLanguage$.value;
     private userState = this._localStorageService.getUsersState();
 
     constructor(
@@ -34,14 +37,23 @@ export class LanguageSelectorComponent implements OnInit {
         this._translateManagerService.changeLang(
             (event?.target as HTMLInputElement).checked
         );
-        this.language = this._translateManagerService.currentLanguage$.value;
-        this._localStorageService.setLanguage(this.language);
+        this.language$ = this._translateManagerService.currentLanguage$.value;
+        this._store$.dispatch(
+            setLanguageSuccess(
+                this.changeLang((<HTMLInputElement>event.target).checked)
+            )
+        );
+        // this._localStorageService.setLanguage(this.language);
+    }
+
+    public changeLang(toggleValue: boolean): string {
+        return toggleValue ? 'en' : 'ru';
     }
 
     ngOnInit(): void {
         if (this.userState) {
-            this.language = this.userState.language;
-            this._translateManagerService.currentLanguage$.next(this.language);
+            this.language$ = this.userState.language;
+            this._translateManagerService.currentLanguage$.next(this.language$);
         }
     }
 }

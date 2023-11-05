@@ -1,11 +1,20 @@
 import { ActionReducerMap } from '@ngrx/store';
 
 import { darkModeReducer } from './dark-mode-store/dark-mode.reducers';
+import { languageSelectorReducer } from './language-selector-store/language-selector.reducers';
 
-export interface State {
+export interface DarkModeState {
     isDark: boolean;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export interface LanguageModeState {
+    language: string;
+}
+
+export const darkMode: ActionReducerMap<DarkModeState> = {
     isDark: darkModeReducer
+};
+
+export const languageMode: ActionReducerMap<LanguageModeState> = {
+    language: languageSelectorReducer
 };

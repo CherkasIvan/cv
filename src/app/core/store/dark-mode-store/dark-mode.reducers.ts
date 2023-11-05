@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { setMode, setModeSuccess } from './dark-mode.actions';
+import { setModeSuccess } from './dark-mode.actions';
 
 const initialState: boolean = false;
 
