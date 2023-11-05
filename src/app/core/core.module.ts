@@ -10,8 +10,12 @@ import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { SliderBehaviorDirective } from './directives/slider/slider-behavior.directive';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
-import { State, reducers } from './store';
-import { darkModeReducer } from './store/dark-mode-store/dark-mode.reducers';
+import {
+    DarkModeState,
+    LanguageModeState,
+    darkMode,
+    languageMode
+} from './store';
 
 @NgModule({
     declarations: [SliderBehaviorDirective],
@@ -21,7 +25,11 @@ import { darkModeReducer } from './store/dark-mode-store/dark-mode.reducers';
         MatDialogModule,
         MatSnackBarModule,
         CommonModule,
-        StoreModule.forFeature<State>('darkMode', reducers)
+        StoreModule.forFeature<DarkModeState>('darkMode', darkMode),
+        StoreModule.forFeature<LanguageModeState>(
+            'languageSelector',
+            languageMode
+        )
     ],
     providers: [
         MatSnackBarModule,

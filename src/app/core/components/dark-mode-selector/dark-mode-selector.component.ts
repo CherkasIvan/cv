@@ -30,9 +30,6 @@ export class DarkModeSelectorComponent {
         this._store$.dispatch(
             setModeSuccess((<HTMLInputElement>$event.target).checked)
         );
-        // this._darkModeService.isDark$.next(
-        //     (<HTMLInputElement>$event.target).checked
-        // );
         this._localStorageService.setMode(this.isChecked$.toString());
     }
 }
