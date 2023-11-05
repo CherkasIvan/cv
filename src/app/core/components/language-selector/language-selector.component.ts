@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-import { languageSelectorType } from '@core/store/model/language-selector.type';
+import { ILanguagesSelector } from '@core/store/model/language-selector.interface';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
@@ -27,10 +27,10 @@ export class LanguageSelectorComponent implements OnInit {
         private readonly _translateManagerService: TranslateManagerService,
         private readonly _darkModeService: DarkModeService,
         private _localStorageService: localStorageService,
-        private _store$: Store<languageSelectorType>
+        private _store$: Store<ILanguagesSelector>
     ) {}
 
-    public toggle(event: Event) {
+    public toggle(event: Event): void {
         this._translateManagerService.changeLang(
             (event?.target as HTMLInputElement).checked
         );

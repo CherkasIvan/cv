@@ -1,12 +1,8 @@
 import { createSelector } from '@ngrx/store';
 
-import { DarkModeType } from '../model/dark-mode.type';
-
-// export interface State {
-//     mode: DarkModeType;
-// }
+import { IDarkMode } from '../model/dark-mode.interface';
 
 export const darkModeSelector = createSelector(
-    (state: DarkModeType) => state,
-    (mode: DarkModeType) => mode
+    (state: IDarkMode) => state.isDark,
+    (isDarkMode: boolean) => isDarkMode
 );
