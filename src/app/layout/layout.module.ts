@@ -6,13 +6,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AuthModule } from '@auth/auth.module';
 
 import { ButtonComponent } from '@core/components/button/button.component';
-import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
-import { LanguageSelectorComponent } from '@core/components/language-selector/language-selector.component';
 import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { SimpleButtonComponent } from '@core/components/simple-button/simple-button.component';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
+
+import { DarkModeSelectorComponent } from '@app/layout/components/dark-mode-selector/dark-mode-selector.component';
+import { LanguageSelectorComponent } from '@app/layout/components/language-selector/language-selector.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';

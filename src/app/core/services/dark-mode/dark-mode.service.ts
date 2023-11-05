@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { BehaviorSubject } from 'rxjs';
 
-import { darkModeSelector } from '@core/store/dark-mode-store/dark-mode.selectors';
-import { IDarkMode } from '@core/store/model/dark-mode.interface';
+import { darkModeSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';
+import { IDarkMode } from '@app/layout/store/model/dark-mode.interface';
 
 @Injectable({
     providedIn: 'root'

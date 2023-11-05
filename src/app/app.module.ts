@@ -34,6 +34,7 @@ import { AppComponent } from './app.component';
 import { AuthService } from './auth/services/auth.service';
 import { CoreModule } from './core/core.module';
 import { entityConfig } from './entity-metadata';
+import { globalSetReducers } from './layout/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -65,7 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore()),
         provideDatabase(() => getDatabase()),
-        StoreModule.forRoot({}),
+        StoreModule.forRoot(globalSetReducers),
         StoreDevtoolsModule.instrument({
             maxAge: 25, // Retains last 25 states
             logOnly: environment.production // Restrict extension to log-only mode

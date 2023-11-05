@@ -10,27 +10,11 @@ import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { SliderBehaviorDirective } from './directives/slider/slider-behavior.directive';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
-import {
-    DarkModeState,
-    LanguageModeState,
-    darkMode,
-    languageMode
-} from './store';
 
 @NgModule({
     declarations: [SliderBehaviorDirective],
     exports: [MatDialogModule, CommonModule],
-    imports: [
-        RouterModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        CommonModule,
-        StoreModule.forFeature<DarkModeState>('darkMode', darkMode),
-        StoreModule.forFeature<LanguageModeState>(
-            'languageSelector',
-            languageMode
-        )
-    ],
+    imports: [RouterModule, MatDialogModule, MatSnackBarModule, CommonModule],
     providers: [
         MatSnackBarModule,
         SnackbarService,

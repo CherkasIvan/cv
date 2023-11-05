@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
+import { localStorageService } from '@shared/services/localstorage/local-storage.service';
+
 import {
     setMode,
     setModeSuccess
-} from '@core/store/dark-mode-store/dark-mode.actions';
-import { darkModeSelector } from '@core/store/dark-mode-store/dark-mode.selectors';
-import { IDarkMode } from '@core/store/model/dark-mode.interface';
-
-import { localStorageService } from '@shared/services/localstorage/local-storage.service';
+} from '@app/layout/store/dark-mode-store/dark-mode.actions';
+import { darkModeSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';
+import { IDarkMode } from '@app/layout/store/model/dark-mode.interface';
 
 @Component({
     selector: 'cv-dark-mode-selector',

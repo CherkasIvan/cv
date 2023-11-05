@@ -11,7 +11,8 @@ export class LogoutDialogService {
 
     openDialog(): void {
         this.dialog.open(LogoutDialogComponent, {
-            width: '600px',
+            maxWidth: '300px',
+            minWidth: '250px',
             panelClass: 'logout-modal'
         });
     }

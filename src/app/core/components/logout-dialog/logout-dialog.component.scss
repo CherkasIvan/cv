@@ -4,6 +4,11 @@
 .dialog-content {
     @include flex-a_center-d_column;
     background: black;
+    padding: 10px;
+
+    .dialog-message {
+        text-align: center;
+    }
 
     .dialog-actions {
         display: flex;

@@ -3,11 +3,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { provideRouter } from '@angular/router';
 import { provideStore } from '@ngrx/store';
 
-import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/dark-mode-selector.component';
-
 import { environment } from '@env/environment';
 
 import { AppComponent } from '@app/app.component';
+import { DarkModeSelectorComponent } from '@app/layout/components/dark-mode-selector/dark-mode-selector.component';
 
 import { routes } from './app/app-routing.module';
 import { AppModule } from './app/app.module';

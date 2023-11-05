@@ -4,13 +4,13 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-import { languageSelector } from '@core/store/language-selector-store/language-selector.selectors';
-import { ILanguagesSelector } from '@core/store/model/language-selector.interface';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
-import { setLanguageSuccess } from '@app/core/store/language-selector-store/language-selector.actions';
+import { setLanguageSuccess } from '@app/layout/store/language-selector-store/language-selector.actions';
+import { languageSelector } from '@app/layout/store/language-selector-store/language-selector.selectors';
+import { ILanguagesSelector } from '@app/layout/store/model/language-selector.interface';
 
 @Component({
     selector: 'cv-language-selector',
