@@ -10,7 +10,7 @@ import { DarkModeSelectorComponent } from '@core/components/dark-mode-selector/d
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
 import { LanguageSelectorComponent } from '@core/components/language-selector/language-selector.component';
 import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
-import { LogoutComponent } from '@core/components/logout/logout.component';
+import { SimpleButtonComponent } from '@core/components/simple-button/simple-button.component';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
@@ -43,7 +43,7 @@ import { LayoutComponent } from './layout.component';
         SkillsContentComponent,
         LinksContainerComponent,
         ButtonComponent,
-        LogoutComponent,
+        SimpleButtonComponent,
         TranslateModule,
         AuthModule
     ]

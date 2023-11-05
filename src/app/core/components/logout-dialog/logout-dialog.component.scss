@@ -1,10 +1,23 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as *;
 
 .dialog-content {
     @include flex-a_center-d_column;
+    background: black;
+
     .dialog-actions {
         display: flex;
         align-items: center;
-        row-gap: 15px;
+        column-gap: 15px;
+
+        .cancel-button,
+        .confirm-button {
+            @include default_button_glassmorphism;
+        }
+
+        .cancel-button:hover,
+        .confirm-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
     }
 }
