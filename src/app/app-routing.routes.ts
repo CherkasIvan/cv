@@ -9,13 +9,13 @@ export const mainRoutes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: `/${ERouterPath.AUTH}` },
     {
         path: ERouterPath.AUTH,
-        loadChildren: () =>
+        loadComponent: () =>
             import('./auth/auth.module').then((m) => m.AuthModule)
     },
     {
         path: ERouterPath.LAYOUT,
         canActivate: [AuthGuard],
-        loadChildren: () =>
+        loadComponent: () =>
             import('./layout/layout.module').then((m) => m.LayoutModule)
     }
 ];

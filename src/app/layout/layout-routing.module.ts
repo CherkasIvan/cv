@@ -12,49 +12,49 @@ const routes: Routes = [
         children: [
             {
                 path: ERouterPath.ABOUT_ME,
-                loadChildren: () =>
-                    import('../pages/about-me/about-me.module').then(
-                        (module) => module.AboutMeModule
+                loadComponent: () =>
+                    import('../pages/about-me/about-me.component').then(
+                        (module) => module.AboutMeComponent
                     ),
                 data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.PROJECTS,
-                loadChildren: () =>
-                    import('../pages/projects/projects.module').then(
-                        (module) => module.ProjectsModule
+                loadComponent: () =>
+                    import('../pages/projects/projects.component').then(
+                        (module) => module.ProjectsComponent
                     ),
                 data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.EDUCATION,
-                loadChildren: () =>
-                    import('../pages/education/education.module').then(
-                        (module) => module.EducationModule
+                loadComponent: () =>
+                    import('../pages/education/education.component').then(
+                        (module) => module.EducationComponent
                     ),
                 data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.TECHNOLOGIES,
-                loadChildren: () =>
-                    import('../pages/technologies/technologies.module').then(
-                        (module) => module.TechnologiesModule
+                loadComponent: () =>
+                    import('../pages/technologies/technologies.component').then(
+                        (module) => module.TechnologiesComponent
                     ),
                 data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.WORK_EXPERIENCE,
-                loadChildren: () =>
+                loadComponent: () =>
                     import(
-                        '../pages/work-experience/work-experience.module'
-                    ).then((module) => module.WorkExperienceModule),
+                        '../pages/work-experience/work-experience.component'
+                    ).then((module) => module.WorkExperienceComponent),
                 data: { animation: 'page-enter' }
             },
             {
                 path: ERouterPath.CV,
-                loadChildren: () =>
-                    import('../pages/cv/cv.module').then(
-                        (module) => module.CvModule
+                loadComponent: () =>
+                    import('../pages/cv/cv.component').then(
+                        (module) => module.CvComponent
                     ),
                 data: { animation: 'page-enter' }
             }

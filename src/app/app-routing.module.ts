@@ -9,8 +9,8 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: `/${ERouterPath.AUTH}` },
     {
         path: ERouterPath.AUTH,
-        loadChildren: () =>
-            import('./auth/auth.module').then((m) => m.AuthModule)
+        loadComponent: () =>
+            import('./auth/auth.component').then((m) => m.AuthComponent)
     },
     {
         path: ERouterPath.LAYOUT,
