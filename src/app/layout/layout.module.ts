@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthModule } from '@auth/auth.module';
-
 import { ButtonComponent } from '@core/components/button/button.component';
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
 import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
@@ -39,7 +37,6 @@ import { LayoutComponent } from './layout.component';
         ButtonComponent,
         SimpleButtonComponent,
         TranslateModule,
-        AuthModule,
         InitialContentComponent,
         LayoutComponent,
         NavigationPanelComponent,
