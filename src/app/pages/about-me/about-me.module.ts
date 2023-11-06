@@ -9,17 +9,15 @@ import { AboutContentComponent } from './components/about-content/about-content.
 import { AboutPhotosComponent } from './components/about-photos/about-photos.component';
 
 @NgModule({
-    declarations: [
-        AboutMeComponent,
-        AboutContentComponent,
-        AboutPhotosComponent
-    ],
     imports: [
         CommonModule,
         AboutMeRoutingModule,
         TranslateModule,
         CarouselComponent,
-        TranslateModule
+        TranslateModule,
+        AboutMeComponent,
+        AboutContentComponent,
+        AboutPhotosComponent
     ]
 })
 export class AboutMeModule {}

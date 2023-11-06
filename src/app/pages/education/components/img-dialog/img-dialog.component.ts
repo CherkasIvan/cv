@@ -7,7 +7,8 @@ import { DialogService } from '@shared/services/dialog/dialog.service';
     selector: 'cv-img-dialog',
     templateUrl: './img-dialog.component.html',
     styleUrls: ['./img-dialog.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class ImgDialogComponent {
     constructor(

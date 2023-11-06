@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -9,7 +10,9 @@ import {
     selector: 'cv-project-stars',
     templateUrl: './project-stars.component.html',
     styleUrls: ['./project-stars.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor]
 })
 export class ProjectStarsComponent implements OnInit {
     @Input() public projectStars = 0;

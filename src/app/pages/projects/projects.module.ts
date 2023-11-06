@@ -8,11 +8,13 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
 
 @NgModule({
-    declarations: [
+    imports: [
+        CommonModule,
+        ProjectsRoutingModule,
+        TranslateModule,
         ProjectsComponent,
         ProjectsContentComponent,
         ProjectStarsComponent
-    ],
-    imports: [CommonModule, ProjectsRoutingModule, TranslateModule]
+    ]
 })
 export class ProjectsModule {}

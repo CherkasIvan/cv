@@ -9,7 +9,6 @@ import { ButtonComponent } from '@core/components/button/button.component';
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
 import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { SimpleButtonComponent } from '@core/components/simple-button/simple-button.component';
-import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
 import { DarkModeSelectorComponent } from '@app/layout/components/dark-mode-selector/dark-mode-selector.component';
@@ -20,17 +19,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { NavigationPanelBurgerComponent } from './components/navigation-panel-burger/navigation-panel-burger.component';
 import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-    declarations: [
-        InitialContentComponent,
-        LayoutComponent,
-        NavigationPanelComponent,
-        NavigationPanelBurgerComponent,
-        PopUpCloseDirective
-    ],
     exports: [LayoutComponent, PopUpCloseDirective],
     imports: [
         LayoutRoutingModule,
@@ -46,7 +39,12 @@ import { LayoutComponent } from './layout.component';
         ButtonComponent,
         SimpleButtonComponent,
         TranslateModule,
-        AuthModule
+        AuthModule,
+        InitialContentComponent,
+        LayoutComponent,
+        NavigationPanelComponent,
+        NavigationPanelBurgerComponent,
+        PopUpCloseDirective
     ]
 })
 export class LayoutModule {}

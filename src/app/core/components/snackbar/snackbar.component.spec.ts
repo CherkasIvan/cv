@@ -8,7 +8,7 @@ describe('SnackbarComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [SnackbarComponent]
+            imports: [SnackbarComponent]
         });
         fixture = TestBed.createComponent(SnackbarComponent);
         component = fixture.componentInstance;

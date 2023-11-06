@@ -1,8 +1,11 @@
+import { NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
     AbstractControl,
     FormControl,
     FormGroup,
+    FormsModule,
+    ReactiveFormsModule,
     Validators
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -15,8 +18,10 @@ import { selectAuthState } from './store/selectors/auth.selector';
 @Component({
     selector: 'cv-auth',
     templateUrl: './auth.component.html',
-    styleUrls: ['./auth.component.scss']
+    styleUrls: ['./auth.component.scss'],
     // changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgClass, NgIf]
 })
 export class AuthComponent implements OnInit {
     authForm!: FormGroup;

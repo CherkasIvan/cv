@@ -1,3 +1,4 @@
+import { AsyncPipe, NgClass, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,7 +9,9 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
     selector: 'cv-work-experience-content',
     templateUrl: './work-experience-content.component.html',
     styleUrls: ['./work-experience-content.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor, NgClass, AsyncPipe]
 })
 export class WorkExperienceContentComponent {
     public workPlace$: Observable<IWorkExperience[]> =

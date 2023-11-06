@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-    selector: '[cvSliderBehavior]'
+    selector: '[cvSliderBehavior]',
+    standalone: true
 })
 export class SliderBehaviorDirective {
     constructor(private el: ElementRef) {}

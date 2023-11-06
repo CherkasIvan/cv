@@ -1,3 +1,4 @@
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -14,12 +15,30 @@ import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
+import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { InitialContentComponent } from './components/initial-content/initial-content.component';
+import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+
 @Component({
     selector: 'cv-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
     animations: [fadeAnimation],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgClass,
+        NavigationPanelComponent,
+        SpinnerComponent,
+        NgIf,
+        InitialContentComponent,
+        RouterOutlet,
+        FooterComponent,
+        BackgroundsComponent,
+        AsyncPipe
+    ]
 })
 export class LayoutComponent implements OnDestroy {
     public currentTheme$: BehaviorSubject<boolean> =

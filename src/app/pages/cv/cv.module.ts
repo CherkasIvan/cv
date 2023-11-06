@@ -10,8 +10,15 @@ import { CvRoutingModule } from './cv-routing.module';
 import { CvComponent } from './cv.component';
 
 @NgModule({
-    declarations: [CvComponent, DownloadImgComponent, CvItemComponent],
     exports: [DownloadImgComponent],
-    imports: [CvRoutingModule, CommonModule, ButtonComponent, TranslateModule]
+    imports: [
+        CvRoutingModule,
+        CommonModule,
+        ButtonComponent,
+        TranslateModule,
+        CvComponent,
+        DownloadImgComponent,
+        CvItemComponent
+    ]
 })
 export class CvModule {}

@@ -7,7 +7,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-    selector: '[cvPopUpClose]'
+    selector: '[cvPopUpClose]',
+    standalone: true
 })
 export class PopUpCloseDirective {
     @Output() cvPopUpClose = new EventEmitter<MouseEvent>();

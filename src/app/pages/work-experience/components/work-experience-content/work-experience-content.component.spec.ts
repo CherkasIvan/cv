@@ -8,7 +8,7 @@ describe('WorkExperienceContentComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [WorkExperienceContentComponent]
+            imports: [WorkExperienceContentComponent]
         }).compileComponents();
 
         fixture = TestBed.createComponent(WorkExperienceContentComponent);

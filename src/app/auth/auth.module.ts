@@ -14,7 +14,6 @@ import {
 } from './store/reducers/auth.reducer';
 
 @NgModule({
-    declarations: [AuthComponent],
     exports: [AuthComponent],
     imports: [
         AuthRoutingModule,
@@ -23,7 +22,8 @@ import {
         AngularFireAuthModule,
         StoreModule.forFeature(authReducerFeatureKey, authReducer),
         provideAuth(() => getAuth()),
-        CommonModule
+        CommonModule,
+        AuthComponent
     ],
     providers: [AuthService]
 })

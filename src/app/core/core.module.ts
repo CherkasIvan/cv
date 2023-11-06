@@ -12,9 +12,14 @@ import { SliderBehaviorDirective } from './directives/slider/slider-behavior.dir
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
-    declarations: [SliderBehaviorDirective],
     exports: [MatDialogModule, CommonModule],
-    imports: [RouterModule, MatDialogModule, MatSnackBarModule, CommonModule],
+    imports: [
+        RouterModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        CommonModule,
+        SliderBehaviorDirective
+    ],
     providers: [
         MatSnackBarModule,
         SnackbarService,
