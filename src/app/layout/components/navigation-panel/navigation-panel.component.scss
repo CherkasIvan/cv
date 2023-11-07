@@ -76,13 +76,17 @@
             }
         }
 
-        .navigation-burger-menu {
+        .navigation-container--mobile,
+        .logout--mobile {
             display: none;
         }
     }
 }
 
 @media screen and (max-width: 950px) {
+    .container {
+        padding: 1rem;
+    }
     .navigation-panel {
         @include glass.reset_glassmorphism;
     }
@@ -92,7 +96,8 @@
         display: none;
     }
 
-    .navigation-burger-menu {
+    .navigation-container--mobile,
+    .logout--mobile {
         display: block !important;
     }
 }

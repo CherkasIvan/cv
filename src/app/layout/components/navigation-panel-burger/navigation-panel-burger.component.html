@@ -24,5 +24,16 @@
                 >{{ 'NAVIGATION.LINK.VALUE' + i | translate }}</a
             >
         </li>
+        <li class="menu__item">
+            <div class="selectors">
+                <cv-language-selector></cv-language-selector>
+                <cv-dark-mode-selector></cv-dark-mode-selector>
+            </div>
+        </li>
+        <li
+            class="menu__item"
+            (click)="openLogoutDialog()">
+            <div class="item-link">Logout</div>
+        </li>
     </ul>
 </nav>

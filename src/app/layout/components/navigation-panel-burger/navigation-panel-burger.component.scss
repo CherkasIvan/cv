@@ -23,6 +23,12 @@
             width: 100%;
             text-align: center;
         }
+
+        .selectors {
+            align-items: center;
+            display: flex;
+            column-gap: 10px;
+        }
     }
 
     .menu-button-container {
