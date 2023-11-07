@@ -13,7 +13,11 @@ import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.
 
 import { INavigation } from '@shared/models/navigation.interface';
 
+import { LogoutDialogService } from '@app/core/services/logout-dialog/logout-dialog.service';
+
 import { PopUpCloseDirective as PopUpCloseDirective_1 } from '../../../core/directives/pop-up-close/pop-up-close.directive';
+import { DarkModeSelectorComponent } from '../dark-mode-selector/dark-mode-selector.component';
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 
 @Component({
     selector: 'cv-navigation-panel-burger',
@@ -27,7 +31,9 @@ import { PopUpCloseDirective as PopUpCloseDirective_1 } from '../../../core/dire
         NgFor,
         RouterLink,
         RouterLinkActive,
-        TranslateModule
+        TranslateModule,
+        LanguageSelectorComponent,
+        DarkModeSelectorComponent
     ]
 })
 export class NavigationPanelBurgerComponent {
@@ -36,6 +42,12 @@ export class NavigationPanelBurgerComponent {
     popup!: ElementRef<PopUpCloseDirective>;
 
     public isNavigate: boolean = false;
+
+    constructor(private readonly _logoutDialogService: LogoutDialogService) {}
+
+    public openLogoutDialog() {
+        this._logoutDialogService.openDialog();
+    }
 
     public navigationCheck(event: MouseEvent) {
         event.stopPropagation();

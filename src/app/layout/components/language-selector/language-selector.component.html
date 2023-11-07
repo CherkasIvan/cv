@@ -8,5 +8,8 @@
         (change)="toggle($event)" />
     <label
         class="language-selector__label"
-        for="language-toggle"></label>
+        for="language-toggle"
+        [ngClass]="{
+            dark: isDark$ | async
+        }"></label>
 </div>
