@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LogoutDialogComponent } from '@core/components/logout-dialog/logout-dialog.component';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class LogoutDialogService {
     constructor(public dialog: MatDialog) {}
@@ -13,7 +13,7 @@ export class LogoutDialogService {
         this.dialog.open(LogoutDialogComponent, {
             maxWidth: '300px',
             minWidth: '250px',
-            panelClass: 'logout-modal'
+            panelClass: 'logout-modal',
         });
     }
 

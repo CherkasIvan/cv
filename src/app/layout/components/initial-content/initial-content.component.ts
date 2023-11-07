@@ -14,11 +14,10 @@ import { SkillsContentComponent } from '../../../core/components/hard-skills-con
     styleUrls: ['./initial-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [SkillsContentComponent, AsyncPipe, TranslateModule]
+    imports: [SkillsContentComponent, AsyncPipe, TranslateModule],
 })
 export class InitialContentComponent {
-    public technologiesList$: Observable<ITechnologies[]> =
-        this._firebaseService.getProjectTech();
+    public technologiesList$: Observable<ITechnologies[]> = this._firebaseService.getProjectTech();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

@@ -14,11 +14,10 @@ import { ProjectStarsComponent } from '../project-stars/project-stars.component'
     styleUrls: ['./projects-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, ProjectStarsComponent, AsyncPipe, TranslateModule]
+    imports: [NgFor, ProjectStarsComponent, AsyncPipe, TranslateModule],
 })
 export class ProjectsContentComponent {
-    public projectsList$: Observable<IGitHub[]> =
-        this._gitHubService.getUserRepos();
+    public projectsList$: Observable<IGitHub[]> = this._gitHubService.getUserRepos();
 
     constructor(private readonly _gitHubService: GitHubService) {}
 }

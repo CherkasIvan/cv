@@ -1,10 +1,10 @@
 @use '../../../../assets/styles/mixins/flex.mixin' as *;
 
 .technologies-list {
-    margin-top: 2rem;
     display: grid;
-    gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
 
     &__item {
         padding: 1rem;
@@ -20,14 +20,14 @@
                 }
 
                 .item__img {
+                    transition: all 0.5s ease-out;
                     min-width: 4rem;
                     height: 4rem;
-                    transition: all 0.5s ease-out;
                 }
 
                 .item__img:hover {
-                    transition: all 0.5s ease-out;
                     transform: scale(1.2);
+                    transition: all 0.5s ease-out;
                 }
             }
         }

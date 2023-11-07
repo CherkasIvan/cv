@@ -6,7 +6,7 @@ import { darkModeSelector } from '@app/layout/store/dark-mode-store/dark-mode.se
 import { IDarkMode } from '@app/layout/store/model/dark-mode.interface';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class DarkModeService {
     public isDark$: BehaviorSubject<boolean> = new BehaviorSubject(false);

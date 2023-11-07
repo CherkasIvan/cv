@@ -6,5 +6,5 @@ const initialState: boolean = false;
 
 export const darkModeReducer = createReducer(
     initialState,
-    on(setModeSuccess, (state, { mode }) => mode)
+    on(setModeSuccess, (state, { mode }) => mode),
 );

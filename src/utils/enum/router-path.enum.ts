@@ -6,5 +6,5 @@ export enum ERouterPath {
     PROJECTS = 'projects',
     TECHNOLOGIES = 'technologies',
     WORK_EXPERIENCE = 'work-experience',
-    CV = 'cv'
+    CV = 'cv',
 }

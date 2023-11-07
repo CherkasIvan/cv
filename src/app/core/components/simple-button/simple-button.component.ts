@@ -11,7 +11,7 @@ import { LogoutDialogService } from '@core/services/logout-dialog/logout-dialog.
     imports: [CommonModule],
     templateUrl: './simple-button.component.html',
     styleUrls: ['./simple-button.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleButtonComponent {
     @Input() public buttonName = '';

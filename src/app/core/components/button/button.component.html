@@ -1,18 +1,22 @@
 <div
     class="button-container"
-    [ngClass]="downloadPath ? 'download' : 'change-view'">
+    [ngClass]="downloadPath ? 'download' : 'change-view'"
+>
     <button
         class="button"
-        [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'">
+        [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'"
+    >
         <a
             *ngIf="downloadPath"
             [href]="downloadPath"
             class="button__label"
-            >{{ label }}</a
         >
+            {{ label }}
+        </a>
         <a
             *ngIf="!downloadPath"
-            class="button__label">
+            class="button__label"
+        >
             {{ label }}
         </a>
     </button>

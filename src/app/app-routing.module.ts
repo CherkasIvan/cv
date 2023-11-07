@@ -9,15 +9,13 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: `/${ERouterPath.AUTH}` },
     {
         path: ERouterPath.AUTH,
-        loadComponent: () =>
-            import('./auth/auth.component').then((m) => m.AuthComponent)
+        loadComponent: () => import('./auth/auth.component').then((m) => m.AuthComponent),
     },
     {
         path: ERouterPath.LAYOUT,
         canActivate: [AuthGuard],
-        loadChildren: () =>
-            import('./layout/layout.module').then((m) => m.LayoutModule)
-    }
+        loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule),
+    },
 ];
 
 @NgModule({
@@ -25,9 +23,9 @@ export const routes: Routes = [
         RouterModule.forRoot(routes, {
             initialNavigation: 'enabledBlocking',
             scrollPositionRestoration: 'enabled',
-            preloadingStrategy: PreloadAllModules
-        })
+            preloadingStrategy: PreloadAllModules,
+        }),
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}

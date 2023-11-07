@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ImgDialogComponent } from '@pages/education/components/img-dialog/img-dialog.component';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class DialogService {
     constructor(public dialog: MatDialog) {}
@@ -12,7 +12,7 @@ export class DialogService {
     openDialog(img: string): void {
         const dialogRef = this.dialog.open(ImgDialogComponent, {
             width: '600px',
-            data: img
+            data: img,
         });
         dialogRef.afterClosed().subscribe((result) => {
             return result;

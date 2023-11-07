@@ -1,10 +1,5 @@
 import { NgFor } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    Input,
-    OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'cv-project-stars',
@@ -12,7 +7,7 @@ import {
     styleUrls: ['./project-stars.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor]
+    imports: [NgFor],
 })
 export class ProjectStarsComponent implements OnInit {
     @Input() public projectStars = 0;

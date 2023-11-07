@@ -15,14 +15,14 @@ export class AuthEffects {
             switchMap(({ email, password }) =>
                 this.authService.signIn(email, password).pipe(
                     map((user) => authSuccess({ user })),
-                    catchError((error) => of(authFailure({ error })))
-                )
-            )
-        )
+                    catchError((error) => of(authFailure({ error }))),
+                ),
+            ),
+        ),
     );
 
     constructor(
         private actions$: Actions,
-        private authService: AuthService
+        private authService: AuthService,
     ) {}
 }

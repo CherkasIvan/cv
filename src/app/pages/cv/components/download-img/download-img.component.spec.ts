@@ -8,7 +8,7 @@ describe('DownloadImgComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [DownloadImgComponent]
+            imports: [DownloadImgComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(DownloadImgComponent);

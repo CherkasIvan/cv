@@ -15,15 +15,14 @@ import { CarouselComponent } from '../../../../core/components/carousel/carousel
     styleUrls: ['./education-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NgIf, CarouselComponent, AsyncPipe, TranslateModule]
+    imports: [NgFor, NgIf, CarouselComponent, AsyncPipe, TranslateModule],
 })
 export class EducationContentComponent {
-    public educationList$: Observable<IEducation[]> =
-        this._firebaseService.getEducation();
+    public educationList$: Observable<IEducation[]> = this._firebaseService.getEducation();
 
     constructor(
         private readonly _dialogService: DialogService,
-        private readonly _firebaseService: FirebaseService
+        private readonly _firebaseService: FirebaseService,
     ) {}
 
     public openDialog(imgPath: string) {

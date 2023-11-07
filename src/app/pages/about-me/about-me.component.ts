@@ -9,6 +9,6 @@ import { AboutPhotosComponent } from './components/about-photos/about-photos.com
     styleUrls: ['./about-me.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [AboutContentComponent, AboutPhotosComponent]
+    imports: [AboutContentComponent, AboutPhotosComponent],
 })
 export class AboutMeComponent {}

@@ -9,34 +9,31 @@ export const education: IEducation[] = [
                 slideNumber: 0,
                 src: 'assets/img/educational_establishments/school/hs_132.jpeg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '1',
                 slideNumber: 1,
                 src: 'assets/img/educational_establishments/school/main_132.jpeg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '2',
                 slideNumber: 2,
                 src: 'assets/img/educational_establishments/school/hs_132_full.jpeg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
-            }
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+            },
         ],
         educationPlaceName: [
             {
                 name: '132',
                 link: 'http://sch132.minsk.edu.by/',
                 address: 'г.Минск, ул.П.Глебки, д.86',
-                phone: '+375 17 337-46-43'
-            }
-        ]
+                phone: '+375 17 337-46-43',
+            },
+        ],
     },
     {
         educationTitle: 'UNIVERSITY',
@@ -46,34 +43,31 @@ export const education: IEducation[] = [
                 slideNumber: 0,
                 src: 'assets/img/educational_establishments/university/miu_aside.jpg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '1',
                 slideNumber: 1,
                 src: 'assets/img/educational_establishments/university/miu_corpus.jpeg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '2',
                 slideNumber: 2,
                 src: 'assets/img/educational_establishments/university/miu_main.jpeg',
                 title: 'First slide',
-                subtitle:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
-            }
+                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+            },
         ],
         educationPlaceName: [
             {
                 name: 'MIU',
                 link: 'http://miu.by/',
                 address: 'г.Минск, ул.Лазо, д.12',
-                phone: '+375 17 351-26-27'
-            }
-        ]
+                phone: '+375 17 351-26-27',
+            },
+        ],
     },
     {
         educationTitle: 'COURSES',
@@ -85,7 +79,7 @@ export const education: IEducation[] = [
                 phone: '+375 29 105-59-59',
                 grade: 'Front-end developer',
                 certificatePath: 'assets/img/certificate/frontend.jpg',
-                certificateLink: ''
+                certificateLink: '',
             },
             {
                 name: 'IT-ACADEMY',
@@ -95,7 +89,7 @@ export const education: IEducation[] = [
                 grade: 'C# developer',
                 certificatePath: 'assets/img/certificate/web-design.jpg',
                 certificateLink:
-                    'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc'
+                    'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc',
             },
             {
                 name: 'HIGHLIGHTS',
@@ -105,7 +99,7 @@ export const education: IEducation[] = [
                 grade: 'Основы веб-дизайна в Adobe-Photoshop',
                 certificatePath: 'assets/img/certificate/web-design.jpg',
                 certificateLink:
-                    'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc'
+                    'https://vk.com/doc348769408_600252239?hash=FYdq3hRtY13M6YzSy1quSPQnso3XjuKzbLqPpKllBDX&dl=PO4r4gz66CZTgO5aB9fAzwv9CGQgQ6Z3Y2Q0FeGKZwc',
             },
             {
                 name: 'STEPIK',
@@ -114,7 +108,7 @@ export const education: IEducation[] = [
                 phone: '',
                 grade: 'Основы програмирования на C#',
                 certificatePath: 'assets/img/certificate/beginner.jpg',
-                certificateLink: 'https://stepik.org/cert/320534'
+                certificateLink: 'https://stepik.org/cert/320534',
             },
             {
                 name: 'STEPIK',
@@ -123,8 +117,8 @@ export const education: IEducation[] = [
                 phone: '',
                 grade: 'Базовые навыки Excel>',
                 certificatePath: 'assets/img/certificate/stepik-excel.png',
-                certificateLink: 'https://stepik.org/cert/1953522'
-            }
-        ]
-    }
+                certificateLink: 'https://stepik.org/cert/1953522',
+            },
+        ],
+    },
 ];

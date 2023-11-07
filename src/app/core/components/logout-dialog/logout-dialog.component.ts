@@ -13,13 +13,13 @@ import { SimpleButtonComponent } from '../simple-button/simple-button.component'
     styleUrls: ['./logout-dialog.component.scss'],
     standalone: true,
     imports: [CommonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoutDialogComponent {
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: string,
         private readonly _logoutDialogService: LogoutDialogService,
-        private readonly _authService: AuthService
+        private readonly _authService: AuthService,
     ) {}
 
     public cancel() {

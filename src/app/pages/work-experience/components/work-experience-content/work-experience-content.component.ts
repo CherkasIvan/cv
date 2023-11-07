@@ -11,11 +11,10 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
     styleUrls: ['./work-experience-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NgClass, AsyncPipe]
+    imports: [NgFor, NgClass, AsyncPipe],
 })
 export class WorkExperienceContentComponent {
-    public workPlace$: Observable<IWorkExperience[]> =
-        this._firebaseService.getWorkExperience();
+    public workPlace$: Observable<IWorkExperience[]> = this._firebaseService.getWorkExperience();
     public workExp: number[] = [];
     public totalWorkTimeEverInMonth!: number;
     public totalWorkTimeEverConverted!: string;

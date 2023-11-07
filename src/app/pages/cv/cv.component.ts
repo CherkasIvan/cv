@@ -13,11 +13,10 @@ import { DownloadImgComponent } from './components/download-img/download-img.com
     styleUrls: ['./cv.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [DownloadImgComponent, TranslateModule]
+    imports: [DownloadImgComponent, TranslateModule],
 })
 export class CvComponent {
-    public cvList: Observable<ICvFormat[]> =
-        this._firebaseService.getCvFormat();
+    public cvList: Observable<ICvFormat[]> = this._firebaseService.getCvFormat();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

@@ -10,5 +10,5 @@ export interface GlobalState {
 
 export const globalSetReducers: ActionReducerMap<GlobalState> = {
     isDark: darkModeReducer,
-    language: languageSelectorReducer
+    language: languageSelectorReducer,
 };

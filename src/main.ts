@@ -1,13 +1,6 @@
-import {
-    HttpClient,
-    provideHttpClient,
-    withInterceptorsFromDi
-} from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
-import {
-    ScreenTrackingService,
-    UserTrackingService
-} from '@angular/fire/analytics';
+import { ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -49,9 +42,9 @@ bootstrapApplication(AppComponent, {
                 loader: {
                     provide: TranslateLoader,
                     useFactory: HttpLoaderFactory,
-                    deps: [HttpClient]
+                    deps: [HttpClient],
                 },
-                defaultLanguage: 'ru'
+                defaultLanguage: 'ru',
             }),
             AppRoutingModule,
             BrowserModule,
@@ -64,23 +57,23 @@ bootstrapApplication(AppComponent, {
             StoreModule.forRoot(globalSetReducers),
             StoreDevtoolsModule.instrument({
                 maxAge: 25,
-                logOnly: environment.production // Restrict extension to log-only mode
+                logOnly: environment.production, // Restrict extension to log-only mode
             }),
             EffectsModule.forRoot([]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
             ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: environment.production,
-                registrationStrategy: 'registerWhenStable:30000'
-            })
+                registrationStrategy: 'registerWhenStable:30000',
+            }),
         ),
         AuthService,
         ScreenTrackingService,
         UserTrackingService,
         provideAnimations(),
         provideHttpClient(withInterceptorsFromDi()),
-        provideRouter([])
-    ]
+        provideRouter([]),
+    ],
 })
     .then(() => {
         if ('serviceWorker' in navigator && environment.production) {
@@ -90,5 +83,5 @@ bootstrapApplication(AppComponent, {
     .catch((err) => console.log(err));
 
 bootstrapApplication(AppComponent, {
-    providers: [provideStore()]
+    providers: [provideStore()],
 }).catch((err) => console.log(err));

@@ -13,13 +13,7 @@ import { CvItemComponent } from '../download-column/cv-item.component';
     styleUrls: ['./download-img.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [
-        NgIf,
-        CvItemComponent,
-        ButtonComponent,
-        AsyncPipe,
-        TranslateModule
-    ]
+    imports: [NgIf, CvItemComponent, ButtonComponent, AsyncPipe, TranslateModule],
 })
 export class DownloadImgComponent {
     public isEuropean = false;
@@ -28,7 +22,5 @@ export class DownloadImgComponent {
         this.isEuropean = !this.isEuropean;
     }
 
-    constructor(
-        private readonly _translateManagerService: TranslateManagerService
-    ) {}
+    constructor(private readonly _translateManagerService: TranslateManagerService) {}
 }

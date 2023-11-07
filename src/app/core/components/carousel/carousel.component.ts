@@ -13,7 +13,7 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
     standalone: true,
     imports: [CarouselModule, RouterModule, CommonModule],
     styleUrls: ['./carousel.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CarouselComponent implements OnInit {
     public pageSlides$!: Observable<IProfilePhoto[]>;
@@ -23,7 +23,7 @@ export class CarouselComponent implements OnInit {
         slideNumber: -1,
         src: '',
         title: '',
-        subtitle: ''
+        subtitle: '',
     });
 
     constructor(private readonly _firebaseService: FirebaseService) {}
@@ -39,10 +39,10 @@ export class CarouselComponent implements OnInit {
                         slideNumber: slide.slideNumber,
                         src: slide.src,
                         title: slide.title,
-                        subtitle: slide.subtitle
+                        subtitle: slide.subtitle,
                     };
                 });
-            })
+            }),
         );
     }
 }

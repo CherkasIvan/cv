@@ -1,13 +1,6 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-    AbstractControl,
-    FormControl,
-    FormGroup,
-    FormsModule,
-    ReactiveFormsModule,
-    Validators
-} from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
 import { IAuth } from './model/auth.interface';
@@ -21,22 +14,22 @@ import { selectAuthState } from './store/selectors/auth.selector';
     styleUrls: ['./auth.component.scss'],
     // changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, NgClass, NgIf]
+    imports: [FormsModule, ReactiveFormsModule, NgClass, NgIf],
 })
 export class AuthComponent implements OnInit {
     authForm!: FormGroup;
     user: IAuth | null = null;
     constructor(
         private authService: AuthService,
-        private store$: Store<IAuth>
+        private store$: Store<IAuth>,
     ) {}
 
     createForm(): FormGroup {
         this.authForm = new FormGroup({
             email: new FormControl('', {
-                validators: [Validators.required, Validators.email]
+                validators: [Validators.required, Validators.email],
             }),
-            password: new FormControl('', { validators: [Validators.required] })
+            password: new FormControl('', { validators: [Validators.required] }),
         });
         return this.authForm;
     }

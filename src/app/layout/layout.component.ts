@@ -1,10 +1,5 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    HostListener,
-    OnDestroy
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
@@ -37,14 +32,12 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
         RouterOutlet,
         FooterComponent,
         BackgroundsComponent,
-        AsyncPipe
-    ]
+        AsyncPipe,
+    ],
 })
 export class LayoutComponent implements OnDestroy {
-    public currentTheme$: BehaviorSubject<boolean> =
-        this._darkModeService.isDark$;
-    public navigation$: Observable<INavigation[]> =
-        this._firebaseService.getNavigation();
+    public currentTheme$: BehaviorSubject<boolean> = this._darkModeService.isDark$;
+    public navigation$: Observable<INavigation[]> = this._firebaseService.getNavigation();
     public currentRoute!: string;
     public isAuth = false;
     public isPwaView = false;
@@ -55,25 +48,19 @@ export class LayoutComponent implements OnDestroy {
         private readonly _router: Router,
         private readonly _darkModeService: DarkModeService,
         private readonly _localStorageService: localStorageService,
-        private readonly _firebaseService: FirebaseService
+        private readonly _firebaseService: FirebaseService,
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
-                event instanceof NavigationEnd
-                    ? (this.currentRoute = event.url)
-                    : null;
+                event instanceof NavigationEnd ? (this.currentRoute = event.url) : null;
                 this._localStorageService.setRout(this.currentRoute);
-            })
+            }),
         );
     }
 
     public prepareRoute(outlet: RouterOutlet) {
         console.log(outlet.activatedRouteData['animation']);
-        return (
-            outlet &&
-            outlet.activatedRouteData &&
-            outlet.activatedRouteData['animation']
-        );
+        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
     }
 
     ngOnDestroy(): void {

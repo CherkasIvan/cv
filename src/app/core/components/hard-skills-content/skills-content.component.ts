@@ -11,7 +11,7 @@ import { pwaView } from '@utils/functions/pwaView';
     standalone: true,
     imports: [CommonModule],
     styleUrls: ['./skills-content.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillsContentComponent {
     @Input() public technologiesList: ITechnologies[] = [];

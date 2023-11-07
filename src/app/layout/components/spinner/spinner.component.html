@@ -2,7 +2,8 @@
     <div
         [ngClass]="spinnerStyle"
         class="loader"
-        *ngIf="loading$ | async">
+        *ngIf="loading$ | async"
+    >
         <div class="face">
             <div class="circle"></div>
         </div>
@@ -14,14 +15,15 @@
 
 <ng-container
     *ngIf="spinnerStyle === 'layout'"
-    [ngTemplateOutlet]="isWhiteMode">
-</ng-container>
+    [ngTemplateOutlet]="isWhiteMode"
+></ng-container>
 
 <ng-template #isDarkMode>
     <div
         [ngClass]="spinnerStyle"
         class="circles"
-        *ngIf="loading$ | async">
+        *ngIf="loading$ | async"
+    >
         <div class="circles">
             <div class="circle1"></div>
             <div class="circle2"></div>
@@ -45,5 +47,5 @@
 
 <ng-container
     *ngIf="spinnerStyle === 'dark-layout'"
-    [ngTemplateOutlet]="isDarkMode">
-</ng-container>
+    [ngTemplateOutlet]="isDarkMode"
+></ng-container>

@@ -8,6 +8,6 @@ import { WorkExperienceContentComponent } from './components/work-experience-con
     styleUrls: ['./work-experience.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [WorkExperienceContentComponent]
+    imports: [WorkExperienceContentComponent],
 })
 export class WorkExperienceComponent {}

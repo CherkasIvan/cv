@@ -24,8 +24,8 @@ import { NavigationPanelBurgerComponent } from '../navigation-panel-burger/navig
         LanguageSelectorComponent,
         DarkModeSelectorComponent,
         SimpleButtonComponent,
-        TranslateModule
-    ]
+        TranslateModule,
+    ],
 })
 export class NavigationPanelComponent {
     @Input() public navigators: INavigation[] = [];

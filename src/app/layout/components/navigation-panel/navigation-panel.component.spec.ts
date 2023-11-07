@@ -8,7 +8,7 @@ describe('NavigationPanelComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [NavigationPanelComponent]
+            imports: [NavigationPanelComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(NavigationPanelComponent);

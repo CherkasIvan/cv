@@ -1,11 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    ElementRef,
-    Input,
-    ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -33,8 +27,8 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         RouterLinkActive,
         TranslateModule,
         LanguageSelectorComponent,
-        DarkModeSelectorComponent
-    ]
+        DarkModeSelectorComponent,
+    ],
 })
 export class NavigationPanelBurgerComponent {
     @Input() public burgerNavigators: INavigation[] = [];

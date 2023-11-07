@@ -13,21 +13,15 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
     exports: [MatDialogModule, CommonModule],
-    imports: [
-        RouterModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        CommonModule,
-        SliderBehaviorDirective
-    ],
+    imports: [RouterModule, MatDialogModule, MatSnackBarModule, CommonModule, SliderBehaviorDirective],
     providers: [
         MatSnackBarModule,
         SnackbarService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: LoadingInterceptor,
-            multi: true
-        }
-    ]
+            multi: true,
+        },
+    ],
 })
 export class CoreModule {}

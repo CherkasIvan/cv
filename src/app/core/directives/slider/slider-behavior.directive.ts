@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: '[cvSliderBehavior]',
-    standalone: true
+    standalone: true,
 })
 export class SliderBehaviorDirective {
     constructor(private el: ElementRef) {}
@@ -14,14 +14,12 @@ export class SliderBehaviorDirective {
     }
 
     public nextSlide() {
-        const element =
-            this.el.nativeElement.parentElement.parentElement.children[0];
+        const element = this.el.nativeElement.parentElement.parentElement.children[0];
         return element.getElementsByClassName('item');
     }
 
     public previousSlide() {
-        const element =
-            this.el.nativeElement.parentElement.parentElement.children[0];
+        const element = this.el.nativeElement.parentElement.parentElement.children[0];
         return element.getElementsByClassName('item');
     }
 }

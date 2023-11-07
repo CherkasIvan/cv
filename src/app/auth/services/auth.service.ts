@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import {
-    AngularFirestore,
-    AngularFirestoreDocument
-} from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
@@ -15,7 +12,7 @@ import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class AuthService {
     public userData: User | null = null;
@@ -27,7 +24,7 @@ export class AuthService {
         private readonly _afAuth: AngularFireAuth,
         private readonly _router: Router,
         private readonly _snackbarService: SnackbarService,
-        private readonly _localStorageService: localStorageService
+        private readonly _localStorageService: localStorageService,
     ) {
         if (localStorage.getItem('usersState')) {
             this.isAuth$.next(true);
@@ -51,16 +48,14 @@ export class AuthService {
                         if (user) {
                             const snackbarDataSuccess: ISnackbar = {
                                 message: `You are logged in as ${result.user?.email}`,
-                                isSuccess: true
+                                isSuccess: true,
                             };
                             // this.userState.rout = this._localStorageService.usersState.rout;
 
                             if (this.isAuth$.value) {
                                 console.log(this.userState);
                                 this._router.navigate([ERouterPath.LAYOUT]);
-                                this._snackbarService.openSnackBar(
-                                    snackbarDataSuccess
-                                );
+                                this._snackbarService.openSnackBar(snackbarDataSuccess);
                             }
                         }
                     });
@@ -69,7 +64,7 @@ export class AuthService {
             .catch((error: Error) => {
                 const snackbarDataError: ISnackbar = {
                     message: error.message,
-                    isSuccess: false
+                    isSuccess: false,
                 };
                 this.isAuth$.next(false);
                 this._snackbarService.openSnackBar(snackbarDataError);
@@ -78,18 +73,16 @@ export class AuthService {
     }
 
     setUserData(user: firebase.default.User | null) {
-        const userRef: AngularFirestoreDocument<User> = this._afs.doc(
-            `users/${user?.uid}`
-        );
+        const userRef: AngularFirestoreDocument<User> = this._afs.doc(`users/${user?.uid}`);
         const userData: any = {
             uid: user?.uid,
             email: user?.email,
             displayName: user?.displayName,
             photoURL: user?.photoURL,
-            emailVerified: user?.emailVerified
+            emailVerified: user?.emailVerified,
         };
         return userRef.set(userData, {
-            merge: true
+            merge: true,
         });
     }
     // Sign out

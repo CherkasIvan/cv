@@ -6,5 +6,5 @@ const initialState: string = 'ru';
 
 export const languageSelectorReducer = createReducer(
     initialState,
-    on(setLanguageSuccess, (state, { currentLanguage }) => currentLanguage)
+    on(setLanguageSuccess, (state, { currentLanguage }) => currentLanguage),
 );

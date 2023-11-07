@@ -14,17 +14,13 @@ import { SkillsContentComponent } from '../../core/components/hard-skills-conten
     styleUrls: ['./technologies.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [SkillsContentComponent, AsyncPipe, TranslateModule]
+    imports: [SkillsContentComponent, AsyncPipe, TranslateModule],
 })
 export class TechnologiesComponent {
-    public frontendTech$: Observable<ITechnologies[]> =
-        this._firebaseService.getFrontendTech();
-    public backendTech$: Observable<ITechnologies[]> =
-        this._firebaseService.getBackendTech();
-    public socialTech$: Observable<ITechnologies[]> =
-        this._firebaseService.getSocialTech();
-    public otherTech$: Observable<ITechnologies[]> =
-        this._firebaseService.getOtherTech();
+    public frontendTech$: Observable<ITechnologies[]> = this._firebaseService.getFrontendTech();
+    public backendTech$: Observable<ITechnologies[]> = this._firebaseService.getBackendTech();
+    public socialTech$: Observable<ITechnologies[]> = this._firebaseService.getSocialTech();
+    public otherTech$: Observable<ITechnologies[]> = this._firebaseService.getOtherTech();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

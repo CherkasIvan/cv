@@ -4,7 +4,8 @@
 </div>
 <form
     [formGroup]="authForm"
-    (ngSubmit)="onSubmit()">
+    (ngSubmit)="onSubmit()"
+>
     <h3>Login Here</h3>
 
     <div class="form-group">
@@ -16,15 +17,13 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid':
-                    authForm.get('email')?.touched &&
-                    !authForm.get('email')?.value
-            }" />
+                'is-invalid': authForm.get('email')?.touched && !authForm.get('email')?.value
+            }"
+        />
         <div
-            *ngIf="
-                authForm.get('email')?.touched && !authForm.get('email')?.value
-            "
-            class="invalid-feedback">
+            *ngIf="authForm.get('email')?.touched && !authForm.get('email')?.value"
+            class="invalid-feedback"
+        >
             <div *ngIf="f['email'].errors['required']">E-mail is required</div>
         </div>
     </div>
@@ -37,19 +36,14 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid':
-                    authForm.get('password')?.touched &&
-                    !authForm.get('password')?.value
-            }" />
+                'is-invalid': authForm.get('password')?.touched && !authForm.get('password')?.value
+            }"
+        />
         <div
-            *ngIf="
-                authForm.get('password')?.touched &&
-                !authForm.get('password')?.value
-            "
-            class="invalid-feedback">
-            <div *ngIf="f['password'].errors['required']">
-                Password is required
-            </div>
+            *ngIf="authForm.get('password')?.touched && !authForm.get('password')?.value"
+            class="invalid-feedback"
+        >
+            <div *ngIf="f['password'].errors['required']">Password is required</div>
         </div>
     </div>
 
@@ -58,14 +52,16 @@
             (click)="checkAuth()"
             [ngClass]="!authForm.valid ? 'disabled' : 'enabled'"
             [disabled]="!authForm.valid"
-            type=" submit">
+            type=" submit"
+        >
             Log In
         </button>
 
         <button
             type="button"
             (click)="onReset()"
-            class="btn btn-warning">
+            class="btn btn-warning"
+        >
             Reset
         </button>
     </div>

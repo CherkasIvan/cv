@@ -8,7 +8,7 @@ describe('BackgroundsComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BackgroundsComponent]
+            imports: [BackgroundsComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(BackgroundsComponent);

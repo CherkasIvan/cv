@@ -18,11 +18,10 @@ import { pwaView } from '@utils/functions/pwaView';
     styleUrls: ['./footer.component.scss'],
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [LinksContainerComponent, CommonModule, TranslateModule]
+    imports: [LinksContainerComponent, CommonModule, TranslateModule],
 })
 export class FooterComponent {
-    public myContacts$: Observable<IContacts[]> =
-        this._firebaseService.getContacts();
+    public myContacts$: Observable<IContacts[]> = this._firebaseService.getContacts();
     public currentTheme$ = this._darkModeService.isDark$;
     public isPwaView: boolean = pwaView;
     public isScrolable = false;
@@ -30,7 +29,7 @@ export class FooterComponent {
     constructor(
         private readonly _sanitizer: DomSanitizer,
         private readonly _darkModeService: DarkModeService,
-        private readonly _firebaseService: FirebaseService
+        private readonly _firebaseService: FirebaseService,
     ) {}
 
     public getSantizeUrl(url: string) {

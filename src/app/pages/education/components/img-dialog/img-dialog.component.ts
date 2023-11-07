@@ -8,12 +8,12 @@ import { DialogService } from '@shared/services/dialog/dialog.service';
     templateUrl: './img-dialog.component.html',
     styleUrls: ['./img-dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true
+    standalone: true,
 })
 export class ImgDialogComponent {
     constructor(
         private readonly _dialogService: DialogService,
-        @Inject(MAT_DIALOG_DATA) public data: string
+        @Inject(MAT_DIALOG_DATA) public data: string,
     ) {}
 
     public closeDialog() {

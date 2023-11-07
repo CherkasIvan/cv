@@ -8,6 +8,6 @@ import { ProjectsContentComponent } from './components/projects-content/projects
     styleUrls: ['./projects.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [ProjectsContentComponent]
+    imports: [ProjectsContentComponent],
 })
 export class ProjectsComponent {}

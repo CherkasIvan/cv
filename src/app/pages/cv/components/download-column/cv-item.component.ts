@@ -10,7 +10,7 @@ import { ButtonComponent } from '../../../../core/components/button/button.compo
     styleUrls: ['./cv-item.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [ButtonComponent]
+    imports: [ButtonComponent],
 })
 export class CvItemComponent {
     @Input() public downloadPath = '';

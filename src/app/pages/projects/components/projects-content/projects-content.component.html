@@ -6,16 +6,15 @@
         <ul class="projects-list">
             <li
                 class="projects-list__item"
-                *ngFor="let project of projectsList$ | async; let i = index">
+                *ngFor="let project of projectsList$ | async; let i = index"
+            >
                 <a
                     [href]="project.htmlUrl"
-                    class="project">
+                    class="project"
+                >
                     <span class="project__title">{{ project.name }}</span>
-                    <span class="project__content">{{
-                        project.description
-                    }}</span>
-                    <cv-project-stars
-                        [projectStars]="project.stars"></cv-project-stars>
+                    <span class="project__content">{{ project.description }}</span>
+                    <cv-project-stars [projectStars]="project.stars"></cv-project-stars>
                 </a>
             </li>
         </ul>

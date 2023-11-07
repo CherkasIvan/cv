@@ -7,6 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
     styleUrls: ['./about-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [TranslateModule]
+    imports: [TranslateModule],
 })
 export class AboutContentComponent {}

@@ -5,7 +5,7 @@ import { ILocalStorage } from '@shared/models/localstorage.interface';
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class localStorageService {
     public usersState: ILocalStorage | null = null;
@@ -57,7 +57,7 @@ export class localStorageService {
                 user: user,
                 rout: `${ERouterPath.LAYOUT}`,
                 isDarkMode: 'false',
-                language: 'ru'
+                language: 'ru',
             };
         }
     }

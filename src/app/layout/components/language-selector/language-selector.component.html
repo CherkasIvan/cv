@@ -5,11 +5,13 @@
         name="language-toggle"
         id="language-toggle"
         [value]="language$"
-        (change)="toggle($event)" />
+        (change)="toggle($event)"
+    />
     <label
         class="language-selector__label"
         for="language-toggle"
         [ngClass]="{
             dark: isDark$ | async
-        }"></label>
+        }"
+    ></label>
 </div>

@@ -41,7 +41,7 @@ import { LayoutComponent } from './layout.component';
         LayoutComponent,
         NavigationPanelComponent,
         NavigationPanelBurgerComponent,
-        PopUpCloseDirective
-    ]
+        PopUpCloseDirective,
+    ],
 })
 export class LayoutModule {}

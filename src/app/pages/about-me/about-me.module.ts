@@ -17,7 +17,7 @@ import { AboutPhotosComponent } from './components/about-photos/about-photos.com
         TranslateModule,
         AboutMeComponent,
         AboutContentComponent,
-        AboutPhotosComponent
-    ]
+        AboutPhotosComponent,
+    ],
 })
 export class AboutMeModule {}

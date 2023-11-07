@@ -12,8 +12,8 @@ $cv-theme: mat.define-light-theme(
         color: (
             primary: $cv-primary,
             accent: $cv-accent,
-            warn: $cv-warn
-        )
+            warn: $cv-warn,
+        ),
     )
 );
 
@@ -26,8 +26,8 @@ $cv-dark-theme: mat.define-dark-theme(
         color: (
             primary: $cv-dark-primary,
             accent: $cv-dark-accent,
-            warn: $cv-dark-warn
-        )
+            warn: $cv-dark-warn,
+        ),
     )
 );
 

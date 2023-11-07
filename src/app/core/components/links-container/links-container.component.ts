@@ -12,17 +12,16 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
     imports: [CommonModule],
     templateUrl: './links-container.component.html',
     styleUrls: ['./links-container.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LinksContainerComponent {
     @Input() public modeTheme!: boolean;
     @Input() public pwaView = false;
-    public socialMediaLinks$: Observable<ISocialMedia[]> =
-        this._firebaseService.getSocialMediaLinks();
+    public socialMediaLinks$: Observable<ISocialMedia[]> = this._firebaseService.getSocialMediaLinks();
 
     constructor(
         private readonly _firebaseService: FirebaseService,
-        private readonly _sanitizer: DomSanitizer
+        private readonly _sanitizer: DomSanitizer,
     ) {}
 
     public getSantizeUrl(url: string) {

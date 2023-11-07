@@ -1,9 +1,9 @@
 @use '../../assets/styles/variables' as color;
 
 * {
-    padding: 0;
     margin: 0;
     border: 0;
+    padding: 0;
 }
 
 *,
@@ -16,14 +16,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
     max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    color: color.$white;
     font-size: 100%;
     line-height: 1;
-    overflow-y: visible;
-    overflow-x: hidden;
-    color: color.$white;
 }
 
 input,
@@ -60,8 +60,8 @@ a:focus {
 }
 
 a {
-    color: color.$white;
     cursor: pointer;
+    color: color.$white;
 }
 
 ul li {
@@ -86,8 +86,8 @@ h1,
 h2,
 h3,
 h4 {
-    font-size: inherit;
     font-weight: inherit;
+    font-size: inherit;
 }
 
 input:-webkit-autofill,

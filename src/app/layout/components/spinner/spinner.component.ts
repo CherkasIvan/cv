@@ -10,7 +10,7 @@ import { SpinnerService } from '@core/services/spinner/spinner.service';
     imports: [CommonModule],
     templateUrl: './spinner.component.html',
     styleUrls: ['./spinner.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpinnerComponent {
     @Input() public spinnerStyle!: string;

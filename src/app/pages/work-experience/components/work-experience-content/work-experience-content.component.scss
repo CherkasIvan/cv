@@ -6,10 +6,10 @@
         text-align: center;
 
         .work-list {
-            width: 100%;
             display: grid;
-            gap: 1rem;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            width: 100%;
 
             &__item {
                 @include flex-d_column;
@@ -27,24 +27,24 @@
                     }
 
                     &__logo {
+                        transform: scale(1);
+                        transition: all 0.5s ease-out;
                         cursor: pointer;
-                        width: fit-content;
-                        border-radius: 8px;
                         box-shadow:
                             0 14px 28px rgba(0, 0, 0, 0.25),
                             0 10px 10px rgba(0, 0, 0, 0.22);
-                        transition: all 0.5s ease-out;
-                        transform: scale(1);
+                        border-radius: 8px;
+                        width: fit-content;
 
                         .logo-icon {
-                            height: 200px;
                             border-radius: 8px;
+                            height: 200px;
                         }
                     }
 
                     &__logo:hover {
-                        transition: all 0.5s ease-out;
                         transform: scale(1.05);
+                        transition: all 0.5s ease-out;
                     }
 
                     .white {

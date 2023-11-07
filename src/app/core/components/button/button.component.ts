@@ -9,7 +9,7 @@ import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
     imports: [CommonModule],
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
     @Input() public downloadPath?: string;

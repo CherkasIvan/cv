@@ -3,31 +3,23 @@
         <ul class="education-list">
             <li
                 class="education-list__item"
-                *ngFor="
-                    let educationPlace of educationList$ | async;
-                    let i = index
-                ">
-                <span class="educational__institution">{{
-                    'EDUCATION.' + educationPlace.educationTitle + '.TITLE'
-                        | translate
-                }}</span>
+                *ngFor="let educationPlace of educationList$ | async; let i = index"
+            >
+                <span class="educational__institution">
+                    {{ 'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate }}
+                </span>
 
                 <div class="content-container">
                     <div class="places">
                         <ul class="places__list">
                             <li
                                 class="item"
-                                *ngFor="
-                                    let education of educationPlace.educationPlaceName;
-                                    let i = index
-                                ">
+                                *ngFor="let education of educationPlace.educationPlaceName; let i = index"
+                            >
                                 <span class="item__name">
                                     {{
-                                        'EDUCATION.' +
-                                            educationPlace.educationTitle +
-                                            '.' +
-                                            education.name +
-                                            '.NAME' | translate
+                                        'EDUCATION.' + educationPlace.educationTitle + '.' + education.name + '.NAME'
+                                            | translate
                                     }}
                                 </span>
 
@@ -37,41 +29,31 @@
                                         [alt]="education.grade"
                                         class="item__img"
                                         role="none"
-                                        (click)="
-                                            openDialog(
-                                                education.certificatePath
-                                            )
-                                        " />
+                                        (click)="openDialog(education.certificatePath)"
+                                    />
                                 </ng-container>
 
                                 <span class="item__address">
                                     {{
-                                        'EDUCATION.' +
-                                            educationPlace.educationTitle +
-                                            '.' +
-                                            education.name +
-                                            '.ADDRESS' | translate
-                                    }}</span
-                                >
-                                <span class="item__phone">{{
-                                    education.phone
-                                }}</span>
+                                        'EDUCATION.' + educationPlace.educationTitle + '.' + education.name + '.ADDRESS'
+                                            | translate
+                                    }}
+                                </span>
+                                <span class="item__phone">{{ education.phone }}</span>
 
                                 <a
                                     [href]="education.link"
                                     class="intem__link"
-                                    >{{ education.link }}</a
                                 >
+                                    {{ education.link }}
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <ng-container *ngIf="educationPlace.educationLogo">
                         <div class="education-logo__container">
-                            <cv-carousel
-                                [pageSlides]="
-                                    educationPlace.educationLogo
-                                "></cv-carousel>
+                            <cv-carousel [pageSlides]="educationPlace.educationLogo"></cv-carousel>
                         </div>
                     </ng-container>
                 </div>

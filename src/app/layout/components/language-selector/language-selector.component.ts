@@ -21,34 +21,25 @@ import { TranslateManagerService } from '@shared/services/translate/translate-ma
     imports: [CommonModule],
     templateUrl: './language-selector.component.html',
     styleUrls: ['./language-selector.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguageSelectorComponent implements OnInit {
-    public isDark$: Observable<boolean> = this._store$.pipe(
-        select(darkModeSelector)
-    );
+    public isDark$: Observable<boolean> = this._store$.pipe(select(darkModeSelector));
     public languages = this._translateManagerService.languageList;
     public language$ = this._translateManagerService.currentLanguage$.value;
-    private userState: ILocalStorage | null =
-        this._localStorageService.getUsersState();
+    private userState: ILocalStorage | null = this._localStorageService.getUsersState();
 
     constructor(
         private readonly _translateManagerService: TranslateManagerService,
         private readonly _darkModeService: DarkModeService,
         private _localStorageService: localStorageService,
-        private _store$: Store<ILanguagesSelector & IDarkMode>
+        private _store$: Store<ILanguagesSelector & IDarkMode>,
     ) {}
 
     public toggle(event: Event): void {
-        this._translateManagerService.changeLang(
-            (event?.target as HTMLInputElement).checked
-        );
+        this._translateManagerService.changeLang((event?.target as HTMLInputElement).checked);
         this.language$ = this._translateManagerService.currentLanguage$.value;
-        this._store$.dispatch(
-            setLanguageSuccess(
-                this.changeLang((<HTMLInputElement>event.target).checked)
-            )
-        );
+        this._store$.dispatch(setLanguageSuccess(this.changeLang((<HTMLInputElement>event.target).checked)));
         // this._localStorageService.setLanguage(this.language);
     }
 

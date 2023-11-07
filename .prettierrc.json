@@ -1,15 +1,17 @@
 {
     "singleQuote": true,
     "semi": true,
-    "proseWrap": "preserve",
-    "trailingComma": "none",
-    "bracketSameLine": true,
+    "proseWrap": "always",
+    "trailingComma": "all",
+    "bracketSameLine": false,
     "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "ignore",
     "arrowParens": "always",
     "singleAttributePerLine": true,
+    "printWidth": 120,
     "tabWidth": 4,
     "useTabs": false,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-css-order"],
     "importOrder": [
         "'^@angular/(.*)$",
 

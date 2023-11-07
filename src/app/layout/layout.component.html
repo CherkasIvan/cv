@@ -2,22 +2,18 @@
     <div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
         <div
             class="layout-container"
-            [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
-            <cv-navigation-panel
-                [navigators]="navigation$ | async"></cv-navigation-panel>
+            [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
+        >
+            <cv-navigation-panel [navigators]="navigation$ | async"></cv-navigation-panel>
 
-            <cv-spinner
-                [spinnerStyle]="
-                    (currentTheme$ | async) ? 'dark-layout' : 'layout'
-                "></cv-spinner>
-            <cv-initial-content
-                *ngIf="currentRoute === '/layout'"></cv-initial-content>
-            <router-outlet #outlet="outlet"></router-outlet>.
+            <cv-spinner [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"></cv-spinner>
+            <cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
+            <router-outlet #outlet="outlet"></router-outlet>
+            .
 
             <cv-footer></cv-footer>
         </div>
 
-        <cv-backgrounds
-            [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+        <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
     </div>
 </ng-container>

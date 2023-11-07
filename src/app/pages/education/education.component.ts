@@ -8,6 +8,6 @@ import { EducationContentComponent } from './components/education-content/educat
     styleUrls: ['./education.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [EducationContentComponent]
+    imports: [EducationContentComponent],
 })
 export class EducationComponent {}
