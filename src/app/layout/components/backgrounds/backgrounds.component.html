@@ -1,7 +1,8 @@
 <main class="layout-background">
-    <div
+    @if (!isDarkBackground) {
+<div
         class="parallax"
-        *ngIf="!isDarkBackground"
+       
     >
         <div class="parallax__layer parallax__layer--back">
             <div class="starfield">
@@ -36,13 +37,16 @@
             </div>
         </div>
     </div>
+}
 
-    <div
+    @if (isDarkBackground) {
+<div
         class="stars"
-        *ngIf="isDarkBackground"
+       
     >
         <div class="bg background"></div>
         <div class="bg midground"></div>
         <div class="bg foreground"></div>
     </div>
+}
 </main>

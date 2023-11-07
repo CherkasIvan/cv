@@ -1,8 +1,9 @@
 <div class="stars">
     <div class="stars__container">
-        <div
+        @for (star of starsArray; track star) {
+  <div
             class="stars-img"
-            *ngFor="let star of starsArray"
+           
         >
             <img
                 class="star"
@@ -10,6 +11,7 @@
                 alt="star"
             />
         </div>
+}
     </div>
     <div class="stars-count">
         <p class="stars-count__description">Total:</p>

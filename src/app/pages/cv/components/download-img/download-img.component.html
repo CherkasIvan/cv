@@ -1,7 +1,9 @@
 <div class="download-img">
     <div class="cv-container">
-        <ng-container *ngIf="!isEuropean">
-            <ng-container *ngIf="(currentLanguage$ | async) === 'en'">
+        @if (!isEuropean) {
+
+            @if ((currentLanguage$ | async) === 'en') {
+
                 <cv-item
                     downloadPath="assets/img/cv/i.cherkas_angular_cv.pdf"
                     imgPath="assets/img/cv/ivan.cherkas_angular_developer_page1.jpg"
@@ -16,9 +18,11 @@
                     imgPath="assets/img/cv/ivan.cherkas_angular_deveolper_page2.jpg"
                     currentText="{{ 'CV.JPG' | translate }}"
                 ></cv-item>
-            </ng-container>
+            
+}
 
-            <ng-container *ngIf="(currentLanguage$ | async) === 'ru'">
+            @if ((currentLanguage$ | async) === 'ru') {
+
                 <cv-item
                     downloadPath="assets/img/cv/i.cherkas_angular_cv_ru.pdf"
                     imgPath="assets/img/cv/ivan.cherkas_angular_developer_page1_ru.jpg"
@@ -33,10 +37,13 @@
                     imgPath="assets/img/cv/ivan.cherkas_angular_deveolper_page2_ru.jpg"
                     currentText="{{ 'CV.JPG' | translate }}"
                 ></cv-item>
-            </ng-container>
-        </ng-container>
+            
+}
+        
+}
 
-        <ng-container *ngIf="isEuropean">
+        @if (isEuropean) {
+
             <cv-item
                 downloadPath="assets/img/cv/i.cherkas_angular_cv.pdf"
                 imgPath="assets/img/cv/ivan.cherkas_angular_developer_page1.jpg"
@@ -51,6 +58,7 @@
                 imgPath="assets/img/cv/ivan.cherkas_angular_deveolper_page2.jpg"
                 currentText="{{ 'CV.PDF' | translate }}"
             ></cv-item>
-        </ng-container>
+        
+}
     </div>
 </div>

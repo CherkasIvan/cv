@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
 import { AuthService } from '@auth/services/auth.service';
-
 import { LogoutDialogService } from '@core/services/logout-dialog/logout-dialog.service';
 
 @Component({
@@ -16,13 +14,20 @@ import { LogoutDialogService } from '@core/services/logout-dialog/logout-dialog.
 export class SimpleButtonComponent {
     @Input() public buttonName = '';
 
-    constructor(private readonly _logoutDialogService: LogoutDialogService) {}
+    constructor(
+        private readonly _logoutDialogService: LogoutDialogService,
+        private readonly _authService: AuthService,
+    ) {}
 
     public openLogoutDialog() {
         this._logoutDialogService.openDialog();
     }
 
-    ngOnInit() {
-        console.log(this.buttonName);
+    public cancel() {
+        this._logoutDialogService.closeDialog();
+    }
+
+    public confirmLogout() {
+        this._authService.signOut();
     }
 }

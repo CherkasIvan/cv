@@ -1,7 +1,8 @@
 <ul class="technologies-list">
-    <li
+    @for (technology of technologiesList; track technology; let i = $index) {
+  <li
         class="technologies-list__item"
-        *ngFor="let technology of technologiesList; let i = index"
+       
     >
         <a
             [href]="technology.link"
@@ -19,4 +20,5 @@
             </div>
         </a>
     </li>
+}
 </ul>

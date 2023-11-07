@@ -9,9 +9,10 @@
         ></cv-links-container>
         <div class="personal-data-container">
             <ul class="personal-data-list">
-                <li
+                @for (contact of myContacts$ | async; track contact; let i = $index) {
+  <li
                     class="personal-data-list__item"
-                    *ngFor="let contact of myContacts$ | async; let i = index"
+                   
                 >
                     <span class="item-title">{{ 'FOOTER.ITEM.VALUE' + i | translate }}</span>
                     <a
@@ -21,6 +22,7 @@
                         {{ contact.value }}
                     </a>
                 </li>
+}
             </ul>
         </div>
     </div>

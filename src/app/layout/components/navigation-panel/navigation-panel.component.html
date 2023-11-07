@@ -9,9 +9,10 @@
 
         <nav class="navigation-container">
             <ul class="navigation-list">
-                <li
+                @for (link of navigators; track link; let i = $index) {
+  <li
                     class="navigation-list__item"
-                    *ngFor="let link of navigators; let i = index"
+                   
                 >
                     <a
                         routerLink="{{ link.link }}"
@@ -21,6 +22,7 @@
                         {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
                     </a>
                 </li>
+}
             </ul>
         </nav>
 

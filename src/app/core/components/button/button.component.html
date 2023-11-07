@@ -6,18 +6,22 @@
         class="button"
         [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'"
     >
-        <a
-            *ngIf="downloadPath"
+        @if (downloadPath) {
+<a
+           
             [href]="downloadPath"
             class="button__label"
         >
             {{ label }}
         </a>
-        <a
-            *ngIf="!downloadPath"
+}
+        @if (!downloadPath) {
+<a
+           
             class="button__label"
         >
             {{ label }}
         </a>
+}
     </button>
 </div>

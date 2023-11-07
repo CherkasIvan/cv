@@ -1,15 +1,19 @@
 <div class="snackbar">
     <span class="snackbar-message">{{ data.message }}</span>
 
-    <img
-        *ngIf="data.isSuccess"
+    @if (data.isSuccess) {
+<img
+       
         class="snackbar-img"
         src="assets/img/snackbar/accept.png"
     />
+}
 
-    <img
-        *ngIf="!data.isSuccess"
+    @if (!data.isSuccess) {
+<img
+       
         class="snackbar-img"
         src="assets/img/snackbar/reject.png"
     />
+}
 </div>

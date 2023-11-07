@@ -1,9 +1,10 @@
 <div class="work-experience-content">
     <main class="work-container">
         <ul class="work-list">
-            <li
+            @for (work of workPlace$ | async; track work) {
+  <li
                 class="work-list__item"
-                *ngFor="let work of workPlace$ | async"
+               
             >
                 <div class="item-header">
                     <div
@@ -28,6 +29,7 @@
                     <span class="item-footer__place">{{ work.place }}</span>
                 </div>
             </li>
+}
         </ul>
         <div class="total-experience">
             {{ totalWorkTimeEverConverted }}

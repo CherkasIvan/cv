@@ -6,10 +6,8 @@
 >
     <c-carousel-indicators></c-carousel-indicators>
     <c-carousel-inner>
-        <c-carousel-item
-            *ngFor="let slide of slides"
-            class="carousel-container"
-        >
+        @for (slide of slides; track slide) {
+        <c-carousel-item class="carousel-container">
             <img
                 [src]="slide.src"
                 alt="{{ slide.title }}"
@@ -21,6 +19,7 @@
                 <p>{{ slide.subtitle }}</p>
             </c-carousel-caption>
         </c-carousel-item>
+        }
     </c-carousel-inner>
     <c-carousel-control
         [routerLink]
