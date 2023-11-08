@@ -14,12 +14,14 @@ export class SliderBehaviorDirective {
     }
 
     public nextSlide() {
-        const element = this.el.nativeElement.parentElement.parentElement.children[0];
+        const element =
+            this.el.nativeElement.parentElement.parentElement.children[0];
         return element.getElementsByClassName('item');
     }
 
     public previousSlide() {
-        const element = this.el.nativeElement.parentElement.parentElement.children[0];
+        const element =
+            this.el.nativeElement.parentElement.parentElement.children[0];
         return element.getElementsByClassName('item');
     }
 }

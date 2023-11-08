@@ -9,7 +9,9 @@ export interface State {
     [fromRouter.DEFAULT_ROUTER_FEATURENAME]: fromRouter.RouterReducerState<any>;
 }
 
-export const selectRouter = createFeatureSelector<State>(fromRouter.DEFAULT_ROUTER_FEATURENAME);
+export const selectRouter = createFeatureSelector<State>(
+    fromRouter.DEFAULT_ROUTER_FEATURENAME,
+);
 
 // const routerSelectors = fromRouter.getSelectors(selectRouter);
 
@@ -31,7 +33,10 @@ export const {
 
 const { selectEntities } = routerAdapter.getSelectors();
 
-export const selectRouterEntities = createSelector(selectRouter, selectEntities);
+export const selectRouterEntities = createSelector(
+    selectRouter,
+    selectEntities,
+);
 
 // export const selectCars = createSelector(carsFeatureSelector, selectAll);
 

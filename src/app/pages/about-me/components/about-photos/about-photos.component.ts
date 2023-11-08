@@ -15,7 +15,8 @@ import { CarouselComponent } from '../../../../core/components/carousel/carousel
     imports: [CarouselComponent],
 })
 export class AboutPhotosComponent {
-    public slides$: Observable<IProfilePhoto[]> = this._firebaseService.getMyProfilePhotos();
+    public slides$: Observable<IProfilePhoto[]> =
+        this._firebaseService.getMyProfilePhotos();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

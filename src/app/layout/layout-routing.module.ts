@@ -13,19 +13,25 @@ const routes: Routes = [
             {
                 path: ERouterPath.ABOUT_ME,
                 loadComponent: () =>
-                    import('../pages/about-me/about-me.component').then((module) => module.AboutMeComponent),
+                    import('../pages/about-me/about-me.component').then(
+                        (module) => module.AboutMeComponent,
+                    ),
                 data: { animation: 'page-enter' },
             },
             {
                 path: ERouterPath.PROJECTS,
                 loadComponent: () =>
-                    import('../pages/projects/projects.component').then((module) => module.ProjectsComponent),
+                    import('../pages/projects/projects.component').then(
+                        (module) => module.ProjectsComponent,
+                    ),
                 data: { animation: 'page-enter' },
             },
             {
                 path: ERouterPath.EDUCATION,
                 loadComponent: () =>
-                    import('../pages/education/education.component').then((module) => module.EducationComponent),
+                    import('../pages/education/education.component').then(
+                        (module) => module.EducationComponent,
+                    ),
                 data: { animation: 'page-enter' },
             },
             {
@@ -39,14 +45,17 @@ const routes: Routes = [
             {
                 path: ERouterPath.WORK_EXPERIENCE,
                 loadComponent: () =>
-                    import('../pages/work-experience/work-experience.component').then(
-                        (module) => module.WorkExperienceComponent,
-                    ),
+                    import(
+                        '../pages/work-experience/work-experience.component'
+                    ).then((module) => module.WorkExperienceComponent),
                 data: { animation: 'page-enter' },
             },
             {
                 path: ERouterPath.CV,
-                loadComponent: () => import('../pages/cv/cv.component').then((module) => module.CvComponent),
+                loadComponent: () =>
+                    import('../pages/cv/cv.component').then(
+                        (module) => module.CvComponent,
+                    ),
                 data: { animation: 'page-enter' },
             },
         ],

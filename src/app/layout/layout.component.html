@@ -1,21 +1,28 @@
-<ng-container>
-    <div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
-        <div
-            class="layout-container"
-            [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
-        >
-            <cv-navigation-panel [navigators]="navigation$ | async"></cv-navigation-panel>
+<div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
+    <div
+        class="layout-container"
+        [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
+    >
+        @if(showLogoutModal) {
+        <cv-modal-outlet (modalClosed)="closeLogoutDialog()"></cv-modal-outlet>
+        }
 
-            <cv-spinner [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"></cv-spinner>
-            @if (currentRoute === '/layout') {
-<cv-initial-content></cv-initial-content>
-}
-            <router-outlet #outlet="outlet"></router-outlet>
-            .
+        <cv-navigation-panel
+            [navigators]="navigation$ | async"
+        ></cv-navigation-panel>
 
-            <cv-footer></cv-footer>
-        </div>
+        <cv-spinner
+            [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"
+        ></cv-spinner>
 
-        <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+        @if (currentRoute === '/layout') {
+        <cv-initial-content></cv-initial-content>
+        }
+
+        <router-outlet #outlet="outlet"></router-outlet>
+
+        <cv-footer></cv-footer>
     </div>
-</ng-container>
+
+    <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+</div>

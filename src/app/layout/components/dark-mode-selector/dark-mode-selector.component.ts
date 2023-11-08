@@ -3,7 +3,10 @@ import { Store, select } from '@ngrx/store';
 
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
-import { setMode, setModeSuccess } from '@app/layout/store/dark-mode-store/dark-mode.actions';
+import {
+    setMode,
+    setModeSuccess,
+} from '@app/layout/store/dark-mode-store/dark-mode.actions';
 import { darkModeSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';
 import { IDarkMode } from '@app/layout/store/model/dark-mode.interface';
 
@@ -24,7 +27,9 @@ export class DarkModeSelectorComponent {
 
     public changeView($event: MouseEvent): void {
         this._store$.dispatch(setMode());
-        this._store$.dispatch(setModeSuccess((<HTMLInputElement>$event.target).checked));
+        this._store$.dispatch(
+            setModeSuccess((<HTMLInputElement>$event.target).checked),
+        );
         this._localStorageService.setMode(this.isChecked$.toString());
     }
 }

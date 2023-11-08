@@ -1,5 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Output,
+    ViewChild,
+} from '@angular/core';
+
+import { ModalPortalDirective } from '@core/directives/modal-portal/modal-portal.directive';
+
+import { AuthService } from '@app/auth/services/auth.service';
+
+import { ModalHostComponent } from './modal-host.component';
 
 @Component({
     selector: 'cv-modal-outlet',
@@ -7,16 +20,24 @@ import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, V
     styleUrls: ['./modal-outlet.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, ModalPortalDirective, ModalHostComponent],
 })
 export class ModalOutletComponent {
-    @Output() private isClosed = new EventEmitter<boolean>();
+    @Output() private modalClosed: EventEmitter<boolean> =
+        new EventEmitter<boolean>();
 
     @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
 
-    closeModal(event: MouseEvent) {
+    constructor(private readonly _authService: AuthService) {}
+
+    public closeModal(event: MouseEvent) {
         if (this.overlay.nativeElement === event.target) {
-            this.isClosed.emit();
+            this.modalClosed.emit();
         }
+    }
+
+    public confirmLogout() {
+        this._authService.signOut();
+        this.modalClosed.emit();
     }
 }

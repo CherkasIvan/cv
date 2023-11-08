@@ -12,7 +12,11 @@ describe('LoginComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [AuthComponent, AngularFireModule.initializeApp(environment.firebase), MatSnackBarModule],
+            imports: [
+                AuthComponent,
+                AngularFireModule.initializeApp(environment.firebase),
+                MatSnackBarModule,
+            ],
         });
         fixture = TestBed.createComponent(AuthComponent);
         component = fixture.componentInstance;

@@ -3,9 +3,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { SimpleButtonComponent } from '@core/components/simple-button/simple-button.component';
+
 import { INavigation } from '@shared/models/navigation.interface';
 
-import { SimpleButtonComponent } from '../../../core/components/simple-button/simple-button.component';
 import { DarkModeSelectorComponent } from '../dark-mode-selector/dark-mode-selector.component';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { NavigationPanelBurgerComponent } from '../navigation-panel-burger/navigation-panel-burger.component';

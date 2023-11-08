@@ -9,6 +9,7 @@ import { LinksContainerComponent } from '@core/components/links-container/links-
 import { SimpleButtonComponent } from '@core/components/simple-button/simple-button.component';
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
+import { ModalOutletComponent } from '@app/core/components/modal-outlet/modal-outlet.component';
 import { DarkModeSelectorComponent } from '@app/layout/components/dark-mode-selector/dark-mode-selector.component';
 import { LanguageSelectorComponent } from '@app/layout/components/language-selector/language-selector.component';
 
@@ -31,6 +32,7 @@ import { LayoutComponent } from './layout.component';
         DarkModeSelectorComponent,
         SpinnerComponent,
         BackgroundsComponent,
+        ModalOutletComponent,
         FooterComponent,
         SkillsContentComponent,
         LinksContainerComponent,

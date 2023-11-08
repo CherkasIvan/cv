@@ -21,7 +21,8 @@ import { pwaView } from '@utils/functions/pwaView';
     imports: [LinksContainerComponent, CommonModule, TranslateModule],
 })
 export class FooterComponent {
-    public myContacts$: Observable<IContacts[]> = this._firebaseService.getContacts();
+    public myContacts$: Observable<IContacts[]> =
+        this._firebaseService.getContacts();
     public currentTheme$ = this._darkModeService.isDark$;
     public isPwaView: boolean = pwaView;
     public isScrolable = false;

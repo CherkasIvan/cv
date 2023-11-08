@@ -2,14 +2,13 @@
     <main class="work-container">
         <ul class="work-list">
             @for (work of workPlace$ | async; track work) {
-  <li
-                class="work-list__item"
-               
-            >
+            <li class="work-list__item">
                 <div class="item-header">
                     <div
                         class="item-header__logo"
-                        [ngClass]="work.company === 'FreshLimeSoft' ? 'white' : ''"
+                        [ngClass]="
+                            work.company === 'FreshLimeSoft' ? 'white' : ''
+                        "
                     >
                         <img
                             class="logo-icon"
@@ -29,7 +28,7 @@
                     <span class="item-footer__place">{{ work.place }}</span>
                 </div>
             </li>
-}
+            }
         </ul>
         <div class="total-experience">
             {{ totalWorkTimeEverConverted }}

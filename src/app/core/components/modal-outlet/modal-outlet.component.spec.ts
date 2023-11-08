@@ -11,7 +11,7 @@ describe('ModalOutletComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ModalOutletComponent],
+            imports: [ModalOutletComponent],
         }).compileComponents();
     }));
 

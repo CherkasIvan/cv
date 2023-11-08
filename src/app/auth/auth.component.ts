@@ -1,6 +1,13 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+    AbstractControl,
+    FormControl,
+    FormGroup,
+    FormsModule,
+    ReactiveFormsModule,
+    Validators,
+} from '@angular/forms';
 import { Store } from '@ngrx/store';
 
 import { IAuth } from './model/auth.interface';
@@ -29,7 +36,9 @@ export class AuthComponent implements OnInit {
             email: new FormControl('', {
                 validators: [Validators.required, Validators.email],
             }),
-            password: new FormControl('', { validators: [Validators.required] }),
+            password: new FormControl('', {
+                validators: [Validators.required],
+            }),
         });
         return this.authForm;
     }

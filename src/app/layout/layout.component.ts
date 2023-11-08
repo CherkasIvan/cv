@@ -1,5 +1,10 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, HostListener, OnDestroy } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    HostListener,
+    OnDestroy,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
@@ -9,6 +14,8 @@ import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
+
+import { ModalOutletComponent } from '@app/core/components/modal-outlet/modal-outlet.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -29,6 +36,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
         SpinnerComponent,
         NgIf,
         InitialContentComponent,
+        ModalOutletComponent,
         RouterOutlet,
         FooterComponent,
         BackgroundsComponent,
@@ -36,11 +44,14 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ],
 })
 export class LayoutComponent implements OnDestroy {
-    public currentTheme$: BehaviorSubject<boolean> = this._darkModeService.isDark$;
-    public navigation$: Observable<INavigation[]> = this._firebaseService.getNavigation();
+    public currentTheme$: BehaviorSubject<boolean> =
+        this._darkModeService.isDark$;
+    public navigation$: Observable<INavigation[]> =
+        this._firebaseService.getNavigation();
     public currentRoute!: string;
     public isAuth = false;
     public isPwaView = false;
+    public showLogoutModal = false;
 
     private routerSubscription$: Subscription = new Subscription();
 
@@ -52,7 +63,9 @@ export class LayoutComponent implements OnDestroy {
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
-                event instanceof NavigationEnd ? (this.currentRoute = event.url) : null;
+                event instanceof NavigationEnd
+                    ? (this.currentRoute = event.url)
+                    : null;
                 this._localStorageService.setRout(this.currentRoute);
             }),
         );
@@ -60,7 +73,21 @@ export class LayoutComponent implements OnDestroy {
 
     public prepareRoute(outlet: RouterOutlet) {
         console.log(outlet.activatedRouteData['animation']);
-        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+        return (
+            outlet &&
+            outlet.activatedRouteData &&
+            outlet.activatedRouteData['animation']
+        );
+    }
+
+    public openLogoutDialog() {
+        // this._logoutDialogService.openDialog();
+        this.showLogoutModal = true;
+    }
+
+    public closeLogoutDialog() {
+        // this._logoutDialogService.closeDialog();
+        this.showLogoutModal = false;
     }
 
     ngOnDestroy(): void {

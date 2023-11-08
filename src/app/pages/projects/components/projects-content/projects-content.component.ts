@@ -17,7 +17,8 @@ import { ProjectStarsComponent } from '../project-stars/project-stars.component'
     imports: [NgFor, ProjectStarsComponent, AsyncPipe, TranslateModule],
 })
 export class ProjectsContentComponent {
-    public projectsList$: Observable<IGitHub[]> = this._gitHubService.getUserRepos();
+    public projectsList$: Observable<IGitHub[]> =
+        this._gitHubService.getUserRepos();
 
     constructor(private readonly _gitHubService: GitHubService) {}
 }
