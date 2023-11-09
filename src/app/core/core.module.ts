@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
+import { ModalHostComponent } from './components/modal-outlet/modal-host.component';
 import { ModalOutletComponent } from './components/modal-outlet/modal-outlet.component';
 import { ModalPortalDirective } from './directives/modal-portal/modal-portal.directive';
 import { SliderBehaviorDirective } from './directives/slider/slider-behavior.directive';
@@ -19,6 +20,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
         CommonModule,
         ModalPortalDirective,
         ModalOutletComponent,
+        ModalHostComponent,
     ],
     imports: [
         RouterModule,
@@ -28,6 +30,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
         SliderBehaviorDirective,
         ModalPortalDirective,
         ModalOutletComponent,
+        ModalHostComponent,
     ],
     providers: [
         MatSnackBarModule,

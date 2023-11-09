@@ -6,7 +6,8 @@ import {
     OnDestroy,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import { BehaviorSubject, Observable, Subscription, pipe } from 'rxjs';
 
 import { fadeAnimation } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
@@ -22,6 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { setLogoutDialogSuccess } from './store/logout-button-store/logout-button.actions';
+import { logoutButtonSelector } from './store/logout-button-store/logout-button.selectors';
+import { ILogoutButton } from './store/model/logout-button.interface';
 
 @Component({
     selector: 'cv-layout',
@@ -51,7 +55,9 @@ export class LayoutComponent implements OnDestroy {
     public currentRoute!: string;
     public isAuth = false;
     public isPwaView = false;
-    public showLogoutModal = false;
+    public showLogoutModal$: Observable<boolean> = this._store$.pipe(
+        select(logoutButtonSelector),
+    );
 
     private routerSubscription$: Subscription = new Subscription();
 
@@ -60,6 +66,7 @@ export class LayoutComponent implements OnDestroy {
         private readonly _darkModeService: DarkModeService,
         private readonly _localStorageService: localStorageService,
         private readonly _firebaseService: FirebaseService,
+        private readonly _store$: Store<ILogoutButton>,
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
@@ -80,14 +87,9 @@ export class LayoutComponent implements OnDestroy {
         );
     }
 
-    public openLogoutDialog() {
-        // this._logoutDialogService.openDialog();
-        this.showLogoutModal = true;
-    }
-
     public closeLogoutDialog() {
         // this._logoutDialogService.closeDialog();
-        this.showLogoutModal = false;
+        this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 
     ngOnDestroy(): void {

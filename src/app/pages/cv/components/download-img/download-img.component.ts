@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
-import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { DownloadButtonComponent } from '../download-button/download-button.component';
 import { CvItemComponent } from '../download-column/cv-item.component';
 
 @Component({
@@ -16,7 +16,7 @@ import { CvItemComponent } from '../download-column/cv-item.component';
     imports: [
         NgIf,
         CvItemComponent,
-        ButtonComponent,
+        DownloadButtonComponent,
         AsyncPipe,
         TranslateModule,
     ],

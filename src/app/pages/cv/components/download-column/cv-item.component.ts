@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { DialogService } from '@shared/services/dialog/dialog.service';
 
-import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { DownloadButtonComponent } from '../download-button/download-button.component';
 
 @Component({
     selector: 'cv-item',
@@ -10,7 +10,7 @@ import { ButtonComponent } from '../../../../core/components/button/button.compo
     styleUrls: ['./cv-item.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [ButtonComponent],
+    imports: [DownloadButtonComponent],
 })
 export class CvItemComponent {
     @Input() public downloadPath = '';

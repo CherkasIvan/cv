@@ -10,7 +10,7 @@ export const mainRoutes: Routes = [
     {
         path: ERouterPath.AUTH,
         loadComponent: () =>
-            import('./auth/auth.module').then((m) => m.AuthModule),
+            import('./auth/auth.component').then((m) => m.AuthComponent),
     },
     {
         path: ERouterPath.LAYOUT,

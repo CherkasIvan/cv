@@ -4,15 +4,15 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
 @Component({
-    selector: 'cv-button',
+    selector: 'cv-download-button',
     standalone: true,
     imports: [CommonModule],
-    templateUrl: './button.component.html',
-    styleUrls: ['./button.component.scss'],
+    templateUrl: './download-button.component.html',
+    styleUrls: ['./download-button.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {
-    @Input() public downloadPath?: string;
+export class DownloadButtonComponent {
+    @Input() public downloadPath = '';
     @Input() public label = '';
     public currentTheme$ = this._darkModeService.isDark$;
 

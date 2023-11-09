@@ -1,6 +1,6 @@
 @use '../../../../assets/styles/mixins/glassmorphism.mixin' as *;
 
-.simple-button {
+.logout {
     .logout-button,
     .cancel-button {
         @include default_button_glassmorphism;

@@ -3,7 +3,7 @@
         class="layout-container"
         [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
     >
-        @if(showLogoutModal) {
+        @if(showLogoutModal$ | async) {
         <cv-modal-outlet (modalClosed)="closeLogoutDialog()"></cv-modal-outlet>
         }
 
