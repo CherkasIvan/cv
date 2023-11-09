@@ -3,6 +3,8 @@ import {
     Directive,
     Inject,
     Input,
+    OnDestroy,
+    OnInit,
     TemplateRef,
     ViewContainerRef,
 } from '@angular/core';
@@ -11,14 +13,14 @@ import {
     selector: '[cvModalPortal]',
     standalone: true,
 })
-export class ModalPortalDirective {
+export class ModalPortalDirective implements OnInit, OnDestroy {
     @Input() cvModalPortal: string = '';
 
     private host: Element | null = null;
     private portalIds: string[] = [];
 
     constructor(
-        private tpl: TemplateRef<any>,
+        private tpl: TemplateRef<unknown>,
         private vcr: ViewContainerRef,
         @Inject(DOCUMENT) private document: Document,
     ) {}

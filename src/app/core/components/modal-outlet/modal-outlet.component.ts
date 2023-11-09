@@ -10,8 +10,6 @@ import {
 
 import { ModalPortalDirective } from '@core/directives/modal-portal/modal-portal.directive';
 
-import { AuthService } from '@app/auth/services/auth.service';
-
 import { ModalHostComponent } from './modal-host.component';
 
 @Component({
@@ -28,7 +26,7 @@ export class ModalOutletComponent {
 
     @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
 
-    constructor(private readonly _authService: AuthService) {}
+    // constructor(private readonly _authService: AuthService) {}
 
     public closeModal(event: MouseEvent) {
         if (this.overlay.nativeElement === event.target) {
@@ -36,8 +34,8 @@ export class ModalOutletComponent {
         }
     }
 
-    public confirmLogout() {
-        this._authService.signOut();
-        this.modalClosed.emit();
-    }
+    // public confirmLogout() {
+    //     this._authService.signOut();
+    //     this.modalClosed.emit();
+    // }
 }
