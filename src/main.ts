@@ -28,13 +28,18 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+import { GithubEffects } from '@pages/projects/projects-store/github.effects';
+
 import { environment } from '@env/environment';
 
 import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
+import {
+    githubReducer,
+    githubReposFeatureKey,
+} from '@app/pages/projects/projects-store/github.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
-import { CoreModule } from './app/core/core.module';
 import { entityConfig } from './app/entity-metadata';
 import { globalSetReducers } from './app/layout/store';
 
@@ -55,18 +60,19 @@ bootstrapApplication(AppComponent, {
             }),
             // AppRoutingModule,
             BrowserModule,
-            CoreModule,
+            // CoreModule,
             AngularFireModule.initializeApp(environment.firebase),
             provideFirebaseApp(() => initializeApp(environment.firebase)),
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
             StoreModule.forRoot(globalSetReducers),
+            StoreModule.forFeature(githubReposFeatureKey, githubReducer),
             StoreDevtoolsModule.instrument({
                 maxAge: 25,
                 logOnly: environment.production, // Restrict extension to log-only mode
             }),
-            EffectsModule.forRoot([]),
+            EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
             ServiceWorkerModule.register('ngsw-worker.js', {

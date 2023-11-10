@@ -7,7 +7,7 @@ export const selectGithubReposState =
         fromGithubRepos.githubReposFeatureKey,
     );
 
-export const selectUserRepos = createSelector(
+export const selectGithubRepos = createSelector(
     selectGithubReposState,
     (state) => state.githubRepos,
 );

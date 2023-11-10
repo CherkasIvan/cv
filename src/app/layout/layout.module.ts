@@ -22,25 +22,15 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-    exports: [LayoutComponent, PopUpCloseDirective],
+    exports: [LayoutComponent],
     imports: [
         LayoutRoutingModule,
         MatTableModule,
         CommonModule,
-        LanguageSelectorComponent,
-        DarkModeSelectorComponent,
         SpinnerComponent,
         BackgroundsComponent,
         ModalOutletComponent,
-        FooterComponent,
-        SkillsContentComponent,
-        LinksContainerComponent,
-        TranslateModule,
-        InitialContentComponent,
         LayoutComponent,
-        NavigationPanelComponent,
-        NavigationPanelBurgerComponent,
-        PopUpCloseDirective,
     ],
 })
 export class LayoutModule {}

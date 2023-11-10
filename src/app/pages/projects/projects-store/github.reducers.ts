@@ -13,7 +13,7 @@ export const initialState: State = {
     githubRepos: [],
 };
 
-export const reducer = createReducer(
+export const githubReducer = createReducer(
     initialState,
     on(GithubReposActions.loadGithubReposSuccess, (state, action) => ({
         ...state,

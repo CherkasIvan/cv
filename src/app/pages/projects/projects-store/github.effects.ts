@@ -6,7 +6,7 @@ import { GitHubService } from '../services/git-hub/git-hub.service';
 import * as GithubReposActions from './github.actions';
 
 @Injectable()
-export class UserReposEffects {
+export class GithubEffects {
     loadUserRepos$ = createEffect(() =>
         this.actions$.pipe(
             ofType(GithubReposActions.loadGithubRepos),
