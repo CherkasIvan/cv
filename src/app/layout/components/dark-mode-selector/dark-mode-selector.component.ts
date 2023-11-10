@@ -1,10 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import {
-    setMode,
-    setModeSuccess,
-} from '@layout/store/dark-mode-store/dark-mode.actions';
+import { setModeSuccess } from '@layout/store/dark-mode-store/dark-mode.actions';
 import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';
 import { IDarkMode } from '@layout/store/model/dark-mode.interface';
 
@@ -13,7 +11,7 @@ import { localStorageService } from '@shared/services/localstorage/local-storage
 @Component({
     selector: 'cv-dark-mode-selector',
     standalone: true,
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './dark-mode-selector.component.html',
     styleUrls: ['./dark-mode-selector.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,7 +24,6 @@ export class DarkModeSelectorComponent {
     ) {}
 
     public changeView($event: MouseEvent): void {
-        this._store$.dispatch(setMode());
         this._store$.dispatch(
             setModeSuccess((<HTMLInputElement>$event.target).checked),
         );

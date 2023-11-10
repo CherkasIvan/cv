@@ -12,11 +12,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
+import { setLogoutDialogSuccess } from '@layout/store/logout-button-store/logout-button.actions';
+
 import { INavigation } from '@shared/models/navigation.interface';
 
-import { setLogoutDialogSuccess } from '@app/layout/store/logout-button-store/logout-button.actions';
-
-import { PopUpCloseDirective as PopUpCloseDirective_1 } from '../../../core/directives/pop-up-close/pop-up-close.directive';
 import { DarkModeSelectorComponent } from '../dark-mode-selector/dark-mode-selector.component';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 
@@ -27,7 +26,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
-        PopUpCloseDirective_1,
+        PopUpCloseDirective,
         NgClass,
         NgFor,
         RouterLink,
@@ -40,7 +39,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
 export class NavigationPanelBurgerComponent {
     @Input() public burgerNavigators: INavigation[] = [];
     @ViewChild('popup', { read: ElementRef })
-    popup!: ElementRef<PopUpCloseDirective>;
+    public popup!: ElementRef<PopUpCloseDirective>;
 
     public isNavigate: boolean = false;
 

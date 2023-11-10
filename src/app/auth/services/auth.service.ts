@@ -56,7 +56,6 @@ export class AuthService {
                             // this.userState.rout = this._localStorageService.usersState.rout;
 
                             if (this.isAuth$.value) {
-                                console.log(this.userState);
                                 this._router.navigate([ERouterPath.LAYOUT]);
                                 this._snackbarService.openSnackBar(
                                     snackbarDataSuccess,
@@ -100,7 +99,6 @@ export class AuthService {
                 const previousUser = removeUser.user;
                 removeUser.previousUser = previousUser;
                 removeUser.user = null;
-                console.log(removeUser);
                 if (removeUser.user === null) {
                     this._localStorageService.setNewUserState(removeUser);
                 }

@@ -1,7 +1,5 @@
 import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { importProvidersFrom } from '@angular/core';
-import { EffectsModule } from '@ngrx/effects';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
@@ -19,7 +17,7 @@ import { ProjectStarsComponent } from '../project-stars/project-stars.component'
     standalone: true,
     imports: [NgFor, ProjectStarsComponent, AsyncPipe, TranslateModule],
 })
-export class ProjectsContentComponent {
+export class ProjectsContentComponent implements OnInit {
     public projectsList$!: Observable<IGitHub[]>;
 
     constructor(private _store$: Store<IGitHub>) {}
