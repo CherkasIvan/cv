@@ -15,7 +15,7 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideFirestore } from '@angular/fire/firestore';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
@@ -28,13 +28,18 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
+import { GithubEffects } from '@pages/projects/projects-store/github.effects';
+
 import { environment } from '@env/environment';
 
+import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
+import {
+    githubReducer,
+    githubReposFeatureKey,
+} from '@app/pages/projects/projects-store/github.reducers';
 
-import { AppRoutingModule } from './app/app-routing.module';
 import { AuthService } from './app/auth/services/auth.service';
-import { CoreModule } from './app/core/core.module';
 import { entityConfig } from './app/entity-metadata';
 import { globalSetReducers } from './app/layout/store';
 
@@ -53,20 +58,21 @@ bootstrapApplication(AppComponent, {
                 },
                 defaultLanguage: 'ru',
             }),
-            AppRoutingModule,
+            // AppRoutingModule,
             BrowserModule,
-            CoreModule,
+            // CoreModule,
             AngularFireModule.initializeApp(environment.firebase),
             provideFirebaseApp(() => initializeApp(environment.firebase)),
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
             StoreModule.forRoot(globalSetReducers),
+            StoreModule.forFeature(githubReposFeatureKey, githubReducer),
             StoreDevtoolsModule.instrument({
                 maxAge: 25,
                 logOnly: environment.production, // Restrict extension to log-only mode
             }),
-            EffectsModule.forRoot([]),
+            EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
             ServiceWorkerModule.register('ngsw-worker.js', {
@@ -79,7 +85,7 @@ bootstrapApplication(AppComponent, {
         UserTrackingService,
         provideAnimations(),
         provideHttpClient(withInterceptorsFromDi()),
-        provideRouter([]),
+        provideRouter(mainRoutes),
     ],
 })
     .then(() => {
@@ -88,7 +94,3 @@ bootstrapApplication(AppComponent, {
         }
     })
     .catch((err) => console.log(err));
-
-bootstrapApplication(AppComponent, {
-    providers: [provideStore()],
-}).catch((err) => console.log(err));

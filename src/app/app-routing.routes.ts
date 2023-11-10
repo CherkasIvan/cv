@@ -10,13 +10,13 @@ export const mainRoutes: Routes = [
     {
         path: ERouterPath.AUTH,
         loadComponent: () =>
-            import('./auth/auth.component').then((m) => m.AuthComponent),
+            import('./auth/auth.component').then((c) => c.AuthComponent),
     },
     {
         path: ERouterPath.LAYOUT,
         canActivate: [AuthGuard],
-        loadComponent: () =>
-            import('./layout/layout.module').then((m) => m.LayoutModule),
+        loadChildren: () =>
+            import('./layout/layout.module').then((c) => c.LayoutModule),
     },
 ];
 

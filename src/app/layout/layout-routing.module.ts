@@ -14,7 +14,7 @@ const routes: Routes = [
                 path: ERouterPath.ABOUT_ME,
                 loadComponent: () =>
                     import('../pages/about-me/about-me.component').then(
-                        (module) => module.AboutMeComponent,
+                        (c) => c.AboutMeComponent,
                     ),
                 data: { animation: 'page-enter' },
             },
@@ -22,7 +22,7 @@ const routes: Routes = [
                 path: ERouterPath.PROJECTS,
                 loadComponent: () =>
                     import('../pages/projects/projects.component').then(
-                        (module) => module.ProjectsComponent,
+                        (c) => c.ProjectsComponent,
                     ),
                 data: { animation: 'page-enter' },
             },
@@ -30,7 +30,7 @@ const routes: Routes = [
                 path: ERouterPath.EDUCATION,
                 loadComponent: () =>
                     import('../pages/education/education.component').then(
-                        (module) => module.EducationComponent,
+                        (c) => c.EducationComponent,
                     ),
                 data: { animation: 'page-enter' },
             },
@@ -38,7 +38,7 @@ const routes: Routes = [
                 path: ERouterPath.TECHNOLOGIES,
                 loadComponent: () =>
                     import('../pages/technologies/technologies.component').then(
-                        (module) => module.TechnologiesComponent,
+                        (c) => c.TechnologiesComponent,
                     ),
                 data: { animation: 'page-enter' },
             },
@@ -47,14 +47,14 @@ const routes: Routes = [
                 loadComponent: () =>
                     import(
                         '../pages/work-experience/work-experience.component'
-                    ).then((module) => module.WorkExperienceComponent),
+                    ).then((c) => c.WorkExperienceComponent),
                 data: { animation: 'page-enter' },
             },
             {
                 path: ERouterPath.CV,
                 loadComponent: () =>
                     import('../pages/cv/cv.component').then(
-                        (module) => module.CvComponent,
+                        (c) => c.CvComponent,
                     ),
                 data: { animation: 'page-enter' },
             },

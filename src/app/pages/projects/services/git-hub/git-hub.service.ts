@@ -11,7 +11,7 @@ import { IGitHub } from '../../models/github.interface';
 export class GitHubService {
     constructor(private httpClient: HttpClient) {}
 
-    getUserRepos(): Observable<IGitHub[]> {
+    public getGithubRepos(): Observable<IGitHub[]> {
         return this.httpClient
             .get<IGitHubRepo[]>(
                 'https://api.github.com/users/CherkasIvan/repos',

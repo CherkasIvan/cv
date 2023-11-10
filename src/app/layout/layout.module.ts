@@ -4,12 +4,13 @@ import { MatTableModule } from '@angular/material/table';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SkillsContentComponent } from '@core/components/hard-skills-content/skills-content.component';
-import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { ModalOutletComponent } from '@core/components/modal-outlet/modal-outlet.component';
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
 import { DarkModeSelectorComponent } from '@layout/components/dark-mode-selector/dark-mode-selector.component';
 import { LanguageSelectorComponent } from '@layout/components/language-selector/language-selector.component';
+
+import { LinksContainerComponent } from '@app/layout/components/links-container/links-container.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,25 +22,15 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-    exports: [LayoutComponent, PopUpCloseDirective],
+    exports: [LayoutComponent],
     imports: [
         LayoutRoutingModule,
         MatTableModule,
         CommonModule,
-        LanguageSelectorComponent,
-        DarkModeSelectorComponent,
         SpinnerComponent,
         BackgroundsComponent,
         ModalOutletComponent,
-        FooterComponent,
-        SkillsContentComponent,
-        LinksContainerComponent,
-        TranslateModule,
-        InitialContentComponent,
         LayoutComponent,
-        NavigationPanelComponent,
-        NavigationPanelBurgerComponent,
-        PopUpCloseDirective,
     ],
 })
 export class LayoutModule {}
