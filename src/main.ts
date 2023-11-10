@@ -15,7 +15,7 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideFirestore } from '@angular/fire/firestore';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
@@ -30,9 +30,9 @@ import { getFirestore } from 'firebase/firestore';
 
 import { environment } from '@env/environment';
 
+import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
 
-import { AppRoutingModule } from './app/app-routing.module';
 import { AuthService } from './app/auth/services/auth.service';
 import { CoreModule } from './app/core/core.module';
 import { entityConfig } from './app/entity-metadata';
@@ -53,7 +53,7 @@ bootstrapApplication(AppComponent, {
                 },
                 defaultLanguage: 'ru',
             }),
-            AppRoutingModule,
+            // AppRoutingModule,
             BrowserModule,
             CoreModule,
             AngularFireModule.initializeApp(environment.firebase),
@@ -79,7 +79,7 @@ bootstrapApplication(AppComponent, {
         UserTrackingService,
         provideAnimations(),
         provideHttpClient(withInterceptorsFromDi()),
-        provideRouter([]),
+        provideRouter(mainRoutes),
     ],
 })
     .then(() => {
@@ -88,7 +88,3 @@ bootstrapApplication(AppComponent, {
         }
     })
     .catch((err) => console.log(err));
-
-bootstrapApplication(AppComponent, {
-    providers: [provideStore()],
-}).catch((err) => console.log(err));

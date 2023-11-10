@@ -18,7 +18,7 @@ import { ProjectStarsComponent } from '../project-stars/project-stars.component'
 })
 export class ProjectsContentComponent {
     public projectsList$: Observable<IGitHub[]> =
-        this._gitHubService.getUserRepos();
+        this._gitHubService.getGithubRepos();
 
     constructor(private readonly _gitHubService: GitHubService) {}
 }

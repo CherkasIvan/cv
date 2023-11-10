@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
 
 .button-container {
     @include flex-a_center-j_sa;

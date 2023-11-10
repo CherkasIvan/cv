@@ -15,7 +15,7 @@ export const mainRoutes: Routes = [
     {
         path: ERouterPath.LAYOUT,
         canActivate: [AuthGuard],
-        loadComponent: () =>
+        loadChildren: () =>
             import('./layout/layout.module').then((m) => m.LayoutModule),
     },
 ];

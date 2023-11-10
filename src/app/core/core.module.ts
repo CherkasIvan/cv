@@ -15,22 +15,13 @@ import { SliderBehaviorDirective } from './directives/slider/slider-behavior.dir
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
-    exports: [
-        MatDialogModule,
-        CommonModule,
-        ModalPortalDirective,
-        ModalOutletComponent,
-        ModalHostComponent,
-    ],
+    exports: [MatDialogModule, CommonModule],
     imports: [
-        RouterModule,
         MatDialogModule,
         MatSnackBarModule,
         CommonModule,
         SliderBehaviorDirective,
         ModalPortalDirective,
-        ModalOutletComponent,
-        ModalHostComponent,
     ],
     providers: [
         MatSnackBarModule,
