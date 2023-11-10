@@ -9,12 +9,12 @@
         ></cv-links-container>
         <div class="personal-data-container">
             <ul class="personal-data-list">
-                @for (contact of myContacts$ | async; track contact; let i = $index) {
-  <li
-                    class="personal-data-list__item"
-                   
-                >
-                    <span class="item-title">{{ 'FOOTER.ITEM.VALUE' + i | translate }}</span>
+                @for (contact of myContacts$ | async; track contact; let i =
+                $index) {
+                <li class="personal-data-list__item">
+                    <span class="item-title">
+                        {{ 'FOOTER.ITEM.VALUE' + i | translate }}
+                    </span>
                     <a
                         [href]="getSantizeUrl(contact.path)"
                         class="item-value"
@@ -22,7 +22,7 @@
                         {{ contact.value }}
                     </a>
                 </li>
-}
+                }
             </ul>
         </div>
     </div>

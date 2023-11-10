@@ -17,7 +17,9 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid': authForm.get('email')?.touched && !authForm.get('email')?.value
+                'is-invalid':
+                    authForm.get('email')?.touched &&
+                    !authForm.get('email')?.value
             }"
         />
         @if (authForm.get('email')?.touched && !authForm.get('email')?.value) {
@@ -37,10 +39,13 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid': authForm.get('password')?.touched && !authForm.get('password')?.value
+                'is-invalid':
+                    authForm.get('password')?.touched &&
+                    !authForm.get('password')?.value
             }"
         />
-        @if (authForm.get('password')?.touched && !authForm.get('password')?.value) {
+        @if (authForm.get('password')?.touched &&
+        !authForm.get('password')?.value) {
         <div class="invalid-feedback">
             @if (f['password']?.errors['required']) {
             <div>Password is required</div>

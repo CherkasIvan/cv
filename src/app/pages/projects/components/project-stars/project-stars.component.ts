@@ -1,5 +1,10 @@
 import { NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
+} from '@angular/core';
 
 @Component({
     selector: 'cv-project-stars',

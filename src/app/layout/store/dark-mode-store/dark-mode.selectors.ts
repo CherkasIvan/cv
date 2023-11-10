@@ -4,5 +4,5 @@ import { IDarkMode } from '../model/dark-mode.interface';
 
 export const darkModeSelector = createSelector(
     (state: IDarkMode) => state.isDark,
-    (isDarkMode: boolean) => isDarkMode,
+    (isDark: boolean) => isDark,
 );

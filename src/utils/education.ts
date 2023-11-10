@@ -9,21 +9,24 @@ export const education: IEducation[] = [
                 slideNumber: 0,
                 src: 'assets/img/educational_establishments/school/hs_132.jpeg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '1',
                 slideNumber: 1,
                 src: 'assets/img/educational_establishments/school/main_132.jpeg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '2',
                 slideNumber: 2,
                 src: 'assets/img/educational_establishments/school/hs_132_full.jpeg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
         ],
         educationPlaceName: [
@@ -43,21 +46,24 @@ export const education: IEducation[] = [
                 slideNumber: 0,
                 src: 'assets/img/educational_establishments/university/miu_aside.jpg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '1',
                 slideNumber: 1,
                 src: 'assets/img/educational_establishments/university/miu_corpus.jpeg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
             {
                 id: '2',
                 slideNumber: 2,
                 src: 'assets/img/educational_establishments/university/miu_main.jpeg',
                 title: 'First slide',
-                subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                subtitle:
+                    'Nulla vitae elit libero, a pharetra augue mollis interdum.',
             },
         ],
         educationPlaceName: [

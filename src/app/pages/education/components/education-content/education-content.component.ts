@@ -18,7 +18,8 @@ import { CarouselComponent } from '../../../../core/components/carousel/carousel
     imports: [NgFor, NgIf, CarouselComponent, AsyncPipe, TranslateModule],
 })
 export class EducationContentComponent {
-    public educationList$: Observable<IEducation[]> = this._firebaseService.getEducation();
+    public educationList$: Observable<IEducation[]> =
+        this._firebaseService.getEducation();
 
     constructor(
         private readonly _dialogService: DialogService,

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import {
+    AngularFirestore,
+    AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
@@ -55,7 +58,9 @@ export class AuthService {
                             if (this.isAuth$.value) {
                                 console.log(this.userState);
                                 this._router.navigate([ERouterPath.LAYOUT]);
-                                this._snackbarService.openSnackBar(snackbarDataSuccess);
+                                this._snackbarService.openSnackBar(
+                                    snackbarDataSuccess,
+                                );
                             }
                         }
                     });
@@ -73,7 +78,9 @@ export class AuthService {
     }
 
     setUserData(user: firebase.default.User | null) {
-        const userRef: AngularFirestoreDocument<User> = this._afs.doc(`users/${user?.uid}`);
+        const userRef: AngularFirestoreDocument<User> = this._afs.doc(
+            `users/${user?.uid}`,
+        );
         const userData: any = {
             uid: user?.uid,
             email: user?.email,

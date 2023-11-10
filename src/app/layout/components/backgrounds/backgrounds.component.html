@@ -1,9 +1,6 @@
 <main class="layout-background">
     @if (!isDarkBackground) {
-<div
-        class="parallax"
-       
-    >
+    <div class="parallax">
         <div class="parallax__layer parallax__layer--back">
             <div class="starfield">
                 <span></span>
@@ -37,16 +34,11 @@
             </div>
         </div>
     </div>
-}
-
-    @if (isDarkBackground) {
-<div
-        class="stars"
-       
-    >
+    } @if (isDarkBackground) {
+    <div class="stars">
         <div class="bg background"></div>
         <div class="bg midground"></div>
         <div class="bg foreground"></div>
     </div>
-}
+    }
 </main>

@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 
 import { ModalOutletComponent } from './modal-outlet.component';
 
@@ -11,7 +9,7 @@ describe('ModalOutletComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ModalOutletComponent],
+            imports: [ModalOutletComponent],
         }).compileComponents();
     }));
 

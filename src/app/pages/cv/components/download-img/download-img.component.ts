@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
-import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { DownloadButtonComponent } from '../download-button/download-button.component';
 import { CvItemComponent } from '../download-column/cv-item.component';
 
 @Component({
@@ -13,7 +13,13 @@ import { CvItemComponent } from '../download-column/cv-item.component';
     styleUrls: ['./download-img.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, CvItemComponent, ButtonComponent, AsyncPipe, TranslateModule],
+    imports: [
+        NgIf,
+        CvItemComponent,
+        DownloadButtonComponent,
+        AsyncPipe,
+        TranslateModule,
+    ],
 })
 export class DownloadImgComponent {
     public isEuropean = false;
@@ -22,5 +28,7 @@ export class DownloadImgComponent {
         this.isEuropean = !this.isEuropean;
     }
 
-    constructor(private readonly _translateManagerService: TranslateManagerService) {}
+    constructor(
+        private readonly _translateManagerService: TranslateManagerService,
+    ) {}
 }

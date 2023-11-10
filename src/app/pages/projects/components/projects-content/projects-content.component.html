@@ -4,21 +4,23 @@
             {{ 'PROJECTS.DESCRIPTION' | translate }}
         </h1>
         <ul class="projects-list">
-            @for (project of projectsList$ | async; track project; let i = $index) {
-  <li
-                class="projects-list__item"
-               
-            >
+            @for (project of projectsList$ | async; track project; let i =
+            $index) {
+            <li class="projects-list__item">
                 <a
                     [href]="project.htmlUrl"
                     class="project"
                 >
                     <span class="project__title">{{ project.name }}</span>
-                    <span class="project__content">{{ project.description }}</span>
-                    <cv-project-stars [projectStars]="project.stars"></cv-project-stars>
+                    <span class="project__content">
+                        {{ project.description }}
+                    </span>
+                    <cv-project-stars
+                        [projectStars]="project.stars"
+                    ></cv-project-stars>
                 </a>
             </li>
-}
+            }
         </ul>
     </div>
 </div>

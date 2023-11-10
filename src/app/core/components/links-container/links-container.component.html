@@ -1,10 +1,7 @@
 <div class="links-container">
     <ul class="links-list">
         @for (link of socialMediaLinks$ | async; track link) {
-  <li
-            class="links-list__item"
-           
-        >
+        <li class="links-list__item">
             <div
                 class="social-media-container"
                 [ngClass]="modeTheme ? 'dark-layout' : 'layout'"
@@ -23,6 +20,6 @@
                 </a>
             </div>
         </li>
-}
+        }
     </ul>
 </div>

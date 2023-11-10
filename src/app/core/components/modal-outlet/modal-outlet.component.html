@@ -1,11 +1,8 @@
-<div (click)="closeModal($event)">
-    <div
-        class="modal-overlay"
-        *portalTo="'.modals-host'"
-        #overlay
-    >
-        <div class="modal">
-            <ng-content></ng-content>
-        </div>
-    </div>
+<div
+    class="modal-overlay"
+    (click)="closeModal($event)"
+    *cvModalPortal="'.modals-host'"
+    #overlay
+>
+    <ng-content></ng-content>
 </div>

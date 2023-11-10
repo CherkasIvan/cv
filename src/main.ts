@@ -1,6 +1,13 @@
-import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+    HttpClient,
+    provideHttpClient,
+    withInterceptorsFromDi,
+} from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
-import { ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import {
+    ScreenTrackingService,
+    UserTrackingService,
+} from '@angular/fire/analytics';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';

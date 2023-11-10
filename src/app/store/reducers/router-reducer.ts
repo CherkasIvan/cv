@@ -1,5 +1,9 @@
 import { createEntityAdapter } from '@ngrx/entity';
-import { DEFAULT_ROUTER_FEATURENAME, RouterReducerState, routerReducer } from '@ngrx/router-store';
+import {
+    DEFAULT_ROUTER_FEATURENAME,
+    RouterReducerState,
+    routerReducer,
+} from '@ngrx/router-store';
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface State {

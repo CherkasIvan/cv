@@ -17,7 +17,8 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 export class LinksContainerComponent {
     @Input() public modeTheme!: boolean;
     @Input() public pwaView = false;
-    public socialMediaLinks$: Observable<ISocialMedia[]> = this._firebaseService.getSocialMediaLinks();
+    public socialMediaLinks$: Observable<ISocialMedia[]> =
+        this._firebaseService.getSocialMediaLinks();
 
     constructor(
         private readonly _firebaseService: FirebaseService,

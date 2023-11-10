@@ -17,9 +17,8 @@
     </label>
     <ul class="menu">
         @for (item of burgerNavigators; track item; let i = $index) {
-  <li
+        <li
             class="menu__item"
-           
             (click)="navigationCheck($event)"
         >
             <a
@@ -30,7 +29,7 @@
                 {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
             </a>
         </li>
-}
+        }
         <li class="menu__item">
             <div class="selectors">
                 <cv-language-selector></cv-language-selector>

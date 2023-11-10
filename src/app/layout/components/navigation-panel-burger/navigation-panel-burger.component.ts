@@ -1,13 +1,20 @@
 import { NgClass, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Input,
+    ViewChild,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
 import { INavigation } from '@shared/models/navigation.interface';
 
-import { LogoutDialogService } from '@app/core/services/logout-dialog/logout-dialog.service';
+import { setLogoutDialogSuccess } from '@app/layout/store/logout-button-store/logout-button.actions';
 
 import { PopUpCloseDirective as PopUpCloseDirective_1 } from '../../../core/directives/pop-up-close/pop-up-close.directive';
 import { DarkModeSelectorComponent } from '../dark-mode-selector/dark-mode-selector.component';
@@ -37,10 +44,10 @@ export class NavigationPanelBurgerComponent {
 
     public isNavigate: boolean = false;
 
-    constructor(private readonly _logoutDialogService: LogoutDialogService) {}
+    constructor(private readonly _store$: Store) {}
 
     public openLogoutDialog() {
-        this._logoutDialogService.openDialog();
+        this._store$.dispatch(setLogoutDialogSuccess(true));
     }
 
     public navigationCheck(event: MouseEvent) {
