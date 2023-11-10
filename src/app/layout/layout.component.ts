@@ -38,6 +38,7 @@ import { ILogoutButton } from './store/model/logout-button.interface';
         InitialContentComponent,
         ModalOutletComponent,
         RouterOutlet,
+        SpinnerComponent,
         FooterComponent,
         BackgroundsComponent,
         AsyncPipe,
@@ -76,7 +77,6 @@ export class LayoutComponent implements OnDestroy {
     }
 
     public prepareRoute(outlet: RouterOutlet) {
-        console.log(outlet.activatedRouteData['animation']);
         return (
             outlet &&
             outlet.activatedRouteData &&

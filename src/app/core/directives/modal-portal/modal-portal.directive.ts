@@ -35,9 +35,6 @@ export class ModalPortalDirective implements OnInit, OnDestroy {
             this.portalIds.push(portalId);
             this.host?.appendChild(node);
         });
-
-        console.log(this.portalIds);
-        console.log(this.cvModalPortal);
     }
 
     ngOnDestroy() {

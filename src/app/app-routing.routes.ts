@@ -19,15 +19,3 @@ export const mainRoutes: Routes = [
             import('./layout/layout.module').then((c) => c.LayoutModule),
     },
 ];
-
-// @NgModule({
-//     imports: [
-//         RouterModule.forRoot(routes, {
-//             initialNavigation: 'enabledBlocking',
-//             scrollPositionRestoration: 'enabled',
-//             preloadingStrategy: PreloadAllModules
-//         })
-//     ],
-//     exports: [RouterModule]
-// })
-// export class AppRoutingModule {}
