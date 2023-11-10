@@ -1,13 +1,8 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    HostListener,
-    OnDestroy,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { BehaviorSubject, Observable, Subscription, pipe } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 import { fadeAnimation } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
@@ -16,6 +11,7 @@ import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
+import { AuthService } from '@app/auth/services/auth.service';
 import { ModalOutletComponent } from '@app/core/components/modal-outlet/modal-outlet.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
@@ -67,6 +63,7 @@ export class LayoutComponent implements OnDestroy {
         private readonly _localStorageService: localStorageService,
         private readonly _firebaseService: FirebaseService,
         private readonly _store$: Store<ILogoutButton>,
+        private readonly _authService: AuthService,
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
@@ -85,6 +82,11 @@ export class LayoutComponent implements OnDestroy {
             outlet.activatedRouteData &&
             outlet.activatedRouteData['animation']
         );
+    }
+
+    public confirmLogout() {
+        this._authService.signOut();
+        this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 
     public closeLogoutDialog() {
