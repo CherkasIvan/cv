@@ -16,7 +16,7 @@ const routes: Routes = [
                     import('../pages/about-me/about-me.component').then(
                         (c) => c.AboutMeComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'about-me' },
             },
             {
                 path: ERouterPath.PROJECTS,
@@ -24,7 +24,7 @@ const routes: Routes = [
                     import('../pages/projects/projects.component').then(
                         (c) => c.ProjectsComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'projects' },
             },
             {
                 path: ERouterPath.EDUCATION,
@@ -32,7 +32,7 @@ const routes: Routes = [
                     import('../pages/education/education.component').then(
                         (c) => c.EducationComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'education' },
             },
             {
                 path: ERouterPath.TECHNOLOGIES,
@@ -40,7 +40,7 @@ const routes: Routes = [
                     import('../pages/technologies/technologies.component').then(
                         (c) => c.TechnologiesComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'technologies' },
             },
             {
                 path: ERouterPath.WORK_EXPERIENCE,
@@ -48,7 +48,7 @@ const routes: Routes = [
                     import(
                         '../pages/work-experience/work-experience.component'
                     ).then((c) => c.WorkExperienceComponent),
-                data: { animation: 'page-enter' },
+                data: { animation: 'work-exp' },
             },
             {
                 path: ERouterPath.CV,
@@ -56,7 +56,7 @@ const routes: Routes = [
                     import('../pages/cv/cv.component').then(
                         (c) => c.CvComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'cv' },
             },
         ],
     },

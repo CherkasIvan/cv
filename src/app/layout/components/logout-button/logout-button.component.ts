@@ -7,7 +7,7 @@ import { setLogoutDialogSuccess } from '@layout/store/logout-button-store/logout
 import { logoutButtonSelector } from '@layout/store/logout-button-store/logout-button.selectors';
 import { ILogoutButton } from '@layout/store/model/logout-button.interface';
 
-import { ModalOutletComponent } from '../../../core/components/modal-outlet/modal-outlet.component';
+import { ModalOutletComponent } from '../modal-outlet/modal-outlet.component';
 
 @Component({
     selector: 'cv-logout-button',

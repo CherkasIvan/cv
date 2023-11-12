@@ -1,10 +1,15 @@
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    HostBinding,
+    OnDestroy,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
-import { fadeAnimation } from '@core/animations/route-animation';
+import { routeAnimations } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
 import { INavigation } from '@shared/models/navigation.interface';
@@ -12,7 +17,7 @@ import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 
 import { AuthService } from '@app/auth/services/auth.service';
-import { ModalOutletComponent } from '@app/core/components/modal-outlet/modal-outlet.component';
+import { ModalOutletComponent } from '@app/layout/components/modal-outlet/modal-outlet.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -27,7 +32,7 @@ import { ILogoutButton } from './store/model/logout-button.interface';
     selector: 'cv-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
-    animations: [fadeAnimation],
+    animations: [routeAnimations],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
@@ -45,6 +50,9 @@ import { ILogoutButton } from './store/model/logout-button.interface';
     ],
 })
 export class LayoutComponent implements OnDestroy {
+    // Добавляем хост-биндинг для триггера fade
+    @HostBinding('@fadeAnimation') fade = 'in';
+
     public currentTheme$: BehaviorSubject<boolean> =
         this._darkModeService.isDark$;
     public navigation$: Observable<INavigation[]> =
@@ -76,14 +84,6 @@ export class LayoutComponent implements OnDestroy {
         );
     }
 
-    public prepareRoute(outlet: RouterOutlet) {
-        return (
-            outlet &&
-            outlet.activatedRouteData &&
-            outlet.activatedRouteData['animation']
-        );
-    }
-
     public confirmLogout() {
         this._authService.signOut();
         this._store$.dispatch(setLogoutDialogSuccess(false));
@@ -92,6 +92,15 @@ export class LayoutComponent implements OnDestroy {
     public closeLogoutDialog() {
         // this._logoutDialogService.closeDialog();
         this._store$.dispatch(setLogoutDialogSuccess(false));
+    }
+
+    prepareRoute(outlet: RouterOutlet) {
+        console.log(outlet.activatedRouteData['animation']);
+        return (
+            outlet &&
+            outlet.activatedRouteData &&
+            outlet.activatedRouteData['animation']
+        );
     }
 
     ngOnDestroy(): void {

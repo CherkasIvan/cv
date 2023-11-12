@@ -1,12 +1,14 @@
 <div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
     <div
         class="layout-container"
-        [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
+        [@routeAnimations]="prepareRoute(outlet)"
     >
         @if(showLogoutModal$ | async) {
         <cv-modal-outlet (modalClosed)="closeLogoutDialog()">
             <div class="modal-content">
-                <p class="modal-message">Are you shure that you wont to exit from app?</p>
+                <p class="modal-message">
+                    Are you shure that you wont to exit from app?
+                </p>
                 <div class="modal-actions">
                     <button
                         class="cancel-button"
@@ -27,9 +29,13 @@
         </cv-modal-outlet>
         }
 
-        <cv-navigation-panel [navigators]="navigation$ | async"></cv-navigation-panel>
+        <cv-navigation-panel
+            [navigators]="navigation$ | async"
+        ></cv-navigation-panel>
 
-        <cv-spinner [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"></cv-spinner>
+        <cv-spinner
+            [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"
+        ></cv-spinner>
 
         @if (currentRoute === '/layout') {
         <cv-initial-content></cv-initial-content>

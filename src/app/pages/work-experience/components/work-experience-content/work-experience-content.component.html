@@ -1,7 +1,7 @@
 <div class="work-experience-content">
     <main class="work-container">
         <ul class="work-list">
-            @for (work of workPlace$ | async; track work) {
+            @for (work of workPlace$ | async; track work; let idx = $index) {
             <li class="work-list__item">
                 <div class="item-header">
                     <div
@@ -26,6 +26,24 @@
                 </div>
                 <div class="item-footer">
                     <span class="item-footer__place">{{ work.place }}</span>
+                </div>
+                <div class="total-work-time">
+                    @if(workExp[idx].years > 0){
+                    <div class="years">
+                        {{ workExp[idx].years }}
+                        <span class="total-work-time__years-label">years</span>
+                    </div>
+                    }
+
+                    <div class="months">
+                        {{ workExp[idx].month }}
+                        <span class="total-work-time__month-label">month</span>
+                    </div>
+
+                    <div class="days">
+                        {{ workExp[idx].days }}
+                        <span class="total-work-time__days-label">days</span>
+                    </div>
                 </div>
             </li>
             }
