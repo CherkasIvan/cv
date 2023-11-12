@@ -17,7 +17,6 @@
         padding: 40px 20px;
         min-width: 400px;
         min-height: 500px;
-
         &-content {
             @include flex-a_center-d_column;
             background: black;

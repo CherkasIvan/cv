@@ -26,16 +26,9 @@ export class ModalOutletComponent {
 
     @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
 
-    // constructor(private readonly _authService: AuthService) {}
-
     public closeModal(event: MouseEvent) {
         if (this.overlay.nativeElement === event.target) {
             this.modalClosed.emit();
         }
     }
-
-    // public confirmLogout() {
-    //     this._authService.signOut();
-    //     this.modalClosed.emit();
-    // }
 }

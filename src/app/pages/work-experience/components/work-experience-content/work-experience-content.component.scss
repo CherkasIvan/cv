@@ -66,5 +66,12 @@
         .total-experience {
             margin-top: 50px;
         }
+
+        .total-work-time {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
