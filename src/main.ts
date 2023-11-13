@@ -74,10 +74,10 @@ bootstrapApplication(AppComponent, {
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(mainRoutes),
     ],
-});
-// .then(() => {
-//     if ('serviceWorker' in navigator && environment.production) {
-//         navigator.serviceWorker.register('/ngsw-worker.js');
-//     }
-// })
-// .catch((err) => console.log(err));
+})
+    .then(() => {
+        if ('serviceWorker' in navigator && environment.production) {
+            navigator.serviceWorker.register('/ngsw-worker.js');
+        }
+    })
+    .catch((err) => console.log(err));
