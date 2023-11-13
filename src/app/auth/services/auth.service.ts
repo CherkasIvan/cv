@@ -1,13 +1,19 @@
+import { User } from 'firebase/auth';
+import { BehaviorSubject } from 'rxjs';
+
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import {
+    AngularFirestore,
+    AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+
 import { ISnackbar } from '@shared/models/snackbar.interface';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
+
 import { ERouterPath } from '@utils/enum/router-path.enum';
-import { User } from 'firebase/auth';
-import { BehaviorSubject } from 'rxjs';
 
 import { IProfile } from '../model/profile.interface';
 
@@ -54,7 +60,9 @@ export class AuthService {
 
                             if (this.isAuth$.value) {
                                 this._router.navigate([ERouterPath.LAYOUT]);
-                                this._snackbarService.openSnackBar(snackbarDataSuccess);
+                                this._snackbarService.openSnackBar(
+                                    snackbarDataSuccess,
+                                );
                             }
                         }
                     });
@@ -72,7 +80,9 @@ export class AuthService {
     }
 
     setUserData(user: firebase.default.User | null) {
-        const userRef: AngularFirestoreDocument<IProfile> = this._afs.doc(`users/${user?.uid}`);
+        const userRef: AngularFirestoreDocument<IProfile> = this._afs.doc(
+            `users/${user?.uid}`,
+        );
         const userData: IProfile = {
             uid: user?.uid,
             email: user?.email,

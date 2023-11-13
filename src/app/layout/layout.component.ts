@@ -1,15 +1,26 @@
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component, HostBinding, OnDestroy } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    HostBinding,
+    OnDestroy,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { AuthService } from '@app/auth/services/auth.service';
-import { ModalOutletComponent } from '@app/layout/components/modal-outlet/modal-outlet.component';
+
+import { Store, select } from '@ngrx/store';
+
+import { AuthService } from '@auth/services/auth.service';
+
 import { routeAnimations } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
-import { Store, select } from '@ngrx/store';
+
+import { ModalOutletComponent } from '@layout/components/modal-outlet/modal-outlet.component';
+
 import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -44,12 +55,16 @@ import { ILogoutButton } from './store/model/logout-button.interface';
 export class LayoutComponent implements OnDestroy {
     @HostBinding('@fadeAnimation') fade = 'in';
 
-    public currentTheme$: BehaviorSubject<boolean> = this._darkModeService.isDark$;
-    public navigation$: Observable<INavigation[]> = this._firebaseService.getNavigation();
+    public currentTheme$: BehaviorSubject<boolean> =
+        this._darkModeService.isDark$;
+    public navigation$: Observable<INavigation[]> =
+        this._firebaseService.getNavigation();
     public currentRoute!: string;
     public isAuth = false;
     public isPwaView = false;
-    public showLogoutModal$: Observable<boolean> = this._store$.pipe(select(logoutButtonSelector));
+    public showLogoutModal$: Observable<boolean> = this._store$.pipe(
+        select(logoutButtonSelector),
+    );
 
     private routerSubscription$: Subscription = new Subscription();
 
@@ -63,7 +78,9 @@ export class LayoutComponent implements OnDestroy {
     ) {
         this.routerSubscription$.add(
             this._router.events.subscribe((event) => {
-                event instanceof NavigationEnd ? (this.currentRoute = event.url) : null;
+                event instanceof NavigationEnd
+                    ? (this.currentRoute = event.url)
+                    : null;
                 this._localStorageService.setRout(this.currentRoute);
             }),
         );
@@ -80,7 +97,11 @@ export class LayoutComponent implements OnDestroy {
     }
 
     prepareRoute(outlet: RouterOutlet) {
-        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+        return (
+            outlet &&
+            outlet.activatedRouteData &&
+            outlet.activatedRouteData['animation']
+        );
     }
 
     ngOnDestroy(): void {

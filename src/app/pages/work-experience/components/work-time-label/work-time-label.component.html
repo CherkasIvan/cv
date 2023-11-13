@@ -1,4 +1,5 @@
-@if (dateLabel === 'YEARS') { @if(dateNumber ===1 || dateNumber === 21 || dateNumber === 31 ){
+@if (dateLabel === 'YEARS') { @if(dateNumber ===1 || dateNumber === 21 ||
+dateNumber === 31 ){
 <span class="single-work-time__years-label">
     {{ 'WORK-EXPERIENCE.YEAR' | translate }}
 </span>
@@ -26,7 +27,8 @@
 <span class="single-work-time__days-label">
     {{ 'WORK-EXPERIENCE.DAY' | translate }}
 </span>
-} @else if((dateNumber > 1 && dateNumber < 5) || dateNumber > 21 && dateNumber < 25 ){
+} @else if((dateNumber > 1 && dateNumber < 5) || dateNumber > 21 && dateNumber <
+25 ){
 <span class="single-work-time__days-label">
     {{ 'WORK-EXPERIENCE.DAYS' | translate }}
 </span>

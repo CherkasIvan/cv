@@ -1,7 +1,9 @@
+import { Observable } from 'rxjs';
+
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
 
 import { setLogoutDialogSuccess } from '@layout/store/logout-button-store/logout-button.actions';
 import { logoutButtonSelector } from '@layout/store/logout-button-store/logout-button.selectors';

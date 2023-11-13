@@ -1,8 +1,9 @@
+import { CarouselModule } from '@coreui/angular';
+import { Observable, tap } from 'rxjs';
+
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CarouselModule } from '@coreui/angular';
-import { Observable, tap } from 'rxjs';
 
 import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';

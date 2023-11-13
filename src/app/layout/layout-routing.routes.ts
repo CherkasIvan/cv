@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes, provideRouter } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
 import { LayoutComponent } from './layout.component';
 
-const routes: Routes = [
+export const LAYOT_ROUTES: Routes = [
     {
         path: '',
         component: LayoutComponent,
@@ -62,9 +61,9 @@ const routes: Routes = [
     },
 ];
 
-@NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    providers: [provideRouter(routes)],
-})
-export class LayoutRoutingModule {}
+// @NgModule({
+//     imports: [RouterModule.forChild(routes)],
+//     exports: [RouterModule],
+//     providers: [provideRouter(routes)],
+// })
+// export class LayoutRoutingModule {}

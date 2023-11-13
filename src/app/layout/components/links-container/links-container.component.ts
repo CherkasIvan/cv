@@ -1,7 +1,8 @@
+import { Observable } from 'rxjs';
+
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
 
 import { ISocialMedia } from '@shared/models/social-media.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';

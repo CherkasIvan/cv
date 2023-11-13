@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+
 import { ILocalStorage } from '@shared/models/localstorage.interface';
+
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
 @Injectable({

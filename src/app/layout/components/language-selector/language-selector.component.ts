@@ -1,7 +1,9 @@
+import { Observable } from 'rxjs';
+
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
 
 import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';
 import { setLanguageSuccess } from '@layout/store/language-selector-store/language-selector.actions';

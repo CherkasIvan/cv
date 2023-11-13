@@ -1,8 +1,10 @@
-import { AsyncPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
+import { AsyncPipe, NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { Store } from '@ngrx/store';
 
 import { IGitHub } from '../../models/github.interface';
 import * as GithubReposActions from '../../projects-store/github.actions';

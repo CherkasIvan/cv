@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+
 import { Store, select } from '@ngrx/store';
 
 import { setModeSuccess } from '@layout/store/dark-mode-store/dark-mode.actions';

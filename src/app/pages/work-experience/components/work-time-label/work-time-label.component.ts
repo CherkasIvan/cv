@@ -1,6 +1,7 @@
+import { TranslateModule } from '@ngx-translate/core';
+
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'cv-work-time-label',
