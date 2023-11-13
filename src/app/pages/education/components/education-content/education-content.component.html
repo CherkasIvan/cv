@@ -1,45 +1,59 @@
 <div class="education-content">
     <div class="education-container">
         <ul class="education-list">
-            <li
-                class="education-list__item"
-                *ngFor="let educationPlace of educationList$ | async; let i = index"
-            >
+            @for (educationPlace of educationList$ | async; track
+            educationPlace; let i = $index) {
+            <li class="education-list__item">
                 <span class="educational__institution">
-                    {{ 'EDUCATION.' + educationPlace.educationTitle + '.TITLE' | translate }}
+                    {{
+                        'EDUCATION.' + educationPlace.educationTitle + '.TITLE'
+                            | translate
+                    }}
                 </span>
 
                 <div class="content-container">
                     <div class="places">
                         <ul class="places__list">
-                            <li
-                                class="item"
-                                *ngFor="let education of educationPlace.educationPlaceName; let i = index"
-                            >
+                            @for (education of
+                            educationPlace.educationPlaceName; track education;
+                            let i = $index) {
+                            <li class="item">
                                 <span class="item__name">
                                     {{
-                                        'EDUCATION.' + educationPlace.educationTitle + '.' + education.name + '.NAME'
-                                            | translate
+                                        'EDUCATION.' +
+                                            educationPlace.educationTitle +
+                                            '.' +
+                                            education.name +
+                                            '.NAME' | translate
                                     }}
                                 </span>
 
-                                <ng-container *ngIf="education.certificatePath">
-                                    <img
-                                        [src]="education.certificatePath"
-                                        [alt]="education.grade"
-                                        class="item__img"
-                                        role="none"
-                                        (click)="openDialog(education.certificatePath)"
-                                    />
-                                </ng-container>
+                                @if (education.certificatePath) {
+
+                                <img
+                                    [src]="education.certificatePath"
+                                    [alt]="education.grade"
+                                    class="item__img"
+                                    role="none"
+                                    (click)="
+                                        openDialog(education.certificatePath)
+                                    "
+                                />
+
+                                }
 
                                 <span class="item__address">
                                     {{
-                                        'EDUCATION.' + educationPlace.educationTitle + '.' + education.name + '.ADDRESS'
-                                            | translate
+                                        'EDUCATION.' +
+                                            educationPlace.educationTitle +
+                                            '.' +
+                                            education.name +
+                                            '.ADDRESS' | translate
                                     }}
                                 </span>
-                                <span class="item__phone">{{ education.phone }}</span>
+                                <span class="item__phone">
+                                    {{ education.phone }}
+                                </span>
 
                                 <a
                                     [href]="education.link"
@@ -48,16 +62,19 @@
                                     {{ education.link }}
                                 </a>
                             </li>
+                            }
                         </ul>
                     </div>
 
-                    <ng-container *ngIf="educationPlace.educationLogo">
-                        <div class="education-logo__container">
-                            <cv-carousel [pageSlides]="educationPlace.educationLogo"></cv-carousel>
-                        </div>
-                    </ng-container>
+                    @if (educationPlace.educationLogo) {
+
+                    <div class="education-logo__container">
+                        <cv-carousel></cv-carousel>
+                    </div>
+                    }
                 </div>
             </li>
+            }
         </ul>
     </div>
 </div>

@@ -8,10 +8,13 @@
     "htmlWhitespaceSensitivity": "ignore",
     "arrowParens": "always",
     "singleAttributePerLine": true,
-    "printWidth": 120,
+    "printWidth": 80,
     "tabWidth": 4,
     "useTabs": false,
-    "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-css-order"],
+    "plugins": [
+        "@trivago/prettier-plugin-sort-imports",
+        "prettier-plugin-css-order"
+    ],
     "importOrder": [
         "'^@angular/(.*)$",
 

@@ -9,10 +9,8 @@
 
         <nav class="navigation-container">
             <ul class="navigation-list">
-                <li
-                    class="navigation-list__item"
-                    *ngFor="let link of navigators; let i = index"
-                >
+                @for (link of navigators; track link; let i = $index) {
+                <li class="navigation-list__item">
                     <a
                         routerLink="{{ link.link }}"
                         class="item-link"
@@ -21,6 +19,7 @@
                         {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
                     </a>
                 </li>
+                }
             </ul>
         </nav>
 
@@ -35,7 +34,7 @@
                 <cv-dark-mode-selector></cv-dark-mode-selector>
             </div>
             <div class="logout">
-                <cv-simple-button buttonName="logout"></cv-simple-button>
+                <cv-logout-button buttonName="logout"></cv-logout-button>
             </div>
         </div>
     </div>

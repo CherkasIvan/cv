@@ -32,7 +32,6 @@ export class CarouselComponent implements OnInit {
         this.pageSlides$ = this._firebaseService.getMyProfilePhotos();
         this.pageSlides$.pipe(
             tap((slideList: IProfilePhoto[]) => {
-                console.log(slideList);
                 slideList.forEach((slide: IProfilePhoto) => {
                     this.slides[Number(slide.slideNumber)] = {
                         id: slide.id,

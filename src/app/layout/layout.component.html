@@ -1,19 +1,50 @@
-<ng-container>
-    <div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
-        <div
-            class="layout-container"
-            [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
-        >
-            <cv-navigation-panel [navigators]="navigation$ | async"></cv-navigation-panel>
+<div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
+    <div
+        class="layout-container"
+        [@routeAnimations]="prepareRoute(outlet)"
+    >
+        @if(showLogoutModal$ | async) {
+        <cv-modal-outlet (modalClosed)="closeLogoutDialog()">
+            <div class="modal-content">
+                <p class="modal-message">
+                    Are you shure that you wont to exit from app?
+                </p>
+                <div class="modal-actions">
+                    <button
+                        class="cancel-button"
+                        type="button"
+                        (click)="closeLogoutDialog()"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        class="confirm-button"
+                        type="button"
+                        (click)="confirmLogout()"
+                    >
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </cv-modal-outlet>
+        }
 
-            <cv-spinner [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"></cv-spinner>
-            <cv-initial-content *ngIf="currentRoute === '/layout'"></cv-initial-content>
-            <router-outlet #outlet="outlet"></router-outlet>
-            .
+        <cv-navigation-panel
+            [navigators]="navigation$ | async"
+        ></cv-navigation-panel>
 
-            <cv-footer></cv-footer>
-        </div>
+        <cv-spinner
+            [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"
+        ></cv-spinner>
 
-        <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+        @if (currentRoute === '/layout') {
+        <cv-initial-content></cv-initial-content>
+        }
+
+        <router-outlet #outlet="outlet"></router-outlet>
+
+        <cv-footer></cv-footer>
     </div>
-</ng-container>
+
+    <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+</div>

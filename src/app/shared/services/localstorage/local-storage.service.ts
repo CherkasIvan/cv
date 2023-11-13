@@ -12,9 +12,7 @@ export class localStorageService {
 
     public setUser(userData: any): void {
         this.usersState = this.getUsersState();
-        console.log(this.usersState);
         if (this.usersState) {
-            console.log(this.usersState);
             this.usersState.user = userData;
             localStorage.setItem('usersState', JSON.stringify(this.usersState));
         }
@@ -28,7 +26,6 @@ export class localStorageService {
     }
 
     public setMode(currentMode: string): void {
-        console.log(currentMode);
         if (this.usersState) {
             this.usersState.isDarkMode !== currentMode;
             localStorage.setItem('usersState', JSON.stringify(this.usersState));
@@ -36,7 +33,6 @@ export class localStorageService {
     }
 
     public setLanguage(currentLanguage: string): void {
-        console.log(currentLanguage);
         if (this.usersState) {
             this.usersState.language = currentLanguage;
             localStorage.setItem('usersState', JSON.stringify(this.usersState));

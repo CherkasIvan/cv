@@ -17,15 +17,18 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid': authForm.get('email')?.touched && !authForm.get('email')?.value
+                'is-invalid':
+                    authForm.get('email')?.touched &&
+                    !authForm.get('email')?.value
             }"
         />
-        <div
-            *ngIf="authForm.get('email')?.touched && !authForm.get('email')?.value"
-            class="invalid-feedback"
-        >
-            <div *ngIf="f['email'].errors['required']">E-mail is required</div>
+        @if (authForm.get('email')?.touched && !authForm.get('email')?.value) {
+        <div class="invalid-feedback">
+            @if (f['email']?.errors['required']) {
+            <div>E-mail is required</div>
+            }
         </div>
+        }
     </div>
     <div class="form-group">
         <label for="password">Password</label>
@@ -36,15 +39,19 @@
             autocomplete="on"
             class="form-control"
             [ngClass]="{
-                'is-invalid': authForm.get('password')?.touched && !authForm.get('password')?.value
+                'is-invalid':
+                    authForm.get('password')?.touched &&
+                    !authForm.get('password')?.value
             }"
         />
-        <div
-            *ngIf="authForm.get('password')?.touched && !authForm.get('password')?.value"
-            class="invalid-feedback"
-        >
-            <div *ngIf="f['password'].errors['required']">Password is required</div>
+        @if (authForm.get('password')?.touched &&
+        !authForm.get('password')?.value) {
+        <div class="invalid-feedback">
+            @if (f['password']?.errors['required']) {
+            <div>Password is required</div>
+            }
         </div>
+        }
     </div>
 
     <div class="button__block">

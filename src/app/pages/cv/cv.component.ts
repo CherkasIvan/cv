@@ -16,7 +16,8 @@ import { DownloadImgComponent } from './components/download-img/download-img.com
     imports: [DownloadImgComponent, TranslateModule],
 })
 export class CvComponent {
-    public cvList: Observable<ICvFormat[]> = this._firebaseService.getCvFormat();
+    public cvList: Observable<ICvFormat[]> =
+        this._firebaseService.getCvFormat();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

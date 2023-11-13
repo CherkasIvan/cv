@@ -5,7 +5,8 @@ import { initializeApp } from 'firebase/app';
 export const firebaseConfig = {
     apiKey: 'AIzaSyCneI-9WPco0wH8zERGyqowI0sXaWeM1IQ',
     authDomain: 'cv-cherkas.firebaseapp.com',
-    databaseURL: 'https://cv-cherkas-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+        'https://cv-cherkas-default-rtdb.europe-west1.firebasedatabase.app',
     projectId: 'cv-cherkas',
     storageBucket: 'cv-cherkas.appspot.com',
     messagingSenderId: '730620484477',

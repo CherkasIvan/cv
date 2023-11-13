@@ -4,13 +4,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
-import { LinksContainerComponent } from '@core/components/links-container/links-container.component';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
 import { IContacts } from '@shared/models/contacts.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
 import { pwaView } from '@utils/functions/pwaView';
+
+import { LinksContainerComponent } from '@app/layout/components/links-container/links-container.component';
 
 @Component({
     selector: 'cv-footer',
@@ -21,7 +22,8 @@ import { pwaView } from '@utils/functions/pwaView';
     imports: [LinksContainerComponent, CommonModule, TranslateModule],
 })
 export class FooterComponent {
-    public myContacts$: Observable<IContacts[]> = this._firebaseService.getContacts();
+    public myContacts$: Observable<IContacts[]> =
+        this._firebaseService.getContacts();
     public currentTheme$ = this._darkModeService.isDark$;
     public isPwaView: boolean = pwaView;
     public isScrolable = false;

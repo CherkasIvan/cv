@@ -13,41 +13,50 @@ const routes: Routes = [
             {
                 path: ERouterPath.ABOUT_ME,
                 loadComponent: () =>
-                    import('../pages/about-me/about-me.component').then((module) => module.AboutMeComponent),
-                data: { animation: 'page-enter' },
+                    import('../pages/about-me/about-me.component').then(
+                        (c) => c.AboutMeComponent,
+                    ),
+                data: { animation: 'about-me' },
             },
             {
                 path: ERouterPath.PROJECTS,
                 loadComponent: () =>
-                    import('../pages/projects/projects.component').then((module) => module.ProjectsComponent),
-                data: { animation: 'page-enter' },
+                    import('../pages/projects/projects.component').then(
+                        (c) => c.ProjectsComponent,
+                    ),
+                data: { animation: 'projects' },
             },
             {
                 path: ERouterPath.EDUCATION,
                 loadComponent: () =>
-                    import('../pages/education/education.component').then((module) => module.EducationComponent),
-                data: { animation: 'page-enter' },
+                    import('../pages/education/education.component').then(
+                        (c) => c.EducationComponent,
+                    ),
+                data: { animation: 'education' },
             },
             {
                 path: ERouterPath.TECHNOLOGIES,
                 loadComponent: () =>
                     import('../pages/technologies/technologies.component').then(
-                        (module) => module.TechnologiesComponent,
+                        (c) => c.TechnologiesComponent,
                     ),
-                data: { animation: 'page-enter' },
+                data: { animation: 'technologies' },
             },
             {
                 path: ERouterPath.WORK_EXPERIENCE,
                 loadComponent: () =>
-                    import('../pages/work-experience/work-experience.component').then(
-                        (module) => module.WorkExperienceComponent,
-                    ),
-                data: { animation: 'page-enter' },
+                    import(
+                        '../pages/work-experience/work-experience.component'
+                    ).then((c) => c.WorkExperienceComponent),
+                data: { animation: 'work-exp' },
             },
             {
                 path: ERouterPath.CV,
-                loadComponent: () => import('../pages/cv/cv.component').then((module) => module.CvComponent),
-                data: { animation: 'page-enter' },
+                loadComponent: () =>
+                    import('../pages/cv/cv.component').then(
+                        (c) => c.CvComponent,
+                    ),
+                data: { animation: 'cv' },
             },
         ],
     },

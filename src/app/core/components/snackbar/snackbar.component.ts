@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { MAT_SNACK_BAR_DATA, MatSnackBarModule } from '@angular/material/snack-bar';
+import {
+    MAT_SNACK_BAR_DATA,
+    MatSnackBarModule,
+} from '@angular/material/snack-bar';
 
 import { ISnackbar } from '@shared/models/snackbar.interface';
 

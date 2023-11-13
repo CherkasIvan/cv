@@ -47,12 +47,28 @@
         }
 
         .starfield > * {
-            background-image: radial-gradient(2px 2px at 40px 60px, #ccc, rgba(0, 0, 0, 0)),
+            background-image: radial-gradient(
+                    2px 2px at 40px 60px,
+                    #ccc,
+                    rgba(0, 0, 0, 0)
+                ),
                 radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)),
                 radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
-                radial-gradient(2px 2px at 40px 60px, rgb(0, 255, 0), rgba(0, 0, 0, 0)),
-                radial-gradient(2px 2px at 110px 90px, rgb(255, 0, 0), rgba(0, 0, 0, 0)),
-                radial-gradient(2px 2px at 190px 150px, rgb(255, 200, 0), rgba(0, 0, 0, 0));
+                radial-gradient(
+                    2px 2px at 40px 60px,
+                    rgb(0, 255, 0),
+                    rgba(0, 0, 0, 0)
+                ),
+                radial-gradient(
+                    2px 2px at 110px 90px,
+                    rgb(255, 0, 0),
+                    rgba(0, 0, 0, 0)
+                ),
+                radial-gradient(
+                    2px 2px at 190px 150px,
+                    rgb(255, 200, 0),
+                    rgba(0, 0, 0, 0)
+                );
             background-size: 200px 200px;
             background-repeat: repeat;
         }

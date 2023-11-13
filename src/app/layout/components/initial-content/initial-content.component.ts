@@ -17,7 +17,8 @@ import { SkillsContentComponent } from '../../../core/components/hard-skills-con
     imports: [SkillsContentComponent, AsyncPipe, TranslateModule],
 })
 export class InitialContentComponent {
-    public technologiesList$: Observable<ITechnologies[]> = this._firebaseService.getProjectTech();
+    public technologiesList$: Observable<ITechnologies[]> =
+        this._firebaseService.getProjectTech();
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 }

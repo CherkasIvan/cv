@@ -1,4 +1,10 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Output,
+} from '@angular/core';
 
 @Directive({
     selector: '[cvPopUpClose]',
