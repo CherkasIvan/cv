@@ -1,5 +1,5 @@
 export interface ITotalWorkTime {
     years: number;
-    month: number;
+    months: number;
     days: number;
 }

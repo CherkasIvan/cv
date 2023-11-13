@@ -31,17 +31,28 @@
                     @if(workExp[idx].years > 0){
                     <div class="years">
                         {{ workExp[idx].years }}
-                        <span class="single-work-time__years-label">years</span>
+                        <span class="single-work-time__years-label">
+                            {{
+                                'WORK-EXPERIENCE.YEARS'
+                                    | translate
+                                    | dateTranslate: 'год' : 'года' : 'лет'
+                            }}
+                        </span>
                     </div>
-                    } @if(workExp[idx].month > 0){
+                    } @if(workExp[idx].months > 0){
                     <div class="months">
-                        {{ workExp[idx].month }}
-                        <span class="single-work-time__month-label">month</span>
+                        {{ workExp[idx].months }}
+                        <span class="single-work-time__months-label">
+                            {{ 'WORK-EXPERIENCE.MONTHS' | translate }}
+                        </span>
                     </div>
                     } @if(workExp[idx].days > 0){
                     <div class="days">
                         {{ workExp[idx].days }}
-                        <span class="single-work-time__days-label">days</span>
+
+                        <span class="single-work-time__days-label">
+                            {{ 'WORK-EXPERIENCE.DAYS' | translate }}
+                        </span>
                     </div>
                     }
                 </div>
@@ -52,17 +63,23 @@
             @if(totalWorkTime.years > 0){
             <div class="years">
                 {{ totalWorkTime.years }}
-                <span class="total-work-time__years-label">years</span>
+                <span class="total-work-time__years-label">
+                    {{ 'WORK-EXPERIENCE.YEARS' | translate }}
+                </span>
             </div>
-            } @if(totalWorkTime.month > 0){
+            } @if(totalWorkTime.months > 0){
             <div class="months">
-                {{ totalWorkTime.month }}
-                <span class="total-work-time__month-label">month</span>
+                {{ totalWorkTime.months }}
+                <span class="total-work-time__months-label">
+                    {{ 'WORK-EXPERIENCE.MONTHS' | translate }}
+                </span>
             </div>
             } @if(totalWorkTime.days > 0){
             <div class="days">
                 {{ totalWorkTime.days }}
-                <span class="total-work-time__days-label">days</span>
+                <span class="total-work-time__days-label">
+                    {{ 'WORK-EXPERIENCE.DAYS' | translate }}
+                </span>
             </div>
             }
         </div>

@@ -110,7 +110,9 @@
     },
 
     "WORK-EXPERIENCE": {
-        "YEARS": "лет"
+        "YEARS": "лет",
+        "MONTHS": "месецев",
+        "DAYS": "дней"
     },
 
     "FOOTER": {
