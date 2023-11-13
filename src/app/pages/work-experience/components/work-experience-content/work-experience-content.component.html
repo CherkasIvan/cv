@@ -27,29 +27,44 @@
                 <div class="item-footer">
                     <span class="item-footer__place">{{ work.place }}</span>
                 </div>
-                <div class="total-work-time">
+                <div class="single-work-time">
                     @if(workExp[idx].years > 0){
                     <div class="years">
                         {{ workExp[idx].years }}
-                        <span class="total-work-time__years-label">years</span>
+                        <span class="single-work-time__years-label">years</span>
                     </div>
-                    }
-
+                    } @if(workExp[idx].month > 0){
                     <div class="months">
                         {{ workExp[idx].month }}
-                        <span class="total-work-time__month-label">month</span>
+                        <span class="single-work-time__month-label">month</span>
                     </div>
-
+                    } @if(workExp[idx].days > 0){
                     <div class="days">
                         {{ workExp[idx].days }}
-                        <span class="total-work-time__days-label">days</span>
+                        <span class="single-work-time__days-label">days</span>
                     </div>
+                    }
                 </div>
             </li>
             }
         </ul>
-        <div class="total-experience">
-            {{ totalWorkTimeEverConverted }}
+        <div class="total-work-time">
+            @if(totalWorkTime.years > 0){
+            <div class="years">
+                {{ totalWorkTime.years }}
+                <span class="total-work-time__years-label">years</span>
+            </div>
+            } @if(totalWorkTime.month > 0){
+            <div class="months">
+                {{ totalWorkTime.month }}
+                <span class="total-work-time__month-label">month</span>
+            </div>
+            } @if(totalWorkTime.days > 0){
+            <div class="days">
+                {{ totalWorkTime.days }}
+                <span class="total-work-time__days-label">days</span>
+            </div>
+            }
         </div>
     </main>
 </div>
