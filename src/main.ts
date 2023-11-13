@@ -1,13 +1,6 @@
-import {
-    HttpClient,
-    provideHttpClient,
-    withInterceptorsFromDi,
-} from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
-import {
-    ScreenTrackingService,
-    UserTrackingService,
-} from '@angular/fire/analytics';
+import { ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -17,6 +10,10 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { mainRoutes } from '@app/app-routing.routes';
+import { AppComponent } from '@app/app.component';
+import { githubReducer, githubReposFeatureKey } from '@app/pages/projects/projects-store/github.reducers';
+import { environment } from '@env/environment';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -24,20 +21,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { GithubEffects } from '@pages/projects/projects-store/github.effects';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-
-import { GithubEffects } from '@pages/projects/projects-store/github.effects';
-
-import { environment } from '@env/environment';
-
-import { mainRoutes } from '@app/app-routing.routes';
-import { AppComponent } from '@app/app.component';
-import {
-    githubReducer,
-    githubReposFeatureKey,
-} from '@app/pages/projects/projects-store/github.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
@@ -87,10 +74,10 @@ bootstrapApplication(AppComponent, {
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(mainRoutes),
     ],
-})
-    .then(() => {
-        if ('serviceWorker' in navigator && environment.production) {
-            navigator.serviceWorker.register('/ngsw-worker.js');
-        }
-    })
-    .catch((err) => console.log(err));
+});
+// .then(() => {
+//     if ('serviceWorker' in navigator && environment.production) {
+//         navigator.serviceWorker.register('/ngsw-worker.js');
+//     }
+// })
+// .catch((err) => console.log(err));
