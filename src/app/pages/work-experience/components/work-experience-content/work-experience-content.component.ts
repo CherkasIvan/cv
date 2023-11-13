@@ -19,7 +19,7 @@ export class WorkExperienceContentComponent implements OnInit {
     public workPlace$: Observable<IWorkExperience[]> =
         this._firebaseService.getWorkExperience();
     public workExp: ITotalWorkTime[] = [];
-    public totalWorkTimeEverConverted!: string;
+    public totalWorkTime: ITotalWorkTime = { years: 0, month: 0, days: 0 };
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 
@@ -39,19 +39,30 @@ export class WorkExperienceContentComponent implements OnInit {
     }
 
     private _workTerm(workStartEnd: { workStart: number; workEnd: number }) {
-        const difference: any = new Date(
+        const difference: Date = new Date(
             Math.abs(workStartEnd.workEnd - workStartEnd.workStart),
         );
-        let totalWorkTime: ITotalWorkTime;
-
-        totalWorkTime = {
-            years: difference.toISOString().slice(0, 4) - 1970,
-            month: difference.getMonth(),
-            days: difference.getDate() - 1,
+        let singleWorkTerm: ITotalWorkTime;
+        singleWorkTerm = {
+            years: difference.getUTCFullYear() - 1970,
+            month: difference.getUTCMonth() + 1,
+            days: difference.getUTCDate() - 1,
         };
-        if (totalWorkTime) {
-            this.workExp.push(totalWorkTime);
-        }
+        this.workExp.push(singleWorkTerm);
+    }
+
+    private _totalWorkTerm(workExp: ITotalWorkTime[]) {
+        let result: ITotalWorkTime = { years: 0, month: 0, days: 0 };
+        workExp.forEach((work: ITotalWorkTime) => {
+            result.years += work.years;
+            result.month += work.month;
+            result.days += work.days;
+        });
+        result.years += Math.floor(result.month / 12);
+        result.month = result.month % 12;
+        result.month += Math.floor(result.days / 31);
+        result.days = result.days % 31;
+        this.totalWorkTime = result;
     }
 
     ngOnInit(): void {
@@ -59,7 +70,10 @@ export class WorkExperienceContentComponent implements OnInit {
             .pipe(
                 tap((works: IWorkExperience[]) => {
                     works.map((echWorkStartEndTime: IWorkExperience) => {
-                        const workStartEnd = {
+                        const workStartEnd: {
+                            workStart: number;
+                            workEnd: number;
+                        } = {
                             workStart: this._parseDate(
                                 echWorkStartEndTime.from.split('-'),
                             ),
@@ -68,8 +82,8 @@ export class WorkExperienceContentComponent implements OnInit {
                             ),
                         };
                         this._workTerm(workStartEnd);
+                        this._totalWorkTerm(this.workExp);
                     });
-                    console.log(this.workExp);
                 }),
             )
             .subscribe();
