@@ -1,6 +1,7 @@
-import { NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+
+import { NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'cv-work-time-label',
@@ -9,11 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
     standalone: true,
     imports: [NgIf, TranslateModule],
 })
-export class WorkTimeLabelComponent implements OnInit {
+export class WorkTimeLabelComponent {
     @Input() public dateNumber: number = 0;
     @Input() public dateLabel: string = '';
-
-    ngOnInit(): void {
-        console.log(this.dateNumber);
-    }
 }

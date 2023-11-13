@@ -1,3 +1,6 @@
+import { User } from 'firebase/auth';
+import { BehaviorSubject } from 'rxjs';
+
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -5,14 +8,14 @@ import {
     AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { User } from 'firebase/auth';
-import { BehaviorSubject } from 'rxjs';
 
 import { ISnackbar } from '@shared/models/snackbar.interface';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { SnackbarService } from '@shared/services/snackbar/snackbar.service';
 
 import { ERouterPath } from '@utils/enum/router-path.enum';
+
+import { IProfile } from '../model/profile.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -77,10 +80,10 @@ export class AuthService {
     }
 
     setUserData(user: firebase.default.User | null) {
-        const userRef: AngularFirestoreDocument<User> = this._afs.doc(
+        const userRef: AngularFirestoreDocument<IProfile> = this._afs.doc(
             `users/${user?.uid}`,
         );
-        const userData: any = {
+        const userData: IProfile = {
             uid: user?.uid,
             email: user?.email,
             displayName: user?.displayName,

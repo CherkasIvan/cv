@@ -10,7 +10,7 @@ import { ERouterPath } from '@utils/enum/router-path.enum';
 export class localStorageService {
     public usersState: ILocalStorage | null = null;
 
-    public setUser(userData: any): void {
+    public setUser(userData: firebase.default.User | null): void {
         this.usersState = this.getUsersState();
         if (this.usersState) {
             this.usersState.user = userData;

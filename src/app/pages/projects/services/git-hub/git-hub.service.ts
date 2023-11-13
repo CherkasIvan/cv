@@ -1,6 +1,7 @@
+import { Observable, map } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
 
 import { IGitHubRepo } from '../../models/github-repos.interface';
 import { IGitHub } from '../../models/github.interface';

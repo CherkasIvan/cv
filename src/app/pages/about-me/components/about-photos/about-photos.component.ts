@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
+
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';

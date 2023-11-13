@@ -5,7 +5,7 @@ import { SliderBehaviorDirective } from './slider-behavior.directive';
 describe('SliderBehaviorDirective', () => {
     it('should create an instance', () => {
         const directive = new SliderBehaviorDirective(
-            new ElementRef((nativeElement: any) => nativeElement),
+            new ElementRef((nativeElement: ElementRef) => nativeElement),
         );
         expect(directive).toBeTruthy();
     });

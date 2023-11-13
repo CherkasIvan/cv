@@ -1,6 +1,7 @@
+import { TranslateModule } from '@ngx-translate/core';
+
 import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 

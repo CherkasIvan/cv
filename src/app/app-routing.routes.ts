@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { ERouterPath } from '@utils/enum/router-path.enum';
 
@@ -16,6 +15,8 @@ export const mainRoutes: Routes = [
         path: ERouterPath.LAYOUT,
         canActivate: [AuthGuard],
         loadChildren: () =>
-            import('./layout/layout.module').then((c) => c.LayoutModule),
+            import('./layout/layout-routing.routes').then(
+                (c) => c.LAYOT_ROUTES,
+            ),
     },
 ];

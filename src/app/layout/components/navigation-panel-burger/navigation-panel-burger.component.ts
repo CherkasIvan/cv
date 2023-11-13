@@ -1,3 +1,5 @@
+import { TranslateModule } from '@ngx-translate/core';
+
 import { NgClass, NgFor } from '@angular/common';
 import {
     ChangeDetectionStrategy,
@@ -7,8 +9,8 @@ import {
     ViewChild,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+
 import { Store } from '@ngrx/store';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { PopUpCloseDirective } from '@core/directives/pop-up-close/pop-up-close.directive';
 
@@ -54,8 +56,8 @@ export class NavigationPanelBurgerComponent {
         this.isNavigate = !this.isNavigate;
     }
 
-    public hidePopup(event: any) {
-        if (event.target !== this.popup.nativeElement) {
+    public hidePopup(event: Event) {
+        if (event.target !== (this.popup.nativeElement as unknown)) {
             this.isNavigate = false;
         }
     }

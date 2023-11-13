@@ -1,3 +1,5 @@
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
     ChangeDetectionStrategy,
@@ -6,18 +8,19 @@ import {
     OnDestroy,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+
 import { Store, select } from '@ngrx/store';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+import { AuthService } from '@auth/services/auth.service';
 
 import { routeAnimations } from '@core/animations/route-animation';
 import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
+import { ModalOutletComponent } from '@layout/components/modal-outlet/modal-outlet.component';
+
 import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
-
-import { AuthService } from '@app/auth/services/auth.service';
-import { ModalOutletComponent } from '@app/layout/components/modal-outlet/modal-outlet.component';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -50,7 +53,6 @@ import { ILogoutButton } from './store/model/logout-button.interface';
     ],
 })
 export class LayoutComponent implements OnDestroy {
-    // Добавляем хост-биндинг для триггера fade
     @HostBinding('@fadeAnimation') fade = 'in';
 
     public currentTheme$: BehaviorSubject<boolean> =
@@ -95,7 +97,6 @@ export class LayoutComponent implements OnDestroy {
     }
 
     prepareRoute(outlet: RouterOutlet) {
-        console.log(outlet.activatedRouteData['animation']);
         return (
             outlet &&
             outlet.activatedRouteData &&

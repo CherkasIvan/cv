@@ -1,7 +1,8 @@
-import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { ITechnologies } from '@shared/models/tecnologies.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';

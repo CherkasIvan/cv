@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { ICvFormat } from '@shared/models/cv-format.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';

@@ -1,7 +1,8 @@
+import { TranslateModule } from '@ngx-translate/core';
+
 import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { INavigation } from '@shared/models/navigation.interface';
 

@@ -1,7 +1,8 @@
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { IEducation } from '@shared/models/education.interface';
 import { DialogService } from '@shared/services/dialog/dialog.service';

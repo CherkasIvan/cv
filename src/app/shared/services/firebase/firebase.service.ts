@@ -1,6 +1,7 @@
+import { Observable } from 'rxjs';
+
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 import { IContacts } from '@shared/models/contacts.interface';
 import { ICvFormat } from '@shared/models/cv-format.interface';
