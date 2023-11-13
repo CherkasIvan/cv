@@ -1,13 +1,12 @@
 import { AsyncPipe, NgClass, NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Observable, tap } from 'rxjs';
-
 import { ITotalWorkTime } from '@shared/models/total-work-time.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
+import { Observable, tap } from 'rxjs';
 
-import { DateTranslatePipe } from '../../pipes/date-translate.pipe';
+import { WorkTimeLabelComponent } from '../work-time-label/work-time-label.component';
 
 @Component({
     selector: 'cv-work-experience-content',
@@ -15,11 +14,10 @@ import { DateTranslatePipe } from '../../pipes/date-translate.pipe';
     styleUrls: ['./work-experience-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NgClass, AsyncPipe, TranslateModule, DateTranslatePipe],
+    imports: [NgFor, NgClass, AsyncPipe, TranslateModule, WorkTimeLabelComponent],
 })
 export class WorkExperienceContentComponent implements OnInit {
-    public workPlace$: Observable<IWorkExperience[]> =
-        this._firebaseService.getWorkExperience();
+    public workPlace$: Observable<IWorkExperience[]> = this._firebaseService.getWorkExperience();
     public workExp: ITotalWorkTime[] = [];
     public totalWorkTime: ITotalWorkTime = { years: 0, months: 0, days: 0 };
 
@@ -41,10 +39,8 @@ export class WorkExperienceContentComponent implements OnInit {
     }
 
     private _workTerm(workStartEnd: { workStart: number; workEnd: number }) {
-        const difference: Date = new Date(
-            Math.abs(workStartEnd.workEnd - workStartEnd.workStart),
-        );
-        let singleWorkTerm: ITotalWorkTime;
+        const difference: Date = new Date(Math.abs(workStartEnd.workEnd - workStartEnd.workStart));
+        let singleWorkTerm: ITotalWorkTime = { years: 0, months: 0, days: 0 };
         singleWorkTerm = {
             years: difference.getUTCFullYear() - 1970,
             months: difference.getUTCMonth() + 1,
@@ -54,7 +50,7 @@ export class WorkExperienceContentComponent implements OnInit {
     }
 
     private _totalWorkTerm(workExp: ITotalWorkTime[]) {
-        let result: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+        const result: ITotalWorkTime = { years: 0, months: 0, days: 0 };
         workExp.forEach((work: ITotalWorkTime) => {
             result.years += work.years;
             result.months += work.months;
@@ -76,12 +72,8 @@ export class WorkExperienceContentComponent implements OnInit {
                             workStart: number;
                             workEnd: number;
                         } = {
-                            workStart: this._parseDate(
-                                echWorkStartEndTime.from.split('-'),
-                            ),
-                            workEnd: this._parseDate(
-                                echWorkStartEndTime.to.split('-'),
-                            ),
+                            workStart: this._parseDate(echWorkStartEndTime.from.split('-')),
+                            workEnd: this._parseDate(echWorkStartEndTime.to.split('-')),
                         };
                         this._workTerm(workStartEnd);
                         this._totalWorkTerm(this.workExp);

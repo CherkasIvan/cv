@@ -1,4 +1,4 @@
-import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,7 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class WorkTimeLabelComponent implements OnInit {
     @Input() public dateNumber: number = 0;
-    constructor() {}
+    @Input() public dateLabel: string = '';
 
-    ngOnInit() {}
+    ngOnInit(): void {
+        console.log(this.dateNumber);
+    }
 }

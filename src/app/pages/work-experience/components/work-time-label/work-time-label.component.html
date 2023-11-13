@@ -1,6 +1,30 @@
-@if(dateNumber === 1 ){
+@if (dateLabel === 'YEARS') { @if(dateNumber === 1 ){
+<span class="single-work-time__years-label">
+    {{ 'WORK-EXPERIENCE.YEAR' | translate }}
+</span>
+} @else if(dateNumber > 1 && dateNumber < 5 ){
+<span class="single-work-time__years-label">
+    {{ 'WORK-EXPERIENCE.YEARS' | translate }}
+</span>
+} @else{
+<span class="single-work-time__years-label">
+    {{ 'WORK-EXPERIENCE.YEARS-ELSE' | translate }}
+</span>
+} } @else if (dateLabel === 'MONTHS') { @if(dateNumber === 1 ){
+<span class="single-work-time__months-label">
+    {{ 'WORK-EXPERIENCE.MONTH' | translate }}
+</span>
+} @else if(dateNumber > 1 && dateNumber < 5 ){
+<span class="single-work-time__months-label">
+    {{ 'WORK-EXPERIENCE.MONTHS' | translate }}
+</span>
+} @else{
+<span class="single-work-time__months-label">
+    {{ 'WORK-EXPERIENCE.MONTHS-ELSE' | translate }}
+</span>
+} } @else { @if(dateNumber === 1 ){
 <span class="single-work-time__days-label">
-    {{ 'WORK-EXPERIENCE.DAYS' | translate }}
+    {{ 'WORK-EXPERIENCE.DAY' | translate }}
 </span>
 } @else if(dateNumber > 1 && dateNumber < 5 ){
 <span class="single-work-time__days-label">
@@ -8,6 +32,6 @@
 </span>
 } @else{
 <span class="single-work-time__days-label">
-    {{ 'WORK-EXPERIENCE.DAYS' | translate }}
+    {{ 'WORK-EXPERIENCE.DAYS-ELSE' | translate }}
 </span>
-}
+} }

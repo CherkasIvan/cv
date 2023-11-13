@@ -114,10 +114,10 @@
         "MONTH": "month",
         "DAY": "day",
         "YEARS": "years",
-        "MONTHS": "month",
+        "MONTHS": "months",
         "DAYS": "days",
         "YEARS-ELSE": "years",
-        "MONTHS-ELSE": "month",
+        "MONTHS-ELSE": "months",
         "DAYS-ELSE": "days"
     },
 
