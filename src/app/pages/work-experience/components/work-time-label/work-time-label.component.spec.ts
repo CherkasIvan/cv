@@ -1,28 +1,25 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WorkTimeLabelComponent } from './work-time-label.component';
 
 describe('WorkTimeLabelComponent', () => {
-  let component: WorkTimeLabelComponent;
-  let fixture: ComponentFixture<WorkTimeLabelComponent>;
+    let component: WorkTimeLabelComponent;
+    let fixture: ComponentFixture<WorkTimeLabelComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-    imports: [WorkTimeLabelComponent]
-})
-    .compileComponents();
-  }));
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            imports: [WorkTimeLabelComponent],
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(WorkTimeLabelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(WorkTimeLabelComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
