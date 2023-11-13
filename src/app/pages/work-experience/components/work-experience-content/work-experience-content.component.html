@@ -6,9 +6,7 @@
                 <div class="item-header">
                     <div
                         class="item-header__logo"
-                        [ngClass]="
-                            work.company === 'FreshLimeSoft' ? 'white' : ''
-                        "
+                        [ngClass]="work.company === 'FreshLimeSoft' ? 'white' : ''"
                     >
                         <img
                             class="logo-icon"
@@ -29,19 +27,31 @@
                 </div>
                 <div class="single-work-time">
                     @if(workExp[idx].years > 0){
+                    {{ workExp[idx].years }}
                     <div class="years">
-                        {{ workExp[idx].years }}
-                        <span class="single-work-time__years-label">years</span>
+                        <cv-work-time-label
+                            [dateNumber]="workExp[idx].years"
+                            dateLabel="YEARS"
+                        ></cv-work-time-label>
                     </div>
-                    } @if(workExp[idx].month > 0){
+                    } @if(workExp[idx].months > 0){
                     <div class="months">
-                        {{ workExp[idx].month }}
-                        <span class="single-work-time__month-label">month</span>
+                        {{ workExp[idx].months }}
+                        <span class="single-work-time__months-label">
+                            <cv-work-time-label
+                                [dateNumber]="workExp[idx].months"
+                                dateLabel="MONTHS"
+                            ></cv-work-time-label>
+                        </span>
                     </div>
                     } @if(workExp[idx].days > 0){
                     <div class="days">
                         {{ workExp[idx].days }}
-                        <span class="single-work-time__days-label">days</span>
+
+                        <cv-work-time-label
+                            [dateNumber]="workExp[idx].days"
+                            dateLabel="DAYS"
+                        ></cv-work-time-label>
                     </div>
                     }
                 </div>
@@ -52,17 +62,28 @@
             @if(totalWorkTime.years > 0){
             <div class="years">
                 {{ totalWorkTime.years }}
-                <span class="total-work-time__years-label">years</span>
+                <cv-work-time-label
+                    [dateNumber]="totalWorkTime.years"
+                    dateLabel="YEARS"
+                ></cv-work-time-label>
             </div>
-            } @if(totalWorkTime.month > 0){
+            } @if(totalWorkTime.months > 0){
             <div class="months">
-                {{ totalWorkTime.month }}
-                <span class="total-work-time__month-label">month</span>
+                {{ totalWorkTime.months }}
+                <cv-work-time-label
+                    [dateNumber]="totalWorkTime.months"
+                    dateLabel="MONTHS"
+                ></cv-work-time-label>
             </div>
             } @if(totalWorkTime.days > 0){
             <div class="days">
                 {{ totalWorkTime.days }}
-                <span class="total-work-time__days-label">days</span>
+                <span class="total-work-time__days-label">
+                    <cv-work-time-label
+                        [dateNumber]="totalWorkTime.days"
+                        dateLabel="DAYS"
+                    ></cv-work-time-label>
+                </span>
             </div>
             }
         </div>

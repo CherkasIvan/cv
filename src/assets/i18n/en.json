@@ -110,7 +110,15 @@
     },
 
     "WORK-EXPERIENCE": {
-        "YEARS": "years"
+        "YEAR": "year",
+        "MONTH": "month",
+        "DAY": "day",
+        "YEARS": "years",
+        "MONTHS": "months",
+        "DAYS": "days",
+        "YEARS-ELSE": "years",
+        "MONTHS-ELSE": "months",
+        "DAYS-ELSE": "days"
     },
 
     "FOOTER": {
