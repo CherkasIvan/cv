@@ -27,7 +27,6 @@ export class FooterComponent {
         this._firebaseService.getContacts();
     public currentTheme$ = this._darkModeService.isDark$;
     public isPwaView: boolean = pwaView;
-    public isScrolable = false;
 
     constructor(
         private readonly _sanitizer: DomSanitizer,
