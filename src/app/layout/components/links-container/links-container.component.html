@@ -5,6 +5,10 @@
             <div
                 class="social-media-container"
                 [ngClass]="modeTheme ? 'dark-layout' : 'layout'"
+                cdkScrollable
+                matTooltipClass="link-tooltip"
+                [matTooltip]="link.alt + ': ' + link.link"
+                matTooltipPosition="above"
             >
                 <a
                     [href]="getSantizeUrl(link?.link)"

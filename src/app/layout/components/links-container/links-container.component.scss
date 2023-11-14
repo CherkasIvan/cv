@@ -72,15 +72,13 @@
         &:hover {
             transition: all 0.5s ease-in-out;
 
-            & > .social-media__back {
-                transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg)
-                    rotateY(-20deg);
+            &>.social-media__back {
+                transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
                 background: linear-gradient(135deg, #ff7979 -20%, #f0000f 120%);
             }
 
-            & > .social-media__img {
-                transform: translateZ(80px) translateY(-5px) rotateX(15deg)
-                    rotateY(15deg);
+            &>.social-media__img {
+                transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
             }
         }
     }
@@ -89,7 +87,7 @@
         .social-media {
             box-shadow: 16px 0 40px #ff7979;
 
-            & > .social-media__back {
+            &>.social-media__back {
                 background: linear-gradient(135deg, red -20%, yellow 120%);
             }
         }
