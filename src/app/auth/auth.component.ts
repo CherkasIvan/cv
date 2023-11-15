@@ -1,5 +1,8 @@
+import * as error from 'console';
+
 import { NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { user } from '@angular/fire/auth';
 import {
     AbstractControl,
     FormControl,
@@ -55,10 +58,10 @@ export class AuthComponent implements OnInit {
         const { email, password } = this.authForm.value;
 
         if (this.authForm.valid) {
-            this._store$.dispatch(authSuccess({ email, password }));
+            this._store$.dispatch(authSuccess({ user }));
             this._authService.signIn(email, password);
         } else {
-            this._store$.dispatch(authFailure({ email, password }));
+            this._store$.dispatch(authFailure({ error }));
         }
     }
 
@@ -68,7 +71,7 @@ export class AuthComponent implements OnInit {
 
     onReset(): void {
         this.authForm.reset();
-        this._store$.dispatch(authFailure({ email: '', password: '' }));
+        this._store$.dispatch(authFailure({ error }));
     }
 
     ngOnInit(): void {
