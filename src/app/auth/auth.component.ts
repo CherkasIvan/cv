@@ -1,17 +1,7 @@
-import * as error from 'console';
-
 import { NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { user } from '@angular/fire/auth';
-import {
-    AbstractControl,
-    FormControl,
-    FormGroup,
-    FormsModule,
-    ReactiveFormsModule,
-    Validators,
-} from '@angular/forms';
-
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
 import { IAuth } from './model/auth.interface';
@@ -61,7 +51,7 @@ export class AuthComponent implements OnInit {
             this._store$.dispatch(authSuccess({ user }));
             this._authService.signIn(email, password);
         } else {
-            this._store$.dispatch(authFailure({ error }));
+            this._store$.dispatch(authFailure({ error: Error }));
         }
     }
 
@@ -71,7 +61,7 @@ export class AuthComponent implements OnInit {
 
     onReset(): void {
         this.authForm.reset();
-        this._store$.dispatch(authFailure({ error }));
+        this._store$.dispatch(authFailure({ error: Error }));
     }
 
     ngOnInit(): void {
