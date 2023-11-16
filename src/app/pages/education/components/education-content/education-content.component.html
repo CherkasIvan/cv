@@ -1,79 +1,86 @@
 <div class="education-content">
     <div class="education-container">
         <ul class="education-list">
-            @for (educationPlace of educationList$ | async; track
-            educationPlace; let i = $index) {
-            <li class="education-list__item">
-                <span class="educational__institution">
-                    {{
-                        'EDUCATION.' + educationPlace.educationTitle + '.TITLE'
-                            | translate
-                    }}
-                </span>
+            @for (
+                educationPlace of educationList$ | async;
+                track educationPlace;
+                let i = $index
+            ) {
+                <li class="education-list__item">
+                    <span class="educational__institution">
+                        {{
+                            'EDUCATION.' +
+                                educationPlace.educationTitle +
+                                '.TITLE' | translate
+                        }}
+                    </span>
 
-                <div class="content-container">
-                    <div class="places">
-                        <ul class="places__list">
-                            @for (education of
-                            educationPlace.educationPlaceName; track education;
-                            let i = $index) {
-                            <li class="item">
-                                <span class="item__name">
-                                    {{
-                                        'EDUCATION.' +
-                                            educationPlace.educationTitle +
-                                            '.' +
-                                            education.name +
-                                            '.NAME' | translate
-                                    }}
-                                </span>
+                    <div class="content-container">
+                        <div class="places">
+                            <ul class="places__list">
+                                @for (
+                                    education of educationPlace.educationPlaceName;
+                                    track education;
+                                    let i = $index
+                                ) {
+                                    <li class="item">
+                                        <span class="item__name">
+                                            {{
+                                                'EDUCATION.' +
+                                                    educationPlace.educationTitle +
+                                                    '.' +
+                                                    education.name +
+                                                    '.NAME' | translate
+                                            }}
+                                        </span>
 
-                                @if (education.certificatePath) {
+                                        @if (education.certificatePath) {
+                                            <img
+                                                [src]="
+                                                    education.certificatePath
+                                                "
+                                                [alt]="education.grade"
+                                                class="item__img"
+                                                role="none"
+                                                (click)="
+                                                    openDialog(
+                                                        education.certificatePath
+                                                    )
+                                                "
+                                            />
+                                        }
 
-                                <img
-                                    [src]="education.certificatePath"
-                                    [alt]="education.grade"
-                                    class="item__img"
-                                    role="none"
-                                    (click)="
-                                        openDialog(education.certificatePath)
-                                    "
-                                />
+                                        <span class="item__address">
+                                            {{
+                                                'EDUCATION.' +
+                                                    educationPlace.educationTitle +
+                                                    '.' +
+                                                    education.name +
+                                                    '.ADDRESS' | translate
+                                            }}
+                                        </span>
+                                        <span class="item__phone">
+                                            {{ education.phone }}
+                                        </span>
 
+                                        <a
+                                            [href]="education.link"
+                                            class="intem__link"
+                                        >
+                                            {{ education.link }}
+                                        </a>
+                                    </li>
                                 }
+                            </ul>
+                        </div>
 
-                                <span class="item__address">
-                                    {{
-                                        'EDUCATION.' +
-                                            educationPlace.educationTitle +
-                                            '.' +
-                                            education.name +
-                                            '.ADDRESS' | translate
-                                    }}
-                                </span>
-                                <span class="item__phone">
-                                    {{ education.phone }}
-                                </span>
-
-                                <a
-                                    [href]="education.link"
-                                    class="intem__link"
-                                >
-                                    {{ education.link }}
-                                </a>
-                            </li>
-                            }
-                        </ul>
+                        @if (educationPlace.educationLogo) {
+                            <div class="education-logo__container">
+                                <!-- <cv-carousel></cv-carousel> -->
+                            </div>
+                        }
                     </div>
-
-                    @if (educationPlace.educationLogo) {
-
-                    <div class="education-logo__container">
-                        <cv-carousel></cv-carousel>
-                    </div>
-                    }
-                </div>
-            </li>
+                </li>
             }
         </ul>
     </div>
