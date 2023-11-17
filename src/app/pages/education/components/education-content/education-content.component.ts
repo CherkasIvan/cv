@@ -8,15 +8,13 @@ import { IEducation } from '@shared/models/education.interface';
 import { DialogService } from '@shared/services/dialog/dialog.service';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
-import { CarouselComponent } from '../../../../core/components/carousel/carousel.component';
-
 @Component({
     selector: 'cv-education-content',
     templateUrl: './education-content.component.html',
     styleUrls: ['./education-content.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NgIf, CarouselComponent, AsyncPipe, TranslateModule],
+    imports: [NgFor, NgIf, AsyncPipe, TranslateModule],
 })
 export class EducationContentComponent {
     public educationList$: Observable<IEducation[]> =
