@@ -1,6 +1,5 @@
 @use '../src/assets/styles/styles.scss';
 @use '@angular/material' as mat;
-@import '~@coreui/coreui/dist/css/coreui.min.css';
 @include mat.core();
 
 $cv-primary: mat.define-palette(mat.$indigo-palette);

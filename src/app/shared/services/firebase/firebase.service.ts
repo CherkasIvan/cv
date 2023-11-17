@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 
 import { IContacts } from '@shared/models/contacts.interface';
@@ -16,6 +17,10 @@ import { IWorkExperience } from '@shared/models/work-experience.interface';
     providedIn: 'root',
 })
 export class FirebaseService {
+    private basePath = '/images';
+    file!: File;
+    url = '';
+
     frontendTechCollection$!: Observable<ITechnologies[]>;
     backendTechCollection$!: Observable<ITechnologies[]>;
     socialTechCollection$!: Observable<ITechnologies[]>;
@@ -28,8 +33,16 @@ export class FirebaseService {
     workExperienceCollection$!: Observable<IWorkExperience[]>;
     projectTechCollection$!: Observable<ITechnologies[]>;
     educarionCollection$!: Observable<IEducation[]>;
+    charts$!: Observable<any[]>;
 
-    constructor(private readonly _firestore: Firestore) {}
+    constructor(
+        private readonly _firestore: Firestore,
+        private db: AngularFireDatabase,
+    ) {}
+
+    getCharts(): Observable<any[]> {
+        return (this.charts$ = this.db.list('horizontals_1').valueChanges());
+    }
 
     getFrontendTech(): Observable<ITechnologies[]> {
         this.frontendTechCollection$ = collectionData(
