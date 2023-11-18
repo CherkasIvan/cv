@@ -9,9 +9,9 @@ import { DownloadButtonComponent } from '../download-button/download-button.comp
 import { CvItemComponent } from '../download-column/cv-item.component';
 
 @Component({
-    selector: 'cv-download-img',
-    templateUrl: './download-img.component.html',
-    styleUrls: ['./download-img.component.scss'],
+    selector: 'cv-download-img-container',
+    templateUrl: './download-img-container.component.html',
+    styleUrls: ['./download-img-container.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
@@ -22,7 +22,7 @@ import { CvItemComponent } from '../download-column/cv-item.component';
         TranslateModule,
     ],
 })
-export class DownloadImgComponent {
+export class DownloadImgContainerComponent {
     public isEuropean = false;
     public currentLanguage$ = this._translateManagerService.currentLanguage$;
     public changeCvVersions() {
