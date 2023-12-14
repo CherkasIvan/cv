@@ -13,10 +13,12 @@ export class SpinnerService {
         this._loading$.asObservable();
 
     public show() {
+        console.log('shpw');
         this._loading$.next(true);
     }
 
     public hide() {
+        console.log('hide');
         this._loading$.next(false);
     }
 }

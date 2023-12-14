@@ -32,7 +32,7 @@ import {
     provideRouterStore,
     routerReducer,
 } from '@ngrx/router-store';
-import { StoreModule, provideStore } from '@ngrx/store';
+import { StoreModule, combineReducers } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
@@ -70,7 +70,12 @@ bootstrapApplication(AppComponent, {
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
-            StoreModule.forRoot(globalSetReducers),
+            StoreModule.forRoot({
+                reducer: combineReducers({
+                    router: routerReducer,
+                    ...globalSetReducers,
+                }),
+            }),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
@@ -85,7 +90,6 @@ bootstrapApplication(AppComponent, {
         UserTrackingService,
         provideAnimations(),
         provideRouterStore({ serializer: AppRouterStateSerializer }),
-        provideStore({ router: routerReducer }),
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(mainRoutes),
         provideStoreDevtools({

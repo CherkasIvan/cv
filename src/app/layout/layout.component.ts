@@ -1,6 +1,7 @@
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -21,6 +22,8 @@ import { ModalOutletComponent } from '@layout/components/modal-outlet/modal-outl
 import { INavigation } from '@shared/models/navigation.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
+
+import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
 
 import { BackgroundsComponent } from './components/backgrounds/backgrounds.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -50,6 +53,14 @@ import { ILogoutButton } from './store/model/logout-button.interface';
         FooterComponent,
         BackgroundsComponent,
         AsyncPipe,
+    ],
+    providers: [
+        // Подключаем интерцептор AuthInterceptor к HTTP-запросам
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoadingInterceptor,
+            multi: true,
+        },
     ],
 })
 export class LayoutComponent implements OnDestroy {
@@ -92,7 +103,6 @@ export class LayoutComponent implements OnDestroy {
     }
 
     public closeLogoutDialog() {
-        // this._logoutDialogService.closeDialog();
         this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 

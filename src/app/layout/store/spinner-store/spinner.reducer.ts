@@ -1,23 +1,11 @@
-// export function spinnerReducer(state = { isOn: false }, action) {
-//     switch (action.type) {
-//         case 'startSpinner': {
-//             return {
-//                 isOn: true,
-//             };
-//         }
+import { createReducer, on } from '@ngrx/store';
 
-//         case 'stopSpinner': {
-//             return {
-//                 isOn: false,
-//             };
-//         }
+import { startSpinner, stopSpinner } from './spinner.actions';
 
-//         default:
-//             return state;
-//     }
-// }
+const initialState: boolean = false;
 
-//   export const spinnerReducer = createReducer(
-//     initialState,
-//     on(setSpinnerOn, (state = { isOn: false }, action) => isDark),
-// );
+export const spinnerReducer = createReducer(
+    initialState,
+    on(startSpinner, (state, { isSpinnerOn }) => isSpinnerOn),
+    on(stopSpinner, (state, { isSpinnerOn }) => isSpinnerOn),
+);

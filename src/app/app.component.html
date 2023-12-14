@@ -1,1 +1,4 @@
 <router-outlet></router-outlet>
+<cv-spinner
+    [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"
+></cv-spinner>
