@@ -1,6 +1,4 @@
 /* tslint:disable:no-unused-variable */
-import { TemplateRef } from '@angular/core';
-
 import { ModalPortalDirective } from './modal-portal.directive';
 
 describe('Directive: ModalPortal', () => {

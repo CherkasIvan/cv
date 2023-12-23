@@ -1,9 +1,8 @@
-<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
-<div
+<button
     class="modal-overlay"
     (click)="closeModal($event)"
     *cvModalPortal="'.modals-host'"
     #overlay
 >
     <ng-content></ng-content>
-</div>
+</button>

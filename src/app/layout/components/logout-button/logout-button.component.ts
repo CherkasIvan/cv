@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
@@ -28,6 +28,7 @@ export class LogoutButtonComponent {
     constructor(private readonly _store$: Store<ILogoutButton>) {}
 
     public openLogoutDialog(): void {
+        this.showLogoutModal$.pipe(tap((el) => console.log(el)));
         this._store$.dispatch(setLogoutDialogSuccess(true));
     }
 }

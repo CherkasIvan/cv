@@ -86,6 +86,12 @@ export class LayoutComponent implements OnDestroy {
         );
     }
 
+    ngOnInit() {
+        console.log(
+            this.showLogoutModal$.subscribe((el: unknown) => console.log(el)),
+        );
+    }
+
     public confirmLogout() {
         this._authService.signOut();
         this._store$.dispatch(setLogoutDialogSuccess(false));
