@@ -18,7 +18,7 @@
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "baseHref": "http://localhost:4200/",
-                        "outputPath": "dist/cv",
+                        "outputPath": "dist/cv/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -121,6 +121,67 @@
                     "options": {
                         "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
                     }
+                },
+                "server": {
+                  "builder": "@angular-devkit/build-angular:server",
+                  "options": {
+                    "outputPath": "dist/cv/server",
+                    "main": "server.ts",
+                    "tsConfig": "tsconfig.server.json",
+                    "inlineStyleLanguage": "scss"
+                  },
+                  "configurations": {
+                    "production": {
+                      "outputHashing": "media"
+                    },
+                    "development": {
+                      "buildOptimizer": false,
+                      "fileReplacements": [
+                        {
+                          "replace": "src/environments/environment.ts",
+                          "with": "src/environments/environment.development.ts"
+                        }
+                      ],
+                      "optimization": false,
+                      "sourceMap": true,
+                      "extractLicenses": false,
+                      "vendorChunk": true
+                    }
+                  },
+                  "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                  "builder": "@angular-devkit/build-angular:ssr-dev-server",
+                  "configurations": {
+                    "development": {
+                      "browserTarget": "cv:build:development",
+                      "serverTarget": "cv:server:development"
+                    },
+                    "production": {
+                      "browserTarget": "cv:build:production",
+                      "serverTarget": "cv:server:production"
+                    }
+                  },
+                  "defaultConfiguration": "development"
+                },
+                "prerender": {
+                  "builder": "@angular-devkit/build-angular:prerender",
+                  "options": {
+                    "routes": [
+                      "/"
+                    ]
+                  },
+                  "configurations": {
+                    "production": {
+                      "browserTarget": "cv:build:production",
+                      "serverTarget": "cv:server:production"
+                    },
+                    "development": {
+                      "browserTarget": "cv:build:development",
+                      "serverTarget": "cv:server:development"
+                    }
+                  },
+                  "defaultConfiguration": "production"
                 }
             }
         }

@@ -1,8 +1,10 @@
-import { Observable } from 'rxjs';
-
 import { Injectable } from '@angular/core';
+import {
+    AngularFireDatabase,
+    AngularFireList,
+} from '@angular/fire/compat/database';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-
+import { IFileUpload } from '@app/shared/models/file-upload.interface';
 import { IContacts } from '@shared/models/contacts.interface';
 import { ICvFormat } from '@shared/models/cv-format.interface';
 import { IEducation } from '@shared/models/education.interface';
@@ -11,11 +13,16 @@ import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { ISocialMedia } from '@shared/models/social-media.interface';
 import { ITechnologies } from '@shared/models/technologies.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class FirebaseService {
+    private basePath = 'gs://cv-cherkas.appspot.com';
+    file!: File;
+    url = '';
+
     frontendTechCollection$!: Observable<ITechnologies[]>;
     backendTechCollection$!: Observable<ITechnologies[]>;
     socialTechCollection$!: Observable<ITechnologies[]>;
@@ -28,8 +35,18 @@ export class FirebaseService {
     workExperienceCollection$!: Observable<IWorkExperience[]>;
     projectTechCollection$!: Observable<ITechnologies[]>;
     educarionCollection$!: Observable<IEducation[]>;
+    charts$: AngularFireList<IFileUpload> | undefined;
 
-    constructor(private readonly _firestore: Firestore) {}
+    constructor(
+        private readonly _firestore: Firestore,
+        private db: AngularFireDatabase,
+    ) {}
+
+    getFiles(numberItems: number): AngularFireList<IFileUpload> {
+        return (this.charts$ = this.db.list(this.basePath, (ref) =>
+            ref.limitToLast(numberItems),
+        ));
+    }
 
     getFrontendTech(): Observable<ITechnologies[]> {
         this.frontendTechCollection$ = collectionData(

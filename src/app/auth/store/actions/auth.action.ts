@@ -1,15 +1,18 @@
 import { createAction, props } from '@ngrx/store';
 
-export const auth = createAction('[Auth Page] Auth');
+export const auth = createAction(
+    '[Auth Page] Auth',
+    props<{ email: string; password: string }>(),
+);
 
 export const authSuccess = createAction(
     '[Auth Page] Auth succes',
-    props<{ email: string | null; password: string | null }>(),
+    props<{ user: unknown }>(),
 );
 
 export const disauth = createAction('[Auth Page] Disauth');
 
 export const authFailure = createAction(
     '[Auth Page] Auth failure',
-    props<{ email: string | null; password: string | null }>(),
+    props<{ error: unknown }>(),
 );

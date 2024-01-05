@@ -1,15 +1,9 @@
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
 import {
     HttpClient,
     provideHttpClient,
     withInterceptorsFromDi,
 } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, isDevMode } from '@angular/core';
 import {
     ScreenTrackingService,
     UserTrackingService,
@@ -19,27 +13,36 @@ import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideFirestore } from '@angular/fire/firestore';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import {
+    bootstrapApplication,
+    provideClientHydration,
+} from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { mainRoutes } from '@app/app-routing.routes';
+import { AppComponent } from '@app/app.component';
+import { environment } from '@env/environment';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
+import {
+    StoreRouterConnectingModule,
+    provideRouterStore,
+    routerReducer,
+} from '@ngrx/router-store';
+import { StoreModule, provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
 import {
     githubReducer,
     githubReposFeatureKey,
 } from '@pages/projects/projects-store/github.reducers';
-
-import { environment } from '@env/environment';
-
-import { mainRoutes } from '@app/app-routing.routes';
-import { AppComponent } from '@app/app.component';
+import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
@@ -60,7 +63,6 @@ bootstrapApplication(AppComponent, {
                 },
                 defaultLanguage: 'ru',
             }),
-            BrowserModule,
             AngularFireModule.initializeApp(environment.firebase),
             provideFirebaseApp(() => initializeApp(environment.firebase)),
             provideAuth(() => getAuth()),
@@ -68,10 +70,6 @@ bootstrapApplication(AppComponent, {
             provideDatabase(() => getDatabase()),
             StoreModule.forRoot(globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
-            StoreDevtoolsModule.instrument({
-                maxAge: 25,
-                logOnly: environment.production, // Restrict extension to log-only mode
-            }),
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
@@ -84,8 +82,18 @@ bootstrapApplication(AppComponent, {
         ScreenTrackingService,
         UserTrackingService,
         provideAnimations(),
+        provideRouterStore({ serializer: AppRouterStateSerializer }),
+        provideStore({ router: routerReducer }),
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(mainRoutes),
+        provideStoreDevtools({
+            maxAge: 25, // Retains last 25 states
+            logOnly: !isDevMode(), // Restrict extension to log-only mode
+            autoPause: true, // Pauses recording actions and state changes when the extension window is not open
+            trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
+            traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
+        }),
+        provideClientHydration(),
     ],
 })
     .then(() => {
