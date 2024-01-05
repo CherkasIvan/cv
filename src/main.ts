@@ -1,10 +1,3 @@
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
 import {
     HttpClient,
     provideHttpClient,
@@ -20,11 +13,16 @@ import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideFirestore } from '@angular/fire/firestore';
-import { bootstrapApplication } from '@angular/platform-browser';
+import {
+    bootstrapApplication,
+    provideClientHydration,
+} from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { mainRoutes } from '@app/app-routing.routes';
+import { AppComponent } from '@app/app.component';
+import { environment } from '@env/environment';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -34,17 +32,17 @@ import {
 } from '@ngrx/router-store';
 import { StoreModule, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
 import {
     githubReducer,
     githubReposFeatureKey,
 } from '@pages/projects/projects-store/github.reducers';
-
-import { environment } from '@env/environment';
-
-import { mainRoutes } from '@app/app-routing.routes';
-import { AppComponent } from '@app/app.component';
+import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
@@ -95,6 +93,7 @@ bootstrapApplication(AppComponent, {
             trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
             traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
         }),
+        provideClientHydration(),
     ],
 })
     .then(() => {
