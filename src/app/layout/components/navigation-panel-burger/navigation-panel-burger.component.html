@@ -17,18 +17,18 @@
     </label>
     <ul class="menu">
         @for (item of burgerNavigators; track item; let i = $index) {
-        <li
-            class="menu__item"
-            (click)="navigationCheck($event)"
-        >
-            <a
-                routerLink="{{ item.link }}"
-                class="item-link"
-                [routerLinkActive]="['active']"
+            <li
+                class="menu__item"
+                (click)="navigationCheck($event)"
             >
-                {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
-            </a>
-        </li>
+                <a
+                    routerLink="{{ item.link }}"
+                    class="item-link"
+                    [routerLinkActive]="['active']"
+                >
+                    {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
+                </a>
+            </li>
         }
         <li class="menu__item">
             <div class="selectors">

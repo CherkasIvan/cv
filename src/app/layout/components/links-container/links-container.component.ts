@@ -1,11 +1,13 @@
+import { Observable } from 'rxjs';
+
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DomSanitizer } from '@angular/platform-browser';
+
 import { ISocialMedia } from '@shared/models/social-media.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
-import { Observable } from 'rxjs';
 
 @Component({
     selector: 'cv-links-container',
@@ -18,7 +20,8 @@ import { Observable } from 'rxjs';
 export class LinksContainerComponent {
     @Input() public modeTheme!: boolean;
     @Input() public pwaView = false;
-    public socialMediaLinks$: Observable<ISocialMedia[]> = this._firebaseService.getSocialMediaLinks();
+    public socialMediaLinks$: Observable<ISocialMedia[]> =
+        this._firebaseService.getSocialMediaLinks();
 
     constructor(
         private readonly _firebaseService: FirebaseService,

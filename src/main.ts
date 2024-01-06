@@ -20,7 +20,10 @@ import { provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { provideFirestore } from '@angular/fire/firestore';
-import { bootstrapApplication } from '@angular/platform-browser';
+import {
+    bootstrapApplication,
+    provideClientHydration,
+} from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -95,6 +98,7 @@ bootstrapApplication(AppComponent, {
             trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
             traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
         }),
+        provideClientHydration(),
     ],
 })
     .then(() => {

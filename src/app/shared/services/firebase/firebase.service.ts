@@ -1,7 +1,10 @@
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import {
+    AngularFireDatabase,
+    AngularFireList,
+} from '@angular/fire/compat/database';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 
 import { IContacts } from '@shared/models/contacts.interface';
@@ -13,11 +16,13 @@ import { ISocialMedia } from '@shared/models/social-media.interface';
 import { ITechnologies } from '@shared/models/technologies.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
 
+import { IFileUpload } from '@app/shared/models/file-upload.interface';
+
 @Injectable({
     providedIn: 'root',
 })
 export class FirebaseService {
-    private basePath = '/images';
+    private basePath = 'gs://cv-cherkas.appspot.com';
     file!: File;
     url = '';
 
@@ -32,16 +37,18 @@ export class FirebaseService {
     socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
     workExperienceCollection$!: Observable<IWorkExperience[]>;
     projectTechCollection$!: Observable<ITechnologies[]>;
-    educarionCollection$!: Observable<IEducation[]>;
-    charts$!: Observable<any[]>;
+    educationCollection$!: Observable<IEducation[]>;
+    charts$: AngularFireList<IFileUpload> | undefined;
 
     constructor(
         private readonly _firestore: Firestore,
         private db: AngularFireDatabase,
     ) {}
 
-    getCharts(): Observable<any[]> {
-        return (this.charts$ = this.db.list('horizontals_1').valueChanges());
+    getFiles(numberItems: number): AngularFireList<IFileUpload> {
+        return (this.charts$ = this.db.list(this.basePath, (ref) =>
+            ref.limitToLast(numberItems),
+        ));
     }
 
     getFrontendTech(): Observable<ITechnologies[]> {
@@ -155,12 +162,12 @@ export class FirebaseService {
     }
 
     getEducation(): Observable<IEducation[]> {
-        this.educarionCollection$ = collectionData(
+        this.educationCollection$ = collectionData(
             collection(this._firestore, 'education'),
             {
                 idField: 'id',
             },
         ) as Observable<IEducation[]>;
-        return this.educarionCollection$;
+        return this.educationCollection$;
     }
 }

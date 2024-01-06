@@ -123,73 +123,63 @@
                     }
                 },
                 "server": {
-                  "builder": "@angular-devkit/build-angular:server",
-                  "options": {
-                    "outputPath": "dist/cv/server",
-                    "main": "server.ts",
-                    "tsConfig": "tsconfig.server.json",
-                    "inlineStyleLanguage": "scss",
-                    "externalDependencies": [
-                      "@nestjs/microservices",
-                      "@nestjs/microservices/microservices-module",
-                      "@nestjs/websockets",
-                      "@nestjs/websockets/socket-module",
-                      "cache-manager"
-                    ]
-                  },
-                  "configurations": {
-                    "production": {
-                      "outputHashing": "media",
-                      "optimization": false
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/cv/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json",
+                        "inlineStyleLanguage": "scss"
                     },
-                    "development": {
-                      "buildOptimizer": false,
-                      "fileReplacements": [
-                        {
-                          "replace": "src/environments/environment.ts",
-                          "with": "src/environments/environment.development.ts"
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.development.ts"
+                                }
+                            ],
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false,
+                            "vendorChunk": true
                         }
-                      ],
-                      "optimization": false,
-                      "sourceMap": true,
-                      "extractLicenses": false,
-                      "vendorChunk": true
-                    }
-                  },
-                  "defaultConfiguration": "production"
+                    },
+                    "defaultConfiguration": "production"
                 },
                 "serve-ssr": {
-                  "builder": "@nguniversal/builders:ssr-dev-server",
-                  "configurations": {
-                    "development": {
-                      "browserTarget": "cv:build:development",
-                      "serverTarget": "cv:server:development"
+                    "builder": "@angular-devkit/build-angular:ssr-dev-server",
+                    "configurations": {
+                        "development": {
+                            "browserTarget": "cv:build:development",
+                            "serverTarget": "cv:server:development"
+                        },
+                        "production": {
+                            "browserTarget": "cv:build:production",
+                            "serverTarget": "cv:server:production"
+                        }
                     },
-                    "production": {
-                      "browserTarget": "cv:build:production",
-                      "serverTarget": "cv:server:production"
-                    }
-                  },
-                  "defaultConfiguration": "development"
+                    "defaultConfiguration": "development"
                 },
                 "prerender": {
-                  "builder": "@nguniversal/builders:prerender",
-                  "options": {
-                    "routes": [
-                      "/"
-                    ]
-                  },
-                  "configurations": {
-                    "production": {
-                      "browserTarget": "cv:build:production",
-                      "serverTarget": "cv:server:production"
+                    "builder": "@angular-devkit/build-angular:prerender",
+                    "options": {
+                        "routes": ["/"]
                     },
-                    "development": {
-                      "browserTarget": "cv:build:development",
-                      "serverTarget": "cv:server:development"
-                    }
-                  },
-                  "defaultConfiguration": "production"
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "cv:build:production",
+                            "serverTarget": "cv:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "cv:build:development",
+                            "serverTarget": "cv:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }

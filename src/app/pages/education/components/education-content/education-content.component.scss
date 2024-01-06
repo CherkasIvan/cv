@@ -1,7 +1,7 @@
 @use '../../../../../assets/styles/mixins/flex.mixin' as *;
 
 .education-content {
-        .education-container {
+    .education-container {
         width: 100%;
         @include flex-a_center-j_center;
 

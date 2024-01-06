@@ -1,21 +1,23 @@
 <ul class="technologies-list">
     @for (technology of technologiesList; track technology; let i = $index) {
-    <li class="technologies-list__item">
-        <a
-            [href]="technology.link"
-            [target]="isPwaView ? '_self' : '_blank'"
-            rel="noopener noreferrer"
-            class="item-link"
-        >
-            <div class="item-container">
-                <span class="item__title">{{ technology.technologyName }}</span>
-                <img
-                    [src]="technology.iconPath"
-                    [alt]="technology.alt"
-                    class="item__img"
-                />
-            </div>
-        </a>
-    </li>
+        <li class="technologies-list__item">
+            <a
+                [href]="technology.link"
+                [target]="isPwaView ? '_self' : '_blank'"
+                rel="noopener noreferrer"
+                class="item-link"
+            >
+                <div class="item-container">
+                    <span class="item__title">
+                        {{ technology.technologyName }}
+                    </span>
+                    <img
+                        [src]="technology.iconPath"
+                        [alt]="technology.alt"
+                        class="item__img"
+                    />
+                </div>
+            </a>
+        </li>
     }
 </ul>

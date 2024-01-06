@@ -28,7 +28,25 @@ export class WorkExperienceContentComponent implements OnInit {
     public workPlace$: Observable<IWorkExperience[]> =
         this._firebaseService.getWorkExperience();
     public workExp: ITotalWorkTime[] = [];
-    public totalWorkTime: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+    public totalWorkTime: ITotalWorkTime = {
+        years: 0,
+        yearsLabel: '',
+        months: 0,
+        monthsLabel: '',
+        days: 0,
+        daysLabel: '',
+    };
+    public period = {
+        year: 'год',
+        month: 'месяц',
+        day: 'день',
+        years: 'года',
+        months: 'месяца',
+        days: 'дня',
+        yearsElse: 'лет',
+        monthsElse: 'месецев',
+        daysElse: 'дней',
+    };
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 
@@ -51,17 +69,42 @@ export class WorkExperienceContentComponent implements OnInit {
         const difference: Date = new Date(
             Math.abs(workStartEnd.workEnd - workStartEnd.workStart),
         );
-        let singleWorkTerm: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+        let singleWorkTerm: ITotalWorkTime = {
+            years: 0,
+            yearsLabel: '',
+            months: 0,
+            monthsLabel: '',
+            days: 0,
+            daysLabel: '',
+        };
         singleWorkTerm = {
             years: difference.getUTCFullYear() - 1970,
+            yearsLabel: 'r',
             months: difference.getUTCMonth() + 1,
+            monthsLabel: 't',
             days: difference.getUTCDate() - 1,
+            daysLabel: 'd',
         };
+        console.log(singleWorkTerm);
         this.workExp.push(singleWorkTerm);
     }
 
+    private _setPeriodLabel(period: number, label: string) {
+        switch (label) {
+            case 'period':
+                3;
+        }
+    }
+
     private _totalWorkTerm(workExp: ITotalWorkTime[]) {
-        const result: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+        const result: ITotalWorkTime = {
+            years: 0,
+            yearsLabel: '',
+            months: 0,
+            monthsLabel: '',
+            days: 0,
+            daysLabel: '',
+        };
         workExp.forEach((work: ITotalWorkTime) => {
             result.years += work.years;
             result.months += work.months;
@@ -71,6 +114,8 @@ export class WorkExperienceContentComponent implements OnInit {
         result.months = result.months % 12;
         result.months += Math.floor(result.days / 31);
         result.days = result.days % 31;
+        console.log(result);
+
         this.totalWorkTime = result;
     }
 
@@ -98,16 +143,3 @@ export class WorkExperienceContentComponent implements OnInit {
             .subscribe();
     }
 }
-
-// tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
-// this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
-// })
-// workPlaces.forEach((work) => {
-//   work.workTime = this.totalWorkTime(work.from, work.to);
-// });
-// this.totalWorkTimeEverInMonth = this.workExp.reduce(
-//   (start: number, end: number) => start + end,
-//   0
-// ))
-// this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
-// }
