@@ -132,7 +132,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "5317991901433222982"
+        "hash": "17847339824898765595"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -984,11 +984,11 @@
       },
       {
         "file": "src/app/pages/work-experience/components/work-experience-content/work-experience-content.component.ts",
-        "hash": "5451430289879297516"
+        "hash": "16599578692655828294"
       },
       {
         "file": "src/app/pages/work-experience/components/work-time-label/work-time-label.component.html",
-        "hash": "16187799482832842794"
+        "hash": "1934318995685256718"
       },
       {
         "file": "src/app/pages/work-experience/components/work-time-label/work-time-label.component.scss",
@@ -1068,7 +1068,7 @@
       },
       {
         "file": "src/app/shared/models/total-work-time.interface.ts",
-        "hash": "5922215097102843042"
+        "hash": "17346186594999273821"
       },
       {
         "file": "src/app/shared/models/work-experience.interface.ts",

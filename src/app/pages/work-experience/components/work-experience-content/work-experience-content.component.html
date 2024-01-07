@@ -37,7 +37,7 @@
                             <div class="years">
                                 <cv-work-time-label
                                     [dateNumber]="workExp[idx].years"
-                                    dateLabel="YEARS"
+                                    [dateLabel]="workExp[idx].yearsLabel"
                                 ></cv-work-time-label>
                             </div>
                         }
@@ -47,7 +47,7 @@
                                 <span class="single-work-time__months-label">
                                     <cv-work-time-label
                                         [dateNumber]="workExp[idx].months"
-                                        dateLabel="MONTHS"
+                                        [dateLabel]="workExp[idx].monthsLabel"
                                     ></cv-work-time-label>
                                 </span>
                             </div>
@@ -58,7 +58,7 @@
 
                                 <cv-work-time-label
                                     [dateNumber]="workExp[idx].days"
-                                    dateLabel="DAYS"
+                                    [dateLabel]="workExp[idx].daysLabel"
                                 ></cv-work-time-label>
                             </div>
                         }

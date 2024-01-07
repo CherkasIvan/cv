@@ -1,8 +1,8 @@
 export interface ITotalWorkTime {
     years: number;
-    yearsLabel: string;
+    yearsLabel?: string;
     months: number;
-    monthsLabel: string;
+    monthsLabel?: string;
     days: number;
-    daysLabel: string;
+    daysLabel?: string;
 }
