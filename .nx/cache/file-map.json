@@ -927,7 +927,7 @@
         },
         {
           "file": "src/app/layout/components/language-selector/language-selector.component.ts",
-          "hash": "2361449441630953158",
+          "hash": "10503895621829779663",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
