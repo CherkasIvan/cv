@@ -48,10 +48,11 @@ import { environment } from '@env/environment';
 
 import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
+import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
-import { globalSetReducers } from './app/layout/store';
+import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -73,8 +74,10 @@ bootstrapApplication(AppComponent, {
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
-            StoreModule.forRoot(globalSetReducers),
+            StoreModule.forRoot({}),
+            StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
+            // StoreModule.forFeature('darkMode', darkModeReducer), // use forFeature for feature module
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),

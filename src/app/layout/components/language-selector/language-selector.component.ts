@@ -5,7 +5,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
 
-import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';
 import { setLanguageSuccess } from '@layout/store/language-selector-store/language-selector.actions';
 import { IDarkMode } from '@layout/store/model/dark-mode.interface';
 import { ILanguagesSelector } from '@layout/store/model/language-selector.interface';
@@ -13,6 +12,8 @@ import { ILanguagesSelector } from '@layout/store/model/language-selector.interf
 import { ILocalStorage } from '@shared/models/localstorage.interface';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
+
+import { isDarkSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';
 
 @Component({
     selector: 'cv-language-selector',
@@ -24,7 +25,7 @@ import { TranslateManagerService } from '@shared/services/translate/translate-ma
 })
 export class LanguageSelectorComponent implements OnInit {
     public isDark$: Observable<boolean> = this._store$.pipe(
-        select(darkModeSelector),
+        select(isDarkSelector),
     );
     public languages = this._translateManagerService.languageList;
     public language$ = this._translateManagerService.currentLanguage$.value;
