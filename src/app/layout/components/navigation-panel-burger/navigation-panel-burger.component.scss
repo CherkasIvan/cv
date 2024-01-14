@@ -3,6 +3,7 @@
 @use '../../../../assets/styles/mixins/glassmorphism.mixin' as glass;
 
 .burger-navigation {
+    background: transparent;
     width: 30px;
     height: 30px;
 
@@ -12,6 +13,14 @@
         margin: 0;
         padding: 0;
         list-style-type: none;
+
+        &__item {
+            .menu-item-controller {
+                cursor: pointer;
+                background: transparent;
+                width: 100%;
+            }
+        }
     }
 
     .menu > .menu__item {
@@ -19,8 +28,11 @@
         overflow: hidden;
 
         .item-link {
+            display: block;
             padding: 0.5em;
             width: 100%;
+            height: 100%;
+            color: #ffffff;
             text-align: center;
         }
 

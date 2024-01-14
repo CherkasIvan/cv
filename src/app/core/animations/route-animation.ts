@@ -39,7 +39,7 @@ export const routeAnimations = trigger('routeAnimations', [
                 style({ opacity: 1 }),
                 animate('0.3s', style({ opacity: 0, visibility: 'hidden' })),
             ],
-            // { optional: true },
+            { optional: true },
         ),
         query(
             ':enter',
@@ -47,7 +47,7 @@ export const routeAnimations = trigger('routeAnimations', [
                 style({ opacity: 0, visibility: 'visible' }),
                 animate('0.3s', style({ opacity: 1 })),
             ],
-            // { optional: true },
+            { optional: true },
         ),
     ]),
 ]);

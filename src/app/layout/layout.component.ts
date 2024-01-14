@@ -6,7 +6,6 @@ import {
     Component,
     HostBinding,
     OnDestroy,
-    OnInit,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
@@ -30,6 +29,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { darkModeSelector } from './store/dark-mode-store/dark-mode.selectors';
 import { setLogoutDialogSuccess } from './store/logout-button-store/logout-button.actions';
 import { logoutButtonSelector } from './store/logout-button-store/logout-button.selectors';
+import { IDarkMode } from './store/model/dark-mode.interface';
 import { ILogoutButton } from './store/model/logout-button.interface';
 
 @Component({
@@ -53,8 +53,8 @@ import { ILogoutButton } from './store/model/logout-button.interface';
         AsyncPipe,
     ],
 })
-export class LayoutComponent implements OnDestroy, OnInit {
-    @HostBinding('@fadeAnimation') fade = 'in';
+export class LayoutComponent implements OnDestroy {
+    @HostBinding('@routeAnimations') fade = 'in';
 
     public currentTheme$ = this._store$.pipe(select(darkModeSelector));
     public navigation$: Observable<INavigation[]> =
@@ -72,7 +72,7 @@ export class LayoutComponent implements OnDestroy, OnInit {
         private readonly _router: Router,
         private readonly _localStorageService: localStorageService,
         private readonly _firebaseService: FirebaseService,
-        private readonly _store$: Store<ILogoutButton | any>,
+        private readonly _store$: Store<ILogoutButton | IDarkMode>,
         private readonly _authService: AuthService,
     ) {
         this.routerSubscription$.add(
@@ -82,16 +82,6 @@ export class LayoutComponent implements OnDestroy, OnInit {
                     : null;
                 this._localStorageService.setRout(this.currentRoute);
             }),
-        );
-    }
-
-    ngOnInit() {
-        console.log(
-            this.showLogoutModal$.subscribe((el: unknown) => console.log(el)),
-        );
-
-        console.log(
-            this.currentTheme$.subscribe((el: unknown) => console.log(el)),
         );
     }
 

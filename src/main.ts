@@ -49,10 +49,11 @@ import { environment } from '@env/environment';
 import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
 import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
+import { languageSelectorReducer } from '@app/layout/store/language-selector-store/language-selector.reducers';
+import { logoutButtonReducer } from '@app/layout/store/logout-button-store/logout-button.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
-import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -75,9 +76,11 @@ bootstrapApplication(AppComponent, {
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
             StoreModule.forRoot({}),
-            StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
+            // StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
-            // StoreModule.forFeature('darkMode', darkModeReducer), // use forFeature for feature module
+            StoreModule.forFeature('darkMode', darkModeReducer), // use forFeature for feature module
+            StoreModule.forFeature('language', languageSelectorReducer), // use forFeature for feature module
+            StoreModule.forFeature('isLogout', logoutButtonReducer), // use forFeature for feature module
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),

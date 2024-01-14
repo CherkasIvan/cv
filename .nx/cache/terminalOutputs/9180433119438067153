@@ -1,0 +1,27 @@
+
+Linting "cv"...
+[0m[0m
+[0m[4mC:\Users\Disto\OneDrive\Рабочий стол\Projects\cv\src\app\core\components\snackbar\snackbar.component.html[24m[0m
+[0m   [2m5:9[22m  [31merror[39m  <img/> element must have a text alternative  [2m@angular-eslint/template/alt-text[22m[0m
+[0m  [2m11:9[22m  [31merror[39m  <img/> element must have a text alternative  [2m@angular-eslint/template/alt-text[22m[0m
+[0m[0m
+[0m[4mC:\Users\Disto\OneDrive\Рабочий стол\Projects\cv\src\app\layout\components\navigation-panel-burger\navigation-panel-burger.component.html[24m[0m
+[0m   [2m1:1[22m   [31merror[39m  click must be accompanied by either keyup, keydown or keypress event for accessibility  [2m@angular-eslint/template/click-events-have-key-events[22m[0m
+[0m   [2m1:1[22m   [31merror[39m  Elements with interaction handlers must be focusable                                    [2m@angular-eslint/template/interactive-supports-focus[22m[0m
+[0m  [2m20:13[22m  [31merror[39m  click must be accompanied by either keyup, keydown or keypress event for accessibility  [2m@angular-eslint/template/click-events-have-key-events[22m[0m
+[0m  [2m20:13[22m  [31merror[39m  Elements with interaction handlers must be focusable                                    [2m@angular-eslint/template/interactive-supports-focus[22m[0m
+[0m  [2m39:9[22m   [31merror[39m  click must be accompanied by either keyup, keydown or keypress event for accessibility  [2m@angular-eslint/template/click-events-have-key-events[22m[0m
+[0m  [2m39:9[22m   [31merror[39m  Elements with interaction handlers must be focusable                                    [2m@angular-eslint/template/interactive-supports-focus[22m[0m
+[0m[0m
+[0m[4mC:\Users\Disto\OneDrive\Рабочий стол\Projects\cv\src\app\layout\layout.component.ts[24m[0m
+[0m  [2m75:57[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\Disto\OneDrive\Рабочий стол\Projects\cv\src\app\layout\store\dark-mode-store\dark-mode.selectors.ts[24m[0m
+[0m  [2m1:10[22m  [31merror[39m  'Observable' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m1:22[22m  [31merror[39m  'map' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m5:10[22m  [31merror[39m  'GlobalState' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[31m[1m✖ 12 problems (12 errors, 0 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m
+Lint errors found in the listed files.
+

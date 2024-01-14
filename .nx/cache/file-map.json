@@ -135,6 +135,22 @@
           "hash": "1814254339261842833"
         },
         {
+          "file": ".nx/cache/18272716345049696206/code",
+          "hash": "1838281907459330133"
+        },
+        {
+          "file": ".nx/cache/18272716345049696206/terminalOutput",
+          "hash": "2543493557223989279"
+        },
+        {
+          "file": ".nx/cache/18272716345049696206.commit",
+          "hash": "4664556114322093609"
+        },
+        {
+          "file": ".nx/cache/18272716345049696206.tar.gz",
+          "hash": "7079251042227540267"
+        },
+        {
           "file": ".nx/cache/cloud/2401.03.1/index.js",
           "hash": "12298577992480632049",
           "deps": [
@@ -363,19 +379,19 @@
         },
         {
           "file": ".nx/cache/cloud/verify.lock",
-          "hash": "13752871054841417999"
+          "hash": "3023845983514516326"
         },
         {
           "file": ".nx/cache/d/daemon.log",
-          "hash": "4114332871795063103"
+          "hash": "17177604256051650273"
         },
         {
           "file": ".nx/cache/d/server-process.json",
-          "hash": "4948234552528764383"
+          "hash": "14262496973926498789"
         },
         {
           "file": ".nx/cache/file-map.json",
-          "hash": "12207378606121554741"
+          "hash": "6877395587710598735"
         },
         {
           "file": ".nx/cache/lockfile.hash",
@@ -391,7 +407,7 @@
         },
         {
           "file": ".nx/cache/nx-console-project-graph/static/environment.js",
-          "hash": "4206136904260294467"
+          "hash": "11297588456499055551"
         },
         {
           "file": ".nx/cache/nx-console-project-graph/static/favicon.ico",
@@ -437,7 +453,7 @@
         },
         {
           "file": ".nx/cache/run.json",
-          "hash": "8891727291503395321"
+          "hash": "252237719331789875"
         },
         {
           "file": ".nx/cache/terminalOutputs/1406971133469632497",
@@ -446,6 +462,26 @@
         {
           "file": ".nx/cache/terminalOutputs/16679683161043683979",
           "hash": "4077730296409885674"
+        },
+        {
+          "file": ".nx/cache/terminalOutputs/18272716345049696206",
+          "hash": "2543493557223989279"
+        },
+        {
+          "file": ".nx/cache/terminalOutputs/3205184803561862343",
+          "hash": "11825370454815335960"
+        },
+        {
+          "file": ".nx/cache/terminalOutputs/4573761483779176510",
+          "hash": "14243248469258628588"
+        },
+        {
+          "file": ".nx/cache/terminalOutputs/5624063582008445571",
+          "hash": "7197536697774692514"
+        },
+        {
+          "file": ".nx/cache/terminalOutputs/9180433119438067153",
+          "hash": "16834461669672858915"
         },
         {
           "file": ".nx/cache/terminalOutputs/9978982811073941102",
@@ -497,7 +533,7 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "559075608532963101"
+          "hash": "11207605748583253840"
         },
         {
           "file": "package.json",
@@ -719,7 +755,7 @@
         },
         {
           "file": "src/app/core/animations/route-animation.ts",
-          "hash": "3252059391388140135"
+          "hash": "13283272052602001607"
         },
         {
           "file": "src/app/core/components/carousel/carousel.component.html",
@@ -755,7 +791,7 @@
         },
         {
           "file": "src/app/core/components/snackbar/snackbar.component.html",
-          "hash": "12991085395136135254"
+          "hash": "1916231931230090948"
         },
         {
           "file": "src/app/core/components/snackbar/snackbar.component.scss",
@@ -810,7 +846,7 @@
         },
         {
           "file": "src/app/core/services/dark-mode/dark-mode.service.ts",
-          "hash": "7013810890212475254",
+          "hash": "8214397621583873792",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -966,7 +1002,7 @@
         },
         {
           "file": "src/app/layout/components/logout-button/logout-button.component.ts",
-          "hash": "338477272909907870",
+          "hash": "8178787978697814228",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -1016,11 +1052,11 @@
         },
         {
           "file": "src/app/layout/components/navigation-panel-burger/navigation-panel-burger.component.html",
-          "hash": "16481662014614536001"
+          "hash": "10338719756379168839"
         },
         {
           "file": "src/app/layout/components/navigation-panel-burger/navigation-panel-burger.component.scss",
-          "hash": "4459137505645659129"
+          "hash": "18382546617556335368"
         },
         {
           "file": "src/app/layout/components/navigation-panel-burger/navigation-panel-burger.component.spec.ts",
@@ -1071,7 +1107,7 @@
         },
         {
           "file": "src/app/layout/layout.component.ts",
-          "hash": "11873235156950771300",
+          "hash": "1933021642596067773",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -1501,7 +1537,7 @@
         },
         {
           "file": "src/app/pages/work-experience/components/work-experience-content/work-experience-content.component.ts",
-          "hash": "11608287639040824876",
+          "hash": "448387413006936725",
           "deps": [
             "npm:@ngx-translate/core",
             "npm:rxjs"
@@ -2043,7 +2079,7 @@
         },
         {
           "file": "src/main.ts",
-          "hash": "3451279423709636207",
+          "hash": "9926328990970788747",
           "deps": [
             "npm:@ngx-translate/core",
             "npm:@ngx-translate/http-loader",
@@ -2109,6 +2145,10 @@
         {
           "file": "tsconfig.spec.json",
           "hash": "10685812502644337696"
+        },
+        {
+          "file": "src/assets/img/technologies/back-end/firebase.svg",
+          "hash": "15216168141529407911"
         }
       ]
     }
