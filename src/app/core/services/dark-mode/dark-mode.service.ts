@@ -15,7 +15,6 @@ export class DarkModeService {
 
     constructor(private _store$: Store<IDarkMode>) {
         this._store$.pipe(select(darkModeSelector)).subscribe((isDark) => {
-            console.log(isDark);
             this.isDark$.next(isDark);
         });
         this.isDark$.next(true);

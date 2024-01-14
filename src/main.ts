@@ -38,6 +38,10 @@ import {
 import { StoreModule, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
+import { languageSelectorReducer } from '@layout/store/language-selector-store/language-selector.reducers';
+import { logoutButtonReducer } from '@layout/store/logout-button-store/logout-button.reducers';
+import { spinnerReducer } from '@layout/store/spinner-store/spinner.reducer';
+
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
 import {
     githubReducer,
@@ -77,7 +81,10 @@ bootstrapApplication(AppComponent, {
             StoreModule.forRoot({}),
             StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
-            // StoreModule.forFeature('darkMode', darkModeReducer), // use forFeature for feature module
+            StoreModule.forFeature('darkMode', darkModeReducer),
+            StoreModule.forFeature('language', languageSelectorReducer),
+            StoreModule.forFeature('isLogout', logoutButtonReducer),
+            StoreModule.forFeature('spinner', spinnerReducer),
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
