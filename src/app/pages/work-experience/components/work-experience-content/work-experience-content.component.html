@@ -2,91 +2,99 @@
     <main class="work-container">
         <ul class="work-list">
             @for (work of workPlace$ | async; track work; let idx = $index) {
-            <li class="work-list__item">
-                <div class="item-header">
-                    <div
-                        class="item-header__logo"
-                        [ngClass]="
-                            work.company === 'FreshLimeSoft' ? 'white' : ''
-                        "
-                    >
-                        <img
-                            class="logo-icon"
-                            [src]="work.logoPath"
-                            [alt]="work.logoPath"
-                        />
-                    </div>
+                <li class="work-list__item">
+                    <div class="item-header">
+                        <div
+                            class="item-header__logo"
+                            [ngClass]="
+                                work.company === 'FreshLimeSoft' ? 'white' : ''
+                            "
+                        >
+                            <img
+                                class="logo-icon"
+                                [src]="work.logoPath"
+                                [alt]="work.logoPath"
+                            />
+                        </div>
 
-                    <span class="item-header__company">{{ work.company }}</span>
-                </div>
-                <div class="item-body">
-                    <span class="item-body__from">{{ work.from }}</span>
-                    <span class="item-body__to">{{ work.to }}</span>
-                    <span class="item-body__total">{{ work.workTime }}</span>
-                </div>
-                <div class="item-footer">
-                    <span class="item-footer__place">{{ work.place }}</span>
-                </div>
-                <div class="single-work-time">
-                    @if(workExp[idx].years > 0){
-                    {{ workExp[idx].years }}
-                    <div class="years">
-                        <cv-work-time-label
-                            [dateNumber]="workExp[idx].years"
-                            dateLabel="YEARS"
-                        ></cv-work-time-label>
-                    </div>
-                    } @if(workExp[idx].months > 0){
-                    <div class="months">
-                        {{ workExp[idx].months }}
-                        <span class="single-work-time__months-label">
-                            <cv-work-time-label
-                                [dateNumber]="workExp[idx].months"
-                                dateLabel="MONTHS"
-                            ></cv-work-time-label>
+                        <span class="item-header__company">
+                            {{ work.company }}
                         </span>
                     </div>
-                    } @if(workExp[idx].days > 0){
-                    <div class="days">
-                        {{ workExp[idx].days }}
-
-                        <cv-work-time-label
-                            [dateNumber]="workExp[idx].days"
-                            dateLabel="DAYS"
-                        ></cv-work-time-label>
+                    <div class="item-body">
+                        <span class="item-body__from">{{ work.from }}</span>
+                        <span class="item-body__to">{{ work.to }}</span>
+                        <span class="item-body__total">
+                            {{ work.workTime }}
+                        </span>
                     </div>
-                    }
-                </div>
-            </li>
+                    <div class="item-footer">
+                        <span class="item-footer__place">{{ work.place }}</span>
+                    </div>
+                    <div class="single-work-time">
+                        @if (workExp[idx].years > 0) {
+                            {{ workExp[idx].years }}
+                            <div class="years">
+                                <cv-work-time-label
+                                    [dateNumber]="workExp[idx].years"
+                                    [dateLabel]="workExp[idx].yearsLabel"
+                                ></cv-work-time-label>
+                            </div>
+                        }
+                        @if (workExp[idx].months > 0) {
+                            <div class="months">
+                                {{ workExp[idx].months }}
+                                <span class="single-work-time__months-label">
+                                    <cv-work-time-label
+                                        [dateNumber]="workExp[idx].months"
+                                        [dateLabel]="workExp[idx].monthsLabel"
+                                    ></cv-work-time-label>
+                                </span>
+                            </div>
+                        }
+                        @if (workExp[idx].days > 0) {
+                            <div class="days">
+                                {{ workExp[idx].days }}
+
+                                <cv-work-time-label
+                                    [dateNumber]="workExp[idx].days"
+                                    [dateLabel]="workExp[idx].daysLabel"
+                                ></cv-work-time-label>
+                            </div>
+                        }
+                    </div>
+                </li>
             }
         </ul>
         <div class="total-work-time">
-            @if(totalWorkTime.years > 0){
-            <div class="years">
-                {{ totalWorkTime.years }}
-                <cv-work-time-label
-                    [dateNumber]="totalWorkTime.years"
-                    dateLabel="YEARS"
-                ></cv-work-time-label>
-            </div>
-            } @if(totalWorkTime.months > 0){
-            <div class="months">
-                {{ totalWorkTime.months }}
-                <cv-work-time-label
-                    [dateNumber]="totalWorkTime.months"
-                    dateLabel="MONTHS"
-                ></cv-work-time-label>
-            </div>
-            } @if(totalWorkTime.days > 0){
-            <div class="days">
-                {{ totalWorkTime.days }}
-                <span class="total-work-time__days-label">
+            @if (totalWorkTime.years > 0) {
+                <div class="years">
+                    {{ totalWorkTime.years }}
                     <cv-work-time-label
-                        [dateNumber]="totalWorkTime.days"
-                        dateLabel="DAYS"
+                        [dateNumber]="totalWorkTime.years"
+                        dateLabel="YEARS"
                     ></cv-work-time-label>
-                </span>
-            </div>
+                </div>
+            }
+            @if (totalWorkTime.months > 0) {
+                <div class="months">
+                    {{ totalWorkTime.months }}
+                    <cv-work-time-label
+                        [dateNumber]="totalWorkTime.months"
+                        dateLabel="MONTHS"
+                    ></cv-work-time-label>
+                </div>
+            }
+            @if (totalWorkTime.days > 0) {
+                <div class="days">
+                    {{ totalWorkTime.days }}
+                    <span class="total-work-time__days-label">
+                        <cv-work-time-label
+                            [dateNumber]="totalWorkTime.days"
+                            dateLabel="DAYS"
+                        ></cv-work-time-label>
+                    </span>
+                </div>
             }
         </div>
     </main>

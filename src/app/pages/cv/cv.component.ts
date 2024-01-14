@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ICvFormat } from '@shared/models/cv-format.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
-import { DownloadImgComponent } from './components/download-img/download-img.component';
+import { DownloadImgContainerComponent } from './components/download-img/download-img-container.component';
 
 @Component({
     selector: 'cv-cv',
@@ -14,7 +14,7 @@ import { DownloadImgComponent } from './components/download-img/download-img.com
     styleUrls: ['./cv.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [DownloadImgComponent, TranslateModule],
+    imports: [DownloadImgContainerComponent, TranslateModule],
 })
 export class CvComponent {
     public cvList: Observable<ICvFormat[]> =

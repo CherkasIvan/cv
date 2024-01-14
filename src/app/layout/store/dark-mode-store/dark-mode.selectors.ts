@@ -1,8 +1,11 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { IDarkMode } from '../model/dark-mode.interface';
 
+export const darkModeFeatureSelector =
+    createFeatureSelector<IDarkMode>('darkMode');
+
 export const darkModeSelector = createSelector(
-    (state: IDarkMode) => state.isDark,
-    (isDark: boolean) => isDark,
+    darkModeFeatureSelector,
+    (state: IDarkMode) => state?.isDark ?? false,
 );

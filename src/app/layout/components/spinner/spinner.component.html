@@ -1,51 +1,51 @@
 <ng-template #isWhiteMode>
     @if (loading$ | async) {
-    <div
-        [ngClass]="spinnerStyle"
-        class="loader"
-    >
-        <div class="face">
-            <div class="circle"></div>
+        <div
+            [ngClass]="spinnerStyle"
+            class="loader"
+        >
+            <div class="face">
+                <div class="circle"></div>
+            </div>
+            <div class="face">
+                <div class="circle"></div>
+            </div>
         </div>
-        <div class="face">
-            <div class="circle"></div>
-        </div>
-    </div>
     }
 </ng-template>
 
 @if (spinnerStyle === 'layout') {
-<ng-container [ngTemplateOutlet]="isWhiteMode"></ng-container>
+    <ng-container [ngTemplateOutlet]="isWhiteMode"></ng-container>
 }
 
 <ng-template #isDarkMode>
     @if (loading$ | async) {
-    <div
-        [ngClass]="spinnerStyle"
-        class="circles"
-    >
-        <div class="circles">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-            <div class="circle4"></div>
-            <div class="circle5"></div>
-            <div class="circle6"></div>
-            <div class="circle7"></div>
-            <div class="circle8"></div>
-            <div class="circle9"></div>
-            <div class="circle10"></div>
-            <div class="circle11"></div>
-            <div class="circle12"></div>
-            <div class="circle13"></div>
-            <div class="circle14"></div>
-            <div class="circle15"></div>
-        </div>
+        <div
+            [ngClass]="spinnerStyle"
+            class="circles"
         >
-    </div>
+            <div class="circles">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+                <div class="circle5"></div>
+                <div class="circle6"></div>
+                <div class="circle7"></div>
+                <div class="circle8"></div>
+                <div class="circle9"></div>
+                <div class="circle10"></div>
+                <div class="circle11"></div>
+                <div class="circle12"></div>
+                <div class="circle13"></div>
+                <div class="circle14"></div>
+                <div class="circle15"></div>
+            </div>
+            >
+        </div>
     }
 </ng-template>
 
 @if (spinnerStyle === 'dark-layout') {
-<ng-container [ngTemplateOutlet]="isDarkMode"></ng-container>
+    <ng-container [ngTemplateOutlet]="isDarkMode"></ng-container>
 }

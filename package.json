@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "lint": "ng lint",
+    "start": "nx serve",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration development",
+    "lint": "nx lint",
     "prettier": "npx prettier . --write",
-    "test": "ng test",
-    "dev:ssr": "ng run cv:serve-ssr",
+    "test": "nx test",
+    "dev:ssr": "nx run cv:serve-ssr",
     "serve:ssr": "node dist/cv/server/main.js",
-    "build:ssr": "ng build && ng run cv:server",
-    "prerender": "ng run cv:prerender"
+    "build:ssr": "nx build && nx run cv:server",
+    "prerender": "nx run cv:prerender"
   },
   "private": true,
   "dependencies": {
@@ -80,6 +80,8 @@
     "@angular-eslint/template-parser": "17.1.1",
     "@angular/cli": "~17.0.9",
     "@angular/compiler-cli": "^17.0.8",
+    "@nx/angular": "17.1.3",
+    "@nx/workspace": "17.1.3",
     "@schematics/angular": "^17.0.9",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/dom-to-image": "^2.6.7",
@@ -99,6 +101,7 @@
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "nx": "17.1.3",
     "prettier": "^3.1.1",
     "typescript": "<5.3.0",
     "vite-plugin-pwa": "^0.17.4"

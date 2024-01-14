@@ -1,29 +1,29 @@
 <div class="links-container">
     <ul class="links-list">
         @for (link of socialMediaLinks$ | async; track link) {
-        <li class="links-list__item">
-            <div
-                class="social-media-container"
-                [ngClass]="modeTheme ? 'dark-layout' : 'layout'"
-                cdkScrollable
-                matTooltipClass="link-tooltip"
-                [matTooltip]="link.alt + ': ' + link.link"
-                matTooltipPosition="above"
-            >
-                <a
-                    [href]="getSantizeUrl(link?.link)"
-                    [target]="pwaView ? '_self' : '_blank'"
-                    rel="noopener noreferrer"
-                    class="social-media social-media__back"
+            <li class="links-list__item">
+                <div
+                    class="social-media-container"
+                    [ngClass]="modeTheme ? 'dark-layout' : 'layout'"
+                    cdkScrollable
+                    matTooltipClass="link-tooltip"
+                    [matTooltip]="link.alt + ': ' + link.link"
+                    matTooltipPosition="above"
                 >
-                    <img
-                        [src]="link?.iconPath"
-                        [alt]="link?.alt"
-                        class="social-media__img"
-                    />
-                </a>
-            </div>
-        </li>
+                    <a
+                        [href]="getSantizeUrl(link?.link)"
+                        [target]="pwaView ? '_self' : '_blank'"
+                        rel="noopener noreferrer"
+                        class="social-media social-media__back"
+                    >
+                        <img
+                            [src]="link?.iconPath"
+                            [alt]="link?.alt"
+                            class="social-media__img"
+                        />
+                    </a>
+                </div>
+            </li>
         }
     </ul>
 </div>

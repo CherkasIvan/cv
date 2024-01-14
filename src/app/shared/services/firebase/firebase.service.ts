@@ -1,10 +1,12 @@
+import { Observable } from 'rxjs';
+
 import { Injectable } from '@angular/core';
 import {
     AngularFireDatabase,
     AngularFireList,
 } from '@angular/fire/compat/database';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-import { IFileUpload } from '@app/shared/models/file-upload.interface';
+
 import { IContacts } from '@shared/models/contacts.interface';
 import { ICvFormat } from '@shared/models/cv-format.interface';
 import { IEducation } from '@shared/models/education.interface';
@@ -13,7 +15,8 @@ import { IProfilePhoto } from '@shared/models/profile-photo.interface';
 import { ISocialMedia } from '@shared/models/social-media.interface';
 import { ITechnologies } from '@shared/models/technologies.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
-import { Observable } from 'rxjs';
+
+import { IFileUpload } from '@app/shared/models/file-upload.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -34,7 +37,7 @@ export class FirebaseService {
     socialMediaLinksCollection$!: Observable<ISocialMedia[]>;
     workExperienceCollection$!: Observable<IWorkExperience[]>;
     projectTechCollection$!: Observable<ITechnologies[]>;
-    educarionCollection$!: Observable<IEducation[]>;
+    educationCollection$!: Observable<IEducation[]>;
     charts$: AngularFireList<IFileUpload> | undefined;
 
     constructor(
@@ -159,12 +162,12 @@ export class FirebaseService {
     }
 
     getEducation(): Observable<IEducation[]> {
-        this.educarionCollection$ = collectionData(
+        this.educationCollection$ = collectionData(
             collection(this._firestore, 'education'),
             {
                 idField: 'id',
             },
         ) as Observable<IEducation[]>;
-        return this.educarionCollection$;
+        return this.educationCollection$;
     }
 }

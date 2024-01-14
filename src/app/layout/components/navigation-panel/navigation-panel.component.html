@@ -10,15 +10,15 @@
         <nav class="navigation-container">
             <ul class="navigation-list">
                 @for (link of navigators; track link; let i = $index) {
-                <li class="navigation-list__item">
-                    <a
-                        routerLink="{{ link.link }}"
-                        class="item-link"
-                        [routerLinkActive]="['active']"
-                    >
-                        {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
-                    </a>
-                </li>
+                    <li class="navigation-list__item">
+                        <a
+                            routerLink="{{ link.link }}"
+                            class="item-link"
+                            [routerLinkActive]="['active']"
+                        >
+                            {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
+                        </a>
+                    </li>
                 }
             </ul>
         </nav>

@@ -8,6 +8,8 @@ import { ITotalWorkTime } from '@shared/models/total-work-time.interface';
 import { IWorkExperience } from '@shared/models/work-experience.interface';
 import { FirebaseService } from '@shared/services/firebase/firebase.service';
 
+import { EWorkExperienceLabel } from '@utils/enum/work-experience-label.enum';
+
 import { WorkTimeLabelComponent } from '../work-time-label/work-time-label.component';
 
 @Component({
@@ -28,7 +30,14 @@ export class WorkExperienceContentComponent implements OnInit {
     public workPlace$: Observable<IWorkExperience[]> =
         this._firebaseService.getWorkExperience();
     public workExp: ITotalWorkTime[] = [];
-    public totalWorkTime: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+    public totalWorkTime: ITotalWorkTime = {
+        years: 0,
+        yearsLabel: '',
+        months: 0,
+        monthsLabel: '',
+        days: 0,
+        daysLabel: '',
+    };
 
     constructor(private readonly _firebaseService: FirebaseService) {}
 
@@ -51,17 +60,56 @@ export class WorkExperienceContentComponent implements OnInit {
         const difference: Date = new Date(
             Math.abs(workStartEnd.workEnd - workStartEnd.workStart),
         );
-        let singleWorkTerm: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+        let singleWorkTerm: ITotalWorkTime = {
+            years: 0,
+            yearsLabel: '',
+            months: 0,
+            monthsLabel: '',
+            days: 0,
+            daysLabel: '',
+        };
         singleWorkTerm = {
             years: difference.getUTCFullYear() - 1970,
+            yearsLabel: this._setPeriodLabel(
+                difference.getUTCFullYear() - 1970,
+                'years',
+            ),
             months: difference.getUTCMonth() + 1,
+            monthsLabel: this._setPeriodLabel(
+                difference.getUTCMonth() + 1,
+                'months',
+            ),
             days: difference.getUTCDate() - 1,
+            daysLabel: this._setPeriodLabel(
+                difference.getUTCDate() - 1,
+                'days',
+            ),
         };
+        console.log(singleWorkTerm);
         this.workExp.push(singleWorkTerm);
     }
 
+    private _getPeriodKey(period: number, label: string) {
+        return `${label}_${
+            period === 1 ? 1 : period >= 2 && period <= 4 ? '2-4' : 'else'
+        }`;
+    }
+
+    private _setPeriodLabel(period: number, label: string): string {
+        return EWorkExperienceLabel[
+            this._getPeriodKey(
+                period,
+                label,
+            ) as keyof typeof EWorkExperienceLabel
+        ];
+    }
+
     private _totalWorkTerm(workExp: ITotalWorkTime[]) {
-        const result: ITotalWorkTime = { years: 0, months: 0, days: 0 };
+        const result: ITotalWorkTime = {
+            years: 0,
+            months: 0,
+            days: 0,
+        };
         workExp.forEach((work: ITotalWorkTime) => {
             result.years += work.years;
             result.months += work.months;
@@ -71,6 +119,7 @@ export class WorkExperienceContentComponent implements OnInit {
         result.months = result.months % 12;
         result.months += Math.floor(result.days / 31);
         result.days = result.days % 31;
+
         this.totalWorkTime = result;
     }
 
@@ -98,16 +147,3 @@ export class WorkExperienceContentComponent implements OnInit {
             .subscribe();
     }
 }
-
-// tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
-// this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
-// })
-// workPlaces.forEach((work) => {
-//   work.workTime = this.totalWorkTime(work.from, work.to);
-// });
-// this.totalWorkTimeEverInMonth = this.workExp.reduce(
-//   (start: number, end: number) => start + end,
-//   0
-// ))
-// this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
-// }

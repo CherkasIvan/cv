@@ -7,16 +7,17 @@
         [ngClass]="(currentTheme$ | async) ? 'dark' : 'white'"
     >
         @if (downloadPath) {
-        <a
-            [href]="downloadPath"
-            class="button__label"
-        >
-            {{ label }}
-        </a>
-        } @if (!downloadPath) {
-        <a class="button__label">
-            {{ label }}
-        </a>
+            <a
+                [href]="downloadPath"
+                class="button__label"
+            >
+                {{ label }}
+            </a>
+        }
+        @if (!downloadPath) {
+            <a class="button__label">
+                {{ label }}
+            </a>
         }
     </button>
 </div>

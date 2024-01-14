@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
@@ -6,6 +6,7 @@ import {
     Component,
     HostBinding,
     OnDestroy,
+    OnInit,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
@@ -14,7 +15,6 @@ import { Store, select } from '@ngrx/store';
 import { AuthService } from '@auth/services/auth.service';
 
 import { routeAnimations } from '@core/animations/route-animation';
-import { DarkModeService } from '@core/services/dark-mode/dark-mode.service';
 
 import { ModalOutletComponent } from '@layout/components/modal-outlet/modal-outlet.component';
 
@@ -27,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InitialContentComponent } from './components/initial-content/initial-content.component';
 import { NavigationPanelComponent } from './components/navigation-panel/navigation-panel.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { darkModeSelector } from './store/dark-mode-store/dark-mode.selectors';
 import { setLogoutDialogSuccess } from './store/logout-button-store/logout-button.actions';
 import { logoutButtonSelector } from './store/logout-button-store/logout-button.selectors';
 import { ILogoutButton } from './store/model/logout-button.interface';
@@ -52,11 +53,10 @@ import { ILogoutButton } from './store/model/logout-button.interface';
         AsyncPipe,
     ],
 })
-export class LayoutComponent implements OnDestroy {
+export class LayoutComponent implements OnDestroy, OnInit {
     @HostBinding('@fadeAnimation') fade = 'in';
 
-    public currentTheme$: BehaviorSubject<boolean> =
-        this._darkModeService.isDark$;
+    public currentTheme$ = this._store$.pipe(select(darkModeSelector));
     public navigation$: Observable<INavigation[]> =
         this._firebaseService.getNavigation();
     public currentRoute!: string;
@@ -70,10 +70,9 @@ export class LayoutComponent implements OnDestroy {
 
     constructor(
         private readonly _router: Router,
-        private readonly _darkModeService: DarkModeService,
         private readonly _localStorageService: localStorageService,
         private readonly _firebaseService: FirebaseService,
-        private readonly _store$: Store<ILogoutButton>,
+        private readonly _store$: Store<ILogoutButton | any>,
         private readonly _authService: AuthService,
     ) {
         this.routerSubscription$.add(
@@ -86,13 +85,22 @@ export class LayoutComponent implements OnDestroy {
         );
     }
 
+    ngOnInit() {
+        console.log(
+            this.showLogoutModal$.subscribe((el: unknown) => console.log(el)),
+        );
+
+        console.log(
+            this.currentTheme$.subscribe((el: unknown) => console.log(el)),
+        );
+    }
+
     public confirmLogout() {
         this._authService.signOut();
         this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 
     public closeLogoutDialog() {
-        // this._logoutDialogService.closeDialog();
         this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 

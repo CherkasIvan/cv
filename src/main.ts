@@ -1,3 +1,10 @@
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 import {
     HttpClient,
     provideHttpClient,
@@ -20,9 +27,7 @@ import {
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { mainRoutes } from '@app/app-routing.routes';
-import { AppComponent } from '@app/app.component';
-import { environment } from '@env/environment';
+
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -32,21 +37,22 @@ import {
 } from '@ngrx/router-store';
 import { StoreModule, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
 import {
     githubReducer,
     githubReposFeatureKey,
 } from '@pages/projects/projects-store/github.reducers';
-import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+
+import { environment } from '@env/environment';
+
+import { mainRoutes } from '@app/app-routing.routes';
+import { AppComponent } from '@app/app.component';
+import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
-import { globalSetReducers } from './app/layout/store';
+import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,8 +74,10 @@ bootstrapApplication(AppComponent, {
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
-            StoreModule.forRoot(globalSetReducers),
+            StoreModule.forRoot({}),
+            StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
+            // StoreModule.forFeature('darkMode', darkModeReducer), // use forFeature for feature module
             EffectsModule.forRoot([GithubEffects]),
             StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
