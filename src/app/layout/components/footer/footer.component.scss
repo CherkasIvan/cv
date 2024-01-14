@@ -1,0 +1,38 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as glass;
+
+.cv-footer {
+    padding: 0 5%;
+    @include glass.footer_glassmorphism;
+
+    .footer-container {
+        @include flex-d_column;
+
+        .personal-data-container {
+            @include flex-j_center;
+
+            .links-list,
+            .personal-data-list {
+                display: flex;
+            }
+
+            .personal-data-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                width: 75%;
+
+                &__item {
+                    @include flex-j_center;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+}
+
+.dark-layout {
+    .item-img {
+        filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg)
+            brightness(109%) contrast(100%);
+    }
+}

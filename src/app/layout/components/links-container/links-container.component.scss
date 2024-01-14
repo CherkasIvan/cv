@@ -1,0 +1,97 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
+.links-container {
+    @include flex-j_center;
+
+    .links-list,
+    .personal-data-list {
+        display: flex;
+    }
+
+    .social-media-container {
+        position: relative;
+        perspective: 500px;
+        transition: 250ms;
+        transition: all 0.5s ease-in-out;
+        margin: 32px;
+        width: 45px;
+        height: 45px;
+
+        .social-media {
+            position: absolute;
+            transform: rotateZ(15deg);
+            transform-origin: bottom right;
+            transform-style: preserve-3d;
+            z-index: -1;
+            transition: 250ms;
+            will-change: transform;
+            inset: 0;
+            box-shadow: 16px 0 40px #e4e4e4;
+            border-radius: 32px;
+            width: inherit;
+            height: inherit;
+        }
+
+        .social-media__back {
+            background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+        }
+
+        .social-media__img {
+            position: absolute;
+            transform-origin: top left;
+            transform-style: preserve-3d;
+            z-index: 1;
+            backdrop-filter: blur(20px);
+            transition: 250ms;
+            inset: 0;
+            border-radius: 32px;
+            background-color: #ffffff33;
+            width: inherit;
+            height: inherit;
+            overflow: hidden;
+
+            svg.frame {
+                width: inherit;
+                height: inherit;
+
+                rect {
+                    width: inherit;
+                    height: inherit;
+                    fill: none;
+                    stroke-width: 4;
+                }
+            }
+
+            svg.icon {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                inset: 50% 0 0 50%;
+            }
+        }
+
+        &:hover {
+            transition: all 0.5s ease-in-out;
+
+            & > .social-media__back {
+                transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg)
+                    rotateY(-20deg);
+                background: linear-gradient(135deg, #ff7979 -20%, #f0000f 120%);
+            }
+
+            & > .social-media__img {
+                transform: translateZ(80px) translateY(-5px) rotateX(15deg)
+                    rotateY(15deg);
+            }
+        }
+    }
+
+    .dark-layout {
+        .social-media {
+            box-shadow: 16px 0 40px #ff7979;
+
+            & > .social-media__back {
+                background: linear-gradient(135deg, red -20%, yellow 120%);
+            }
+        }
+    }
+}

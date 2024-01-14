@@ -1,0 +1,246 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
+.loader {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    width: 20em;
+    height: 20em;
+    font-size: 10px;
+    @include flex-a_center-j_center;
+    z-index: 999999;
+}
+
+.loader .face {
+    position: absolute;
+    animation: animate 3s linear infinite;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.loader .face:nth-child(1) {
+    border-width: 0.2em 0.2em 0em 0em;
+    border-color: currentColor transparent transparent currentColor;
+    width: 100%;
+    height: 100%;
+    color: gold;
+    --deg: -45deg;
+    animation-direction: normal;
+}
+
+.loader .face:nth-child(2) {
+    border-width: 0.2em 0em 0em 0.2em;
+    border-color: currentColor currentColor transparent transparent;
+    width: 70%;
+    height: 70%;
+    color: lime;
+    --deg: -135deg;
+    animation-direction: reverse;
+}
+
+.loader .face .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(var(--deg));
+    transform-origin: left;
+    background-color: transparent;
+    width: 50%;
+    height: 0.1em;
+}
+
+.loader .face .circle::before {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    box-shadow:
+        0 0 2em,
+        0 0 4em,
+        0 0 6em,
+        0 0 8em,
+        0 0 10em,
+        0 0 0 0.5em rgba(255, 255, 0, 0.1);
+    border-radius: 50%;
+    background-color: currentColor;
+    width: 1em;
+    height: 1em;
+    content: '';
+}
+
+@keyframes animate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+body {
+    display: flex;
+    background: black;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.circles {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    width: 20em;
+    height: 20em;
+    font-size: 10px;
+    @include flex-a_center-j_center;
+    z-index: 999999;
+}
+
+.circles > * {
+    position: absolute;
+    animation: spin 4s infinite linear alternate;
+    box-sizing: border-box;
+    border: 5px solid powderblue;
+    border-top: 0 solid transparent;
+    border-left: 0 solid transparent;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.circle1 {
+    animation-delay: -5s;
+    border-color: rgba(163, 207, 213, 1);
+    width: 300px;
+    height: 300px;
+}
+
+.circle2 {
+    top: 10px;
+    left: 10px;
+    animation-delay: -4.9s;
+    border-color: rgba(163, 207, 213, 0.95);
+    width: 280px;
+    height: 280px;
+}
+
+.circle3 {
+    top: 20px;
+    left: 20px;
+    animation-delay: -4.8s;
+    border-color: rgba(163, 207, 213, 0.9);
+    width: 260px;
+    height: 260px;
+}
+
+.circle4 {
+    top: 30px;
+    left: 30px;
+    animation-delay: -4.7s;
+    border-color: rgba(163, 207, 213, 0.85);
+    width: 240px;
+    height: 240px;
+}
+
+.circle5 {
+    top: 40px;
+    left: 40px;
+    animation-delay: -4.6s;
+    border-color: rgba(163, 207, 213, 0.8);
+    width: 220px;
+    height: 220px;
+}
+
+.circle6 {
+    top: 50px;
+    left: 50px;
+    animation-delay: -4.5s;
+    border-color: rgba(163, 207, 213, 0.75);
+    width: 200px;
+    height: 200px;
+}
+
+.circle7 {
+    top: 60px;
+    left: 60px;
+    animation-delay: -4.4s;
+    border-color: rgba(163, 207, 213, 0.7);
+    width: 180px;
+    height: 180px;
+}
+
+.circle8 {
+    top: 70px;
+    left: 70px;
+    animation-delay: -4.3s;
+    border-color: rgba(163, 207, 213, 0.65);
+    width: 160px;
+    height: 160px;
+}
+
+.circle9 {
+    top: 80px;
+    left: 80px;
+    animation-delay: -4.2s;
+    border-color: rgba(163, 207, 213, 0.6);
+    width: 140px;
+    height: 140px;
+}
+
+.circle10 {
+    top: 90px;
+    left: 90px;
+    animation-delay: -4.1s;
+    border-color: rgba(163, 207, 213, 0.55);
+    width: 120px;
+    height: 120px;
+}
+
+.circle11 {
+    top: 100px;
+    left: 100px;
+    animation-delay: -4s;
+    border-color: rgba(163, 207, 213, 0.5);
+    width: 100px;
+    height: 100px;
+}
+
+.circle12 {
+    top: 110px;
+    left: 110px;
+    animation-delay: -3.9s;
+    border-color: rgba(163, 207, 213, 0.45);
+    width: 80px;
+    height: 80px;
+}
+
+.circle13 {
+    top: 120px;
+    left: 120px;
+    animation-delay: -3.8s;
+    border-color: rgba(163, 207, 213, 0.4);
+    width: 60px;
+    height: 60px;
+}
+
+.circle14 {
+    top: 130px;
+    left: 130px;
+    animation-delay: -3.7s;
+    border-color: rgba(163, 207, 213, 0.35);
+    width: 40px;
+    height: 40px;
+}
+
+.circle15 {
+    top: 140px;
+    left: 140px;
+    animation-delay: -3.6s;
+    border-color: rgba(163, 207, 213, 0.3);
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

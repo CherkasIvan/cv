@@ -1,0 +1,12 @@
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as *;
+
+.logout {
+    .logout-button,
+    .cancel-button {
+        @include default_button_glassmorphism;
+    }
+
+    .logout-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}

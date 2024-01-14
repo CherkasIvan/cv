@@ -1,0 +1,46 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as *;
+
+.modal-overlay {
+    @include flex-a_center-j_center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .modal {
+        border-radius: 4px;
+        background-color: white;
+        padding: 40px 20px;
+        min-width: 400px;
+        min-height: 500px;
+        &-content {
+            @include flex-a_center-d_column;
+            background: black;
+            padding: 10px;
+
+            &-message {
+                text-align: center;
+            }
+
+            &-actions {
+                display: flex;
+                column-gap: 15px;
+                align-items: center;
+
+                .cancel-button,
+                .confirm-button {
+                    @include default_button_glassmorphism;
+                }
+
+                .cancel-button:hover,
+                .confirm-button:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+}

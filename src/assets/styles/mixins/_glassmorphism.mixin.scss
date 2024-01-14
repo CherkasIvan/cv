@@ -1,0 +1,39 @@
+@use '../variables' as color;
+
+@mixin footer_glassmorphism {
+    opacity: 0.95;
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(244, 244, 244, 0.2);
+    border-left: 1px solid rgba(244, 244, 244, 0.2);
+    border-radius: 10px 10px 0 0;
+}
+
+@mixin header_glassmorphism {
+    opacity: 0.95;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    border-left: 1px solid rgba(244, 244, 244, 0.2);
+    border-radius: 0 0 10px 10px;
+}
+
+@mixin reset_glassmorphism {
+    opacity: 1;
+    backdrop-filter: initial;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0;
+}
+
+@mixin default_button_glassmorphism {
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease;
+    box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    width: fit-content;
+    color: color.$white;
+    font-size: 18px;
+}

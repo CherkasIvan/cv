@@ -1,0 +1,17 @@
+<div class="language-selector">
+    <input
+        class="language-selector__input"
+        type="checkbox"
+        name="language-toggle"
+        id="language-toggle"
+        [value]="language$"
+        (change)="toggle($event)"
+    />
+    <label
+        class="language-selector__label"
+        for="language-toggle"
+        [ngClass]="{
+            dark: isDark$ | async
+        }"
+    ></label>
+</div>

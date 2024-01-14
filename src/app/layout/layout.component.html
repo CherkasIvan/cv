@@ -1,0 +1,49 @@
+<div [ngClass]="(currentTheme$ | async) ? 'dark-layout' : 'layout'">
+    <div
+        class="layout-container"
+        [@routeAnimations]="prepareRoute(outlet)"
+    >
+        @if (showLogoutModal$ | async) {
+            <cv-modal-outlet (modalClosed)="closeLogoutDialog()">
+                <div class="modal-content">
+                    <p class="modal-message">
+                        Are you shure that you wont to exit from app?
+                    </p>
+                    <div class="modal-actions">
+                        <button
+                            class="cancel-button"
+                            type="button"
+                            (click)="closeLogoutDialog()"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            class="confirm-button"
+                            type="button"
+                            (click)="confirmLogout()"
+                        >
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+            </cv-modal-outlet>
+        }
+
+        <cv-navigation-panel
+            [navigators]="navigation$ | async"
+        ></cv-navigation-panel>
+
+        <cv-spinner
+            [spinnerStyle]="(currentTheme$ | async) ? 'dark-layout' : 'layout'"
+        ></cv-spinner>
+
+        @if (currentRoute === '/layout') {
+            <cv-initial-content></cv-initial-content>
+        }
+
+        <router-outlet #outlet="outlet"></router-outlet>
+        <cv-footer></cv-footer>
+    </div>
+
+    <cv-backgrounds [isDarkBackground]="currentTheme$ | async"></cv-backgrounds>
+</div>

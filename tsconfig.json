@@ -1,42 +1,45 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@angular/*": ["../node_modules/@angular/*"],
-      "@env/*": ["environments/*"],
-      "@app/*": ["app/*"],
-      "@assets/*": ["assets/*"],
-      "@shared/*": ["app/shared/*"],
-      "@pages/*": ["app/pages/*"],
-      "@core/*": ["app/core/*"],
-      "@utils/*": ["app/utils/*"],
-      "@standalone-components/*": ["app/standalone-components/*"]
-    },
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@angular/*": ["../node_modules/@angular/*"],
+            "@env/*": ["environments/*"],
+            "@utils/*": ["utils/*"],
+            "@store/*": ["app/store/*"],
+            "@app/*": ["app/*"],
+            "@assets/*": ["assets/*"],
+            "@shared/*": ["app/shared/*"],
+            "@pages/*": ["app/pages/*"],
+            "@core/*": ["app/core/*"],
+            "@auth/*": ["app/auth/*"],
+            "@layout/*": ["app/layout/*"]
+        },
 
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": false
-  }
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": false,
+        "lib": ["ES2022", "dom"]
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": false,
+        "_enabledBlockTypes": ["if", "switch", "for", "defer"]
+    }
 }
