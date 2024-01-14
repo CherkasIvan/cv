@@ -1,0 +1,134 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+
+.layout-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    .parallax {
+        -webkit-perspective: 1px;
+        perspective: 1px;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .parallax__layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .parallax__layer--base {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .parallax__layer--back {
+            -webkit-transform: translateZ(-2px) scale(3);
+            transform: translateZ(-2px) scale(3);
+        }
+
+        .parallax__layer--back2 {
+            -webkit-transform: translateZ(-6px) scale(5);
+            transform: translateZ(-6px) scale(5);
+        }
+
+        .parallax__layer--back3 {
+            -webkit-transform: translateZ(-12px) scale(6);
+            transform: translateZ(-12px) scale(6);
+        }
+
+        /* add some padding to force scrollbars */
+        .parallax__layer {
+            padding: 100vh 0;
+        }
+
+        .starfield > * {
+            background-image: radial-gradient(
+                    2px 2px at 40px 60px,
+                    #ccc,
+                    rgba(0, 0, 0, 0)
+                ),
+                radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
+                radial-gradient(
+                    2px 2px at 40px 60px,
+                    rgb(0, 255, 0),
+                    rgba(0, 0, 0, 0)
+                ),
+                radial-gradient(
+                    2px 2px at 110px 90px,
+                    rgb(255, 0, 0),
+                    rgba(0, 0, 0, 0)
+                ),
+                radial-gradient(
+                    2px 2px at 190px 150px,
+                    rgb(255, 200, 0),
+                    rgba(0, 0, 0, 0)
+                );
+            background-size: 200px 200px;
+            background-repeat: repeat;
+        }
+
+        .starfield > * {
+            position: absolute;
+            top: -250%;
+            left: 0;
+            width: 100%;
+            height: 500%;
+        }
+
+        .starfield span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .starfield span:nth-child(3) {
+            transform: rotate(69deg);
+        }
+
+        .starfield span:nth-child(4) {
+            transform: rotate(123deg);
+        }
+    }
+
+    .stars {
+        .bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            animation: spaceJam 120s linear infinite;
+            height: 100vh;
+        }
+
+        .background {
+            background: url('https://denis-creative.com/wp-content/uploads/2019/03/background.png');
+        }
+
+        .midground {
+            animation-duration: 60s;
+            background: url('https://denis-creative.com/wp-content/uploads/2019/03/midground.png');
+        }
+
+        .foreground {
+            animation-duration: 30s;
+            background: url('https://denis-creative.com/wp-content/uploads/2019/03/foreground.png');
+        }
+
+        @keyframes spaceJam {
+            100% {
+                background-position: -2500px -500px;
+            }
+        }
+    }
+}
+
+// .dark-layout {
+//     .item-img {
+//         filter: invert(100%) sepia(4%) saturate(7483%) hue-rotate(164deg) brightness(109%) contrast(100%);
+//     }
+// }

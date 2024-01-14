@@ -1,0 +1,133 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
+.button-container {
+    @include flex-a_center-j_sa;
+    flex-wrap: wrap;
+
+    .button {
+        display: inline-block;
+        position: relative;
+        border: none;
+        border-radius: 8px;
+        background: none;
+        width: 12rem;
+        height: 5rem;
+
+        &__label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include flex-a_center-j_center;
+            z-index: 1;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            overflow: hidden;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        &__label:hover {
+            letter-spacing: 3px;
+        }
+    }
+
+    .button .button__label::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: skewX(40deg) translateX(0);
+        transition: all 0.5s ease-out;
+        background: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.15),
+            transparent
+        );
+        width: 50%;
+        height: 100%;
+        content: '';
+    }
+
+    .button:hover .button__label::before {
+        transform: skewX(40deg) translateX(200%);
+    }
+
+    .button::before,
+    .button::after {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.4s ease-in-out;
+        transition-delay: 0s;
+        border-radius: 10px;
+        background: #f00;
+        width: 30px;
+        height: 10px;
+        content: '';
+    }
+
+    .button::before {
+        bottom: -5px;
+    }
+
+    .button::after {
+        top: -5px;
+    }
+
+    .button:hover::before,
+    .button:hover::after {
+        transition-delay: 0.3s;
+        border-radius: 30px;
+        width: 80%;
+        height: 50%;
+    }
+
+    .button:hover::before {
+        bottom: 0;
+    }
+
+    .button:hover::after {
+        top: 0;
+    }
+
+    .button::before,
+    .button::after {
+        box-shadow:
+            0 0 5px #a087fd,
+            0 0 15px #a087fd,
+            0 0 30px #a087fd,
+            0 0 60px #a087fd;
+        background: #a087fd;
+    }
+}
+
+.download {
+    .button.dark::before,
+    .button.dark::after {
+        box-shadow:
+            0 0 5px #ff7979,
+            0 0 15px #ff7979,
+            0 0 30px #ff7979,
+            0 0 60px #ff7979;
+        background: #ff7979;
+    }
+}
+
+.change-view {
+    .button.dark::before,
+    .button.dark::after {
+        box-shadow:
+            0 0 5px #ff7979,
+            0 0 15px #ff7979,
+            0 0 30px #ff7979,
+            0 0 60px #ff7979;
+        background: #ff7979;
+    }
+}

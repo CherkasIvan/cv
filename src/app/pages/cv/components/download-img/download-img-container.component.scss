@@ -1,0 +1,41 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
+.download-img {
+    .cv-container {
+        @include flex-a_center-j_center;
+        width: 100%;
+
+        .cv-item {
+            max-width: 65%;
+            @include flex-a_center-d_column;
+            gap: 20px;
+
+            .page {
+                border-radius: 8px;
+                max-width: 65%;
+            }
+        }
+
+        .button-block {
+            width: 60%;
+            @include flex-a_center-j_sa;
+            margin: 0 auto;
+
+            &__download {
+                -webkit-backdrop-filter: blur(15px);
+                backdrop-filter: blur(15px);
+                box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%);
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                border-radius: 8px;
+                background-color: rgba(255, 255, 255, 0.45);
+                padding: 10px 20px;
+                max-width: 65%;
+            }
+
+            &__download:hover {
+                transform: scale(1.1);
+                transition: all 0.5s ease-out;
+            }
+        }
+    }
+}

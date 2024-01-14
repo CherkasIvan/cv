@@ -1,0 +1,15 @@
+<div class="dark-mode-selector">
+    <input
+        #darkModeCheckBox
+        class="dark-mode-selector__input"
+        type="checkbox"
+        name="darkmode-toggle"
+        id="darkmode-toggle"
+        [value]="isChecked$"
+        (change)="changeView($event)"
+    />
+    <label
+        class="dark-mode-selector__label"
+        for="darkmode-toggle"
+    ></label>
+</div>

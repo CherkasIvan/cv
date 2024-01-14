@@ -1,0 +1,17 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/variables' as color;
+
+.snackbar {
+    @include flex-a_center-j_sb;
+
+    &-message {
+        color: color.$white;
+        font-weight: 700;
+    }
+
+    &-img {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+    }
+}

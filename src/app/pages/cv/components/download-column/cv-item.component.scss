@@ -1,34 +1,46 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+
 .cv-item-container {
-  display: flex;
-  margin: 0 auto;
-  justify-content: space-around;
+    @include flex-a_center-j_sa;
+    margin: 0 auto;
 
-  .cv-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    .cv-item {
+        @include flex-a_center-d_column;
+        gap: 20px;
 
-    &__img {
-      max-width: 65%;
-      border-radius: 8px;
+        &__button {
+            cursor: auto;
+            background-color: transparent;
+            width: fit-content;
+        }
+
+        &__img {
+            transition: all 0.5s ease-out;
+            cursor: pointer;
+            border-radius: 8px;
+            max-width: 65%;
+        }
+
+        &__img:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-out;
+        }
+
+        &__download {
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            transition: all 0.5s ease-out;
+            box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.45);
+            padding: 10px 20px;
+            max-width: 65%;
+        }
+
+        &__download:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-out;
+        }
     }
-
-    &__download {
-      background-color: rgba(255, 255, 255, 0.45);
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%);
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
-      padding: 10px 20px;
-      max-width: 65%;
-      transition: all 0.5s ease-out;
-    }
-
-    &__download:hover {
-      transition: all 0.5s ease-out;
-      transform: scale(1.1);
-    }
-  }
 }

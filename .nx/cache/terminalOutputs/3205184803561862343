@@ -1,0 +1,13 @@
+
+Linting "cv"...
+[0m[0m
+[0m[4mC:\Users\Disto\OneDrive\Рабочий стол\Projects\cv\src\app\layout\components\navigation-panel-burger\navigation-panel-burger.component.html[24m[0m
+[0m  [2m20:13[22m  [31merror[39m  click must be accompanied by either keyup, keydown or keypress event for accessibility  [2m@angular-eslint/template/click-events-have-key-events[22m[0m
+[0m  [2m20:13[22m  [31merror[39m  Elements with interaction handlers must be focusable                                    [2m@angular-eslint/template/interactive-supports-focus[22m[0m
+[0m  [2m39:9[22m   [31merror[39m  click must be accompanied by either keyup, keydown or keypress event for accessibility  [2m@angular-eslint/template/click-events-have-key-events[22m[0m
+[0m  [2m39:9[22m   [31merror[39m  Elements with interaction handlers must be focusable                                    [2m@angular-eslint/template/interactive-supports-focus[22m[0m
+[0m[0m
+[0m[31m[1m✖ 4 problems (4 errors, 0 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m
+Lint errors found in the listed files.
+

@@ -1,0 +1,18 @@
+<div class="snackbar">
+    <span class="snackbar-message">{{ data.message }}</span>
+
+    @if (data.isSuccess) {
+        <img
+            class="snackbar-img"
+            src="assets/img/snackbar/accept.png"
+            alt="snackbar accept"
+        />
+    }
+    @if (!data.isSuccess) {
+        <img
+            class="snackbar-img"
+            src="assets/img/snackbar/reject.png"
+            alt="snackbar reject"
+        />
+    }
+</div>

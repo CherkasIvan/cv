@@ -1,108 +1,148 @@
-import { Component, OnInit } from '@angular/core';
-import { IWorkExperience } from '@shared/models/work-experience.interface';
-
-import { FirebaseService } from '@shared/services/firebase/firebase.service';
-
-import * as moment from 'moment';
+import { TranslateModule } from '@ngx-translate/core';
 import { Observable, tap } from 'rxjs';
 
+import { AsyncPipe, NgClass, NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { ITotalWorkTime } from '@shared/models/total-work-time.interface';
+import { IWorkExperience } from '@shared/models/work-experience.interface';
+import { FirebaseService } from '@shared/services/firebase/firebase.service';
+
+import { EWorkExperienceLabel } from '@utils/enum/work-experience-label.enum';
+
+import { WorkTimeLabelComponent } from '../work-time-label/work-time-label.component';
+
 @Component({
-  selector: 'cv-work-experience-content',
-  templateUrl: './work-experience-content.component.html',
-  styleUrls: ['./work-experience-content.component.scss']
+    selector: 'cv-work-experience-content',
+    templateUrl: './work-experience-content.component.html',
+    styleUrls: ['./work-experience-content.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgFor,
+        NgClass,
+        AsyncPipe,
+        TranslateModule,
+        WorkTimeLabelComponent,
+    ],
 })
 export class WorkExperienceContentComponent implements OnInit {
-  public workPlace$!: Observable<IWorkExperience[]>;
-  public workExp: number[] = [];
-  public totalWorkTimeEverInMonth!: number;
-  public totalWorkTimeEverConverted!: string;
+    public workPlace$: Observable<IWorkExperience[]> =
+        this._firebaseService.getWorkExperience();
+    public workExp: ITotalWorkTime[] = [];
+    public totalWorkTime: ITotalWorkTime = {
+        years: 0,
+        yearsLabel: '',
+        months: 0,
+        monthsLabel: '',
+        days: 0,
+        daysLabel: '',
+    };
 
-  constructor(private firebaseService: FirebaseService) {}
+    constructor(private readonly _firebaseService: FirebaseService) {}
 
-  public totalWorkTime(from: string, to: string) {
-    const dateFromFormat = moment(from, 'DD-MM-YYYY');
-    const dateToFormat = moment(to, 'DD-MM-YYYY');
-
-    if (to === 'present time' || to === 'по настоящее время') {
-      const today = moment(new Date()).format('DD-MM-YYYY');
-      const now = moment(today, 'DD-MM-YYYY');
-      const diff = moment(now).diff(moment(dateFromFormat), 'days');
-      return this.workTimeFormat(diff);
-    } else {
-      const diff = moment(dateToFormat).diff(moment(dateFromFormat), 'days');
-      return this.workTimeFormat(diff);
-    }
-  }
-
-  public workTimeFormat(days: number) {
-    const months = Math.ceil(days / 30);
-    this.workExp.push(months);
-    let yearsActual;
-    let actualWorkTime;
-    let monthActual = months;
-
-    if (months >= 12) {
-      yearsActual = Math.round(months / 12);
-      monthActual = months - yearsActual * 12;
-      actualWorkTime =
-        (yearsActual === 1
-          ? `${yearsActual} год`
-          : `${yearsActual} года` && monthActual < 5) +
-        ' ' +
-        (monthActual < 5 && monthActual > 1
-          ? `${monthActual} месяца`
-          : `${monthActual} месяцев`);
-    } else {
-      actualWorkTime =
-        monthActual < 5 && monthActual > 1
-          ? `${monthActual} месяца`
-          : `${monthActual} месяцев`;
-    }
-    return actualWorkTime;
-  }
-
-  private countAndConvertTotalWorkTime(time: number) {
-    const years = Math.trunc(time / 12);
-    const months = time % 12;
-    let currentYear;
-    let currentMonths;
-    if (years === 1) {
-      currentYear = `${years} год`;
-    }
-    if (years > 4) {
-      currentYear = `${years} лет`;
-    } else {
-      currentYear = `${years} года`;
+    private _parseDate(date: string[]) {
+        {
+            let workDate: number;
+            if (date[0] !== 'Present time') {
+                const day = +date[0];
+                const months = +date[1];
+                const year = +date[2];
+                workDate = new Date(year, months, day).getTime();
+            } else {
+                workDate = new Date().getTime();
+            }
+            return workDate;
+        }
     }
 
-    if (months === 1) {
-      currentMonths = `${months} месяц`;
+    private _workTerm(workStartEnd: { workStart: number; workEnd: number }) {
+        const difference: Date = new Date(
+            Math.abs(workStartEnd.workEnd - workStartEnd.workStart),
+        );
+        let singleWorkTerm: ITotalWorkTime = {
+            years: 0,
+            yearsLabel: '',
+            months: 0,
+            monthsLabel: '',
+            days: 0,
+            daysLabel: '',
+        };
+        singleWorkTerm = {
+            years: difference.getUTCFullYear() - 1970,
+            yearsLabel: this._setPeriodLabel(
+                difference.getUTCFullYear() - 1970,
+                'years',
+            ),
+            months: difference.getUTCMonth() + 1,
+            monthsLabel: this._setPeriodLabel(
+                difference.getUTCMonth() + 1,
+                'months',
+            ),
+            days: difference.getUTCDate() - 1,
+            daysLabel: this._setPeriodLabel(
+                difference.getUTCDate() - 1,
+                'days',
+            ),
+        };
+        this.workExp.push(singleWorkTerm);
     }
-    if (months > 1 && months < 5) {
-      currentMonths = `${months} месяца`;
-    } else {
-      currentMonths = `${months} месяцев`;
+
+    private _getPeriodKey(period: number, label: string) {
+        return `${label}_${
+            period === 1 ? 1 : period >= 2 && period <= 4 ? '2-4' : 'else'
+        }`;
     }
-    this.totalWorkTimeEverConverted = currentYear + ' ' + currentMonths;
-  }
 
-  ngOnInit(): void {
-    this.workPlace$ = this.firebaseService.getWorkExperience();
-    this.workPlace$
-      .pipe
-      // tap(workPlaces => { workPlaces.forEach(work => work.workTime = this.totalWorkTime)
-      // this.totalWorkTimeEverInMonth = this.workExp.reduce((start, end) => start + end,0)
-      // })
-      ()
-      .subscribe();
-    // workPlaces.forEach((work) => {
-    //   work.workTime = this.totalWorkTime(work.from, work.to);
-    // });
-    // this.totalWorkTimeEverInMonth = this.workExp.reduce(
-    //   (start: number, end: number) => start + end,
-    //   0
-    // ))
+    private _setPeriodLabel(period: number, label: string): string {
+        return EWorkExperienceLabel[
+            this._getPeriodKey(
+                period,
+                label,
+            ) as keyof typeof EWorkExperienceLabel
+        ];
+    }
 
-    this.countAndConvertTotalWorkTime(this.totalWorkTimeEverInMonth);
-  }
+    private _totalWorkTerm(workExp: ITotalWorkTime[]) {
+        const result: ITotalWorkTime = {
+            years: 0,
+            months: 0,
+            days: 0,
+        };
+        workExp.forEach((work: ITotalWorkTime) => {
+            result.years += work.years;
+            result.months += work.months;
+            result.days += work.days;
+        });
+        result.years += Math.floor(result.months / 12);
+        result.months = result.months % 12;
+        result.months += Math.floor(result.days / 31);
+        result.days = result.days % 31;
+
+        this.totalWorkTime = result;
+    }
+
+    ngOnInit(): void {
+        this.workPlace$
+            .pipe(
+                tap((works: IWorkExperience[]) => {
+                    works.map((echWorkStartEndTime: IWorkExperience) => {
+                        const workStartEnd: {
+                            workStart: number;
+                            workEnd: number;
+                        } = {
+                            workStart: this._parseDate(
+                                echWorkStartEndTime.from.split('-'),
+                            ),
+                            workEnd: this._parseDate(
+                                echWorkStartEndTime.to.split('-'),
+                            ),
+                        };
+                        this._workTerm(workStartEnd);
+                        this._totalWorkTerm(this.workExp);
+                    });
+                }),
+            )
+            .subscribe();
+    }
 }
