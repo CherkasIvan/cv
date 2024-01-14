@@ -6,7 +6,6 @@ import {
     Component,
     HostBinding,
     OnDestroy,
-    OnInit,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
@@ -53,7 +52,7 @@ import { ILogoutButton } from './store/model/logout-button.interface';
         AsyncPipe,
     ],
 })
-export class LayoutComponent implements OnDestroy, OnInit {
+export class LayoutComponent implements OnDestroy {
     @HostBinding('@fadeAnimation') fade = 'in';
 
     public currentTheme$ = this._store$.pipe(select(darkModeSelector));
@@ -82,16 +81,6 @@ export class LayoutComponent implements OnDestroy, OnInit {
                     : null;
                 this._localStorageService.setRout(this.currentRoute);
             }),
-        );
-    }
-
-    ngOnInit() {
-        console.log(
-            this.showLogoutModal$.subscribe((el: unknown) => console.log(el)),
-        );
-
-        console.log(
-            this.currentTheme$.subscribe((el: unknown) => console.log(el)),
         );
     }
 

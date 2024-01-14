@@ -85,7 +85,6 @@ export class WorkExperienceContentComponent implements OnInit {
                 'days',
             ),
         };
-        console.log(singleWorkTerm);
         this.workExp.push(singleWorkTerm);
     }
 
