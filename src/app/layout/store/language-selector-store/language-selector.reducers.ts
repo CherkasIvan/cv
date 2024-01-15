@@ -12,5 +12,8 @@ export const initialLanguageModeState: LanguageModeState = {
 
 export const languageSelectorReducer = createReducer(
     initialLanguageModeState,
-    on(setLanguageSuccess, (state, { language }) => ({ language })),
+    on(setLanguageSuccess, (state, { language }) => ({
+        ...state,
+        language,
+    })),
 );

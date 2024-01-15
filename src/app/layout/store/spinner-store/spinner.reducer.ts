@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { ISpinner } from '../model/spinner.interface';
-import { spinnerWork } from './spinner.actions';
+import { hideSpinner, showSpinner } from './spinner.actions';
 
 export const initialSpinnerModeState: ISpinner = {
     isSpinnerOn: false,
@@ -9,5 +9,12 @@ export const initialSpinnerModeState: ISpinner = {
 
 export const spinnerReducer = createReducer(
     initialSpinnerModeState,
-    on(spinnerWork, (state, { isSpinnerOn }) => ({ isSpinnerOn })),
+    on(showSpinner, (state) => ({
+        ...state,
+        isSpinnerOn: true,
+    })),
+    on(hideSpinner, (state) => ({
+        ...state,
+        isSpinnerOn: false,
+    })),
 );

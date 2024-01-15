@@ -9,5 +9,8 @@ export const initialLogoutModeState: ILogoutButton = {
 
 export const logoutButtonReducer = createReducer(
     initialLogoutModeState,
-    on(setLogoutDialogSuccess, (state, { isLogout }) => ({ isLogout })),
+    on(setLogoutDialogSuccess, (state, { isLogout }) => ({
+        ...state,
+        isLogout,
+    })),
 );
