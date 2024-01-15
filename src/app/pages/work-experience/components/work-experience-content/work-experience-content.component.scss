@@ -1,71 +1,78 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../../assets/styles/variables' as color;
 .work-experience-content {
-  .work-container {
-    width: 100%;
-    text-align: center;
+    .work-container {
+        width: 100%;
+        text-align: center;
 
-    .work-list {
-      width: 100%;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            width: 100%;
 
-      &__item {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+            &__item {
+                @include flex-d_column;
+                gap: 1rem;
 
-        .item-header,
-        .item-body,
-        .item-footer {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          justify-content: center;
+                .item-header,
+                .item-body,
+                .item-footer {
+                    @include flex-a_center-j_center;
+                    gap: 10px;
 
-          &__company {
-            font-weight: 700;
-            font-size: 20px;
-          }
+                    &__company {
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
 
-          &__logo {
-            cursor: pointer;
-            width: fit-content;
-            border-radius: 8px;
-            box-shadow:
-              0 14px 28px rgba(0, 0, 0, 0.25),
-              0 10px 10px rgba(0, 0, 0, 0.22);
-            transition: all 0.5s ease-out;
-            transform: scale(1);
+                    &__logo {
+                        transform: scale(1);
+                        transition: all 0.5s ease-out;
+                        cursor: pointer;
+                        box-shadow:
+                            0 14px 28px rgba(0, 0, 0, 0.25),
+                            0 10px 10px rgba(0, 0, 0, 0.22);
+                        border-radius: 8px;
+                        width: fit-content;
 
-            .logo-icon {
-              height: 200px;
-              border-radius: 8px;
+                        .logo-icon {
+                            border-radius: 8px;
+                            height: 200px;
+                        }
+                    }
+
+                    &__logo:hover {
+                        transform: scale(1.05);
+                        transition: all 0.5s ease-out;
+                    }
+
+                    .white {
+                        background-color: color.$white;
+                    }
+                }
+
+                .item-header {
+                    flex-direction: column-reverse;
+                }
+
+                .item-body {
+                    font-weight: 600;
+                    font-size: 18px;
+                }
             }
-          }
-
-          &__logo:hover {
-            transition: all 0.5s ease-out;
-            transform: scale(1.05);
-          }
-
-          .white {
-            background-color: #fff;
-          }
         }
 
-        .item-header {
-          flex-direction: column-reverse;
+        .total-experience {
+            margin-top: 50px;
         }
 
-        .item-body {
-          font-weight: 600;
-          font-size: 18px;
+        .single-work-time,
+        .total-work-time {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
         }
-      }
     }
-
-    .total-experience {
-      margin-top: 50px;
-    }
-  }
 }

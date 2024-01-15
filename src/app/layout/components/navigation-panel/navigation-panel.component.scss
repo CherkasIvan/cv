@@ -1,0 +1,103 @@
+@use '../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../assets/styles/mixins/glassmorphism.mixin' as glass;
+
+.navigation-panel {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    @include glass.header_glassmorphism;
+    z-index: 100;
+
+    .container {
+        @include flex-a_center-j_sb;
+        min-width: 100%;
+
+        .logo {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+        }
+
+        .navigation-container {
+            @include flex-a_center;
+            gap: 1rem;
+
+            .navigation-list {
+                display: flex;
+                column-gap: 15px;
+                margin: 0 10px;
+
+                &__item {
+                    justify-content: center;
+                    justify-self: center;
+                    width: fit-content;
+                    font-size: 20px;
+
+                    .item-link {
+                        position: relative;
+                        -webkit-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                        padding: 1rem 0;
+                        color: #ccccff;
+                        font-weight: bold;
+                        line-height: 1;
+                    }
+
+                    .item-link::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+
+                &__item:hover {
+                    .item-link {
+                        border-bottom: 4px solid #cc0033;
+                        border-radius: 4px;
+                        color: #cc0033;
+                    }
+                }
+
+                .active {
+                    -webkit-transition: all 0.1s ease;
+                    transition: all 0.1s ease;
+                    border-bottom: 4px solid #ccff33;
+                    border-radius: 4px;
+                    color: #ccff33;
+                }
+            }
+        }
+
+        .personal-area {
+            @include flex-a_center;
+            column-gap: 20px;
+
+            .selectors {
+                @include flex-d_column;
+                row-gap: 10px;
+            }
+        }
+
+        .navigation-container--mobile,
+        .logout--mobile {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        padding: 1rem;
+    }
+    .navigation-panel {
+        @include glass.reset_glassmorphism;
+    }
+
+    .navigation-panel .container .navigation-container,
+    .navigation-panel .container .personal-area {
+        display: none;
+    }
+
+    .navigation-container--mobile,
+    .logout--mobile {
+        display: block !important;
+    }
+}

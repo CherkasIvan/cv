@@ -1,0 +1,440 @@
+[1m[33m    Warning: --deploy-url and/or --base-href contain unsupported values for ng serve. Default serve path of '/' used. Use --serve-path to override.[39m[22m
+[36m⠋[39m Generating browser application bundles (phase: setup)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: setup)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: emitting)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: emitting)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: done)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: done)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                                                                                    [2m | [22m[1mNames[22m                                          [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mvendor.js[39m[37m                                                                                              [2m | [22mvendor                                         [2m | [22m  [96m6.64 MB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92mstyles.css, styles.js[39m[37m                                                                                  [2m | [22mstyles                                         [2m | [22m[96m460.27 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92mpolyfills.js[39m[37m                                                                                           [2m | [22mpolyfills                                      [2m | [22m[96m333.05 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92mmain.js[39m[37m                                                                                                [2m | [22mmain                                           [2m | [22m [96m49.68 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                                                                             [2m | [22mruntime                                        [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1m [22m                                                                                                      [2m | [22m[1mInitial Total[22m                                  [2m | [22m  [1m7.47 MB[22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                                                                                       [2m | [22m[1mNames[22m                                          [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m                                                             [2m | [22mlayout-layout-routing-routes                   [2m | [22m[96m363.04 kB[[39m[37m39m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_auth_auth_component_ts.js[39m[37m                                                                      [2m | [22mauth-auth-component                            [2m | [22m[96m316.76 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92mdefault-src_app_pages_education_components_img-dialog_img-dialog_component_ts-src_app_shared_-e56f79.js[39m[37m[2m | [22mpages-education-education-component            [2m | [22m[96m116.25 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_cv_cv_component_ts.js[39m[37m                                                                    [2m | [22mpages-cv-cv-component                          [2m | [22m [96m47.94 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_work-experience_work-experience_component_ts.js[39m[37m                                          [2m | [22mpages-work-experience-work-experience-component[2m | [22m [96m37.31 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_education_education_component_ts.js[39m[37m                                                      [2m | [22mpages-education-education-component            [2m | [22m [96m26.31 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_projects_projects_component_ts.js[39m[37m                                                        [2m | [22mpages-projects-projects-component              [2m | [22m [96m23.91 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_technologies_technologies_component_ts.js[39m[37m                                                [2m | [22mpages-technologies-technologies-component      [2m | [22m [96m22.28 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[92msrc_app_pages_about-me_about-me_component_ts.js[39m[37m                                                        [2m | [22mpages-about-me-about-me-component              [2m | [22m [96m17.36 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:08:39.922Z[39m[37m[22m - Hash: [1m[37maf3f01272a055610[39m[37m[22m - Time: [1m[37m20723[39m[37m[22mms[0m[39m
+[37m[39m
+[37m** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **[39m
+[37m[39m
+[37m[39m
+[37m[92m√[39m[37m Compiled successfully.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠧[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠇[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠏[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠋[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.09 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:08:58.166Z[39m[37m[22m - Hash: [1m[37m3ec1bfa72490f8f9[39m[37m[22m - Time: [1m[37m12117[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-60[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/layout.component.ts[39m[31m[0m:[0m[93m64:50-66[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in './store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m18[0m[39m[22m
+[1m[31m    [7m9[0m     export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m                 ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96[39m[22m[1m[31mmsrc/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m18[0m[39m[22m
+[1m[31m    [7m9[0m     export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m                 ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m8[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m18[0m[39m[22m
+[1m[31m    [7m9[0m     export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m                 ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/layout.component.ts[0m:[93m30[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"./store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m30[0m import { darkModeSelector } from './store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m18[0m[39m[22m
+[1m[31m    [7m9[0m     export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m                 ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.06 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:08:58.813Z[39m[37m[22m - Hash: [1m[37m748431bdc2ffa9b8[39m[37m[22m - Time: [1m[37m559[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-60[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/layout.component.ts[39m[31m[0m:[0m[93m64:50-66[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in './store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app[39m[22m[1m[31m/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m8[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/layout.component.ts[0m:[93m30[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"./store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m30[0m import { darkModeSelector } from './store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m  [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared[39m[22m[1m[31m here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.06 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:09:54.546Z[39m[37m[22m - Hash: [1m[37m95115ebdabf266ae[39m[37m[22m - Time: [1m[37m1080[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-60[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkM[39m[22m[1m[31modeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m8[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.06 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:10:07.773Z[39m[37m[22m - Hash: [1m[37mb9e7e7cb5786c3f5[39m[37m[22m - Time: [1m[37m738[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-60[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkM[39m[22m[1m[31modeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m8[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m8[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m362.79 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:10:37.746Z[39m[37m[22m - Hash: [1m[37macddc30a14d9c076[39m[37m[22m - Time: [1m[37m701[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDa[39m[22m[1m[31mrkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m26[0m:[93m16[0m - [91merror[0m[90m TS2304: [0mCannot find name 'darkModeSelector'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m26[0m         select(darkModeSelector),[39m[22m
+[1m[31m[7m  [0m [91m               ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.07 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:10:59.295Z[39m[37m[22m - Hash: [1m[37m5b30e1ee3c9c26cb[39m[37m[22m - Time: [1m[37m803[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/core/services/dark-mode/dark-mode.service.ts[39m[31m[0m:[0m[93m10:29-45[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[39m[31m[0m:[0m[93m12:47-63[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'darkModeSelector' (imported as 'darkModeSelector') was not found in '@layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, isDarkSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/core/services/dark-mode/dark-mode.service.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDarkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/dark-mode-selector/dark-mode-selector.component.ts[0m:[93m7[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"@layout/store/dark-mode-store/dark-mode.selectors"' has no exported member named 'darkModeSelector'. Did you mean 'isDarkSelector'?[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m7[0m import { darkModeSelector } from '@layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/dark-mode-store/dark-mode.selectors.ts[0m:[93m9[0m:[93m14[0m[39m[22m
+[1m[31m    [7m9[0m export const isDarkSelector = createSelector([39m[22m
+[1m[31m    [7m [0m [96m             ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m    'isDa[39m[22m[1m[31mrkSelector' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m28[0m:[93m9[0m - [91merror[0m[90m TS2345: [0mArgument of type '(source$: Observable<GlobalState>) => Observable<boolean>' is not assignable to parameter of type 'OperatorFunction<ILanguagesSelector & IDarkMode, boolean>'.[39m[22m
+[1m[31m  Types of parameters 'source$' and 'source' are incompatible.[39m[22m
+[1m[31m    Type 'Observable<ILanguagesSelector & IDarkMode>' is not assignable to type 'Observable<GlobalState>'.[39m[22m
+[1m[31m      Property 'isLogout' is missing in type 'ILanguagesSelector & IDarkMode' but required in type 'GlobalState'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m28[0m         select(isDarkSelector),[39m[22m
+[1m[31m[7m  [0m [91m        ~~~~~~~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  [96msrc/app/layout/store/index.ts[0m:[93m10[0m:[93m5[0m[39m[22m
+[1m[31m    [7m10[0m     isLogout: boolean;[39m[22m
+[1m[31m    [7m  [0m [96m    ~~~~~~~~[0m[39m[22m
+[1m[31m    'isLogout' is declared here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.05 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:13:45.310Z[39m[37m[22m - Hash: [1m[37m6e2370912c2ef5f4[39m[37m[22m - Time: [1m[37m675[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-58[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'isDarkSelector' (imported as 'isDarkSelector') was not found in '@app/layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, darkModeSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/layout.component.ts[39m[31m[0m:[0m[93m64:50-64[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'isDarkSelector' (imported as 'isDarkSelector') was not found in './store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, darkModeSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m16[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@app/layout/store/dark-mode-store/dark-mode.selectors"' has no exported member 'isDarkSelector'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m16[0m import { isDarkSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m  [0m [91m         ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/layout.component.ts[0m:[93m30[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"./store/dark-mode-store/dark-mode.selectors"' has no exported member 'isDarkSelector'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m30[0m import { isDarkSelector } from './store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m  [0m [91m         ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: sealing)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.05 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:13:57.823Z[39m[37m[22m - Hash: [1m[37mfa6c7fce63974499[39m[37m[22m - Time: [1m[37m427[39m[37m[22mms[0m[39m
+[1m[31m[39m[22m
+[1m[31m[0m[36m./src/app/layout/components/language-selector/language-selector.component.ts[39m[31m[0m:[0m[93m18:44-58[39m[31m[0m - [0m[91mError: [39m[31m[0mexport 'isDarkSelector' (imported as 'isDarkSelector') was not found in '@app/layout/store/dark-mode-store/dark-mode.selectors' (possible exports: darkModeFeatureSelector, darkModeSelector)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[0m[91mError: [39m[31m[0m[96msrc/app/layout/components/language-selector/language-selector.component.ts[0m:[93m16[0m:[93m10[0m - [91merror[0m[90m TS2305: [0mModule '"@app/layout/store/dark-mode-store/dark-mode.selectors"' has no exported member 'isDarkSelector'.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[7m16[0m import { isDarkSelector } from '@app/layout/store/dark-mode-store/dark-mode.selectors';[39m[22m
+[1m[31m[7m  [0m [91m         ~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[37m[39m
+[37m[91m×[39m[37m Failed to compile.[39m
+[36m⠋[39m Generating browser application bundles...[2K[1G[36m⠙[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠹[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠸[39m Generating browser application bundles (phase: building)...[2K[1G[36m⠼[39m Generating browser application bundles (phase: sealing)...[2K[1G[36m⠴[39m Generating browser application bundles (phase: emitting)...[2K[1G[36m⠦[39m Generating browser application bundles (phase: done)...[2K[1G[32m✔[39m Browser application bundle generation complete.
+[37m[39m
+[37m[0m[1mInitial Chunk Files[22m                       [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92mruntime.js[39m[37m                                [2m | [22mruntime                     [2m | [22m [96m12.61 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m[1mLazy Chunk Files[22m                          [2m | [22m[1mNames[22m                       [2m | [22m [1mRaw Size[22m[0m[39m
+[37m[0m[92msrc_app_layout_layout-routing_routes_ts.js[39m[37m[2m | [22mlayout-layout-routing-routes[2m | [22m[96m363.04 kB[39m[37m[2m | [22m[0m[39m
+[37m[0m[0m[39m
+[37m[0m12 unchanged chunks[0m[39m
+[37m[0m[0m[39m
+[37m[0mBuild at: [1m[37m2024-01-13T05:15:09.739Z[39m[37m[22m - Hash: [1m[37maf3f01272a055610[39m[37m[22m - Time: [1m[37m850[39m[37m[22mms[0m[39m
+[37m[39m
+[37m[92m√[39m[37m Compiled successfully.[39m

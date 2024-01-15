@@ -1,12 +1,12 @@
 {
-  "rules": {
-    "layout": {
-      "technologies": {
+    "rules": {
+        "layout": {
+            "technologies": {
+                ".read": true,
+                ".write": true
+            }
+        },
         ".read": true,
         ".write": true
-      }
-    },
-    ".read": true,
-    ".write": true
-  }
+    }
 }

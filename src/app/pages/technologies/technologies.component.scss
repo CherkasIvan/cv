@@ -1,48 +1,47 @@
 .technologies {
-  .container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5rem;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        grid-gap: 5rem;
 
-    .hard-skills,
-    .other-skills {
-      text-align: center;
-      &__title {
-        font-weight: 700;
-        font-size: 20px;
-      }
-
-      .front-end-skills,
-      .back-end-skills,
-      .social-skills,
-      .ui-skills {
-        margin: 2rem 0;
-
-        &__title {
-          font-size: 16px;
-          font-weight: 600;
-        }
-
-        &__list {
-          margin-top: 25px;
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-
-          .item {
-            margin-top: 2rem;
-
-            padding: 10px;
-
-            &__link {
-              &-img {
-                max-width: 4rem;
-                max-height: 4rem;
-              }
+        .hard-skills,
+        .other-skills {
+            text-align: center;
+            &__title {
+                font-weight: 700;
+                font-size: 20px;
             }
-          }
+
+            .front-end-skills,
+            .back-end-skills,
+            .social-skills,
+            .ui-skills {
+                margin: 2rem 0;
+
+                &__title {
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                &__list {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    margin-top: 25px;
+
+                    .item {
+                        margin-top: 2rem;
+                        padding: 10px;
+
+                        &__link {
+                            &-img {
+                                max-width: 4rem;
+                                max-height: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

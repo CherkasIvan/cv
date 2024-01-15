@@ -1,46 +1,48 @@
+@use '../../../../../assets/styles/mixins/flex.mixin' as *;
+@use '../../../../../assets/styles/variables' as color;
+
 .projects-content {
-  width: 100%;
+    width: 100%;
 
-  .projects-container {
-    margin: 2rem 0;
+    .projects-container {
+        margin: 2rem 0;
 
-    .projects-description {
-      margin-bottom: 2rem;
-      font-size: 20px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .projects-list {
-      display: grid;
-      width: 100%;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-column-gap: 10px;
-
-      &__item {
-        padding: 10px;
-        border-radius: 8px;
-        color: #fff;
-        font-size: 18px;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        transition: 0.5s ease;
-
-        .project {
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          row-gap: 5px;
+        .projects-description {
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
         }
-      }
 
-      &__item:hover {
-        background: rgba(255, 255, 255, 0.3);
-      }
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            grid-column-gap: 10px;
+
+            &__item {
+                backdrop-filter: blur(10px);
+                transition: 0.5s ease;
+                box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 10px;
+                color: color.$white;
+                font-size: 18px;
+
+                .project {
+                    @include flex-d_column;
+                    row-gap: 5px;
+                    text-align: center;
+                }
+            }
+
+            &__item:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
+        }
     }
-  }
 }

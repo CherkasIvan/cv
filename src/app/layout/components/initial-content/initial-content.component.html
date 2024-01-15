@@ -1,0 +1,33 @@
+<div class="initial-content">
+    <div class="container">
+        <div class="main-content">
+            <span class="main-content__title">
+                {{ 'LAYOUT.MAIN.TITLE' | translate }}
+            </span>
+            <p class="main-content__description">
+                {{ 'LAYOUT.MAIN.DESCRIPTION' | translate }}
+            </p>
+        </div>
+
+        <div class="technologies-content">
+            <p class="technologies-content__title">
+                {{ 'LAYOUT.TECHNOLOGIES.TITLE' | translate }}
+            </p>
+            <cv-skills-content
+                [technologiesList]="technologiesList$ | async"
+            ></cv-skills-content>
+        </div>
+
+        <aside class="etc">
+            <span class="etc__language">
+                {{ 'LAYOUT.ETC.LANGUAGE' | translate }}
+            </span>
+            <span class="etc__color-mode">
+                {{ 'LAYOUT.ETC.DARK-THEM' | translate }}
+            </span>
+            <span class="etc__wishes">
+                {{ 'LAYOUT.ETC.WISHES' | translate }}
+            </span>
+        </aside>
+    </div>
+</div>

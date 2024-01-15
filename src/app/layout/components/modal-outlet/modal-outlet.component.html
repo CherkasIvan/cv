@@ -1,0 +1,8 @@
+<button
+    class="modal-overlay"
+    (click)="closeModal($event)"
+    *cvModalPortal="'.modals-host'"
+    #overlay
+>
+    <ng-content></ng-content>
+</button>

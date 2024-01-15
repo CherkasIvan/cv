@@ -1,33 +1,36 @@
-import { Injectable } from '@angular/core';
+import { Observable, finalize } from 'rxjs';
+
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpRequest,
 } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { finalize, Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
-import { SpinnerService } from '../services/spinner/spinner.service';
+import { ISpinner } from '@layout/store/model/spinner.interface';
+import {
+    hideSpinner,
+    showSpinner,
+} from '@layout/store/spinner-store/spinner.actions';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
-  private totalRequests = 0;
-  constructor(private spinnerService: SpinnerService) {}
+    private totalRequests = 0;
+    constructor(private _store: Store<ISpinner>) {}
 
-  intercept(
-    request: HttpRequest<unknown>,
-    next: HttpHandler
-  ): Observable<HttpEvent<unknown>> {
-    this.totalRequests++;
-    this.spinnerService.setLoading(true);
-    return next.handle(request).pipe(
-      finalize(() => {
-        this.totalRequests--;
-        if (this.totalRequests == 0) {
-          this.spinnerService.setLoading(false);
-        }
-      })
-    );
-  }
+    intercept(
+        req: HttpRequest<unknown>,
+        next: HttpHandler,
+    ): Observable<HttpEvent<unknown>> {
+        this._store.dispatch(showSpinner()); // dispatch showSpinner action before each request
+        return next.handle(req).pipe(
+            finalize(() => {
+                console.log(req);
+                this._store.dispatch(hideSpinner()); // dispatch hideSpinner action after each request
+            }),
+        );
+    }
 }

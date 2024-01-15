@@ -1,0 +1,46 @@
+<nav
+    class="burger-navigation"
+    #popup
+    (click)="navigationCheck($event)"
+    (cvPopUpClose)="hidePopup($event)"
+>
+    <input
+        class="menu-toggle"
+        type="checkbox"
+        [ngClass]="!isNavigate ? 'menu-toggle__close' : 'menu-toggle__open'"
+    />
+    <label
+        class="menu-button-container"
+        for="menu-toggle"
+    >
+        <div class="menu-button"></div>
+    </label>
+    <ul class="menu">
+        @for (item of burgerNavigators; track item; let i = $index) {
+            <li
+                class="menu__item"
+                (click)="navigationCheck($event)"
+            >
+                <a
+                    routerLink="{{ item.link }}"
+                    class="item-link"
+                    [routerLinkActive]="['active']"
+                >
+                    {{ 'NAVIGATION.LINK.VALUE' + i | translate }}
+                </a>
+            </li>
+        }
+        <li class="menu__item">
+            <div class="selectors">
+                <cv-language-selector></cv-language-selector>
+                <cv-dark-mode-selector></cv-dark-mode-selector>
+            </div>
+        </li>
+        <li
+            class="menu__item"
+            (click)="openLogoutDialog()"
+        >
+            <div class="item-link">Logout</div>
+        </li>
+    </ul>
+</nav>
