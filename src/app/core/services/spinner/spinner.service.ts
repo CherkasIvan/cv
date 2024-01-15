@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class SpinnerService {
     private _loading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-        false,
+        true,
     );
     public readonly loading$: Observable<boolean> =
         this._loading$.asObservable();

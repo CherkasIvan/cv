@@ -6,6 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 import {
+    HTTP_INTERCEPTORS,
     HttpClient,
     provideHttpClient,
     withInterceptorsFromDi,
@@ -52,6 +53,7 @@ import { environment } from '@env/environment';
 
 import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
+import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
 import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
@@ -93,6 +95,11 @@ bootstrapApplication(AppComponent, {
                 registrationStrategy: 'registerWhenStable:30000',
             }),
         ),
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoadingInterceptor,
+            multi: true,
+        },
         AuthService,
         ScreenTrackingService,
         UserTrackingService,

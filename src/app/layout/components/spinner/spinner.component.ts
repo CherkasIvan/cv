@@ -1,10 +1,13 @@
-import { Observable } from 'rxjs';
+import { Observable, timeout } from 'rxjs';
 
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { SpinnerService } from '@core/services/spinner/spinner.service';
+import { Store, select } from '@ngrx/store';
+
+import { ISpinner } from '@layout/store/model/spinner.interface';
+import { spinnerSelector } from '@layout/store/spinner-store/spinner.selectots';
 
 import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
 
@@ -16,7 +19,6 @@ import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
     styleUrls: ['./spinner.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
-        // Подключаем интерцептор AuthInterceptor к HTTP-запросам
         {
             provide: HTTP_INTERCEPTORS,
             useClass: LoadingInterceptor,
@@ -26,7 +28,10 @@ import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
 })
 export class SpinnerComponent {
     @Input() public spinnerStyle!: string;
-    public loading$: Observable<boolean> = this._spinnerService.loading$;
+    public loading$: Observable<boolean> = this._store.pipe(
+        timeout(1500),
+        select(spinnerSelector),
+    );
 
-    constructor(private readonly _spinnerService: SpinnerService) {}
+    constructor(private _store: Store<ISpinner>) {}
 }

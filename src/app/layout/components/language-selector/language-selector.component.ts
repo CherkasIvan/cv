@@ -14,6 +14,8 @@ import { ILocalStorage } from '@shared/models/localstorage.interface';
 import { localStorageService } from '@shared/services/localstorage/local-storage.service';
 import { TranslateManagerService } from '@shared/services/translate/translate-manager.service';
 
+import { GlobalState } from '@app/layout/store';
+
 @Component({
     selector: 'cv-language-selector',
     standalone: true,
@@ -34,7 +36,7 @@ export class LanguageSelectorComponent implements OnInit {
     constructor(
         private readonly _translateManagerService: TranslateManagerService,
         private _localStorageService: localStorageService,
-        private _store$: Store<ILanguagesSelector & IDarkMode>,
+        private _store$: Store<ILanguagesSelector & IDarkMode & GlobalState>,
     ) {}
 
     public toggle(event: Event): void {

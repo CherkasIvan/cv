@@ -12,5 +12,8 @@ export const initialDarkModeState: DarkModeState = {
 
 export const darkModeReducer = createReducer(
     initialDarkModeState,
-    on(setModeSuccess, (state, { isDark }) => ({ isDark })),
+    on(setModeSuccess, (state, { isDark }) => ({
+        ...state,
+        isDark,
+    })),
 );

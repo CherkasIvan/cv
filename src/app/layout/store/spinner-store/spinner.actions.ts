@@ -1,6 +1,5 @@
 import { createAction } from '@ngrx/store';
 
-export const spinnerWork = createAction(
-    '[SPINNER] Spinner work',
-    (isSpinnerOn: boolean) => ({ isSpinnerOn }),
-);
+export const showSpinner = createAction('[SPINNER] Show spinner');
+
+export const hideSpinner = createAction('[SPINNER] Hide spinner');
