@@ -1,18 +1,18 @@
 {
   "run": {
-    "command": "nx run cv:serve-ssr",
-    "startTime": "2024-01-08T06:04:35.711Z",
-    "endTime": "2024-01-08T06:04:36.205Z",
+    "command": "nx serve",
+    "startTime": "2024-01-16T01:21:48.322Z",
+    "endTime": "2024-01-16T01:21:48.545Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "cv:serve-ssr:development",
-      "target": "serve-ssr",
+      "taskId": "cv:serve:development",
+      "target": "serve",
       "projectName": "cv",
-      "hash": "9978982811073941102",
-      "startTime": "2024-01-08T06:04:35.720Z",
-      "endTime": "2024-01-08T06:04:36.204Z",
+      "hash": "2278543776499702045",
+      "startTime": "2024-01-16T01:21:48.329Z",
+      "endTime": "2024-01-16T01:21:48.544Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 1
