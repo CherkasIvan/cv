@@ -4,7 +4,7 @@ import { ERouterPath } from '@utils/enum/router-path.enum';
 
 import { LayoutComponent } from './layout.component';
 
-export const LAYOT_ROUTES: Routes = [
+export const LAYOUT_ROUTES: Routes = [
     {
         path: '',
         component: LayoutComponent,

@@ -2,17 +2,13 @@ import { CommonModule } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
-    ElementRef,
     EventEmitter,
+    Input,
     Output,
-    ViewChild,
 } from '@angular/core';
 
-import { Store } from '@ngrx/store';
-
+import { logoutModalAnimation } from '@core/animations/logout-modal.animation';
 import { ModalPortalDirective } from '@core/directives/modal-portal/modal-portal.directive';
-
-import { ILogoutButton } from '@app/layout/store/model/logout-button.interface';
 
 import { ModalHostComponent } from './modal-host.component';
 
@@ -22,19 +18,20 @@ import { ModalHostComponent } from './modal-host.component';
     styleUrls: ['./modal-outlet.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
+    animations: [logoutModalAnimation],
     imports: [CommonModule, ModalPortalDirective, ModalHostComponent],
 })
 export class ModalOutletComponent {
-    @Output() private modalClosed: EventEmitter<boolean> =
-        new EventEmitter<boolean>(true);
+    @Input() public modalTitle = '';
+    @Input() public modalContent = '';
+    @Output() public modalCloseEmitter: EventEmitter<void> =
+        new EventEmitter<void>();
+    public fadeState: string = 'in';
 
-    @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
-
-    constructor(private readonly _store$: Store<ILogoutButton>) {}
-
-    public closeModal(event: MouseEvent) {
-        if (this.overlay.nativeElement === event.target) {
-            this.modalClosed.emit();
-        }
+    public closeModal() {
+        this.fadeState = 'out';
+        setTimeout(() => {
+            this.modalCloseEmitter.emit();
+        }, 1000);
     }
 }

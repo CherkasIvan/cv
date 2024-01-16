@@ -301,7 +301,7 @@
         },
         {
           "file": "src/app/app-routing.routes.ts",
-          "hash": "750103250398551826"
+          "hash": "1271685637951575416"
         },
         {
           "file": "src/app/app.component.html",
@@ -404,7 +404,7 @@
         },
         {
           "file": "src/app/core/animations/route-animation.ts",
-          "hash": "3252059391388140135"
+          "hash": "8216473669915227935"
         },
         {
           "file": "src/app/core/components/carousel/carousel.component.html",
@@ -484,7 +484,7 @@
         },
         {
           "file": "src/app/core/interceptors/loading.interceptor.ts",
-          "hash": "3039595584534345135",
+          "hash": "2143173498226820075",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -653,7 +653,7 @@
         },
         {
           "file": "src/app/layout/components/logout-button/logout-button.component.ts",
-          "hash": "9480901605612214301",
+          "hash": "8178787978697814228",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -665,7 +665,7 @@
         },
         {
           "file": "src/app/layout/components/modal-outlet/modal-outlet.component.html",
-          "hash": "9491020330201919481"
+          "hash": "9692174615407050516"
         },
         {
           "file": "src/app/layout/components/modal-outlet/modal-outlet.component.scss",
@@ -677,10 +677,7 @@
         },
         {
           "file": "src/app/layout/components/modal-outlet/modal-outlet.component.ts",
-          "hash": "14899091424495408300",
-          "deps": [
-            "npm:@ngrx/store"
-          ]
+          "hash": "6305296087028971815"
         },
         {
           "file": "src/app/layout/components/navigation-panel/navigation-panel.component.html",
@@ -743,11 +740,11 @@
         },
         {
           "file": "src/app/layout/layout-routing.routes.ts",
-          "hash": "1135447825324963051"
+          "hash": "3023240687824231966"
         },
         {
           "file": "src/app/layout/layout.component.html",
-          "hash": "16126750632274513661"
+          "hash": "17249961925978204585"
         },
         {
           "file": "src/app/layout/layout.component.scss",
@@ -759,7 +756,7 @@
         },
         {
           "file": "src/app/layout/layout.component.ts",
-          "hash": "1828933867253330593",
+          "hash": "13758674998431220977",
           "deps": [
             "npm:rxjs",
             "npm:@ngrx/store"
@@ -1605,7 +1602,7 @@
         },
         {
           "file": "src/assets/img/technologies/back-end/firebase.svg",
-          "hash": "15216168141529407911"
+          "hash": "14910246182972501275"
         },
         {
           "file": "src/assets/img/technologies/back-end/nestjs.svg",
@@ -1745,7 +1742,7 @@
         },
         {
           "file": "src/main.ts",
-          "hash": "17050963761746654503",
+          "hash": "16732605378662850456",
           "deps": [
             "npm:@ngx-translate/core",
             "npm:@ngx-translate/http-loader",
@@ -1811,6 +1808,10 @@
         {
           "file": "tsconfig.spec.json",
           "hash": "10685812502644337696"
+        },
+        {
+          "file": "src/app/core/animations/logout-modal.animation.ts",
+          "hash": "7320816383668800308"
         }
       ]
     }

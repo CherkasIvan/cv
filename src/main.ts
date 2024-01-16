@@ -58,7 +58,8 @@ import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.red
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
-import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
+
+// import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -81,7 +82,7 @@ bootstrapApplication(AppComponent, {
             provideFirestore(() => getFirestore()),
             provideDatabase(() => getDatabase()),
             StoreModule.forRoot({}),
-            StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
+            // StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
             StoreModule.forFeature('darkMode', darkModeReducer),
             StoreModule.forFeature('language', languageSelectorReducer),

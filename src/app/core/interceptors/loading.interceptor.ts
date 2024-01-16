@@ -28,7 +28,6 @@ export class LoadingInterceptor implements HttpInterceptor {
         this._store.dispatch(showSpinner()); // dispatch showSpinner action before each request
         return next.handle(req).pipe(
             finalize(() => {
-                console.log(req);
                 this._store.dispatch(hideSpinner()); // dispatch hideSpinner action after each request
             }),
         );
