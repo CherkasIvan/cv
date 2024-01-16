@@ -15304,6 +15304,11 @@
       },
       {
         "source": "cv",
+        "target": "npm:@nrwl/nx-cloud",
+        "type": "static"
+      },
+      {
+        "source": "cv",
         "target": "npm:@types/firebase",
         "type": "static"
       },

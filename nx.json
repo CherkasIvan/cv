@@ -1,76 +1,59 @@
 {
-  "targetDefaults": {
-    "build": {
-      "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+    "targetDefaults": {
+        "build": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
+        },
+        "serve": {
+            "cache": true
+        },
+        "extract-i18n": {
+            "cache": true
+        },
+        "test": {
+            "cache": true,
+            "inputs": ["default", "^production"]
+        },
+        "deploy": {
+            "cache": true
+        },
+        "lint": {
+            "cache": true,
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+        },
+        "server": {
+            "cache": true,
+            "inputs": ["production", "^production"]
+        },
+        "serve-ssr": {
+            "cache": true
+        },
+        "prerender": {
+            "cache": true
+        }
     },
-    "serve": {
-      "cache": true
+    "affected": {
+        "defaultBase": "main"
     },
-    "extract-i18n": {
-      "cache": true
+    "namedInputs": {
+        "sharedGlobals": [],
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "production": [
+            "default",
+            "!{projectRoot}/tsconfig.spec.json",
+            "!{projectRoot}/**/*.spec.[jt]s",
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/eslint.config.js"
+        ]
     },
-    "test": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
-    },
-    "deploy": {
-      "cache": true
-    },
-    "lint": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
-    },
-    "server": {
-      "cache": true,
-      "inputs": [
-        "production",
-        "^production"
-      ]
-    },
-    "serve-ssr": {
-      "cache": true
-    },
-    "prerender": {
-      "cache": true
+    "nxCloudAccessToken": "MDZkZjk1N2MtYjdmNC00ZTNiLWE1OGQtOTNhZjAyOTZjZmNhfHJlYWQtd3JpdGU=",
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "nx-cloud",
+            "options": {
+                "accessToken": "MDcxYTJhZTUtMTZkYy00NmU3LTlmM2MtMTAxYmYyNTg1MmJjfHJlYWQtd3JpdGU="
+            }
+        }
     }
-  },
-  "affected": {
-    "defaultBase": "main"
-  },
-  "namedInputs": {
-    "sharedGlobals": [],
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "production": [
-      "default",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/**/*.spec.[jt]s",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js"
-    ]
-  },
-  "nxCloudAccessToken": "MDZkZjk1N2MtYjdmNC00ZTNiLWE1OGQtOTNhZjAyOTZjZmNhfHJlYWQtd3JpdGU=",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "accessToken": "MDcxYTJhZTUtMTZkYy00NmU3LTlmM2MtMTAxYmYyNTg1MmJjfHJlYWQtd3JpdGU="
-      }
-    }
-  }
 }
