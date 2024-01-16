@@ -4374,6 +4374,15 @@
         "hash": "sha512-aUE6lK8+D37xNlRz7ZpFbUOwIU6Vb1aNVjXxaouFQ2kcirv2NdJVmUIpbK7zDE/pzC3YmdZADqG2UjpvSUAErw=="
       }
     },
+    "npm:@nrwl/nx-cloud": {
+      "type": "npm",
+      "name": "npm:@nrwl/nx-cloud",
+      "data": {
+        "version": "16.5.2",
+        "packageName": "@nrwl/nx-cloud",
+        "hash": "sha512-oHO5T1HRJsR9mbRd8eUqMBPCgqVZLSbAh3zJoPFmhEmjbM4YB9ePRpgYFT8dRNeZUOUd/8Yt7Pb6EVWOHvpD/w=="
+      }
+    },
     "npm:@nrwl/tao": {
       "type": "npm",
       "name": "npm:@nrwl/tao",
@@ -6624,6 +6633,15 @@
         "hash": "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
       }
     },
+    "npm:axios@1.1.3": {
+      "type": "npm",
+      "name": "npm:axios@1.1.3",
+      "data": {
+        "version": "1.1.3",
+        "packageName": "axios",
+        "hash": "sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA=="
+      }
+    },
     "npm:axios@1.6.4": {
       "type": "npm",
       "name": "npm:axios@1.6.4",
@@ -8341,6 +8359,15 @@
         "version": "16.3.1",
         "packageName": "dotenv",
         "hash": "sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ=="
+      }
+    },
+    "npm:dotenv@10.0.0": {
+      "type": "npm",
+      "name": "npm:dotenv@10.0.0",
+      "data": {
+        "version": "10.0.0",
+        "packageName": "dotenv",
+        "hash": "sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q=="
       }
     },
     "npm:dotenv-expand": {
@@ -11880,6 +11907,33 @@
         "hash": "sha512-6LYoTt01nS1d/dvvYtRs+pEAMQmUVsd2fr/a8+X1cDjWrb8wsf1O3DwlBTqKOXOazpS3eOr0Ukc9N1svbu7uXA=="
       }
     },
+    "npm:nx-cloud": {
+      "type": "npm",
+      "name": "npm:nx-cloud",
+      "data": {
+        "version": "16.5.2",
+        "packageName": "nx-cloud",
+        "hash": "sha512-1t1Ii9gojl8r/8hFGaZ/ZyYR0Cb0hzvXLCsaFuvg+EJEFdvua3P4cfNya/0bdRrm+7Eb/ITUOskbvYq4TSlyGg=="
+      }
+    },
+    "npm:tar@6.1.11": {
+      "type": "npm",
+      "name": "npm:tar@6.1.11",
+      "data": {
+        "version": "6.1.11",
+        "packageName": "tar",
+        "hash": "sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA=="
+      }
+    },
+    "npm:tar": {
+      "type": "npm",
+      "name": "npm:tar",
+      "data": {
+        "version": "6.2.0",
+        "packageName": "tar",
+        "hash": "sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ=="
+      }
+    },
     "npm:object-assign": {
       "type": "npm",
       "name": "npm:object-assign",
@@ -13759,15 +13813,6 @@
         "version": "2.2.1",
         "packageName": "tapable",
         "hash": "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="
-      }
-    },
-    "npm:tar": {
-      "type": "npm",
-      "name": "npm:tar",
-      "data": {
-        "version": "6.2.0",
-        "packageName": "tar",
-        "hash": "sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ=="
       }
     },
     "npm:tar-stream": {
@@ -22925,6 +22970,11 @@
     {
       "source": "npm:@nrwl/js",
       "target": "npm:@nx/js",
+      "type": "static"
+    },
+    {
+      "source": "npm:@nrwl/nx-cloud",
+      "target": "npm:nx-cloud",
       "type": "static"
     },
     {
@@ -33165,6 +33215,161 @@
     {
       "source": "npm:nx",
       "target": "npm:@nx/nx-win32-x64-msvc",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:@nrwl/nx-cloud",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:axios@1.1.3",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:chalk@4.1.2",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:dotenv@10.0.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:fs-extra@11.2.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:node-machine-id",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:open",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:strip-json-comments",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:tar@6.1.11",
+      "type": "static"
+    },
+    {
+      "source": "npm:nx-cloud",
+      "target": "npm:yargs-parser",
+      "type": "static"
+    },
+    {
+      "source": "npm:ansi-styles@4.3.0",
+      "target": "npm:color-convert@2.0.1",
+      "type": "static"
+    },
+    {
+      "source": "npm:axios@1.1.3",
+      "target": "npm:follow-redirects",
+      "type": "static"
+    },
+    {
+      "source": "npm:axios@1.1.3",
+      "target": "npm:form-data",
+      "type": "static"
+    },
+    {
+      "source": "npm:axios@1.1.3",
+      "target": "npm:proxy-from-env",
+      "type": "static"
+    },
+    {
+      "source": "npm:chalk@4.1.2",
+      "target": "npm:ansi-styles@4.3.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:chalk@4.1.2",
+      "target": "npm:supports-color@7.2.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:color-convert@2.0.1",
+      "target": "npm:color-name@1.1.4",
+      "type": "static"
+    },
+    {
+      "source": "npm:fs-extra@11.2.0",
+      "target": "npm:graceful-fs",
+      "type": "static"
+    },
+    {
+      "source": "npm:fs-extra@11.2.0",
+      "target": "npm:jsonfile@6.1.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:fs-extra@11.2.0",
+      "target": "npm:universalify@2.0.1",
+      "type": "static"
+    },
+    {
+      "source": "npm:fs-minipass@2.1.0",
+      "target": "npm:minipass@3.3.6",
+      "type": "static"
+    },
+    {
+      "source": "npm:jsonfile@6.1.0",
+      "target": "npm:universalify@2.0.1",
+      "type": "static"
+    },
+    {
+      "source": "npm:jsonfile@6.1.0",
+      "target": "npm:graceful-fs",
+      "type": "static"
+    },
+    {
+      "source": "npm:minipass@3.3.6",
+      "target": "npm:yallist@4.0.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:supports-color@7.2.0",
+      "target": "npm:has-flag@4.0.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:chownr",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:fs-minipass@2.1.0",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:minipass@3.3.6",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:minizlib",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:mkdirp@1.0.4",
+      "type": "static"
+    },
+    {
+      "source": "npm:tar@6.1.11",
+      "target": "npm:yallist@4.0.0",
       "type": "static"
     },
     {

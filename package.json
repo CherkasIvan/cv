@@ -45,6 +45,7 @@
     "@ngrx/store-devtools": "^17.0.1",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@nrwl/nx-cloud": "^16.5.2",
     "@types/firebase": "^3.2.1",
     "console": "^0.7.2",
     "dom-to-image": "^2.6.0",
