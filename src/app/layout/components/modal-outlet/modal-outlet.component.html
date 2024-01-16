@@ -1,8 +1,10 @@
-<button
-    class="modal-overlay"
-    (click)="closeModal($event)"
-    *cvModalPortal="'.modals-host'"
-    #overlay
->
-    <ng-content></ng-content>
-</button>
+<div class="modal">
+    <div
+        class="modal-content"
+        [@logoutModalAnimation]="fadeState"
+    >
+        <h1>{{ modalTitle }}</h1>
+        <p>{{ modalContent }}</p>
+        <button (click)="closeModal()">Close Modal</button>
+    </div>
+</div>
