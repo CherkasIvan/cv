@@ -235,3 +235,8 @@ Error: This workspace is more than a week old and is unclaimed. Workspaces must 
 [NX Daemon Server] - 2024-01-16T01:47:44.676Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-16T01:47:44.753Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-16T01:47:44.908Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-16T01:50:34.203Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-16T01:50:34.209Z - [WATCHER]: .gitignore was modified
+[NX Daemon Server] - 2024-01-16T01:50:34.209Z - [WATCHER]: Stopping the watcher for c:\Users\Disto\OneDrive\Рабочий стол\Projects\cv (sources)
+[NX Daemon Server] - 2024-01-16T01:50:34.210Z - [WATCHER]: Stopping the watcher for c:\Users\Disto\OneDrive\Рабочий стол\Projects\cv (outputs)
+[NX Daemon Server] - 2024-01-16T01:50:34.210Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
