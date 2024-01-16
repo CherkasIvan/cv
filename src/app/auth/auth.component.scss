@@ -1,112 +1,169 @@
 @use '../../assets/styles/mixins/flex.mixin' as *;
 
-.background {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #080710;
+
+/* CSS-стили, которые задают стили и анимацию объектов */
+.container {
     width: 100vw;
-    height: 100%;
-}
+    height: 100vh;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
 
-.background .shape {
-    position: absolute;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-}
+    .background {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #080710;
+        width: 100vw;
+        height: 100%;
+    }
 
-.shape:first-child {
-    top: 17%;
-    left: 30%;
-    background: linear-gradient(#00ff87, #60efff);
-}
+    .background .shape {
+        position: absolute;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
 
-.shape:last-child {
-    right: 30%;
-    bottom: 17%;
-    background: linear-gradient(to right, #ff930f, #fff95b);
-}
+    .shape:first-child {
+        top: 17%;
+        left: 30%;
+        background: linear-gradient(#00ff87, #60efff);
+    }
 
-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.767);
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.13);
-    padding: 50px 35px;
-    width: 400px;
-    height: 520px;
-}
+    .shape:last-child {
+        right: 30%;
+        bottom: 17%;
+        background: linear-gradient(to right, #ff930f, #fff95b);
+    }
 
-form * {
-    outline: none;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
-}
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border: 2px solid rgba(255, 255, 255, 0.767);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.13);
+        padding: 50px 35px;
+        width: 400px;
+        height: fit-content;
+    }
 
-form h3 {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 42px;
-    text-align: center;
-}
+    form * {
+        outline: none;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.5px;
+    }
 
-label {
-    display: block;
-    margin-top: 30px;
-    font-weight: 500;
-    font-size: 16px;
-}
+    form h3 {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 42px;
+        text-align: center;
+    }
 
-input {
-    display: block;
-    margin-top: 8px;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.07);
-    padding: 0 10px;
-    width: 100%;
-    height: 50px;
-    color: #080710;
-    font-weight: 300;
-    font-size: 14px;
-}
+    label {
+        display: block;
+        margin-top: 30px;
+        font-weight: 500;
+        font-size: 16px;
+    }
 
-::placeholder {
-    color: #e5e5e5;
-}
-
-.button__block {
-    margin-top: 20px;
-    @include flex-d_column;
-    row-gap: 20px;
-
-    button {
-        cursor: pointer;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.02);
-        padding: 15px 0;
+    input {
+        display: block;
+        margin-top: 8px;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.07);
+        padding: 0 10px;
         width: 100%;
+        height: 50px;
         color: #080710;
-        font-weight: 600;
-        font-size: 18px;
+        font-weight: 300;
+        font-size: 14px;
     }
 
-    .disabled {
-        background-color: red;
+    ::placeholder {
+        color: #e5e5e5;
     }
 
-    .enabled {
-        background-color: green;
+    .button__block {
+        margin-top: 20px;
+        @include flex-d_column;
+        row-gap: 20px;
+
+        button {
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.02);
+            padding: 15px 0;
+            width: 100%;
+            color: #080710;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .disabled {
+            background-color: red;
+        }
+
+        .enabled {
+            background-color: green;
+        }
+    }
+
+    input.is-invalid {
+        border: 2px solid red;
     }
 }
 
-input.is-invalid {
-    border: 2px solid red;
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gradient {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    // --size: 450px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media (min-width: 720px) {
+    .gradient {
+        --size: 300px;
+    }
+}
+
+body {
+    background-color: #222;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* This is just to transition when you change the viewport size. */
+* {
+    transition: all 0.25s ease-out;
 }

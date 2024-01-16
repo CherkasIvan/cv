@@ -1,75 +1,79 @@
-<div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
+<div class="container">
+    <div class="gradient"></div>
+
+    <form
+        [formGroup]="authForm"
+        (ngSubmit)="onSubmit()"
+    >
+        <h3>Login Here</h3>
+
+        <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input
+                type="text"
+                name="email"
+                formControlName="email"
+                autocomplete="on"
+                class="form-control"
+                [ngClass]="{
+                    'is-invalid':
+                        authForm.get('email')?.touched &&
+                        !authForm.get('email')?.value
+                }"
+            />
+            @if (
+                authForm.get('email')?.touched && !authForm.get('email')?.value
+            ) {
+                <div class="invalid-feedback">
+                    @if (f['email']?.errors['required']) {
+                        <div>E-mail is required</div>
+                    }
+                </div>
+            }
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                formControlName="password"
+                name="password"
+                autocomplete="on"
+                class="form-control"
+                [ngClass]="{
+                    'is-invalid':
+                        authForm.get('password')?.touched &&
+                        !authForm.get('password')?.value
+                }"
+            />
+            @if (
+                authForm.get('password')?.touched &&
+                !authForm.get('password')?.value
+            ) {
+                <div class="invalid-feedback">
+                    @if (f['password']?.errors['required']) {
+                        <div>Password is required</div>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="button__block">
+            <button
+                (click)="checkAuth()"
+                [ngClass]="!authForm.valid ? 'disabled' : 'enabled'"
+                [disabled]="!authForm.valid"
+                type=" submit"
+            >
+                Log In
+            </button>
+
+            <button
+                type="button"
+                (click)="onReset()"
+                class="btn btn-warning"
+            >
+                Reset
+            </button>
+        </div>
+    </form>
 </div>
-<form
-    [formGroup]="authForm"
-    (ngSubmit)="onSubmit()"
->
-    <h3>Login Here</h3>
-
-    <div class="form-group">
-        <label for="email">E-Mail</label>
-        <input
-            type="text"
-            name="email"
-            formControlName="email"
-            autocomplete="on"
-            class="form-control"
-            [ngClass]="{
-                'is-invalid':
-                    authForm.get('email')?.touched &&
-                    !authForm.get('email')?.value
-            }"
-        />
-        @if (authForm.get('email')?.touched && !authForm.get('email')?.value) {
-        <div class="invalid-feedback">
-            @if (f['email']?.errors['required']) {
-            <div>E-mail is required</div>
-            }
-        </div>
-        }
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input
-            type="password"
-            formControlName="password"
-            name="password"
-            autocomplete="on"
-            class="form-control"
-            [ngClass]="{
-                'is-invalid':
-                    authForm.get('password')?.touched &&
-                    !authForm.get('password')?.value
-            }"
-        />
-        @if (authForm.get('password')?.touched &&
-        !authForm.get('password')?.value) {
-        <div class="invalid-feedback">
-            @if (f['password']?.errors['required']) {
-            <div>Password is required</div>
-            }
-        </div>
-        }
-    </div>
-
-    <div class="button__block">
-        <button
-            (click)="checkAuth()"
-            [ngClass]="!authForm.valid ? 'disabled' : 'enabled'"
-            [disabled]="!authForm.valid"
-            type=" submit"
-        >
-            Log In
-        </button>
-
-        <button
-            type="button"
-            (click)="onReset()"
-            class="btn btn-warning"
-        >
-            Reset
-        </button>
-    </div>
-</form>
