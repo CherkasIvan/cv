@@ -1,204 +1,184 @@
 {
-  "$schema": "node_modules/nx/schemas/project-schema.json",
-  "name": "cv",
-  "projectType": "application",
-  "generators": {
-    "@schematics/angular:component": {
-      "style": "scss"
-    }
-  },
-  "sourceRoot": "src",
-  "prefix": "cv",
-  "targets": {
-    "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "options": {
-        "baseHref": "http://localhost:4200/",
-        "outputPath": "dist/cv/browser",
-        "index": "src/index.html",
-        "main": "src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
-        "tsConfig": "tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          "src/favicon.ico",
-          "src/assets",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest"
-        ],
-        "styles": [
-          "src/styles.scss"
-        ],
-        "scripts": [],
-        "serviceWorker": true,
-        "ngswConfigPath": "ngsw-config.json"
-      },
-      "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "10mb",
-              "maximumError": "15mb"
+    "$schema": "node_modules/nx/schemas/project-schema.json",
+    "name": "cv",
+    "projectType": "application",
+    "generators": {
+        "@schematics/angular:component": {
+            "style": "scss"
+        }
+    },
+    "sourceRoot": "src",
+    "prefix": "cv",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "baseHref": "http://localhost:4200/",
+                "outputPath": "dist/cv/browser",
+                "index": "src/index.html",
+                "main": "src/main.ts",
+                "polyfills": ["zone.js"],
+                "tsConfig": "tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
+                "assets": [
+                    "src/favicon.ico",
+                    "src/assets",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest"
+                ],
+                "styles": ["src/styles.scss"],
+                "scripts": [],
+                "serviceWorker": true,
+                "ngswConfigPath": "ngsw-config.json"
             },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "10kb",
-              "maximumError": "20kb"
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "10mb",
+                            "maximumError": "15mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "10kb",
+                            "maximumError": "20kb"
+                        }
+                    ],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true,
+                    "fileReplacements": [
+                        {
+                            "replace": "src/environments/environment.ts",
+                            "with": "src/environments/environment.development.ts"
+                        }
+                    ]
+                }
+            },
+            "defaultConfiguration": "production",
+            "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "buildTarget": "cv:build:production"
+                },
+                "development": {
+                    "buildTarget": "cv:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "buildTarget": "cv:build"
             }
-          ],
-          "outputHashing": "all"
         },
-        "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
-          "sourceMap": true,
-          "namedChunks": true,
-          "fileReplacements": [
-            {
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.development.ts"
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "polyfills": ["zone.js", "zone.js/testing"],
+                "tsConfig": "tsconfig.spec.json",
+                "inlineStyleLanguage": "scss",
+                "assets": [
+                    "src/favicon.ico",
+                    "src/assets",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest",
+                    "src/manifest.webmanifest"
+                ],
+                "styles": ["src/styles.scss"],
+                "scripts": []
             }
-          ]
-        }
-      },
-      "defaultConfiguration": "production",
-      "outputs": [
-        "{options.outputPath}"
-      ]
-    },
-    "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
-      "configurations": {
-        "production": {
-          "buildTarget": "cv:build:production"
         },
-        "development": {
-          "buildTarget": "cv:build:development"
-        }
-      },
-      "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "buildTarget": "cv:build"
-      }
-    },
-    "test": {
-      "executor": "@angular-devkit/build-angular:karma",
-      "options": {
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
-        ],
-        "tsConfig": "tsconfig.spec.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          "src/favicon.ico",
-          "src/assets",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest",
-          "src/manifest.webmanifest"
-        ],
-        "styles": [
-          "src/styles.scss"
-        ],
-        "scripts": []
-      }
-    },
-    "deploy": {
-      "executor": "@angular/fire:deploy",
-      "options": {
-        "prerender": true,
-        "buildTarget": "cv:build:production",
-        "firebaseProject": "cv-cherkas",
-        "firebaseHostingSite": "cv-cherkas",
-        "prerenderTarget": "cv:prerender:production"
-      }
-    },
-    "lint": {
-      "executor": "@angular-eslint/builder:lint",
-      "options": {
-        "lintFilePatterns": [
-          "src/**/*.ts",
-          "src/**/*.html"
-        ]
-      },
-      "outputs": [
-        "{options.outputFile}"
-      ]
-    },
-    "server": {
-      "executor": "@angular-devkit/build-angular:server",
-      "options": {
-        "outputPath": "dist/cv/server",
-        "main": "server.ts",
-        "tsConfig": "tsconfig.server.json",
-        "inlineStyleLanguage": "scss"
-      },
-      "configurations": {
-        "production": {
-          "outputHashing": "media"
-        },
-        "development": {
-          "buildOptimizer": false,
-          "fileReplacements": [
-            {
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.development.ts"
+        "deploy": {
+            "executor": "@angular/fire:deploy",
+            "options": {
+                "prerender": true,
+                "buildTarget": "cv:build:production",
+                "firebaseProject": "cv-cherkas",
+                "firebaseHostingSite": "cv-cherkas",
+                "prerenderTarget": "cv:prerender:production"
             }
-          ],
-          "optimization": false,
-          "sourceMap": true,
-          "extractLicenses": false,
-          "vendorChunk": true
-        }
-      },
-      "defaultConfiguration": "production",
-      "outputs": [
-        "{options.outputPath}"
-      ]
-    },
-    "serve-ssr": {
-      "executor": "@angular-devkit/build-angular:ssr-dev-server",
-      "configurations": {
-        "development": {
-          "browserTarget": "cv:build:development",
-          "serverTarget": "cv:server:development"
         },
-        "production": {
-          "browserTarget": "cv:build:production",
-          "serverTarget": "cv:server:production"
-        }
-      },
-      "defaultConfiguration": "development"
-    },
-    "prerender": {
-      "executor": "@angular-devkit/build-angular:prerender",
-      "options": {
-        "routes": [
-          "/"
-        ]
-      },
-      "configurations": {
-        "production": {
-          "browserTarget": "cv:build:production",
-          "serverTarget": "cv:server:production"
+        "lint": {
+            "executor": "@angular-eslint/builder:lint",
+            "options": {
+                "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
         },
-        "development": {
-          "browserTarget": "cv:build:development",
-          "serverTarget": "cv:server:development"
+        "server": {
+            "executor": "@angular-devkit/build-angular:server",
+            "options": {
+                "outputPath": "dist/cv/server",
+                "main": "server.ts",
+                "tsConfig": "tsconfig.server.json",
+                "inlineStyleLanguage": "scss"
+            },
+            "configurations": {
+                "production": {
+                    "outputHashing": "media"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "fileReplacements": [
+                        {
+                            "replace": "src/environments/environment.ts",
+                            "with": "src/environments/environment.development.ts"
+                        }
+                    ],
+                    "optimization": false,
+                    "sourceMap": true,
+                    "extractLicenses": false,
+                    "vendorChunk": true
+                }
+            },
+            "defaultConfiguration": "production",
+            "outputs": ["{options.outputPath}"]
+        },
+        "serve-ssr": {
+            "executor": "@angular-devkit/build-angular:ssr-dev-server",
+            "configurations": {
+                "development": {
+                    "browserTarget": "cv:build:development",
+                    "serverTarget": "cv:server:development"
+                },
+                "production": {
+                    "browserTarget": "cv:build:production",
+                    "serverTarget": "cv:server:production"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "prerender": {
+            "executor": "@angular-devkit/build-angular:prerender",
+            "options": {
+                "routes": ["/"]
+            },
+            "configurations": {
+                "production": {
+                    "browserTarget": "cv:build:production",
+                    "serverTarget": "cv:server:production"
+                },
+                "development": {
+                    "browserTarget": "cv:build:development",
+                    "serverTarget": "cv:server:development"
+                }
+            },
+            "defaultConfiguration": "production"
         }
-      },
-      "defaultConfiguration": "production"
     }
-  }
 }

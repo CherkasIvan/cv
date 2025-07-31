@@ -1,4 +1,4 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { user } from '@angular/fire/auth';
 import {
@@ -23,7 +23,7 @@ import { selectAuthState } from './store/selectors/auth.selector';
     styleUrls: ['./auth.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, NgClass, NgIf],
+    imports: [FormsModule, ReactiveFormsModule, NgClass],
 })
 export class AuthComponent implements OnInit {
     authForm!: FormGroup;

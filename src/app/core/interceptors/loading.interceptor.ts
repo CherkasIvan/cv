@@ -8,25 +8,27 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { SpinnerService } from '../services/spinner/spinner.service';
+import { Store } from '@ngrx/store';
+
+import { ISpinner } from '@layout/store/model/spinner.interface';
+import {
+    hideSpinner,
+    showSpinner,
+} from '@layout/store/spinner-store/spinner.actions';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
     private totalRequests = 0;
-    constructor(private _spinnerService: SpinnerService) {}
+    constructor(private _store: Store<ISpinner>) {}
 
     intercept(
-        request: HttpRequest<unknown>,
+        req: HttpRequest<unknown>,
         next: HttpHandler,
     ): Observable<HttpEvent<unknown>> {
-        this.totalRequests++;
-        this._spinnerService.show();
-        return next.handle(request).pipe(
+        this._store.dispatch(showSpinner()); // dispatch showSpinner action before each request
+        return next.handle(req).pipe(
             finalize(() => {
-                this.totalRequests--;
-                if (this.totalRequests == 0) {
-                    this._spinnerService.hide();
-                }
+                this._store.dispatch(hideSpinner()); // dispatch hideSpinner action after each request
             }),
         );
     }

@@ -1,18 +1,14 @@
 import { Observable, Subscription } from 'rxjs';
 
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    HostBinding,
-    OnDestroy,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
 import { AuthService } from '@auth/services/auth.service';
 
+import { logoutModalAnimation } from '@core/animations/logout-modal.animation';
 import { routeAnimations } from '@core/animations/route-animation';
 
 import { ModalOutletComponent } from '@layout/components/modal-outlet/modal-outlet.component';
@@ -36,7 +32,7 @@ import { ILogoutButton } from './store/model/logout-button.interface';
     selector: 'cv-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss'],
-    animations: [routeAnimations],
+    animations: [routeAnimations, logoutModalAnimation],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
@@ -54,9 +50,9 @@ import { ILogoutButton } from './store/model/logout-button.interface';
     ],
 })
 export class LayoutComponent implements OnDestroy {
-    @HostBinding('@routeAnimations') fade = 'in';
-
-    public currentTheme$ = this._store$.pipe(select(darkModeSelector));
+    public currentTheme$: Observable<boolean> = this._store$.pipe(
+        select(darkModeSelector),
+    );
     public navigation$: Observable<INavigation[]> =
         this._firebaseService.getNavigation();
     public currentRoute!: string;
@@ -65,17 +61,19 @@ export class LayoutComponent implements OnDestroy {
     public showLogoutModal$: Observable<boolean> = this._store$.pipe(
         select(logoutButtonSelector),
     );
+    public fadeState: string = 'out';
+    public showModal: boolean = false;
 
-    private routerSubscription$: Subscription = new Subscription();
+    private _routerSubscription$: Subscription = new Subscription();
 
     constructor(
         private readonly _router: Router,
         private readonly _localStorageService: localStorageService,
         private readonly _firebaseService: FirebaseService,
-        private readonly _store$: Store<ILogoutButton | IDarkMode>,
+        private readonly _store$: Store<ILogoutButton & IDarkMode>,
         private readonly _authService: AuthService,
     ) {
-        this.routerSubscription$.add(
+        this._routerSubscription$.add(
             this._router.events.subscribe((event) => {
                 event instanceof NavigationEnd
                     ? (this.currentRoute = event.url)
@@ -87,10 +85,18 @@ export class LayoutComponent implements OnDestroy {
 
     public confirmLogout() {
         this._authService.signOut();
+        setTimeout(() => {
+            this.showModal = false;
+        }, 1000);
         this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 
     public closeLogoutDialog() {
+        this.fadeState = 'out';
+        setTimeout(() => {
+            this.showModal = false;
+        }, 1000);
+
         this._store$.dispatch(setLogoutDialogSuccess(false));
     }
 
@@ -103,6 +109,6 @@ export class LayoutComponent implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.routerSubscription$.unsubscribe();
+        this._routerSubscription$.unsubscribe();
     }
 }

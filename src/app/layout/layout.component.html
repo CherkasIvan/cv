@@ -4,30 +4,37 @@
         [@routeAnimations]="prepareRoute(outlet)"
     >
         @if (showLogoutModal$ | async) {
-            <cv-modal-outlet (modalClosed)="closeLogoutDialog()">
-                <div class="modal-content">
-                    <p class="modal-message">
-                        Are you shure that you wont to exit from app?
-                    </p>
-                    <div class="modal-actions">
-                        <button
-                            class="cancel-button"
-                            type="button"
-                            (click)="closeLogoutDialog()"
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            class="confirm-button"
-                            type="button"
-                            (click)="confirmLogout()"
-                        >
-                            Confirm
-                        </button>
-                    </div>
-                </div>
-            </cv-modal-outlet>
+            <cv-modal-outlet
+                title="modalTitle"
+                content="Are you shure that you wont to exit from app?"
+                (close)="closeLogoutDialog()"
+            ></cv-modal-outlet>
         }
+
+        <!-- <cv-modal-outlet (modalClosed)="closeLogoutDialog()">
+            <div class="modal-content"> -->
+        <!-- [@logoutModalAnimation]="fadeState" -->
+        <!-- <p class="modal-message">
+                    Are you shure that you wont to exit from app?
+                </p>
+                <div class="modal-actions">
+                    <button
+                        class="cancel-button"
+                        type="button"
+                        (click)="closeLogoutDialog()"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        class="confirm-button"
+                        type="button"
+                        (click)="confirmLogout()"
+                    >
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </cv-modal-outlet> -->
 
         <cv-navigation-panel
             [navigators]="navigation$ | async"

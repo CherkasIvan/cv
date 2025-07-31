@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
@@ -18,7 +20,9 @@ import { localStorageService } from '@shared/services/localstorage/local-storage
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DarkModeSelectorComponent {
-    public isChecked$ = this._store$.pipe(select(darkModeSelector));
+    public isChecked$: Observable<boolean> = this._store$.pipe(
+        select(darkModeSelector),
+    );
     constructor(
         private readonly _localStorageService: localStorageService,
         private _store$: Store<IDarkMode>,
