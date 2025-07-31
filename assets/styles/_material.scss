@@ -1,0 +1,14 @@
+.mdc-dialog .mdc-dialog__content {
+    padding: 0 !important;
+}
+
+.mat-sidenav-container,
+.mat-sidenav-content,
+.mat-tab-body-content {
+    transform: none !important;
+}
+
+.link-tooltip {
+    cursor: pointer;
+    text-transform: uppercase;
+}

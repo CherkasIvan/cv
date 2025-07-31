@@ -1,0 +1,131 @@
+{
+    "NAVIGATION": {
+        "LINK": {
+            "VALUE0": "About me",
+            "VALUE1": "Education",
+            "VALUE2": "Projects",
+            "VALUE3": "Technologies",
+            "VALUE4": "Work experience",
+            "VALUE5": "CV"
+        }
+    },
+
+    "LAYOUT": {
+        "MAIN": {
+            "TITLE": "Ivan Cherkas CV",
+            "DESCRIPTION": "All this CV, including its design and texts, was completely developed by me to simplify communication with employers and to demonstrate my technical skills."
+        },
+        "TECHNOLOGIES": {
+            "TITLE": "The following technologies were used in the development of this application:"
+        },
+        "ETC": {
+            "LANGUAGE": "The application is made in Russian and English translations.",
+            "DARK-THEM": "There is an option to switch to a dark theme.",
+            "WISHES": "I wish you good viewing!"
+        }
+    },
+
+    "ABOUT-ME": {
+        "ABOUT": {
+            "TITLE": "Shortly about myself",
+            "TEXT": "Good day. My name is Ivan Vyacheslavovich Cherkas. I was born on January 25, 1991. in the city of Minsk. In programming since 2019. Initial training in C#, but later switched to HTML/CSS/JS. At the moment, I have an excellent command of the Angular framework for the development of corporate solutions on the front-end side. As well as the framework NestJS for the development of applications on the server side."
+        },
+        "HOBBY": {
+            "TITLE": "Hobby",
+            "TEXT": "I can say that I have a fairly general list of hobbies, but I would like to single out the most - the love of handicrafts in my spare time (making bracelets, belts, wallets and other things from leather, metal and stone) and I also like to spend time reading artistic literature."
+        },
+        "SPORTS": {
+            "TITLE": "Sport",
+            "TEXT": "In my youth, I was engaged in kettlebell sports. Now I go to the gym more and more and attend Krav Maga classes."
+        },
+        "ARMY": {
+            "TITLE": "Military duty",
+            "TEXT": "From 2015 to 2017 he served in the Israeli army. He graduated with the rank of sergeant (airborne in Israel). How paradoxical it may sound, but for health in RB."
+        }
+    },
+
+    "EDUCATION": {
+        "SCHOOL": {
+            "TITLE": "School",
+            "132": {
+                "NAME": "Secondary School No. 132",
+                "ADDRESS": "Minsk, P.Glebki street, 86"
+            }
+        },
+        "UNIVERSITY": {
+            "TITLE": "University",
+            "MIU": {
+                "NAME": "Minsk Innovation University",
+                "ADDRESS": "Minsk, Lazo street, 12"
+            }
+        },
+        "COURSES": {
+            "TITLE": "Courses",
+            "MIU": {
+                "NAME": "TeachMeSkills",
+                "GRADE": "Front-end developer",
+                "ADDRESS": "Minsk, Timiryazeva st., 67, office 1101"
+            },
+            "IT-ACADEMY": {
+                "NAME": "IT-cademy",
+                "GRADE": "C# developers",
+                "ADDRESS": "Minsk, Skryganova st., 14, floor 5"
+            },
+            "HIGHLIGHTS": {
+                "NAME": "HIGHLIGHTS",
+                "GRADE": "Web Design Basics in Adobe-Photoshop",
+                "ADDRESS": "Saint Petersburg"
+            },
+            "STEPIK": {
+                "NAME": "Stepik",
+                "GRADE": "Основы програмирования на C#",
+                "ADDRESS": "Moscow"
+            }
+        }
+    },
+
+    "PROJECTS": {
+        "DESCRIPTION": "The projects you see are only a part of all my projects. The github API only allows you to work with public repositories!"
+    },
+
+    "TECHNOLOGIES": {
+        "HARD-SKILLS": {
+            "TITLE": "Technical skills.",
+            "FRONT-END": "Front-end skills.",
+            "BACK-END": "Back-end skills."
+        },
+        "OTHER-SKILLS": {
+            "TITLE": "Other skills",
+            "SOCIAL": "Social skills.",
+            "UI": "Program UI skills."
+        }
+    },
+
+    "CV": {
+        "TITLE": "If you would like to download my CV in PDF or JPG format, please select the appropriate button. You can also choose between the European version and the version for the CIS countries.",
+        "BUTTON-CSI-TEXT": "Switch to European version",
+        "BUTTON-EURO-TEXT": "Switch to CIS version",
+        "PDF": "Download CV in PDF format",
+        "JPG": "Download CV in JPG format"
+    },
+
+    "WORK-EXPERIENCE": {
+        "YEAR": "year",
+        "MONTH": "month",
+        "DAY": "day",
+        "YEARS": "years",
+        "MONTHS": "months",
+        "DAYS": "days",
+        "YEARS-ELSE": "years",
+        "MONTHS-ELSE": "months",
+        "DAYS-ELSE": "days"
+    },
+
+    "FOOTER": {
+        "ITEM": {
+            "VALUE0": "Phone number:",
+            "VALUE1": "Skype:",
+            "VALUE2": "Email:"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@font-face {
+    src: url('../fonts/ofont.ru_Zekton.ttf');
+    font-family: 'Zekton Rg';
+}
+
+body {
+    font-family: 'Zekton Rg', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.about-me,
+.cv,
+.education,
+.projects,
+.technologies,
+.work-experience,
+.initial-content {
+    padding: 120px 5% 0 5%;
+    width: 100%;
+}
