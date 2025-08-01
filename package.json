@@ -4,12 +4,12 @@
     "scripts": {
         "ng": "ng",
         "start": "nx serve",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
-        "lint": "ng lint",
+        "build": "nx build cv --configuration=production",
+        "watch": "nx build --watch --configuration development",
+        "lint": "nx lint",
         "prettier": "npx prettier . --write",
-        "test": "ng test",
-        "dev:ssr": "ng run cv:serve-ssr",
+        "test": "nx-cloud test",
+        "dev:ssr": "nx run cv:serve-ssr",
         "serve:ssr": "node dist/cv/server/main.js",
         "build:ssr": "ng build && ng run cv:server",
         "prerender": "ng run cv:prerender"

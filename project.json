@@ -35,6 +35,8 @@
             },
             "configurations": {
                 "production": {
+                    "baseHref": "/cv/",  
+                    "deployUrl": "/cv/",
                     "budgets": [
                         {
                             "type": "initial",

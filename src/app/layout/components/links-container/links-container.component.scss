@@ -26,14 +26,14 @@
             transition: 250ms;
             will-change: transform;
             inset: 0;
-            box-shadow: 16px 0 40px #e4e4e4;
+            box-shadow: 16px 0 40px #7862e8;
             border-radius: 32px;
             width: inherit;
             height: inherit;
         }
 
         .social-media__back {
-            background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+            background: linear-gradient(90deg, #dc1de9,#6b4dfe,#d411d9);
         }
 
         .social-media__img {
@@ -75,7 +75,7 @@
             & > .social-media__back {
                 transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg)
                     rotateY(-20deg);
-                background: linear-gradient(135deg, #ff7979 -20%, #f0000f 120%);
+                background: linear-gradient(135deg,  #6b4dfe, -20%, #d411d9 120%);
             }
 
             & > .social-media__img {
@@ -87,7 +87,7 @@
 
     .dark-layout {
         .social-media {
-            box-shadow: 16px 0 40px #ff7979;
+            box-shadow: 16px 0 40px #dc1de9 20%;
 
             & > .social-media__back {
                 background: linear-gradient(135deg, red -20%, yellow 120%);
