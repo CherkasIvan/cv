@@ -39,8 +39,6 @@ import {
 import { StoreModule, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-import { languageSelectorReducer } from '@layout/store/language-selector-store/language-selector.reducers';
-import { logoutButtonReducer } from '@layout/store/logout-button-store/logout-button.reducers';
 import { spinnerReducer } from '@layout/store/spinner-store/spinner.reducer';
 
 import { GithubEffects } from '@pages/projects/projects-store/github.effects';
@@ -55,6 +53,8 @@ import { mainRoutes } from '@app/app-routing.routes';
 import { AppComponent } from '@app/app.component';
 import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
 import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
+import { languageSelectorReducer } from '@app/layout/store/language-selector-store/language-selector.reducers';
+import { logoutButtonReducer } from '@app/layout/store/logout-button-store/logout-button.reducers';
 
 import { AuthService } from './app/auth/services/auth.service';
 import { entityConfig } from './app/entity-metadata';
@@ -67,7 +67,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 bootstrapApplication(AppComponent, {
     providers: [
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideDatabase(() => getDatabase()),
         importProvidersFrom(
+            AngularFireModule.initializeApp(environment.firebase),
             TranslateModule.forRoot({
                 loader: {
                     provide: TranslateLoader,
@@ -76,11 +81,6 @@ bootstrapApplication(AppComponent, {
                 },
                 defaultLanguage: 'ru',
             }),
-            AngularFireModule.initializeApp(environment.firebase),
-            provideFirebaseApp(() => initializeApp(environment.firebase)),
-            provideAuth(() => getAuth()),
-            provideFirestore(() => getFirestore()),
-            provideDatabase(() => getDatabase()),
             StoreModule.forRoot({}),
             // StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
