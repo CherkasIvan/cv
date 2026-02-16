@@ -1,6 +1,3 @@
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppRouterStateSerializer } from '@store/router-store/router.serializer';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
@@ -29,99 +26,95 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { createTranslateLoader } from '@app/core/translate-loader/translate-loader.service';
 import { EntityDataModule } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
-import {
-    StoreRouterConnectingModule,
-    provideRouterStore,
-    routerReducer,
-} from '@ngrx/router-store';
+import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { StoreModule, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { spinnerReducer } from '@layout/store/spinner-store/spinner.reducer';
-
-import { GithubEffects } from '@pages/projects/projects-store/github.effects';
+import { mainRoutes } from './app/app-routing.routes';
+import { AppComponent } from './app/app.component';
+import { AuthService } from './app/auth/services/auth.service';
+import { LoadingInterceptor } from './app/core/interceptors/loading.interceptor';
+import { entityConfig } from './app/entity-metadata';
+import { darkModeReducer } from './app/layout/store/dark-mode-store/dark-mode.reducers';
+import { languageSelectorReducer } from './app/layout/store/language-selector-store/language-selector.reducers';
+import { logoutButtonReducer } from './app/layout/store/logout-button-store/logout-button.reducers';
+import { spinnerReducer } from './app/layout/store/spinner-store/spinner.reducer';
+import { GithubEffects } from './app/pages/projects/projects-store/github.effects';
 import {
     githubReducer,
     githubReposFeatureKey,
-} from '@pages/projects/projects-store/github.reducers';
+} from './app/pages/projects/projects-store/github.reducers';
+import { AppRouterStateSerializer } from './app/store/router-store/router.serializer';
+import { environment } from './environments/environment';
 
-import { environment } from '@env/environment';
-
-import { mainRoutes } from '@app/app-routing.routes';
-import { AppComponent } from '@app/app.component';
-import { LoadingInterceptor } from '@app/core/interceptors/loading.interceptor';
-import { darkModeReducer } from '@app/layout/store/dark-mode-store/dark-mode.reducers';
-import { languageSelectorReducer } from '@app/layout/store/language-selector-store/language-selector.reducers';
-import { logoutButtonReducer } from '@app/layout/store/logout-button-store/logout-button.reducers';
-
-import { AuthService } from './app/auth/services/auth.service';
-import { entityConfig } from './app/entity-metadata';
-
-// import { globalSetReducers, globalSetReducersKey } from './app/layout/store';
-
+// Фабрика для загрузки переводов
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+    return new TranslateHttpLoader();
 }
 
 bootstrapApplication(AppComponent, {
     providers: [
+        // Firebase провайдеры
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore()),
         provideDatabase(() => getDatabase()),
+
+        // Импорт модулей
         importProvidersFrom(
             AngularFireModule.initializeApp(environment.firebase),
             TranslateModule.forRoot({
+                fallbackLang: 'en',
                 loader: {
                     provide: TranslateLoader,
-                    useFactory: HttpLoaderFactory,
+                    useFactory: createTranslateLoader,
                     deps: [HttpClient],
                 },
-                defaultLanguage: 'ru',
             }),
             StoreModule.forRoot({}),
-            // StoreModule.forFeature(globalSetReducersKey, globalSetReducers),
             StoreModule.forFeature(githubReposFeatureKey, githubReducer),
             StoreModule.forFeature('darkMode', darkModeReducer),
             StoreModule.forFeature('language', languageSelectorReducer),
             StoreModule.forFeature('isLogout', logoutButtonReducer),
             StoreModule.forFeature('spinner', spinnerReducer),
             EffectsModule.forRoot([GithubEffects]),
-            StoreRouterConnectingModule.forRoot(),
             EntityDataModule.forRoot(entityConfig),
             ServiceWorkerModule.register('ngsw-worker.js', {
                 enabled: environment.production,
                 registrationStrategy: 'registerWhenStable:30000',
             }),
         ),
+
+        // Интерсепторы
         {
             provide: HTTP_INTERCEPTORS,
             useClass: LoadingInterceptor,
             multi: true,
         },
+
+        // Сервисы
         AuthService,
         ScreenTrackingService,
         UserTrackingService,
+
+        // Провайдеры функций
         provideAnimations(),
         provideRouterStore({ serializer: AppRouterStateSerializer }),
         provideStore({ router: routerReducer }),
         provideHttpClient(withInterceptorsFromDi()),
         provideRouter(mainRoutes),
         provideStoreDevtools({
-            maxAge: 25, // Retains last 25 states
-            logOnly: !isDevMode(), // Restrict extension to log-only mode
-            autoPause: true, // Pauses recording actions and state changes when the extension window is not open
-            trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
-            traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
+            maxAge: 25,
+            logOnly: !isDevMode(),
+            autoPause: true,
+            trace: false,
+            traceLimit: 75,
         }),
         provideClientHydration(),
     ],
-})
-    .then(() => {
-        if ('serviceWorker' in navigator && environment.production) {
-            navigator.serviceWorker.register('/ngsw-worker.js');
-        }
-    })
-    .catch((err) => console.log(err));
+}).catch((err) => console.error(err));

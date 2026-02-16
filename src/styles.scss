@@ -1,11 +1,13 @@
-@use '../src/assets/styles/styles.scss';
 @use '@angular/material' as mat;
+
 @include mat.core();
 
+// Определение палитр
 $cv-primary: mat.define-palette(mat.$indigo-palette);
 $cv-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 $cv-warn: mat.define-palette(mat.$red-palette);
 
+// Светлая тема
 $cv-theme: mat.define-light-theme(
     (
         color: (
@@ -13,9 +15,12 @@ $cv-theme: mat.define-light-theme(
             accent: $cv-accent,
             warn: $cv-warn,
         ),
+        typography: mat.define-typography-config(),
+        density: 0,
     )
 );
 
+// Темная тема
 $cv-dark-primary: mat.define-palette(mat.$indigo-palette);
 $cv-dark-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 $cv-dark-warn: mat.define-palette(mat.$red-palette);
@@ -27,9 +32,12 @@ $cv-dark-theme: mat.define-dark-theme(
             accent: $cv-dark-accent,
             warn: $cv-dark-warn,
         ),
+        typography: mat.define-typography-config(),
+        density: 0,
     )
 );
 
+// Применение тем
 @include mat.all-component-themes($cv-theme);
 
 .darkMode {
@@ -38,6 +46,9 @@ $cv-dark-theme: mat.define-dark-theme(
 
 html,
 body {
+    margin: 0;
     height: 100%;
 }
+
+// Импорт предварительно собранной темы Material (опционально)
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';

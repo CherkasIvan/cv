@@ -2,6 +2,8 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./src",
+        "moduleResolution": "bundler",
+        "ignoreDeprecations": "6.0",
         "paths": {
             "@angular/*": ["../node_modules/@angular/*"],
             "@env/*": ["environments/*"],
@@ -28,7 +30,6 @@
         "declaration": false,
         "downlevelIteration": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node",
         "importHelpers": true,
         "target": "ES2022",
         "module": "ES2022",
